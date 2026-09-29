@@ -112,6 +112,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #ff
 @keyframes rise{to{opacity:1;transform:none}}
 
 /* ---------- MARQUEE ---------- */
+.marquee-wrap{overflow-x:clip}
 .marquee{position:relative;z-index:5;background:var(--red);transform:rotate(-2deg);margin:-10px -20px 0;padding:22px 0;overflow:hidden;box-shadow:0 30px 80px -20px rgba(224,17,25,.5)}
 .marquee__track{display:flex;gap:40px;width:max-content;animation:scroll 32s linear infinite}
 .marquee__track span{display:flex;align-items:center;gap:40px;font-size:clamp(22px,2.6vw,34px);font-weight:800;letter-spacing:-.01em;text-transform:uppercase;white-space:nowrap}
@@ -630,16 +631,16 @@ footer{padding:80px 0 40px;overflow:hidden}
   .nav.open .nav__links{display:flex;flex-direction:column;position:absolute;top:70px;left:20px;right:20px;padding:10px;border-radius:20px;background:#141414;border:1px solid var(--line)}
   .nav.open .nav__links a{padding:16px}
   .hero{padding-top:100px}
-  .hero__grid{grid-template-columns:1fr;gap:0}
-  .hero__visual{order:-1;height:440px}
-  .hero__photo{width:300px}
+  .hero__grid{grid-template-columns:minmax(0,1fr);gap:0}
+  .hero__visual{order:-1;height:auto;flex-direction:column;align-items:stretch}
+  .hero__photo{width:300px;height:440px;margin-inline:auto}
   .hero__glow{right:50%;transform:translateX(50%);top:40px;width:460px;height:460px}
   .hero__name{top:110px}
   .stats{position:static;flex-direction:row;margin-top:24px}
   .stat{flex:1;width:auto;padding:16px}
   .stat b{font-size:32px}
   .stat > span{font-size:12px}
-  .badge{top:auto;bottom:40px;left:0;font-size:12px}
+  .badge{top:330px;left:0;font-size:12px}
   .hero__copy{padding:24px 0 72px}
   .t-auto,.t-mkt{grid-column:span 12}
   .tile{padding:26px}
@@ -717,11 +718,13 @@ footer{padding:80px 0 40px;overflow:hidden}
 </header>
 
 <!-- ================= MARQUEE ================= -->
+<div class="marquee-wrap">
 <div class="marquee" aria-hidden="true">
   <div class="marquee__track">
     <span>AI</span><span>Automation</span><span>Marketing</span><span>No hype</span><span>Speed over slowness</span><span>Work before money</span>
     <span>AI</span><span>Automation</span><span>Marketing</span><span>No hype</span><span>Speed over slowness</span><span>Work before money</span>
   </div>
+</div>
 </div>
 
 <main>
