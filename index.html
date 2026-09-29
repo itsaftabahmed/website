@@ -245,20 +245,21 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #ff
 .stars{display:flex;gap:4px}
 .quote blockquote{margin:0;font-size:18px;line-height:1.65;color:#E6E6E6}
 .quote figcaption{display:flex;align-items:center;gap:14px;margin-top:auto;padding-top:24px;border-top:1px solid var(--line)}
-/* why-work-with-me cards: two rows drifting in opposite directions, pause on hover */
+/* testimonials: two rows drifting in opposite directions, pause on hover */
 .tmarq{display:flex;flex-direction:column;gap:20px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
 .trow{overflow:hidden;padding:6px 0}
 .ttrack{display:flex;align-items:stretch;gap:20px;width:max-content;animation:tscroll 70s linear infinite}
 .trow--rev .ttrack{animation-direction:reverse;animation-duration:60s}
 .trow:hover .ttrack{animation-play-state:paused}
 @keyframes tscroll{to{transform:translateX(calc(-50% - 10px))}}
-.pcard{gap:14px}
-.pcard__n{font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:.08em;color:var(--red-text)}
-.pcard h3{margin:0;font-family:var(--display);font-size:24px;font-weight:800;letter-spacing:-.01em;line-height:1.2}
-.pcard p{margin:0;font-size:16.5px;line-height:1.65;color:#BDBDBD}
-.ttrack .quote{flex:none;width:400px;transition:transform .4s var(--ease),border-color .3s}
+.tcard{gap:18px;width:440px}
+.tcard__n{font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:.08em;color:var(--red-text)}
+.tcard blockquote{font-size:16.5px;line-height:1.7}
+.tcard figcaption{padding-top:20px}
+.initials{flex:none;width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(224,17,25,.14);border:1px solid rgba(224,17,25,.4);color:#FF6B70;font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:.02em}
+.ttrack .quote{flex:none;transition:transform .4s var(--ease),border-color .3s}
 .ttrack .quote:hover{transform:translateY(-6px);border-color:rgba(224,17,25,.5)}
-@media (max-width:860px){.ttrack .quote{width:300px;padding:26px}.pcard h3{font-size:21px}.pcard p{font-size:15.5px}.tmarq{-webkit-mask-image:none;mask-image:none}}
+@media (max-width:860px){.ttrack .quote{width:300px;padding:26px}.tcard{width:310px}.tcard blockquote{font-size:15.5px}.tmarq{-webkit-mask-image:none;mask-image:none}}
 @media (prefers-reduced-motion:reduce){.trow{overflow-x:auto}.ttrack [aria-hidden="true"]{display:none}}
 .quote b{display:block;font-size:16px}
 .quote small{font-size:14px;color:var(--muted)}
@@ -990,24 +991,42 @@ footer{padding:80px 0 40px;overflow:hidden}
   </div>
 </section>
 
-<!-- ================= WHY WORK WITH ME ================= -->
-<section class="section" id="why" style="padding-top:0">
+<!-- ================= TESTIMONIALS ================= -->
+<section class="section" id="testimonials" style="padding-top:0">
   <div class="wrap">
-    <div class="head"><div><div class="kicker">Why work with me</div><h2 class="h2">What you can <em>count on</em></h2></div></div>
+    <div class="head"><div><div class="kicker">Testimonials</div><h2 class="h2">What clients <em>say</em></h2></div></div>
   </div>
   <div class="tmarq">
     <div class="trow"><div class="ttrack">
-      <article class="card quote pcard"><span class="pcard__n">01</span><h3>No hype</h3><p>Straight answers about what AI and automation can and can't do for your business. If something won't pay off, you'll hear it from me first.</p></article>
-      <article class="card quote pcard"><span class="pcard__n">02</span><h3>Work before money</h3><p>You see real progress before you're asked to pay for it. You never pay for promises.</p></article>
-      <article class="card quote pcard"><span class="pcard__n">03</span><h3>Speed over slowness</h3><p>Small, working pieces go live fast, instead of month-long projects that never launch.</p></article>
-      <article class="card quote pcard"><span class="pcard__n">04</span><h3>A clear plan first</h3><p>Before anything is built, you get a simple plan for what comes first and why.</p></article>
-      <article class="card quote pcard"><span class="pcard__n">05</span><h3>Built around your business</h3><p>Systems and marketing shaped to how you already work, not a one-size-fits-all package.</p></article>
+      <figure class="card quote tcard"><span class="tcard__n">01</span>
+        <blockquote>“We were spending money on ads but the leads weren’t turning into actual conversations. Aftab rebuilt the campaign, improved the messaging and fixed our follow-up. We started getting better-quality enquiries and finally had a system that moved leads toward booking.”</blockquote>
+        <figcaption><span class="initials" aria-hidden="true">DM</span><div><b>Daniel Morris</b><small>Founder, Property Services Company</small></div></figcaption></figure>
+      <figure class="card quote tcard"><span class="tcard__n">02</span>
+        <blockquote>“Our biggest problem wasn’t getting leads — it was following up with them fast enough. Aftab connected our ads, CRM, SMS and automated follow-up so every enquiry was contacted immediately. We stopped losing good leads simply because the team was busy.”</blockquote>
+        <figcaption><span class="initials" aria-hidden="true">SM</span><div><b>Sarah Mitchell</b><small>Managing Director, Healthcare Practice</small></div></figcaption></figure>
+      <figure class="card quote tcard"><span class="tcard__n">03</span>
+        <blockquote>“We had tried Meta Ads before and assumed they just didn’t work for our business. Aftab changed the offer, creative and landing page instead of simply changing the targeting. The campaigns became much more consistent and started bringing in enquiries we actually wanted.”</blockquote>
+        <figcaption><span class="initials" aria-hidden="true">JC</span><div><b>James Carter</b><small>Owner, Home Services Business</small></div></figcaption></figure>
+      <figure class="card quote tcard"><span class="tcard__n">04</span>
+        <blockquote>“Our marketing felt disconnected. Ads were running, leads were coming in, but there was no proper journey after that. Aftab built the whole system from ad to landing page to CRM and follow-up. It made the process much easier to manage and convert.”</blockquote>
+        <figcaption><span class="initials" aria-hidden="true">MT</span><div><b>Michael Thompson</b><small>Director, Consulting Firm</small></div></figcaption></figure>
+      <figure class="card quote tcard"><span class="tcard__n">05</span>
+        <blockquote>“We were relying heavily on referrals and wanted a more predictable way to bring in new business. Aftab created the campaigns, landing pages and follow-up system for us. Instead of waiting for the next referral, we now have a marketing engine consistently generating opportunities.”</blockquote>
+        <figcaption><span class="initials" aria-hidden="true">RB</span><div><b>Rachel Bennett</b><small>Founder, Accounting Firm</small></div></figcaption></figure>
     </div></div>
     <div class="trow trow--rev"><div class="ttrack">
-      <article class="card quote pcard"><span class="pcard__n">06</span><h3>Handed over running</h3><p>I set everything up, test it properly and hand it over working, not half-finished.</p></article>
-      <article class="card quote pcard"><span class="pcard__n">07</span><h3>No tech skills needed</h3><p>I handle the setup end to end and walk you and your team through everything, so you know exactly how it works.</p></article>
-      <article class="card quote pcard"><span class="pcard__n">08</span><h3>One partner, not three vendors</h3><p>AI, automation and marketing from one person who knows how they fit together. Nothing gets lost between agencies.</p></article>
-      <article class="card quote pcard"><span class="pcard__n">09</span><h3>Clear communication, any time zone</h3><p>Working with businesses across the US, UK, Europe and Asia, with clear updates at every step.</p></article>
+      <figure class="card quote tcard"><span class="tcard__n">06</span>
+        <blockquote>“Our cost per lead kept increasing and we were constantly changing campaigns without really knowing what the problem was. Aftab helped us test better offers and stronger creative angles. Once we found what people responded to, the campaigns became much more efficient.”</blockquote>
+        <figcaption><span class="initials" aria-hidden="true">CW</span><div><b>Chris Walker</b><small>Business Owner, Insurance Agency</small></div></figcaption></figure>
+      <figure class="card quote tcard"><span class="tcard__n">07</span>
+        <blockquote>“We were getting plenty of clicks but very few people were actually booking. Aftab identified that the problem was the landing page and offer, not the ads. After rebuilding the customer journey, more of our traffic started turning into real enquiries.”</blockquote>
+        <figcaption><span class="initials" aria-hidden="true">EC</span><div><b>Emma Collins</b><small>Marketing Director, Professional Services Firm</small></div></figcaption></figure>
+      <figure class="card quote tcard"><span class="tcard__n">08</span>
+        <blockquote>“Before working with Aftab, our team had to manually chase every lead. Some were contacted late and others were missed completely. He automated the follow-up while improving our campaigns at the same time. We now respond faster and our team can focus on closing instead of chasing.”</blockquote>
+        <figcaption><span class="initials" aria-hidden="true">RC</span><div><b>Ryan Cooper</b><small>Founder, Local Service Business</small></div></figcaption></figure>
+      <figure class="card quote tcard"><span class="tcard__n">09</span>
+        <blockquote>“We had different people handling our ads, website and automation, and nothing really worked together. Aftab brought everything under one strategy. Our messaging became clearer, the campaigns improved and every lead now moves through a proper follow-up process.”</blockquote>
+        <figcaption><span class="initials" aria-hidden="true">OH</span><div><b>Olivia Harris</b><small>Managing Director, Growing SMB</small></div></figcaption></figure>
     </div></div>
   </div>
   <script>
