@@ -529,9 +529,22 @@ footer{padding:80px 0 40px;overflow:hidden}
 .notif__dot{width:7px;height:7px;border-radius:50%;background:#4ADE80}
 .notif.pop{animation:notifPop .55s cubic-bezier(.3,1.5,.5,1)}
 @keyframes notifPop{from{opacity:0;transform:translateY(10px) scale(.9)}}
+/* trend line: drawn from the real bar positions by JS, ends on the red bar */
 .spark{position:absolute;left:0;right:0;bottom:0;width:100%;height:130px;overflow:visible;pointer-events:none}
-.spark path{fill:none;stroke:#fff;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.8s var(--ease) .7s;filter:drop-shadow(0 0 6px rgba(255,255,255,.45))}
-.t-mkt.in .spark path{stroke-dashoffset:0}
+.spark__area{opacity:0;transition:opacity 1s ease 2s}
+.spark__line{fill:none;stroke:url(#sparkStroke);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:var(--len);stroke-dashoffset:var(--len);transition:stroke-dashoffset 1.6s cubic-bezier(.65,0,.35,1) 1s;filter:drop-shadow(0 0 6px rgba(255,255,255,.35))}
+.spark__glint{fill:none;stroke:#fff;stroke-width:3.5;stroke-linecap:round;stroke-dasharray:36 var(--len);stroke-dashoffset:36;opacity:0;filter:drop-shadow(0 0 8px #fff)}
+.spark__pt{fill:#0f0f0f;stroke:rgba(255,255,255,.85);stroke-width:2;opacity:0;transform-box:fill-box;transform-origin:center;transform:scale(0);transition:opacity .3s,transform .4s cubic-bezier(.3,1.6,.5,1)}
+.spark__end{fill:#fff;stroke:var(--red);stroke-width:3;transform-box:fill-box;transform-origin:center;transform:scale(0);transition:transform .5s cubic-bezier(.3,1.6,.5,1) 2.55s}
+.spark__ring{fill:none;stroke:#FF4A50;stroke-width:2;opacity:0;transform-box:fill-box;transform-origin:center}
+.t-mkt.in .spark__area{opacity:1}
+.t-mkt.in .spark__line{stroke-dashoffset:0}
+.t-mkt.in .spark__pt{opacity:1;transform:scale(1)}
+.t-mkt.in .spark__end{transform:scale(1)}
+.t-mkt.in .spark__ring{animation:sparkRing 2s ease-out 2.8s infinite}
+.t-mkt.in .spark__glint{animation:sparkGlint 3.2s cubic-bezier(.45,0,.55,1) 2.9s infinite}
+@keyframes sparkRing{0%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(3.2)}}
+@keyframes sparkGlint{0%{opacity:0;stroke-dashoffset:36}10%{opacity:1}75%{opacity:1}100%{opacity:0;stroke-dashoffset:calc(var(--len) * -1)}}
 
 /* who: chips pop in, fill red on hover */
 .who span{opacity:0;transform:translateY(12px) scale(.9);transition:background .25s,border-color .25s,color .25s}
@@ -542,7 +555,7 @@ footer{padding:80px 0 40px;overflow:hidden}
 @media (max-width:860px){.tile__num{font-size:84px;right:18px}.chatwin .chat{min-height:0}}
 @media (prefers-reduced-motion:reduce){
   .who span,.notif{opacity:1!important;transform:none!important}
-  .spark path{stroke-dashoffset:0}
+  .spark__line{stroke-dashoffset:0!important}.spark__area,.spark__pt{opacity:1!important}.spark__pt,.spark__end{transform:none!important}.spark__glint,.spark__ring{display:none}
   .packet,.log__track{animation:none!important}
 }
 
@@ -847,7 +860,7 @@ footer{padding:80px 0 40px;overflow:hidden}
         <div class="chartbox" aria-hidden="true">
           <div class="notif" id="notif"><span class="notif__dot"></span><span id="notifText">New lead from Google</span></div>
           <div class="bars"><i style="height:30%"></i><i style="height:42%"></i><i style="height:38%"></i><i style="height:55%"></i><i style="height:68%"></i><i style="height:80%"></i><i style="height:100%"></i></div>
-          <svg class="spark" viewBox="0 0 300 100" preserveAspectRatio="none"><path pathLength="1" d="M8 78 L50 66 L92 70 L134 50 L176 36 L218 24 L292 4"/></svg>
+          <svg class="spark" id="spark"></svg>
         </div>
       </article>
       <article class="card tile t-who">
@@ -1221,6 +1234,43 @@ footer{padding:80px 0 40px;overflow:hidden}
     o.observe(pipe);
   })();
 
+
+  // ===== Marketing trend line (drawn to fit the bars exactly) =====
+  (function(){
+    const svg = document.getElementById('spark'); if (!svg) return;
+    const bars = svg.parentElement.querySelectorAll('.bars i'), NS = 'http://www.w3.org/2000/svg';
+    const el = (tag, attrs) => { const n = document.createElementNS(NS, tag); for (const k in attrs) n.setAttribute(k, attrs[k]); return n; };
+    const draw = () => {
+      const W = svg.clientWidth, H = svg.clientHeight; if (!W) return;
+      const box = svg.getBoundingClientRect(), bb = svg.parentElement.querySelector('.bars').getBoundingClientRect();
+      const off = bb.top + bb.height - (box.top + box.height);   // bars and svg share the same bottom edge
+      const pts = Array.from(bars).map((b, i, a) => {
+        const x = b.offsetLeft + b.offsetWidth / 2, top = H - b.offsetHeight + off;
+        return [x, i === a.length - 1 ? top : top - 14];            // float above each bar, land on the red one
+      });
+      // smooth curve through every point (Catmull-Rom → cubic Bézier)
+      let d = 'M' + pts[0][0] + ' ' + pts[0][1];
+      for (let i = 0; i < pts.length - 1; i++) {
+        const p0 = pts[i - 1] || pts[i], p1 = pts[i], p2 = pts[i + 1], p3 = pts[i + 2] || p2;
+        d += ' C' + (p1[0] + (p2[0] - p0[0]) / 6) + ' ' + (p1[1] + (p2[1] - p0[1]) / 6) + ',' + (p2[0] - (p3[0] - p1[0]) / 6) + ' ' + (p2[1] - (p3[1] - p1[1]) / 6) + ',' + p2[0] + ' ' + p2[1];
+      }
+      const last = pts[pts.length - 1];
+      svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+      svg.innerHTML = '<defs><linearGradient id="sparkStroke" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset=".6" stop-color="#fff"/><stop offset="1" stop-color="#FF4A50"/></linearGradient>' +
+        '<linearGradient id="sparkFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".14"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>' +
+        '<clipPath id="sparkClip"><rect x="0" y="-20" width="' + (bars[bars.length - 1].offsetLeft - 4) + '" height="' + (H + 20) + '"/></clipPath></defs>';
+      svg.appendChild(el('path', {class:'spark__area', d:d + ' L' + last[0] + ' ' + H + ' L' + pts[0][0] + ' ' + H + ' Z', fill:'url(#sparkFill)', 'clip-path':'url(#sparkClip)'}));
+      const line = el('path', {class:'spark__line', d});
+      svg.appendChild(line);
+      svg.appendChild(el('path', {class:'spark__glint', d}));
+      pts.slice(0, -1).forEach((p, i) => { const c = el('circle', {class:'spark__pt', cx:p[0], cy:p[1], r:3.5}); c.style.transitionDelay = (1 + 1.6 * (i + 1) / pts.length) + 's'; svg.appendChild(c); });
+      svg.appendChild(el('circle', {class:'spark__ring', cx:last[0], cy:last[1], r:6}));
+      svg.appendChild(el('circle', {class:'spark__end', cx:last[0], cy:last[1], r:6}));
+      svg.style.setProperty('--len', Math.ceil(line.getTotalLength()) + 1);
+    };
+    draw();
+    if ('ResizeObserver' in window) new ResizeObserver(draw).observe(svg); else addEventListener('resize', draw);
+  })();
 
   // ===== Latest Shorts from the YouTube channel (auto-updates) =====
   (function(){
