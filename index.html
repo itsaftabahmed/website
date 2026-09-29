@@ -246,7 +246,19 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #ff
 .stars{display:flex;gap:4px}
 .quote blockquote{margin:0;font-size:18px;line-height:1.65;color:#E6E6E6}
 .quote figcaption{display:flex;align-items:center;gap:14px;margin-top:auto;padding-top:24px;border-top:1px solid var(--line)}
-.avatar{width:48px;height:48px;border-radius:50%;object-fit:cover;background:#262626}
+.avatar{flex:none;width:48px;height:48px;border-radius:50%;overflow:hidden;background:#262626}
+.avatar img{display:block;width:100%;height:100%;object-fit:cover}
+/* testimonials: two rows drifting in opposite directions, pause on hover */
+.tmarq{display:flex;flex-direction:column;gap:20px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.trow{overflow:hidden;padding:6px 0}
+.ttrack{display:flex;align-items:stretch;gap:20px;width:max-content;animation:tscroll 70s linear infinite}
+.trow--rev .ttrack{animation-direction:reverse;animation-duration:60s}
+.trow:hover .ttrack{animation-play-state:paused}
+@keyframes tscroll{to{transform:translateX(calc(-50% - 10px))}}
+.ttrack .quote{flex:none;width:400px;transition:transform .4s var(--ease),border-color .3s}
+.ttrack .quote:hover{transform:translateY(-6px);border-color:rgba(224,17,25,.5)}
+@media (max-width:860px){.ttrack .quote{width:300px;padding:26px}.ttrack .quote blockquote{font-size:16px}.tmarq{-webkit-mask-image:none;mask-image:none}}
+@media (prefers-reduced-motion:reduce){.trow{overflow-x:auto}.ttrack [aria-hidden="true"]{display:none}}
 .quote b{display:block;font-size:16px}
 .quote small{font-size:14px;color:var(--muted)}
 
@@ -965,22 +977,49 @@ footer{padding:80px 0 40px;overflow:hidden}
 </section>
 
 <!-- ================= TESTIMONIALS ================= -->
-<section class="section" style="padding-top:0">
+<section class="section" id="testimonials" style="padding-top:0">
   <div class="wrap">
     <div class="head"><div><div class="kicker">Testimonials</div><h2 class="h2">What clients say</h2></div></div>
-    <!-- REPLACE: real client quotes, names and photos -->
-    <div class="quotes">
-      <figure class="card quote"><div class="stars" aria-label="5 stars"><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg></div>
-        <blockquote>“Client testimonial in their own words.”</blockquote>
-        <figcaption><img class="avatar" src="images/client-1.jpg" alt="" loading="lazy" decoding="async"><div><b>Client name</b><small>Role, business</small></div></figcaption></figure>
-      <figure class="card quote"><div class="stars" aria-label="5 stars"><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg></div>
-        <blockquote>“Client testimonial in their own words.”</blockquote>
-        <figcaption><img class="avatar" src="images/client-2.jpg" alt="" loading="lazy" decoding="async"><div><b>Client name</b><small>Role, business</small></div></figcaption></figure>
-      <figure class="card quote"><div class="stars" aria-label="5 stars"><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg></div>
-        <blockquote>“Client testimonial in their own words.”</blockquote>
-        <figcaption><img class="avatar" src="images/client-3.jpg" alt="" loading="lazy" decoding="async"><div><b>Client name</b><small>Role, business</small></div></figcaption></figure>
-    </div>
   </div>
+  <!-- REPLACE: each [bracketed] quote, name and role with a real client's words.
+       Photos: images/client-1.jpg … client-9.jpg (a grey circle shows until you add them). -->
+  <div class="tmarq">
+    <div class="trow"><div class="ttrack">
+      <figure class="card quote"><div class="stars" aria-label="5 stars"><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg></div>
+        <blockquote>“[Client quote] What was slowing their business down before you worked together?”</blockquote>
+        <figcaption><span class="avatar"><img src="images/client-1.jpg" alt="" loading="lazy" decoding="async"></span><div><b>[Client name]</b><small>[Role, business · Country]</small></div></figcaption></figure>
+      <figure class="card quote"><div class="stars" aria-label="5 stars"><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg></div>
+        <blockquote>“[Client quote] What did you build for them, and how quickly was it running?”</blockquote>
+        <figcaption><span class="avatar"><img src="images/client-2.jpg" alt="" loading="lazy" decoding="async"></span><div><b>[Client name]</b><small>[Role, business · Country]</small></div></figcaption></figure>
+      <figure class="card quote"><div class="stars" aria-label="5 stars"><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg></div>
+        <blockquote>“[Client quote] One number that changed: leads, bookings, hours saved or revenue.”</blockquote>
+        <figcaption><span class="avatar"><img src="images/client-3.jpg" alt="" loading="lazy" decoding="async"></span><div><b>[Client name]</b><small>[Role, business · Country]</small></div></figcaption></figure>
+      <figure class="card quote"><div class="stars" aria-label="5 stars"><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg></div>
+        <blockquote>“[Client quote] What surprised them most about working with you?”</blockquote>
+        <figcaption><span class="avatar"><img src="images/client-4.jpg" alt="" loading="lazy" decoding="async"></span><div><b>[Client name]</b><small>[Role, business · Country]</small></div></figcaption></figure>
+      <figure class="card quote"><div class="stars" aria-label="5 stars"><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg></div>
+        <blockquote>“[Client quote] How does their week look now that the busywork runs itself?”</blockquote>
+        <figcaption><span class="avatar"><img src="images/client-5.jpg" alt="" loading="lazy" decoding="async"></span><div><b>[Client name]</b><small>[Role, business · Country]</small></div></figcaption></figure>
+    </div></div>
+    <div class="trow trow--rev"><div class="ttrack">
+      <figure class="card quote"><div class="stars" aria-label="5 stars"><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg></div>
+        <blockquote>“[Client quote] Why would they recommend you to another business owner?”</blockquote>
+        <figcaption><span class="avatar"><img src="images/client-6.jpg" alt="" loading="lazy" decoding="async"></span><div><b>[Client name]</b><small>[Role, business · Country]</small></div></figcaption></figure>
+      <figure class="card quote"><div class="stars" aria-label="5 stars"><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg></div>
+        <blockquote>“[Client quote] What was the first result they noticed after launch?”</blockquote>
+        <figcaption><span class="avatar"><img src="images/client-7.jpg" alt="" loading="lazy" decoding="async"></span><div><b>[Client name]</b><small>[Role, business · Country]</small></div></figcaption></figure>
+      <figure class="card quote"><div class="stars" aria-label="5 stars"><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg></div>
+        <blockquote>“[Client quote] How was the communication across time zones?”</blockquote>
+        <figcaption><span class="avatar"><img src="images/client-8.jpg" alt="" loading="lazy" decoding="async"></span><div><b>[Client name]</b><small>[Role, business · Country]</small></div></figcaption></figure>
+      <figure class="card quote"><div class="stars" aria-label="5 stars"><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#E01119"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg></div>
+        <blockquote>“[Client quote] What would they tell someone who's unsure about AI or automation?”</blockquote>
+        <figcaption><span class="avatar"><img src="images/client-9.jpg" alt="" loading="lazy" decoding="async"></span><div><b>[Client name]</b><small>[Role, business · Country]</small></div></figcaption></figure>
+    </div></div>
+  </div>
+  <script>
+  // duplicate each row once so the scroll loops seamlessly (copies are hidden from screen readers)
+  document.querySelectorAll('.ttrack').forEach(t => Array.from(t.children).forEach(c => { const k = c.cloneNode(true); k.setAttribute('aria-hidden', 'true'); t.appendChild(k); }));
+  </script>
 </section>
 
 <!-- ================= FAQ ================= -->
@@ -1412,7 +1451,7 @@ footer{padding:80px 0 40px;overflow:hidden}
   }
 
   // scroll reveal with stagger (also triggers the chat, flow and bar animations)
-  const targets = document.querySelectorAll('.world__copy, .globe, .sp, .head, .intro > *, .tile, .short, .project, .step, .values, .quote, .faq > *, .faq details, .book, .foot');
+  const targets = document.querySelectorAll('.world__copy, .globe, .sp, .head, .intro > *, .tile, .short, .project, .step, .values, .tmarq, .faq > *, .faq details, .book, .foot');
   targets.forEach(el => {
     if (reduce) { el.classList.add('in'); return; }
     el.classList.add('io');
