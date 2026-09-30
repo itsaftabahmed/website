@@ -1701,7 +1701,7 @@ footer{padding:80px 0 40px;overflow:hidden}
     raf = requestAnimationFrame(tick);
   };
   let lastTick = 0, settle;
-  const onSlide = () => { const now = performance.now(); if (now - lastTick > 45) { sfx.tick(); lastTick = now; } clearTimeout(settle); settle = setTimeout(sfx.count, 420); update(); };
+  const onSlide = () => { clearTimeout(settle); settle = setTimeout(sfx.count, 600); update(); };   // one soft chime once they stop dragging
   hrs.addEventListener('input', onSlide); rate.addEventListener('input', onSlide);
   const hideSay = () => say.classList.remove('show');
   const psst = document.getElementById('abotPsst');
@@ -1716,17 +1716,15 @@ footer{padding:80px 0 40px;overflow:hidden}
     g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(vol, t + .012); g.gain.exponentialRampToValueAtTime(.0001, t + dur);
     o.connect(g).connect(actx.destination); o.start(t); o.stop(t + dur + .02);
   };
+  // only three moments get a sound, so it never feels noisy:
   const sfx = {
-    peek: () => { tone(520, 0, .09, .05, 'sine', 700); tone(700, .1, .12, .05, 'sine', 900); },                 // curious "hm-hm?"
-    pop:  () => { tone(440, 0, .08, .07, 'triangle', 880); tone(988, .09, .16, .06, 'sine'); tone(1318, .18, .22, .04, 'sine'); },   // cheerful chime
-    open: () => { tone(660, 0, .07, .06, 'triangle', 990); tone(1320, .07, .14, .045, 'sine'); },
-    close:() => { tone(880, 0, .1, .05, 'triangle', 440); },
-    tick: () => tone(1800, 0, .025, .018, 'square'),
-    count:() => { tone(1046, 0, .08, .045, 'sine'); tone(1568, .06, .18, .04, 'sine'); }                       // "cha-ching" when the number settles
+    pop:  () => { tone(660, 0, .09, .05, 'triangle', 990); tone(1318, .1, .22, .035, 'sine'); },   // bot arrives with its message
+    open: () => tone(880, 0, .08, .04, 'triangle', 1175),                                          // calculator opens
+    count:() => { tone(1046, 0, .08, .03, 'sine'); tone(1568, .07, .2, .028, 'sine'); }            // savings number settles
   };
   const comeIn = (quiet) => { const was = bot.classList.contains('in'); bot.classList.remove('peek'); bot.classList.add('in'); psst.classList.remove('show'); if (!was && !quiet) sfx.pop(); };
   const open = () => { comeIn(true); sfx.open(); hideSay(); badge.style.display = 'none'; calc.hidden = false; requestAnimationFrame(() => { calc.classList.add('open'); ov.classList.add('open'); }); shown = 0; update(); hrs.focus(); };
-  const close = () => { if (calc.classList.contains('open')) sfx.close(); calc.classList.remove('open'); ov.classList.remove('open'); setTimeout(() => { calc.hidden = true; }, 350); bot.focus(); };
+  const close = () => { calc.classList.remove('open'); ov.classList.remove('open'); setTimeout(() => { calc.hidden = true; }, 350); bot.focus(); };
   bot.addEventListener('click', () => calc.classList.contains('open') ? close() : open());
   say.addEventListener('click', e => { if (e.target.id !== 'abotSayX') open(); });
   document.getElementById('abotSayX').addEventListener('click', e => { e.stopPropagation(); hideSay(); });
@@ -1737,7 +1735,7 @@ footer{padding:80px 0 40px;overflow:hidden}
   let greeted = false; try { greeted = sessionStorage.getItem('abotGreeted') === '1'; } catch (e) {}
   if (greeted || reduce) comeIn(true);
   else {
-    setTimeout(() => { if (!bot.classList.contains('in')) { bot.classList.add('peek'); psst.classList.add('show'); sfx.peek(); } }, 2500);   // slide out and peek
+    setTimeout(() => { if (!bot.classList.contains('in')) { bot.classList.add('peek'); psst.classList.add('show'); } }, 2500);   // slide out and peek
     setTimeout(() => { if (!calc.classList.contains('open')) { comeIn(); setTimeout(() => say.classList.add('show'), 450); try { sessionStorage.setItem('abotGreeted', '1'); } catch (e) {} } }, 8000);
   }
 })();
