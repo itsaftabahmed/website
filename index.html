@@ -730,7 +730,7 @@ footer{padding:80px 0 40px;overflow:hidden}
 @media (min-width:1101px){.badge{top:2%;left:-110px}}
 /* half-screen windows: no free space around the photo for the badge */
 @media (min-width:861px) and (max-width:1100px){.badge{display:none}}
-@media (min-width:1101px) and (max-height:820px){.stats{bottom:36px}}
+
 
 /* desktop: the photo column always spans the full height of the headline column, so the photo never shrinks below the fold on short windows */
 @media (min-width:861px){
@@ -750,6 +750,15 @@ footer{padding:80px 0 40px;overflow:hidden}
 
 /* very small phones: stat cards keep their side margin */
 @media (max-width:360px){.stat{padding:14px}.stat b{font-size:26px}.stat > span{font-size:11.5px}.stats{gap:10px}}
+
+/* desktop: compact stat cards tucked at the bottom of the photo, clear of the face */
+@media (min-width:1101px){
+  .stats,.stats[class]{right:auto;left:50%;transform:translateX(-50%);bottom:40px;gap:10px}
+  .hero__fade{z-index:1}   /* the photo has its own soft fade; keep this overlay from dimming the cards */
+  .stat{width:176px;padding:14px 16px;border-radius:14px}
+  .stat b{font-size:30px;margin-bottom:6px}
+  .stat > span{font-size:12px;line-height:1.4}
+}
 </style>
 </head>
 <body>
@@ -1684,6 +1693,13 @@ function init3D(){
       put(magnet, keepIn(L + PW * (narrow ? .8 : .86), magPx * 1.7), T + PH * (narrow ? .1 : .12), px(magPx));
       magUnit = px(magPx);
       leads.forEach(L => { L.init = false; });   // restart leads from the new magnet position
+      if (W > 1100) {                           // desktop: smaller icons, spread around the head with breathing room
+        const m = PW * .055; magUnit = px(m);
+        put(magnet, L + PW * .84, T + PH * .1, px(m));
+        put(chip, L + PW * .08, T + PH * .3, px(PW * .115));
+        put(bubble, L + PW * .9, T + PH * .5, px(PW * .07));
+        return;
+      }
       put(chip, keepIn(narrow ? L + PW * .15 : mid ? L + PW * .1 : L - PW * .12, chipPx * .85), T + PH * (narrow ? .2 : mid ? .36 : .38), px(mid ? PW * .14 : chipPx));
       const stacked = W <= 860 && !narrow;   // tablet: photo sits alone in the middle, badge on its left
       put(bubble, keepIn(narrow ? L + PW * .84 : stacked ? L + PW * 1.2 : mid ? L + PW * .14 : L - PW * .16, bubPx * 1.45), T + PH * (narrow ? .52 : stacked ? .5 : mid ? .6 : .66), px(mid ? PW * .085 : bubPx));
