@@ -1606,7 +1606,7 @@ function init3D(){
   const mouse = {x:0, y:0};
   addEventListener('pointermove', e => { mouse.x = e.clientX / innerWidth - .5; mouse.y = e.clientY / innerHeight - .5; }, {passive:true});
 
-  /* ---------- HERO: lead magnet, AI chip and chat bubble ---------- */
+  /* ---------- HERO: lead magnet, AI chip and chat bubble (one matching chip-style set) ---------- */
   const hero = document.querySelector('.hero'), photo = document.querySelector('.hero__photo');
   if (hero && photo) {
     const canvas = document.createElement('canvas');
@@ -1626,33 +1626,62 @@ function init3D(){
     const chrome = new THREE.MeshPhysicalMaterial({color:0x1a1a1a, metalness:.95, roughness:.2, clearcoat:1});
     const steel = new THREE.MeshStandardMaterial({color:0xbfbfbf, metalness:1, roughness:.3});
 
-    // neon helper: a thin glowing tube plus a soft additive halo around it (the chip's red glow, in 3D)
-    const neon = (curve, r, closed) => {
+    // chip-style slab: any flat outline becomes a thin dark chrome block whose top face is drawn like the AI chip
+    // (dark face, grey inner border, red circuit ticks along the edge, glowing red artwork) with grey metal pins
+    const chipSlab = (shape, b, drawArt, pins) => {
+      const w = b[2] - b[0], h = b[3] - b[1], CW = 512, CH = Math.round(512 * h / w);
+      const cv = document.createElement('canvas'); cv.width = CW; cv.height = CH; const x = cv.getContext('2d');
+      const toC = (px, py) => [(px - b[0]) / w * CW, (b[3] - py) / h * CH];
+      const pts = shape.getSpacedPoints(400).map(p => toC(p.x, p.y));
+      const outline = () => { x.beginPath(); pts.forEach((p, i) => i ? x.lineTo(p[0], p[1]) : x.moveTo(p[0], p[1])); x.closePath(); };
+      x.fillStyle = '#0d0d0d'; x.fillRect(0, 0, CW, CH);
+      x.save(); outline(); x.clip();
+      x.strokeStyle = 'rgba(224,17,25,.55)'; x.lineWidth = 4;
+      for (let i = 0; i < pts.length; i += 16) {
+        const a = pts[i], n = pts[(i + 2) % pts.length], tx = n[0] - a[0], ty = n[1] - a[1], l = Math.hypot(tx, ty) || 1, nx = -ty / l * 26, ny = tx / l * 26;
+        x.beginPath(); x.moveTo(a[0] - nx, a[1] - ny); x.lineTo(a[0] + nx, a[1] + ny); x.stroke();
+      }
+      outline(); x.strokeStyle = '#2c2c2c'; x.lineWidth = 70; x.stroke();     // grey inner border (the clip keeps the inner half)
+      outline(); x.strokeStyle = '#0d0d0d'; x.lineWidth = 52; x.stroke();
+      x.restore();
+      x.shadowColor = '#E01119'; x.shadowBlur = 40; drawArt(x, toC, CW / w);
+      const tex = new THREE.CanvasTexture(cv);
+      const topMat = new THREE.MeshStandardMaterial({map:tex, emissive:0xffffff, emissiveMap:tex, emissiveIntensity:.55, metalness:.3, roughness:.35});
       const g = new THREE.Group();
-      const core = new THREE.Mesh(new THREE.TubeGeometry(curve, 240, r, 12, closed), new THREE.MeshBasicMaterial({color:0xff2a33}));
-      const halo = new THREE.Mesh(new THREE.TubeGeometry(curve, 240, r * 2.2, 12, closed), new THREE.MeshBasicMaterial({color:0xE01119, transparent:true, opacity:.2, blending:THREE.AdditiveBlending, depthWrite:false}));
-      g.add(halo, core); g.userData.core = core.material; return g;
+      const body = new THREE.ExtrudeGeometry(shape, {depth:.14, bevelEnabled:false, curveSegments:48}); body.translate(0, 0, -.07);
+      g.add(new THREE.Mesh(body, chrome));
+      const topGeo = new THREE.ShapeGeometry(shape, 48), uv = topGeo.attributes.uv, pos = topGeo.attributes.position;
+      for (let i = 0; i < uv.count; i++) uv.setXY(i, (pos.getX(i) - b[0]) / w, (pos.getY(i) - b[1]) / h);
+      const top = new THREE.Mesh(topGeo, topMat); top.position.z = .071; g.add(top);
+      const pg = new THREE.BoxGeometry(.06, .16, .035);
+      (pins || []).forEach(([px, py, rot]) => { const pin = new THREE.Mesh(pg, steel); pin.position.set(px, py, -.03); pin.rotation.z = rot || 0; g.add(pin); });
+      g.userData.top = topMat; return g;
     };
 
-    // lead magnet: dark chrome horseshoe, silver poles, a neon trace along its face (styled like the AI chip)
-    const magnet = new THREE.Group(); scene.add(magnet);
-    const horseshoe = (z) => {
-      const pts = [];
-      for (let k = 0; k <= 10; k++) pts.push(new THREE.Vector3(-1, -1 + k * .1, z));
-      for (let k = 1; k < 40; k++) { const a = Math.PI - k / 40 * Math.PI; pts.push(new THREE.Vector3(Math.cos(a), Math.sin(a), z)); }
-      for (let k = 0; k <= 10; k++) pts.push(new THREE.Vector3(1, -k * .1, z));
-      return new THREE.CatmullRomCurve3(pts, false, 'centripetal');
-    };
-    // flat, matte art style: thick charcoal band, red neon line down the middle, white pole tips
-    const charcoal = chrome;   // same near-black chrome as the AI chip's body
-    const magBody = new THREE.TubeGeometry(horseshoe(0), 240, .32, 40, false); magBody.scale(1, 1, .45);
-    magnet.add(new THREE.Mesh(magBody, charcoal));
-    const magTrace = neon(horseshoe(.17), .045, false); magnet.add(magTrace);
-    const magRed = magTrace.userData.core;
-    const whiteTip = new THREE.MeshBasicMaterial({color:0x8c8c8c});   // same grey as the chip pins
-    const tipGeo = new THREE.BoxGeometry(.7, .34, .3);
-    [-1, 1].forEach(sx => { const tip = new THREE.Mesh(tipGeo, whiteTip); tip.position.set(sx, -1.17, 0); magnet.add(tip); });
-    magnet.rotation.set(.1, .3, 1.0);       // poles open to the lower right, where the leads come from
+    // lead magnet: horseshoe slab, neon trace down the middle, grey metal pole ends
+    const MR = 1, Mr = .42, MY = -1.15;
+    const magShape = new THREE.Shape();
+    magShape.moveTo(-MR, MY); magShape.lineTo(-MR, 0); magShape.absarc(0, 0, MR, Math.PI, 0, true); magShape.lineTo(MR, MY);
+    magShape.lineTo(Mr, MY); magShape.lineTo(Mr, 0); magShape.absarc(0, 0, Mr, 0, Math.PI, false); magShape.lineTo(-Mr, MY); magShape.closePath();
+    const magPins = []; [-1, 1].forEach(sx => [.52, .71, .9].forEach(px => magPins.push([sx * px, MY - .07])));
+    let magnet = chipSlab(magShape, [-1.1, -1.35, 1.1, 1.1], (x, toC) => {
+      x.save(); x.shadowBlur = 0;
+      [-1, 1].forEach(sx => {
+        const a = toC(sx < 0 ? -MR + .06 : Mr, -.78), e = toC(sx < 0 ? -Mr : MR - .06, MY + .06);
+        x.fillStyle = '#8c8c8c'; x.fillRect(a[0], a[1], e[0] - a[0], e[1] - a[1]);
+        const s2 = toC(sx < 0 ? -Mr : MR - .06, -.84); x.fillStyle = '#5a5a5a'; x.fillRect(a[0], a[1], s2[0] - a[0], s2[1] - a[1]);
+      });
+      x.restore();
+      x.strokeStyle = '#FF2A33'; x.lineWidth = 16; x.lineCap = 'round';
+      const c = (MR + Mr) / 2; x.beginPath(); let p = toC(-c, -.66); x.moveTo(p[0], p[1]);
+      for (let a = Math.PI; a >= 0; a -= .05) { p = toC(Math.cos(a) * c, Math.sin(a) * c); x.lineTo(p[0], p[1]); }
+      p = toC(c, -.66); x.lineTo(p[0], p[1]); x.stroke();
+    }, magPins);
+    const magRed = magnet.userData.top;
+    const magnetBody = magnet; magnetBody.scale.setScalar(1.3);
+    { const holder = new THREE.Group(); holder.add(magnetBody); scene.add(holder); var magnetHolder = holder; }
+    magnet = magnetHolder;
+    magnet.rotation.set(-.45, .3, 1.0);     // tilted like the chip; poles open to the lower right, where the leads come from
     // each lead is a tiny glowing person: round head + rounded shoulders
     const headGeo = new THREE.SphereGeometry(.42, 20, 16);
     const bodyGeo = new THREE.SphereGeometry(.72, 24, 12, 0, Math.PI * 2, 0, Math.PI / 2); bodyGeo.scale(1, 1.05, .7);
@@ -1709,28 +1738,25 @@ function init3D(){
     }
     scene.add(chip);
 
-    // chat bubble: dark chrome speech bubble with a neon outline and glowing typing dots
-    const bubble = new THREE.Group(); scene.add(bubble);
-    const bw = 2.2, bh = 1.35, br = .45;
-    // inset shrinks the outline evenly on every side (a scaled copy would pull the tail out of line)
-    const bubShape = (d) => {
-      const L = -bw / 2 + d, R = bw / 2 - d, T = bh / 2 - d, B = -bh / 2 + d, r = br - d, sh = new THREE.Shape();
-      sh.moveTo(L + r, T); sh.lineTo(R - r, T); sh.quadraticCurveTo(R, T, R, T - r);
-      sh.lineTo(R, B + r); sh.quadraticCurveTo(R, B, R - r, B);
-      sh.lineTo(L + 1.0 - d * .4, B);                        // tail: a wide, rounded wedge under the lower-left
-      sh.lineTo(L + .3 + d * 1.2, B - .5 + d * 1.6);
-      sh.lineTo(L + .45 + d * .2, B);
-      sh.lineTo(L + r, B); sh.quadraticCurveTo(L, B, L, B + r);
-      sh.lineTo(L, T - r); sh.quadraticCurveTo(L, T, L + r, T);
-      return sh;
-    };
-    const ring = (z) => new THREE.CatmullRomCurve3(bubShape(.12).getSpacedPoints(220).map(v => new THREE.Vector3(v.x, v.y, z)), true, 'centripetal', .05);
-    const bubBody = new THREE.TubeGeometry(ring(0), 260, .17, 24, true); bubBody.scale(1, 1, .45);
-    bubble.add(new THREE.Mesh(bubBody, charcoal));             // thick charcoal outline, hollow middle (same as the magnet band)
-    bubble.add(neon(ring(.08), .03, true));
-    const dotMat = new THREE.MeshBasicMaterial({color:0xff2a33});   // glowing red, like the chip's "AI"
-    const dots = [-.45, 0, .45].map(xp => { const d = new THREE.Mesh(new THREE.SphereGeometry(.13, 24, 24), dotMat); d.position.set(xp, .02, .05); bubble.add(d); return d; });
-    bubble.rotation.set(.06, .28, .04);
+    // chat bubble: speech-bubble slab in the chip style, with glowing red typing dots that bounce
+    const bw = 2.2, bh = 1.35, br = .45, bubShape = new THREE.Shape();
+    { const L = -bw / 2, R = bw / 2, T = bh / 2, B = -bh / 2;
+      bubShape.moveTo(L + br, T); bubShape.lineTo(R - br, T); bubShape.quadraticCurveTo(R, T, R, T - br);
+      bubShape.lineTo(R, B + br); bubShape.quadraticCurveTo(R, B, R - br, B);
+      bubShape.lineTo(L + 1.0, B); bubShape.lineTo(L + .3, B - .5); bubShape.lineTo(L + .45, B);   // tail
+      bubShape.lineTo(L + br, B); bubShape.quadraticCurveTo(L, B, L, B + br);
+      bubShape.lineTo(L, T - br); bubShape.quadraticCurveTo(L, T, L + br, T); }
+    const bubPins = []; [-.6, -.3, 0, .3, .6].forEach(px => bubPins.push([px, bh / 2 + .07]));
+    [-.2, .15].forEach(py => { bubPins.push([bw / 2 + .07, py, Math.PI / 2]); bubPins.push([-bw / 2 - .07, py, Math.PI / 2]); });
+    const bubbleBody = chipSlab(bubShape, [-1.15, -1.2, 1.15, .72], () => {}, bubPins); bubbleBody.scale.setScalar(1.15);
+    const bubble = new THREE.Group(); bubble.add(bubbleBody); scene.add(bubble);
+    const dotMat = new THREE.MeshBasicMaterial({color:0xff2a33});
+    const dotHalo = new THREE.MeshBasicMaterial({color:0xE01119, transparent:true, opacity:.35, blending:THREE.AdditiveBlending, depthWrite:false});
+    const dots = [-.45, 0, .45].map(xp => {
+      const d = new THREE.Group(); d.add(new THREE.Mesh(new THREE.SphereGeometry(.13, 24, 24), dotMat), new THREE.Mesh(new THREE.SphereGeometry(.2, 20, 20), dotHalo));
+      d.scale.z = .5; d.position.set(xp, 0, .1); bubbleBody.add(d); return d;
+    });
+    bubble.rotation.set(-.45, .3, 0);
 
     const N = 220, pos = new Float32Array(N * 3);
     for (let i = 0; i < N; i++) { pos[i*3] = (Math.random() - .5) * 20; pos[i*3+1] = (Math.random() - .5) * 11; pos[i*3+2] = -4 + Math.random() * 5; }
@@ -1781,10 +1807,10 @@ function init3D(){
       chip.rotation.set(1.05 + Math.sin(t * .6) * .1, Math.sin(t * .5) * .35, Math.sin(t * .4) * .06);
       const cb = base.get(chip); if (cb) chip.position.y = cb.y + Math.sin(t * 1.1) * .12;
       // magnet: gentle sway, leads accelerate into the poles
-      magnet.rotation.z = 1.0 + Math.sin(t * .8) * .06;
+      magnet.rotation.z = 1.0 + Math.sin(t * .8) * .06; magnet.rotation.y = .3 + Math.sin(t * .5) * .1;
       const mb = base.get(magnet); if (mb) magnet.position.y = mb.y + Math.sin(t * 1.05) * .1;
       magnet.updateWorldMatrix(true, false);
-      magPole.set(0, -1.35, 0); magnet.localToWorld(magPole);
+      magPole.set(0, -1.75, 0); magnet.localToWorld(magPole);
       magDir.set(0, -1, 0).transformDirection(magnet.matrixWorld); magDir.z = 0; magDir.normalize();
       const dt = Math.min(Math.max(t - lastT, 0), .05); lastT = t;
       leads.forEach(L => {
@@ -1796,11 +1822,11 @@ function init3D(){
         L.m.scale.setScalar(magUnit * .24 * Math.min(1, L.t * 5) * (1 - e * .8));
         L.m.rotation.z = Math.sin(t * 3 + L.speed * 20) * .15;   // a slight wobble while being pulled
       });
-      magFlash *= .92; magRed.color.setRGB(1, .165 + magFlash * .15, .2 + magFlash * .12);
+      magFlash *= .92; magRed.emissiveIntensity = .55 + magFlash * .6;
       // chat bubble: bob and sway, dots bounce one after another like someone typing
       const bb = base.get(bubble); if (bb) bubble.position.y = bb.y + Math.sin(t * 1.2 + 1) * .1;
-      bubble.rotation.y = .28 + Math.sin(t * .6) * .12; bubble.rotation.z = .04 + Math.sin(t * .9) * .03;
-      dots.forEach((d, i) => { const k = Math.max(0, Math.sin(t * 5.5 - i * .9)); d.position.y = .02 + k * .14; d.scale.setScalar(1 + k * .12); });
+      bubble.rotation.y = .3 + Math.sin(t * .6) * .12; bubble.rotation.z = Math.sin(t * .9) * .03;
+      dots.forEach((d, i) => { const k = Math.max(0, Math.sin(t * 5.5 - i * .9)); d.position.y = k * .14; d.position.z = .1 + k * .08; });
       dust.rotation.y = t * .02;
       scene.position.x += (mouse.x * .45 - scene.position.x) * .05;
       scene.position.y += (-mouse.y * .28 - scene.position.y) * .05;
