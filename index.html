@@ -435,16 +435,11 @@ footer{padding:80px 0 40px;overflow:hidden}
 
 /* ============ MORE MOTION ============ */
 /* custom cursor (mouse only) */
-.cursor,.cursor-ring{position:fixed;left:0;top:0;pointer-events:none;border-radius:50%;opacity:0;transition:opacity .4s}
-/* pointer: red dot with a soft glow */
-.cursor{z-index:201;width:10px;height:10px;background:#ff2a33;box-shadow:0 0 8px 2px rgba(224,17,25,.75),0 0 18px rgba(224,17,25,.45);transition:opacity .3s,width .25s var(--ease),height .25s var(--ease)}
-/* spotlight: a soft red light that trails the pointer and lights up the dark page */
-.cursor-ring{z-index:200;width:420px;height:420px;background:radial-gradient(circle,rgba(224,17,25,.32) 0%,rgba(224,17,25,.14) 30%,rgba(224,17,25,0) 65%);mix-blend-mode:screen;transition:opacity .4s,width .4s var(--ease),height .4s var(--ease)}
+.cursor,.cursor-ring{position:fixed;left:0;top:0;pointer-events:none;z-index:200;border-radius:50%;opacity:0;transition:opacity .3s}
+.cursor{width:8px;height:8px;background:var(--red)}
+.cursor-ring{width:38px;height:38px;border:1.5px solid rgba(255,255,255,.45);transition:width .3s var(--ease),height .3s var(--ease),background .3s,border-color .3s,opacity .3s}
 .cursor-on .cursor,.cursor-on .cursor-ring{opacity:1}
-.cursor-ring.hover{width:520px;height:520px}
-.cursor.hover{width:16px;height:16px;box-shadow:0 0 0 2px #fff,0 0 16px 4px rgba(224,17,25,.8)}
-/* the glowing dot replaces the system arrow (desktop only; inputs keep their text cursor) */
-.cursor-on,.cursor-on a,.cursor-on button,.cursor-on summary,.cursor-on [role=button],.cursor-on .video,.cursor-on .globe{cursor:none}
+.cursor-ring.hover{width:72px;height:72px;background:rgba(224,17,25,.14);border-color:var(--red)}
 
 /* section headings: words rise from a mask */
 .h2 .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.1em;margin-bottom:-.1em}
@@ -1558,8 +1553,8 @@ footer{padding:80px 0 40px;overflow:hidden}
       };
       follow();
       document.querySelectorAll('a, button, summary, [role="button"]').forEach(el => {
-        el.addEventListener('pointerenter', () => { ring.classList.add('hover'); dot.classList.add('hover'); });
-        el.addEventListener('pointerleave', () => { ring.classList.remove('hover'); dot.classList.remove('hover'); });
+        el.addEventListener('pointerenter', () => ring.classList.add('hover'));
+        el.addEventListener('pointerleave', () => ring.classList.remove('hover'));
       });
 
       // 3D tilt on project and short thumbnails
