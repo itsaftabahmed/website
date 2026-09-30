@@ -819,6 +819,25 @@ footer{padding:80px 0 40px;overflow:hidden}
   .calc__h{font-size:25px}
 }
 @media (prefers-reduced-motion:reduce){.abot,.abot__eyes i{animation:none}}
+
+/* peek-in entrance: hidden past the right edge → tilted peek with "psst… 👀" → pops fully in */
+.abot{translate:130px 0;rotate:-14deg;transition:translate .7s cubic-bezier(.3,1.35,.5,1),rotate .7s cubic-bezier(.3,1.35,.5,1)}
+.abot.peek{translate:44px 0;rotate:-14deg}
+.abot.in{translate:0 0;rotate:0deg}
+.abot__ant{display:none}
+.abot__eyes{transition:transform .4s var(--ease)}
+.abot.peek .abot__eyes{transform:translateX(-4px)}
+.abot-psst{position:fixed;right:96px;bottom:92px;z-index:90;font-weight:800;font-size:14px;color:#fff;text-shadow:0 2px 10px #000;opacity:0;transform:translateY(6px);transition:opacity .3s,transform .3s;pointer-events:none}
+.abot-psst.show{opacity:1;transform:none}
+@media (max-width:700px){.abot-psst{right:74px;bottom:84px}}
+@media (prefers-reduced-motion:reduce){.abot{translate:0 0;rotate:0deg}}
+
+/* booking calendar on phones: let the Cal.com embed set its own height instead of a fixed 600-660px box */
+@media (max-width:860px){
+  .cal,.cal[class]{min-height:0}
+  #my-cal-inline-30min,#my-cal-inline-30min[id]{min-height:0;height:auto;overflow:visible}
+  #my-cal-inline-30min iframe{min-height:0!important}
+}
 </style>
 </head>
 <body>
@@ -1640,6 +1659,7 @@ footer{padding:80px 0 40px;overflow:hidden}
   <span class="abot__face"><span class="abot__eyes"><i></i><i></i></span><span class="abot__smile"></span></span>
   <span class="abot__badge" id="abotBadge">1</span>
 </button>
+<div class="abot-psst" id="abotPsst" aria-hidden="true">psst… 👀</div>
 <div class="abot-say" id="abotSay" role="status"><button type="button" class="abot-say__x" id="abotSayX" aria-label="Dismiss">✕</button>
   <b>Hey 👋 I'm Aftab's AI assistant</b><span>Want to see how much busywork is costing your business? It takes 10 seconds.</span><em>Show me →</em></div>
 <div class="calc-ov" id="calcOv"></div>
@@ -1682,7 +1702,9 @@ footer{padding:80px 0 40px;overflow:hidden}
   };
   hrs.addEventListener('input', update); rate.addEventListener('input', update);
   const hideSay = () => say.classList.remove('show');
-  const open = () => { hideSay(); badge.style.display = 'none'; calc.hidden = false; requestAnimationFrame(() => { calc.classList.add('open'); ov.classList.add('open'); }); shown = 0; update(); hrs.focus(); };
+  const psst = document.getElementById('abotPsst');
+  const comeIn = () => { bot.classList.remove('peek'); bot.classList.add('in'); psst.classList.remove('show'); };
+  const open = () => { comeIn(); hideSay(); badge.style.display = 'none'; calc.hidden = false; requestAnimationFrame(() => { calc.classList.add('open'); ov.classList.add('open'); }); shown = 0; update(); hrs.focus(); };
   const close = () => { calc.classList.remove('open'); ov.classList.remove('open'); setTimeout(() => { calc.hidden = true; }, 350); bot.focus(); };
   bot.addEventListener('click', () => calc.classList.contains('open') ? close() : open());
   say.addEventListener('click', e => { if (e.target.id !== 'abotSayX') open(); });
@@ -1692,7 +1714,11 @@ footer{padding:80px 0 40px;overflow:hidden}
   document.getElementById('calcBook').addEventListener('click', close);
   addEventListener('keydown', e => { if (e.key === 'Escape' && calc.classList.contains('open')) close(); });
   let greeted = false; try { greeted = sessionStorage.getItem('abotGreeted') === '1'; } catch (e) {}
-  if (!greeted) setTimeout(() => { if (!calc.classList.contains('open')) { say.classList.add('show'); try { sessionStorage.setItem('abotGreeted', '1'); } catch (e) {} } }, 8000);
+  if (greeted || reduce) comeIn();
+  else {
+    setTimeout(() => { if (!bot.classList.contains('in')) { bot.classList.add('peek'); psst.classList.add('show'); } }, 2500);   // slide out and peek
+    setTimeout(() => { if (!calc.classList.contains('open')) { comeIn(); setTimeout(() => say.classList.add('show'), 450); try { sessionStorage.setItem('abotGreeted', '1'); } catch (e) {} } }, 8000);
+  }
 })();
 </script>
 <script>
