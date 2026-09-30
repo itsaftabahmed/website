@@ -852,7 +852,7 @@ footer{padding:80px 0 40px;overflow:hidden}
       </ul>
     </div>
     <div class="video ph" id="video" data-video-id="CI87I9J2kJg" role="button" tabindex="0" aria-label="Play intro video">
-      <img src="https://i.ytimg.com/vi/CI87I9J2kJg/maxresdefault.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+      <img src="https://i.ytimg.com/vi/CI87I9J2kJg/maxresdefault.jpg" data-fallbacks="https://i.ytimg.com/vi/CI87I9J2kJg/sddefault.jpg https://i.ytimg.com/vi/CI87I9J2kJg/hqdefault.jpg" alt="" decoding="async" referrerpolicy="no-referrer">
       <span class="video__play" aria-hidden="true"><svg width="30" height="34" viewBox="0 0 14 16" fill="#fff"><path d="M0 0L14 8L0 16Z"/></svg></span>
       <div class="video__meta"><span>Hi, I'm Aftab</span><span class="chip">Watch intro</span></div>
     </div>
@@ -1190,9 +1190,16 @@ footer{padding:80px 0 40px;overflow:hidden}
 
   // Missing images → show the placeholder pattern instead of a broken icon
   document.querySelectorAll('img').forEach(img => {
-    const hide = () => { img.style.display = 'none'; };
+    const hide = () => {
+      const next = (img.dataset.fallbacks || '').split(' ').filter(Boolean);
+      if (next.length) { img.dataset.fallbacks = next.slice(1).join(' '); img.src = next[0]; return; }   // try the next source first
+      img.style.display = 'none';
+    };
     img.addEventListener('error', hide);
-    const ok = () => { if (img.parentElement) img.parentElement.classList.remove('ph'); };
+    const ok = () => {
+      if (img.dataset.fallbacks && img.naturalWidth === 120) return hide();
+      if (img.parentElement) img.parentElement.classList.remove('ph');
+    };
     img.addEventListener('load', ok);
     if (img.complete && img.naturalWidth > 0) ok();
     if (img.complete && img.naturalWidth === 0) hide();
@@ -1372,13 +1379,25 @@ footer{padding:80px 0 40px;overflow:hidden}
     modal.addEventListener('click', e => { if (e.target === modal) close(); });
     addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.hidden) close(); });
 
+    const proxies = [u => 'https://api.allorigins.win/raw?url=' + encodeURIComponent(u), u => 'https://api.codetabs.com/v1/proxy/?quest=' + encodeURIComponent(u)];
+    const fromXml = txt => Array.from(new DOMParser().parseFromString(txt, 'text/xml').getElementsByTagName('entry')).map(e => {
+      const vid = e.getElementsByTagName('yt:videoId')[0] || e.getElementsByTagNameNS('*', 'videoId')[0];
+      const title = e.getElementsByTagName('title')[0];
+      return {guid:'yt:video:' + (vid ? vid.textContent : ''), title:title ? title.textContent : ''};
+    });
     const load = async () => {
       for (const f of feeds) {
         try {
-          const r = await fetch(api(f.url)); if (!r.ok) continue;
-          const j = await r.json();
-          if (j.status === 'ok' && j.items && j.items.length) return {items:j.items, shorts:f.shorts};
+          const r = await fetch(api(f.url));
+          if (r.ok) { const j = await r.json(); if (j.status === 'ok' && j.items && j.items.length) return {items:j.items, shorts:f.shorts}; }
         } catch (e) {}
+        for (const px of proxies) {
+          try {
+            const r = await fetch(px(f.url)); if (!r.ok) continue;
+            const items = fromXml(await r.text());
+            if (items.length) return {items, shorts:f.shorts};
+          } catch (e) {}
+        }
       }
       return null;
     };
