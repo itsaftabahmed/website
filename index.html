@@ -1701,6 +1701,28 @@ footer{padding:80px 0 40px;overflow:hidden}
     raf = requestAnimationFrame(tick);
   };
   let lastTick = 0, settle;
+  // ---- page-wide UI sounds (quiet, throttled so nothing stacks) ----
+  let lastUi = 0;
+  const ui = (fn) => { const n = performance.now(); if (n - lastUi < 90) return; lastUi = n; fn(); };
+  const fine = matchMedia('(pointer: fine)').matches;
+  const uiSfx = {
+    hover: () => tone(1400, 0, .03, .012, 'sine'),                                         // barely-there tick on button hover (mouse only)
+    click: () => { tone(740, 0, .05, .035, 'triangle', 1100); },                           // button / link press
+    open:  () => { tone(440, 0, .07, .03, 'sine', 660); },                                 // FAQ / menu opens
+    shut:  () => { tone(660, 0, .07, .025, 'sine', 440); },                                // FAQ / menu closes
+    swipe: () => { tone(300, 0, .12, .025, 'triangle', 700); },                            // carousel arrows
+    play:  () => { tone(523, 0, .08, .04, 'triangle'); tone(784, .08, .18, .035, 'sine'); },  // intro video starts
+    region:() => tone(988, 0, .06, .025, 'sine')                                           // globe region picked
+  };
+  document.querySelectorAll('.btn, .nav__links a, .socials a').forEach(el => {
+    if (fine) el.addEventListener('pointerenter', () => ui(uiSfx.hover));
+    el.addEventListener('click', () => ui(uiSfx.click));
+  });
+  document.querySelectorAll('.faq details').forEach(d => d.addEventListener('toggle', () => ui(d.open ? uiSfx.open : uiSfx.shut)));
+  ['prev', 'next'].forEach(id => { const b = document.getElementById(id); if (b) b.addEventListener('click', () => ui(uiSfx.swipe)); });
+  const vid = document.getElementById('video'); if (vid) vid.addEventListener('click', () => ui(uiSfx.play), {once:true});
+  document.querySelectorAll('[data-region]').forEach(b => b.addEventListener('click', () => ui(uiSfx.region)));
+  const nt = document.getElementById('navToggle'); if (nt) nt.addEventListener('click', () => ui(nt.getAttribute('aria-expanded') === 'true' ? uiSfx.shut : uiSfx.open));
   const onSlide = () => { clearTimeout(settle); settle = setTimeout(sfx.count, 600); update(); };   // one soft chime once they stop dragging
   hrs.addEventListener('input', onSlide); rate.addEventListener('input', onSlide);
   const hideSay = () => say.classList.remove('show');
@@ -1718,6 +1740,7 @@ footer{padding:80px 0 40px;overflow:hidden}
   };
   // only three moments get a sound, so it never feels noisy:
   const sfx = {
+    peek: () => { tone(520, 0, .09, .035, 'sine', 700); tone(700, .12, .12, .035, 'sine', 900); },  // curious "hm-hm?" as it peeks out
     pop:  () => { tone(660, 0, .09, .05, 'triangle', 990); tone(1318, .1, .22, .035, 'sine'); },   // bot arrives with its message
     open: () => tone(880, 0, .08, .04, 'triangle', 1175),                                          // calculator opens
     count:() => { tone(1046, 0, .08, .03, 'sine'); tone(1568, .07, .2, .028, 'sine'); }            // savings number settles
@@ -1735,7 +1758,7 @@ footer{padding:80px 0 40px;overflow:hidden}
   let greeted = false; try { greeted = sessionStorage.getItem('abotGreeted') === '1'; } catch (e) {}
   if (greeted || reduce) comeIn(true);
   else {
-    setTimeout(() => { if (!bot.classList.contains('in')) { bot.classList.add('peek'); psst.classList.add('show'); } }, 2500);   // slide out and peek
+    setTimeout(() => { if (!bot.classList.contains('in')) { bot.classList.add('peek'); psst.classList.add('show'); sfx.peek(); } }, 2500);   // slide out and peek
     setTimeout(() => { if (!calc.classList.contains('open')) { comeIn(); setTimeout(() => say.classList.add('show'), 450); try { sessionStorage.setItem('abotGreeted', '1'); } catch (e) {} } }, 8000);
   }
 })();
