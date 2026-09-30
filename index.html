@@ -1702,24 +1702,26 @@ function init3D(){
 
     // chat bubble: dark chrome speech bubble with a neon outline and glowing typing dots
     const bubble = new THREE.Group(); scene.add(bubble);
-    const bw = 2.2, bh = 1.35, br = .5;
-    const bubShape = (sc) => {
-      const w = bw * sc, h = bh * sc, r = br * sc, sh = new THREE.Shape();
-      sh.moveTo(-w / 2 + r, -h / 2);
-      sh.lineTo(-w / 2 + .75 * sc, -h / 2); sh.lineTo(-w / 2 + .2 * sc, -h / 2 - .5 * sc); sh.lineTo(-w / 2 + .42 * sc, -h / 2);   // tail
-      sh.lineTo(w / 2 - r, -h / 2); sh.quadraticCurveTo(w / 2, -h / 2, w / 2, -h / 2 + r);
-      sh.lineTo(w / 2, h / 2 - r); sh.quadraticCurveTo(w / 2, h / 2, w / 2 - r, h / 2);
-      sh.lineTo(-w / 2 + r, h / 2); sh.quadraticCurveTo(-w / 2, h / 2, -w / 2, h / 2 - r);
-      sh.lineTo(-w / 2, -h / 2 + r); sh.quadraticCurveTo(-w / 2, -h / 2, -w / 2 + r, -h / 2);
+    const bw = 2.2, bh = 1.35, br = .45;
+    // inset shrinks the outline evenly on every side (a scaled copy would pull the tail out of line)
+    const bubShape = (d) => {
+      const L = -bw / 2 + d, R = bw / 2 - d, T = bh / 2 - d, B = -bh / 2 + d, r = br - d, sh = new THREE.Shape();
+      sh.moveTo(L + r, T); sh.lineTo(R - r, T); sh.quadraticCurveTo(R, T, R, T - r);
+      sh.lineTo(R, B + r); sh.quadraticCurveTo(R, B, R - r, B);
+      sh.lineTo(L + 1.0 - d * .4, B);                        // tail: a wide, rounded wedge under the lower-left
+      sh.lineTo(L + .3 + d * 1.2, B - .5 + d * 1.6);
+      sh.lineTo(L + .45 + d * .2, B);
+      sh.lineTo(L + r, B); sh.quadraticCurveTo(L, B, L, B + r);
+      sh.lineTo(L, T - r); sh.quadraticCurveTo(L, T, L + r, T);
       return sh;
     };
-    const bubGeo = new THREE.ExtrudeGeometry(bubShape(1), {depth:.24, bevelEnabled:true, bevelThickness:.1, bevelSize:.09, bevelSegments:6, curveSegments:24});
-    bubGeo.translate(0, 0, -.12); bubble.add(new THREE.Mesh(bubGeo, chrome));
-    const outline = bubShape(.86).getSpacedPoints(160).map(v => new THREE.Vector3(v.x, v.y + .02, .235));
-    bubble.add(neon(new THREE.CatmullRomCurve3(outline, true, 'centripetal', .1), .03, true));
+    const bubGeo = new THREE.ExtrudeGeometry(bubShape(0), {depth:.2, bevelEnabled:true, bevelThickness:.08, bevelSize:.06, bevelSegments:8, curveSegments:32});
+    bubGeo.translate(0, 0, -.1); bubble.add(new THREE.Mesh(bubGeo, chrome));
+    const outline = bubShape(.1).getSpacedPoints(200).map(v => new THREE.Vector3(v.x, v.y, .192));
+    bubble.add(neon(new THREE.CatmullRomCurve3(outline, true, 'centripetal', .05), .028, true));
     const dotMat = new THREE.MeshBasicMaterial({color:0xff2a33});
-    const dots = [-.5, 0, .5].map(xp => { const d = new THREE.Mesh(new THREE.SphereGeometry(.15, 24, 24), dotMat); d.position.set(xp, 0, .24); bubble.add(d); return d; });
-    bubble.rotation.set(.1, .45, .05);
+    const dots = [-.45, 0, .45].map(xp => { const d = new THREE.Mesh(new THREE.SphereGeometry(.13, 24, 24), dotMat); d.position.set(xp, .02, .2); bubble.add(d); return d; });
+    bubble.rotation.set(.06, .28, .04);
 
     const N = 220, pos = new Float32Array(N * 3);
     for (let i = 0; i < N; i++) { pos[i*3] = (Math.random() - .5) * 20; pos[i*3+1] = (Math.random() - .5) * 11; pos[i*3+2] = -4 + Math.random() * 5; }
@@ -1787,8 +1789,8 @@ function init3D(){
       magFlash *= .92; magRed.color.setRGB(1, .165 + magFlash * .6, .2 + magFlash * .6);
       // chat bubble: bob and sway, dots bounce one after another like someone typing
       const bb = base.get(bubble); if (bb) bubble.position.y = bb.y + Math.sin(t * 1.2 + 1) * .1;
-      bubble.rotation.y = .45 + Math.sin(t * .6) * .18; bubble.rotation.z = .05 + Math.sin(t * .9) * .04;
-      dots.forEach((d, i) => { const k = Math.max(0, Math.sin(t * 5.5 - i * .9)); d.position.y = k * .18; d.scale.setScalar(1 + k * .15); });
+      bubble.rotation.y = .28 + Math.sin(t * .6) * .12; bubble.rotation.z = .04 + Math.sin(t * .9) * .03;
+      dots.forEach((d, i) => { const k = Math.max(0, Math.sin(t * 5.5 - i * .9)); d.position.y = .02 + k * .14; d.scale.setScalar(1 + k * .12); });
       dust.rotation.y = t * .02;
       scene.position.x += (mouse.x * .45 - scene.position.x) * .05;
       scene.position.y += (-mouse.y * .28 - scene.position.y) * .05;
