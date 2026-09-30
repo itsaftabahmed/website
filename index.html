@@ -1644,12 +1644,12 @@ function init3D(){
       return new THREE.CatmullRomCurve3(pts, false, 'centripetal');
     };
     // flat, matte art style: thick charcoal band, red neon line down the middle, white pole tips
-    const charcoal = new THREE.MeshBasicMaterial({color:0x2f2f2f});   // unlit: stays true charcoal under the red scene light
+    const charcoal = chrome;   // same near-black chrome as the AI chip's body
     const magBody = new THREE.TubeGeometry(horseshoe(0), 240, .32, 40, false); magBody.scale(1, 1, .45);
     magnet.add(new THREE.Mesh(magBody, charcoal));
     const magTrace = neon(horseshoe(.17), .045, false); magnet.add(magTrace);
     const magRed = magTrace.userData.core;
-    const whiteTip = new THREE.MeshBasicMaterial({color:0xececec});
+    const whiteTip = new THREE.MeshBasicMaterial({color:0x8c8c8c});   // same grey as the chip pins
     const tipGeo = new THREE.BoxGeometry(.7, .34, .3);
     [-1, 1].forEach(sx => { const tip = new THREE.Mesh(tipGeo, whiteTip); tip.position.set(sx, -1.17, 0); magnet.add(tip); });
     magnet.rotation.set(.1, .3, 1.0);       // poles open to the lower right, where the leads come from
@@ -1728,7 +1728,7 @@ function init3D(){
     const bubBody = new THREE.TubeGeometry(ring(0), 260, .17, 24, true); bubBody.scale(1, 1, .45);
     bubble.add(new THREE.Mesh(bubBody, charcoal));             // thick charcoal outline, hollow middle (same as the magnet band)
     bubble.add(neon(ring(.08), .03, true));
-    const dotMat = new THREE.MeshBasicMaterial({color:0xf2f2f2});   // white, like the magnet tips
+    const dotMat = new THREE.MeshBasicMaterial({color:0xff2a33});   // glowing red, like the chip's "AI"
     const dots = [-.45, 0, .45].map(xp => { const d = new THREE.Mesh(new THREE.SphereGeometry(.13, 24, 24), dotMat); d.position.set(xp, .02, .05); bubble.add(d); return d; });
     bubble.rotation.set(.06, .28, .04);
 
