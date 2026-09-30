@@ -727,7 +727,7 @@ footer{padding:80px 0 40px;overflow:hidden}
 }
 
 /* desktop: keep the badge clear of the hero photo's cap */
-@media (min-width:1101px){.badge{top:2%;left:-110px}}
+
 /* half-screen windows: no free space around the photo for the badge */
 @media (min-width:861px) and (max-width:1100px){.badge{display:none}}
 
@@ -758,6 +758,18 @@ footer{padding:80px 0 40px;overflow:hidden}
   .stat{width:176px;padding:14px 16px;border-radius:14px}
   .stat b{font-size:30px;margin-bottom:6px}
   .stat > span{font-size:12px;line-height:1.4}
+}
+
+/* badge becomes a name tag: two lines, red accent bar */
+.badge__txt{display:flex;flex-direction:column;line-height:1.25}
+.badge__txt b{font-family:var(--display);font-stretch:112%;font-weight:800;font-size:1.08em;letter-spacing:.01em}
+.badge{border-radius:16px;border-left:3px solid var(--red)}
+.badge__txt{font-weight:500;color:#cfcfcf}
+.badge__txt b{color:#fff}
+/* desktop: bigger photo, name tag sits on the left shoulder like a lower-third */
+@media (min-width:1101px){
+  .hero__photo{width:min(130%,760px)}
+  .badge{top:auto;bottom:34%;left:-15%;padding:12px 18px 12px 12px}
 }
 </style>
 </head>
@@ -805,7 +817,7 @@ footer{padding:80px 0 40px;overflow:hidden}
         <!-- REPLACE: your hero photo -->
         <img src="images/aftab-cutout.webp" alt="Aftab Ahmed" width="1312" height="1199" fetchpriority="high" decoding="async">
       </div>
-      <div class="badge reveal d6"><i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg></i>Designer turned systems builder</div>
+      <div class="badge reveal d6"><i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg></i><span class="badge__txt"><b>Aftab Ahmed</b>Designer turned systems builder</span></div>
       <div class="stats">
         <div class="stat stat--red reveal d5"><b><span class="hcount" data-to="1500">1,500</span>+</b><span>Projects delivered across the US, Europe and Asia.</span></div>
         <div class="stat stat--glass reveal d6"><b><span class="hcount" data-to="8">8</span>+ yrs</b><span>In design and marketing, now powered by AI.</span></div>
@@ -1695,9 +1707,9 @@ function init3D(){
       leads.forEach(L => { L.init = false; });   // restart leads from the new magnet position
       if (W > 1100) {                           // desktop: smaller icons, spread around the head with breathing room
         const m = PW * .055; magUnit = px(m);
-        put(magnet, L + PW * .84, T + PH * .1, px(m));
+        put(magnet, keepIn(L + PW * .84, m * 1.9 + 40), T + PH * .1, px(m));
         put(chip, L + PW * .08, T + PH * .3, px(PW * .115));
-        put(bubble, L + PW * .9, T + PH * .5, px(PW * .07));
+        put(bubble, keepIn(L + PW * .9, PW * .07 * 1.5), T + PH * .5, px(PW * .07));
         return;
       }
       put(chip, keepIn(narrow ? L + PW * .15 : mid ? L + PW * .1 : L - PW * .12, chipPx * .85), T + PH * (narrow ? .2 : mid ? .36 : .38), px(mid ? PW * .14 : chipPx));
