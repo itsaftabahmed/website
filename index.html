@@ -1630,7 +1630,7 @@ function init3D(){
     const neon = (curve, r, closed) => {
       const g = new THREE.Group();
       const core = new THREE.Mesh(new THREE.TubeGeometry(curve, 240, r, 12, closed), new THREE.MeshBasicMaterial({color:0xff2a33}));
-      const halo = new THREE.Mesh(new THREE.TubeGeometry(curve, 240, r * 2.6, 12, closed), new THREE.MeshBasicMaterial({color:0xE01119, transparent:true, opacity:.28, blending:THREE.AdditiveBlending, depthWrite:false}));
+      const halo = new THREE.Mesh(new THREE.TubeGeometry(curve, 240, r * 2.2, 12, closed), new THREE.MeshBasicMaterial({color:0xE01119, transparent:true, opacity:.2, blending:THREE.AdditiveBlending, depthWrite:false}));
       g.add(halo, core); g.userData.core = core.material; return g;
     };
 
@@ -1643,16 +1643,15 @@ function init3D(){
       for (let k = 0; k <= 10; k++) pts.push(new THREE.Vector3(1, -k * .1, z));
       return new THREE.CatmullRomCurve3(pts, false, 'centripetal');
     };
-    const gunmetal = new THREE.MeshPhysicalMaterial({color:0x3a3a3a, metalness:.85, roughness:.22, clearcoat:1, emissive:0x0c0c0c});
-    magnet.add(new THREE.Mesh(new THREE.TubeGeometry(horseshoe(0), 240, .32, 40, false), gunmetal));
-    const magTrace = neon(horseshoe(.325), .028, false); magnet.add(magTrace);
+    // flat, matte art style: thick charcoal band, red neon line down the middle, white pole tips
+    const charcoal = new THREE.MeshBasicMaterial({color:0x2f2f2f});   // unlit: stays true charcoal under the red scene light
+    const magBody = new THREE.TubeGeometry(horseshoe(0), 240, .32, 40, false); magBody.scale(1, 1, .45);
+    magnet.add(new THREE.Mesh(magBody, charcoal));
+    const magTrace = neon(horseshoe(.17), .045, false); magnet.add(magTrace);
     const magRed = magTrace.userData.core;
-    const silverTip = new THREE.MeshStandardMaterial({color:0xe0e0e0, metalness:.55, roughness:.28, emissive:0x2a2a2a});
-    const tipGeo = new THREE.CylinderGeometry(.33, .33, .36, 40), ringGeo = new THREE.TorusGeometry(.335, .03, 12, 48);
-    [-1, 1].forEach(sx => {
-      const tip = new THREE.Mesh(tipGeo, silverTip); tip.position.set(sx, -1.18, 0); magnet.add(tip);
-      const ring = new THREE.Mesh(ringGeo, new THREE.MeshBasicMaterial({color:0xff2a33})); ring.rotation.x = Math.PI / 2; ring.position.set(sx, -1.0, 0); magnet.add(ring);
-    });
+    const whiteTip = new THREE.MeshBasicMaterial({color:0xececec});
+    const tipGeo = new THREE.BoxGeometry(.7, .34, .3);
+    [-1, 1].forEach(sx => { const tip = new THREE.Mesh(tipGeo, whiteTip); tip.position.set(sx, -1.17, 0); magnet.add(tip); });
     magnet.rotation.set(.1, .3, 1.0);       // poles open to the lower right, where the leads come from
     // each lead is a tiny glowing person: round head + rounded shoulders
     const headGeo = new THREE.SphereGeometry(.42, 20, 16);
@@ -1725,12 +1724,12 @@ function init3D(){
       sh.lineTo(L, T - r); sh.quadraticCurveTo(L, T, L + r, T);
       return sh;
     };
-    const bubGeo = new THREE.ExtrudeGeometry(bubShape(0), {depth:.2, bevelEnabled:true, bevelThickness:.08, bevelSize:.06, bevelSegments:8, curveSegments:32});
-    bubGeo.translate(0, 0, -.1); bubble.add(new THREE.Mesh(bubGeo, chrome));
-    const outline = bubShape(.1).getSpacedPoints(200).map(v => new THREE.Vector3(v.x, v.y, .192));
-    bubble.add(neon(new THREE.CatmullRomCurve3(outline, true, 'centripetal', .05), .028, true));
-    const dotMat = new THREE.MeshBasicMaterial({color:0xff2a33});
-    const dots = [-.45, 0, .45].map(xp => { const d = new THREE.Mesh(new THREE.SphereGeometry(.13, 24, 24), dotMat); d.position.set(xp, .02, .2); bubble.add(d); return d; });
+    const ring = (z) => new THREE.CatmullRomCurve3(bubShape(.12).getSpacedPoints(220).map(v => new THREE.Vector3(v.x, v.y, z)), true, 'centripetal', .05);
+    const bubBody = new THREE.TubeGeometry(ring(0), 260, .17, 24, true); bubBody.scale(1, 1, .45);
+    bubble.add(new THREE.Mesh(bubBody, charcoal));             // thick charcoal outline, hollow middle (same as the magnet band)
+    bubble.add(neon(ring(.08), .03, true));
+    const dotMat = new THREE.MeshBasicMaterial({color:0xf2f2f2});   // white, like the magnet tips
+    const dots = [-.45, 0, .45].map(xp => { const d = new THREE.Mesh(new THREE.SphereGeometry(.13, 24, 24), dotMat); d.position.set(xp, .02, .05); bubble.add(d); return d; });
     bubble.rotation.set(.06, .28, .04);
 
     const N = 220, pos = new Float32Array(N * 3);
@@ -1797,7 +1796,7 @@ function init3D(){
         L.m.scale.setScalar(magUnit * .24 * Math.min(1, L.t * 5) * (1 - e * .8));
         L.m.rotation.z = Math.sin(t * 3 + L.speed * 20) * .15;   // a slight wobble while being pulled
       });
-      magFlash *= .92; magRed.color.setRGB(1, .165 + magFlash * .6, .2 + magFlash * .6);
+      magFlash *= .92; magRed.color.setRGB(1, .165 + magFlash * .15, .2 + magFlash * .12);
       // chat bubble: bob and sway, dots bounce one after another like someone typing
       const bb = base.get(bubble); if (bb) bubble.position.y = bb.y + Math.sin(t * 1.2 + 1) * .1;
       bubble.rotation.y = .28 + Math.sin(t * .6) * .12; bubble.rotation.z = .04 + Math.sin(t * .9) * .03;
