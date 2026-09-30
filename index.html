@@ -1653,11 +1653,15 @@ function init3D(){
       const px = v => v / PW * unit;
       const put = (m, x, y, s) => { const p = toWorld(x, y, W, H); m.position.copy(p); m.scale.setScalar(s); base.set(m, p.clone()); };
       const narrow = W < 700;
-      put(magnet, L + PW * (narrow ? .84 : .86), T + PH * (narrow ? .1 : .12), px(PW * (narrow ? .065 : .07)));
-      magUnit = px(PW * (narrow ? .065 : .07));
+      // keep every object fully on screen: clamp its centre by its half-width (in px) plus a margin
+      const keepIn = (x, half) => Math.min(Math.max(x, half + 12), W - half - 12);
+      const magPx = PW * (narrow ? .06 : .07), chipPx = PW * (narrow ? .14 : .17), bubPx = PW * (narrow ? .085 : .1);
+      put(magnet, keepIn(L + PW * (narrow ? .8 : .86), magPx * 1.7), T + PH * (narrow ? .1 : .12), px(magPx));
+      magUnit = px(magPx);
       leads.forEach(L => { L.init = false; });   // restart leads from the new magnet position
-      put(chip, L - PW * .12, T + PH * .38, px(PW * .17));
-      put(bubble, narrow ? L + PW * .88 : L - PW * .16, T + PH * (narrow ? .5 : .66), px(PW * (narrow ? .09 : .1)));
+      put(chip, keepIn(narrow ? L + PW * .15 : L - PW * .12, chipPx * .85), T + PH * (narrow ? .2 : .38), px(chipPx));
+      const stacked = W <= 860 && !narrow;   // tablet: photo sits alone in the middle, badge on its left
+      put(bubble, keepIn(narrow ? L + PW * .84 : stacked ? L + PW * 1.2 : L - PW * .16, bubPx * 1.45), T + PH * (narrow ? .52 : stacked ? .5 : .66), px(bubPx));
     };
     layout(); addEventListener('resize', layout); setTimeout(layout, 1300);
 
