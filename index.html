@@ -1230,8 +1230,15 @@ footer{padding:80px 0 40px;overflow:hidden}
     const id = video.dataset.videoId;
     if (!id || id === 'YOUR_VIDEO_ID') return;
     const f = document.createElement('iframe');
-    f.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0&controls=0&cc_load_policy=0&iv_load_policy=3&modestbranding=1&playsinline=1&disablekb=1&fs=0';
-    f.title = 'Intro video'; f.allow = 'autoplay; encrypted-media; picture-in-picture'; f.allowFullscreen = true;
+    f.src = 'https://www.youtube.com/embed/' + id + '?si=O_qD2k703wOzlXTE&controls=0&autoplay=1&rel=0&cc_load_policy=0&cc_lang_pref=none&iv_load_policy=3&modestbranding=1&playsinline=1&disablekb=1&fs=0&enablejsapi=1&origin=' + encodeURIComponent(location.origin);
+    f.title = 'YouTube video player'; f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    f.referrerPolicy = 'strict-origin-when-cross-origin'; f.allowFullscreen = true;
+    // switch captions off even when the viewer's YouTube account has them on (repeated while the player boots)
+    const noCaptions = () => {
+      const send = (func, args) => f.contentWindow && f.contentWindow.postMessage(JSON.stringify({event:'command', func, args:args || []}), '*');
+      send('unloadModule', ['captions']); send('unloadModule', ['cc']); send('setOption', ['captions', 'track', {}]);
+    };
+    f.addEventListener('load', () => { f.contentWindow.postMessage(JSON.stringify({event:'listening'}), '*'); [300, 1000, 2000, 3500, 6000].forEach(ms => setTimeout(noCaptions, ms)); });
     video.appendChild(f);
   };
   video.addEventListener('click', play);
