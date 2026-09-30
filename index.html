@@ -770,6 +770,51 @@ footer{padding:80px 0 40px;overflow:hidden}
   .hero__photo{width:min(130%,760px)}
   .badge{top:auto;bottom:34%;left:-15%;padding:12px 18px 12px 12px}
 }
+
+/* ---------- AI assistant bot + savings calculator ---------- */
+.abot{position:fixed;right:24px;bottom:24px;z-index:97;width:84px;height:84px;border:0;padding:0;background:none;cursor:pointer;animation:abob 3.2s ease-in-out infinite}
+@keyframes abob{50%{transform:translateY(-8px)}}
+.abot__pins{position:absolute;inset:0 20px;border-top:6px dashed #8c8c8c;border-bottom:6px dashed #8c8c8c}
+.abot__pins2{position:absolute;inset:20px 0;border-left:6px dashed #8c8c8c;border-right:6px dashed #8c8c8c}
+.abot__body{position:absolute;inset:9px;border-radius:16px;background:linear-gradient(160deg,#262626,#0d0d0d 60%);border:3px solid #2c2c2c;box-shadow:0 0 0 2px #0a0a0a,0 18px 40px rgba(0,0,0,.8),0 0 30px rgba(224,17,25,.45);transition:box-shadow .3s}
+.abot:hover .abot__body{box-shadow:0 0 0 2px #0a0a0a,0 18px 40px rgba(0,0,0,.8),0 0 44px rgba(224,17,25,.8)}
+.abot__face{position:absolute;inset:20px;border:2px solid #3a3a3a;border-radius:9px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.abot__eyes{display:flex;gap:11px}.abot__eyes i{width:9px;height:13px;border-radius:6px;background:#ff2a33;box-shadow:0 0 10px #E01119,0 0 18px #E01119;animation:ablink 4s infinite}
+@keyframes ablink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+.abot__smile{width:16px;height:7px;border:3px solid #ff2a33;border-top:0;border-radius:0 0 10px 10px;filter:drop-shadow(0 0 4px #E01119)}
+.abot__ant{position:absolute;left:50%;top:-12px;width:3px;height:14px;background:#8c8c8c;transform:translateX(-50%)}
+.abot__ant::after{content:"";position:absolute;left:50%;top:-8px;width:11px;height:11px;border-radius:50%;background:#ff2a33;transform:translateX(-50%);box-shadow:0 0 12px #E01119;animation:pulse 2.2s infinite}
+.abot__badge{position:absolute;right:0;top:2px;width:22px;height:22px;border-radius:50%;background:var(--red);border:3px solid #0a0a0a;font:800 11px/16px var(--display,system-ui);color:#fff;text-align:center}
+.abot-say{position:fixed;right:122px;bottom:36px;z-index:90;width:290px;padding:15px 36px 15px 17px;border-radius:18px 18px 4px 18px;background:rgba(18,18,18,.95);border:1px solid #2e2e2e;box-shadow:0 24px 60px -10px rgba(0,0,0,.85);cursor:pointer;opacity:0;transform:translateY(10px) scale(.96);transform-origin:bottom right;pointer-events:none;transition:opacity .35s,transform .45s cubic-bezier(.3,1.4,.5,1)}
+.abot-say.show{opacity:1;transform:none;pointer-events:auto}
+.abot-say b{display:block;font-size:15px;margin-bottom:4px}.abot-say span{display:block;color:#bbb;font-size:13.5px;line-height:1.45}
+.abot-say em{display:inline-block;margin-top:9px;font-style:normal;color:#ff6b70;font-weight:700;font-size:13.5px}
+.abot-say__x{position:absolute;right:8px;top:8px;width:24px;height:24px;border:0;border-radius:50%;background:none;color:#888;font-size:15px;cursor:pointer}
+.calc-ov{position:fixed;inset:0;z-index:95;background:rgba(0,0,0,.55);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:opacity .3s}
+.calc-ov.open{opacity:1;pointer-events:auto}
+.calc{position:fixed;right:24px;bottom:124px;z-index:96;width:min(820px,calc(100vw - 48px));max-height:calc(100vh - 150px);overflow:auto;border-radius:28px;padding:36px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;background:rgba(18,18,18,.97);border:1px solid #2e2e2e;box-shadow:0 30px 80px -10px rgba(0,0,0,.9);opacity:0;transform:translateY(20px) scale(.97);transform-origin:bottom right;pointer-events:none;transition:opacity .3s,transform .45s cubic-bezier(.3,1.3,.5,1)}
+.calc.open{opacity:1;transform:none;pointer-events:auto}
+.calc__x{position:absolute;right:16px;top:14px;width:34px;height:34px;border-radius:50%;border:1px solid #333;background:none;color:#aaa;font-size:16px;cursor:pointer}
+.calc__who{font-size:13px;color:#aaa;margin-bottom:6px}
+.calc__k{color:var(--red-text);font-weight:800;letter-spacing:.14em;font-size:12.5px}
+.calc__h{font-family:var(--display);font-stretch:112%;font-weight:800;font-size:30px;line-height:1.1;letter-spacing:-.02em;margin:10px 0 22px}
+.calc__sl{margin-bottom:22px}.calc__sl label{display:flex;justify-content:space-between;font-size:15px;color:#ccc;margin-bottom:12px}.calc__sl b{color:#fff}
+.calc input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:9px;background:linear-gradient(90deg,var(--red) var(--p,40%),#333 var(--p,40%));outline:none}
+.calc input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:#fff;border:4px solid var(--red);box-shadow:0 0 14px var(--red);cursor:grab}
+.calc input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:#fff;border:4px solid var(--red);box-shadow:0 0 14px var(--red);cursor:grab}
+.calc__note{color:#888;font-size:12.5px}
+.calc__res{background:#0d0d0d;border:1px solid #2c2c2c;border-radius:22px;padding:28px;display:flex;flex-direction:column;justify-content:center}
+.calc__res p{margin:0;color:#bbb}
+.calc__big{font-family:var(--display);font-weight:900;font-size:clamp(44px,5vw,60px);color:#ff2a33;text-shadow:0 0 30px rgba(224,17,25,.5);letter-spacing:-.03em;line-height:1.1;margin:4px 0}
+.calc__big small{font-size:.4em}
+.calc__res .btn{margin-top:20px;align-self:flex-start}
+@media (max-width:700px){
+  .abot{right:14px;bottom:14px;transform:scale(.85)}
+  .abot-say{right:14px;bottom:108px;width:min(290px,calc(100vw - 28px));border-radius:18px 18px 4px 18px}
+  .calc{left:12px;right:12px;bottom:12px;width:auto;max-height:calc(100vh - 24px);grid-template-columns:1fr;padding:26px 22px;gap:20px}
+  .calc__h{font-size:25px}
+}
+@media (prefers-reduced-motion:reduce){.abot,.abot__eyes i{animation:none}}
 </style>
 </head>
 <body>
@@ -816,7 +861,6 @@ footer{padding:80px 0 40px;overflow:hidden}
         <!-- REPLACE: your hero photo -->
         <img src="images/aftab-cutout.webp" alt="Aftab Ahmed" width="1312" height="1199" fetchpriority="high" decoding="async">
       </div>
-      <div class="badge reveal d6"><i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg></i><span class="badge__txt"><b>Aftab Ahmed</b>Designer turned systems builder</span></div>
       <div class="stats">
         <div class="stat stat--red reveal d5"><b><span class="hcount" data-to="1500">1,500</span>+</b><span>Projects delivered across the US, Europe and Asia.</span></div>
         <div class="stat stat--glass reveal d6"><b><span class="hcount" data-to="8">8</span>+ yrs</b><span>In design and marketing, now powered by AI.</span></div>
@@ -1585,6 +1629,68 @@ footer{padding:80px 0 40px;overflow:hidden}
 })();
 </script>
 
+
+<!-- ================= AI ASSISTANT BOT + SAVINGS CALCULATOR ================= -->
+<button type="button" class="abot" id="abot" aria-label="Open the savings calculator" aria-controls="calc">
+  <span class="abot__pins"></span><span class="abot__pins2"></span><span class="abot__body"></span><span class="abot__ant"></span>
+  <span class="abot__face"><span class="abot__eyes"><i></i><i></i></span><span class="abot__smile"></span></span>
+  <span class="abot__badge" id="abotBadge">1</span>
+</button>
+<div class="abot-say" id="abotSay" role="status"><button type="button" class="abot-say__x" id="abotSayX" aria-label="Dismiss">✕</button>
+  <b>Hey 👋 I'm Aftab's AI assistant</b><span>Want to see how much busywork is costing your business? It takes 10 seconds.</span><em>Show me →</em></div>
+<div class="calc-ov" id="calcOv"></div>
+<div class="calc" id="calc" role="dialog" aria-modal="true" aria-labelledby="calcTitle" hidden>
+  <button type="button" class="calc__x" id="calcX" aria-label="Close calculator">✕</button>
+  <div>
+    <div class="calc__who">🤖 Aftab's AI assistant</div>
+    <div class="calc__k">CALCULATOR</div>
+    <div class="calc__h" id="calcTitle">How much is busywork costing you?</div>
+    <div class="calc__sl"><label for="calcHrs">Hours per week on admin <b id="calcHrsV">20 hrs</b></label><input type="range" id="calcHrs" min="2" max="60" step="1" value="20"></div>
+    <div class="calc__sl"><label for="calcRate">Hourly cost of that time <b id="calcRateV">$40</b></label><input type="range" id="calcRate" min="10" max="150" step="5" value="40"></div>
+    <div class="calc__note">Based on automating about 70% of repetitive tasks.</div>
+  </div>
+  <div class="calc__res">
+    <p>You could save around</p>
+    <div class="calc__big"><span id="calcSave">$2,400</span><small>/mo</small></div>
+    <p>and get back <b style="color:#fff" id="calcHours">14 hours</b> every week.</p>
+    <a href="#book" class="btn btn--red" id="calcBook">Book a call to get it →</a>
+  </div>
+</div>
+<script>
+(function(){
+  const bot = document.getElementById('abot'), say = document.getElementById('abotSay'), badge = document.getElementById('abotBadge');
+  const calc = document.getElementById('calc'), ov = document.getElementById('calcOv');
+  const hrs = document.getElementById('calcHrs'), rate = document.getElementById('calcRate');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let shown = 0, raf;
+  const money = n => '$' + Math.round(n).toLocaleString('en-US');
+  const update = () => {
+    [hrs, rate].forEach(r => r.style.setProperty('--p', (r.value - r.min) / (r.max - r.min) * 100 + '%'));
+    document.getElementById('calcHrsV').textContent = hrs.value + ' hrs';
+    document.getElementById('calcRateV').textContent = '$' + rate.value;
+    const saved = hrs.value * .7, target = Math.round(saved * rate.value * 4.33 / 50) * 50;   // 70% automated, ~4.33 weeks a month
+    document.getElementById('calcHours').textContent = Math.round(saved) + ' hours';
+    cancelAnimationFrame(raf);
+    if (reduce) { document.getElementById('calcSave').textContent = money(target); shown = target; return; }
+    const from = shown, t0 = performance.now();
+    const tick = t => { const k = Math.min((t - t0) / 500, 1); shown = from + (target - from) * (1 - Math.pow(1 - k, 3)); document.getElementById('calcSave').textContent = money(shown); if (k < 1) raf = requestAnimationFrame(tick); };
+    raf = requestAnimationFrame(tick);
+  };
+  hrs.addEventListener('input', update); rate.addEventListener('input', update);
+  const hideSay = () => say.classList.remove('show');
+  const open = () => { hideSay(); badge.style.display = 'none'; calc.hidden = false; requestAnimationFrame(() => { calc.classList.add('open'); ov.classList.add('open'); }); shown = 0; update(); hrs.focus(); };
+  const close = () => { calc.classList.remove('open'); ov.classList.remove('open'); setTimeout(() => { calc.hidden = true; }, 350); bot.focus(); };
+  bot.addEventListener('click', () => calc.classList.contains('open') ? close() : open());
+  say.addEventListener('click', e => { if (e.target.id !== 'abotSayX') open(); });
+  document.getElementById('abotSayX').addEventListener('click', e => { e.stopPropagation(); hideSay(); });
+  document.getElementById('calcX').addEventListener('click', close);
+  ov.addEventListener('click', close);
+  document.getElementById('calcBook').addEventListener('click', close);
+  addEventListener('keydown', e => { if (e.key === 'Escape' && calc.classList.contains('open')) close(); });
+  let greeted = false; try { greeted = sessionStorage.getItem('abotGreeted') === '1'; } catch (e) {}
+  if (!greeted) setTimeout(() => { if (!calc.classList.contains('open')) { say.classList.add('show'); try { sessionStorage.setItem('abotGreeted', '1'); } catch (e) {} } }, 8000);
+})();
+</script>
 <script>
 /* ===================== 3D ELEMENTS (three.js) ===================== */
 // three.js (~600 KB) is fetched once the page has finished loading, so it never slows the first paint
