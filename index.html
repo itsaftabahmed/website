@@ -50,7 +50,7 @@
   --ease:cubic-bezier(.2,.7,.2,1); --display:'Archivo','Plus Jakarta Sans',system-ui,sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:90px}
+html{scroll-behavior:smooth;scroll-padding-top:90px;overflow-x:hidden}
 body{margin:0;background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 /* subtle film grain for depth */
 body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.05;mix-blend-mode:overlay;
@@ -128,7 +128,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #ff
 @keyframes rise{to{opacity:1;transform:none}}
 
 /* ---------- MARQUEE ---------- */
-.marquee-wrap{overflow-x:clip}
+/* clips the tilted band's overhang on every browser (overflow:clip needs iOS 16+); the padding keeps its tilt and glow visible */
+.marquee-wrap{position:relative;z-index:5;overflow:hidden;padding:60px 0;margin:-60px 0;pointer-events:none}
 .marquee{position:relative;z-index:5;background:var(--red);transform:rotate(-2deg);margin:-10px -20px 0;padding:22px 0;overflow:hidden;box-shadow:0 30px 80px -20px rgba(224,17,25,.5)}
 .marquee__track{display:flex;gap:40px;width:max-content;animation:scroll 32s linear infinite}
 .marquee__track span{display:flex;align-items:center;gap:40px;font-size:clamp(22px,2.6vw,34px);font-weight:800;letter-spacing:-.01em;text-transform:uppercase;white-space:nowrap}
