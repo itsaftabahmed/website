@@ -43,4 +43,17 @@ Author voice: Aftab Ahmed, 8+ years in design and marketing, now AI, automation 
    `curl -s -X POST https://api.indexnow.org/indexnow -H 'Content-Type: application/json' -d '{"host":"iamaftabahmed.com","key":"1f05e2226886949432f94aa509ff16b9","keyLocation":"https://iamaftabahmed.com/1f05e2226886949432f94aa509ff16b9.txt","urlList":["https://iamaftabahmed.com/blog/<slug>/","https://iamaftabahmed.com/blog/","https://iamaftabahmed.com/sitemap.xml"]}'`
 9. Commit with message `Blog: <title>` and push to **both** the working branch and `main` (`git push origin HEAD:main`). Retry pushes on network errors.
 
+## Quality rules (what Google actually rewards)
+
+Google ranks pages on how helpful and original they are, not on who or what wrote them. Generic, interchangeable content is what fails. Every post must pass these:
+
+- **One original angle.** Include at least one thing a generic article wouldn't: a specific setup Aftab would actually build, a worked example with realistic (clearly hypothetical) numbers, a mistake he sees often, or a clear opinion with the reason behind it. Write it in first person ("When I set this up for a service business, I…") only for general practice, never for invented client stories.
+- **Specific over vague.** Name the actual setting, field, tool or step ("turn on the 'Higher intent' form type in Meta Lead Ads") instead of "optimize your forms".
+- **No filler phrases.** Never use: "In today's fast-paced world", "in the digital age", "unlock", "unleash", "elevate", "game-changer", "dive in/deep dive", "navigate the landscape", "it's important to note", "in conclusion", "whether you're X or Y", "look no further", "seamless", "robust", "leverage" (as a verb), "supercharge".
+- **No em dashes (—).** Use commas, periods or parentheses.
+- **Vary rhythm.** Mix short and long sentences; don't start consecutive paragraphs the same way; avoid groups of exactly three adjectives in a row.
+- **No repeated structure across posts.** Change the order of sections, the example industry and the opening style (a question, a scenario, a direct answer, a common myth) from post to post.
+- **Plain text only.** Type normal characters; never paste invisible or special Unicode characters.
+- **Fact-check claims.** Platform features, policies and settings must be current; if unsure, describe the principle rather than a specific button.
+
 If every topic is checked, write 20 new topics in the same format and style at the end of `blog/topics.md` (new searches US small-business owners make about ads, leads, follow-up and AI automation, not duplicates), then publish the first one.
