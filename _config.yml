@@ -1,0 +1,4 @@
+# Internal files that should not be published on the site
+exclude:
+  - blog/WRITING_GUIDE.md
+  - blog/topics.md
