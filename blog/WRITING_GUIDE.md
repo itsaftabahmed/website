@@ -18,12 +18,17 @@ Author voice: Aftab Ahmed, 8+ years in design and marketing, now AI, automation 
    - Include a step-by-step plan or checklist the reader can use today.
    - FAQ with 3 real questions people search, each answered in 2–3 sentences.
    - End with the CTA box: heading related to the topic, one sentence, button to `../../#book`.
-   - Link to 1–2 earlier posts on this blog where genuinely relevant (relative links like `../other-slug/`).
+   - Internal links (important for SEO):
+     - In the body, link naturally to the **most relevant service page** at least once: `../../services/facebook-ads/`, `../../services/google-ads/`, `../../services/lead-generation/` or `../../services/ai-automation/`, using descriptive anchor text (e.g. "Google Ads management for small businesses"), never "click here".
+     - Link to 1–2 earlier posts on this blog where genuinely relevant (relative links like `../other-slug/`).
+     - Keep the "Related" box above the CTA with the 2–3 most relevant service pages / posts.
+   - Keep the template's breadcrumb (`Home / Blog / <short title>`), canonical URL (`https://iamaftabahmed.com/blog/<slug>/`), og:url, article:published_time and the `BreadcrumbList` JSON-LD, updated for the new post.
    - **Never invent statistics, studies, client names, case results or quotes.** Prefer ranges and "typically", and say costs vary. No fake testimonials, no "we helped X get Y%".
    - No keyword stuffing; use the search phrase naturally in the H1, first paragraph, one H2 and the meta description.
    - US spelling and US context (dollars, US platforms and rules).
 5. Add a card for the post at the **top** of the list in `blog/index.html`, right under `<!-- NEW POSTS GO HERE (newest first) -->`, using the same `<a class="card">` markup.
 6. In the root `index.html`, add a matching `<a class="fpost">` card at the **top** of `<div class="fblog__list">` and keep **only the 3 newest** cards there (delete the oldest beyond 3).
+6b. Once the new post is live, add one contextual link to it from an older related post or from the matching service page's "Related" list, so every post is linked from somewhere other than the blog index.
 7. Add the post URL to `sitemap.xml` (`https://iamaftabahmed.com/blog/<slug>/`, lastmod today) and update the `/blog/` lastmod.
 8. In `blog/topics.md`, change that topic's `- [ ]` to `- [x]`.
 9. Commit with message `Blog: <title>` and push to **both** the working branch and `main` (`git push origin HEAD:main`). Retry pushes on network errors.
