@@ -5,7 +5,7 @@ To change the plan: reorder, add or delete lines. Format: `- [ ] Title | primary
 
 ## Facebook & Instagram ads (Meta)
 - [x] Why your Facebook ads get clicks but no calls (and how to fix it) | facebook ads clicks but no calls
-- [ ] How much do Facebook ads cost for a small business in the US? | facebook ads cost small business
+- [x] How much do Facebook ads cost for a small business in the US? | facebook ads cost small business
 - [ ] Facebook Lead Forms vs landing pages: which gets better leads? | facebook lead forms vs landing page
 - [ ] Why your Facebook leads never answer the phone | facebook leads not answering
 - [ ] How to write a Facebook ad offer people actually act on | facebook ad offer examples
