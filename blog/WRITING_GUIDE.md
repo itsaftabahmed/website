@@ -7,7 +7,7 @@ Author voice: Aftab Ahmed, 8+ years in design and marketing, now AI, automation 
 
 1. Open `blog/topics.md` and take the **first line that starts with `- [ ]`**. The part before `|` is the title; after `|` is the main search phrase.
 2. Make a URL slug from the title: lowercase, words joined by `-`, no stop-word clutter, max ~7 words (e.g. `facebook-ads-cost-small-business`).
-3. Create `blog/<slug>/index.html` by **copying the structure of `blog/facebook-ads-clicks-but-no-calls/index.html` exactly** (same head tags, fonts, `../blog.css`, header, hero, table of contents, article, FAQ, CTA box, footer). Replace:
+3. Create `blog/<slug>/index.html` by **copying the structure (including the Google Tag Manager, Meta Pixel and Clarity tracking codes at the top of `<head>` and the GTM `<noscript>` right after `<body>`, unchanged) of `blog/facebook-ads-clicks-but-no-calls/index.html` exactly** (same head tags, fonts, `../blog.css`, header, hero, table of contents, article, FAQ, CTA box, footer). Replace:
    - `<title>`: under ~60 characters, includes the search phrase, ends with "(2026)" only when the topic is time-sensitive.
    - meta description: 140–160 characters, includes the search phrase, promises a concrete answer.
    - og:title / og:description, JSON-LD `BlogPosting` (headline, description, today's date for datePublished and dateModified, keywords) and `FAQPage` (the same 3 questions as the FAQ section).
