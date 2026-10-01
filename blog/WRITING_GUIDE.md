@@ -25,6 +25,7 @@ Author voice: Aftab Ahmed, 8+ years in design and marketing, now AI, automation 
    - End with the CTA box: heading related to the topic, one sentence, button to `../../#book`.
    - Internal links (important for SEO):
      - In the body, link naturally to the **most relevant service page** at least once: `../../services/facebook-ads/`, `../../services/google-ads/`, `../../services/lead-generation/` or `../../services/ai-automation/`, using descriptive anchor text (e.g. "Google Ads management for small businesses"), never "click here".
+     - If the post is about or clearly useful to one industry, also link its industry page: `../../industries/dental/` (dental & medical), `../../industries/real-estate/` (real estate & property) or `../../industries/accounting/` (accounting & CPA).
      - Link to 1–2 earlier posts on this blog where genuinely relevant (relative links like `../other-slug/`).
      - Keep the "Related" box above the CTA with the 2–3 most relevant service pages / posts.
    - Keep the template's breadcrumb (`Home / Blog / <short title>`), canonical URL (`https://iamaftabahmed.com/blog/<slug>/`), og:url, article:published_time and the `BreadcrumbList` JSON-LD, updated for the new post.
