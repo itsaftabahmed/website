@@ -838,6 +838,18 @@ footer{padding:80px 0 40px;overflow:hidden}
   #my-cal-inline-30min,#my-cal-inline-30min[id]{min-height:0;height:auto;overflow:visible}
   #my-cal-inline-30min iframe{min-height:0!important}
 }
+
+/* footer blog block */
+.fblog{padding:40px 0 36px;border-bottom:1px solid var(--line)}
+.fblog__head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.fblog h4{margin:10px 0 0;font-family:var(--display);font-stretch:112%;font-weight:800;font-size:clamp(20px,2.2vw,26px);letter-spacing:-.02em}
+.fblog__all{color:var(--red-text);font-weight:700;font-size:15px}
+.fblog__list{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.fpost{display:flex;flex-direction:column;gap:8px;padding:22px;border-radius:18px;background:var(--surface);border:1px solid var(--line);transition:border-color .3s,transform .3s}
+.fpost:hover{border-color:rgba(224,17,25,.6);transform:translateY(-3px)}
+.fpost__tag{color:var(--red-text);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.fpost b{font-size:17px;line-height:1.35}
+.fpost small{color:var(--muted);font-size:13px}
 </style>
 </head>
 <body>
@@ -1238,6 +1250,13 @@ footer{padding:80px 0 40px;overflow:hidden}
       <nav aria-label="Footer">
         <a href="#intro">About</a><a href="#services">Services</a><a href="#content">Content</a><a href="blog/">Blog</a><a href="#book">Book a call</a>
       </nav>
+    </div>
+    <!-- FOOTER BLOG: latest posts (newest first) -->
+    <div class="fblog">
+      <div class="fblog__head"><div><div class="kicker">From the blog</div><h4>Latest guides on ads, leads &amp; automation</h4></div><a href="blog/" class="fblog__all">View all posts →</a></div>
+      <div class="fblog__list">
+        <a class="fpost" href="blog/facebook-ads-clicks-but-no-calls/"><span class="fpost__tag">Facebook Ads · Lead generation</span><b>Why your Facebook ads get clicks but no calls (and how to fix it)</b><small>Oct 1, 2026 · 8 min read</small></a>
+      </div>
     </div>
     <div class="foot-logo"><a href="#top" class="logo logo--lg">AFTAB <span>AHMED</span></a><p>AI, Automation &amp; Marketing for growing businesses.</p></div>
     <div class="legal"><span>© <span id="year">2026</span> Aftab Ahmed. All rights reserved.</span><span>AI · Automation · Marketing</span></div>
