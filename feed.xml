@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+  <title>Aftab Ahmed Blog — Ads, Leads &amp; AI Automation</title>
+  <link>https://iamaftabahmed.com/blog/</link>
+  <atom:link href="https://iamaftabahmed.com/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>Practical guides on Google Ads, Facebook ads, lead generation and AI automation for US small businesses.</description>
+  <language>en-us</language>
+  <lastBuildDate>Wed, 01 Oct 2026 13:00:00 GMT</lastBuildDate>
+<!-- NEW ITEMS GO HERE (newest first) -->
+  <item>
+    <title>How much do Facebook ads cost for a small business in the US?</title>
+    <link>https://iamaftabahmed.com/blog/facebook-ads-cost-small-business/</link>
+    <guid isPermaLink="true">https://iamaftabahmed.com/blog/facebook-ads-cost-small-business/</guid>
+    <pubDate>Wed, 01 Oct 2026 13:00:00 GMT</pubDate>
+    <dc:creator>Aftab Ahmed</dc:creator>
+    <description>What really drives Facebook ad prices, how to set a sensible starting budget, and the numbers that matter more than cost per click.</description>
+  </item>
+  <item>
+    <title>Why your Facebook ads get clicks but no calls (and how to fix it)</title>
+    <link>https://iamaftabahmed.com/blog/facebook-ads-clicks-but-no-calls/</link>
+    <guid isPermaLink="true">https://iamaftabahmed.com/blog/facebook-ads-clicks-but-no-calls/</guid>
+    <pubDate>Wed, 01 Oct 2026 09:00:00 GMT</pubDate>
+    <dc:creator>Aftab Ahmed</dc:creator>
+    <description>Clicks without enquiries is almost never a targeting problem. The six real causes and a step-by-step fix.</description>
+  </item>
+</channel>
+</rss>

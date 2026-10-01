@@ -43,3 +43,5 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .steps li::before{content:counter(s);position:absolute;left:0;top:0;width:38px;height:38px;border-radius:50%;background:var(--red);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
 .hero .btn{margin-top:26px}
 article a:not(.btn){color:var(--red-text);text-decoration:underline;text-underline-offset:3px}
+.takeaways{background:linear-gradient(135deg,rgba(224,17,25,.12),rgba(20,20,20,.9));border:1px solid rgba(224,17,25,.35);border-radius:18px;padding:20px 24px;margin:0 0 26px}
+.takeaways b{color:#fff;display:block;margin-bottom:8px}.takeaways ul{margin:0;padding-left:20px}.takeaways li{margin:0 0 6px;color:var(--soft)}

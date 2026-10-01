@@ -1,6 +1,9 @@
 # Aftab Ahmed — AI Automation & Marketing
 
-> Aftab Ahmed helps US small businesses grow with AI automation, AI chatbots, Google Ads, Facebook & Instagram ads and lead generation systems with instant follow-up. 8+ years in design and marketing; based in Pakistan, working with clients in the US, UK and Europe.
+> Aftab Ahmed is a designer turned systems builder (8+ years in design and marketing, 1,500+ projects) who helps US, UK and European small businesses grow with AI automation, AI chatbots, Google Ads, Facebook & Instagram ads and lead generation systems with instant follow-up. Based in Pakistan, working remotely.
+
+## About
+- [About Aftab Ahmed](https://iamaftabahmed.com/about/): background, approach and who he works with
 
 ## Services
 - [AI Automation & AI Chatbots](https://iamaftabahmed.com/services/ai-automation/): assistants that answer, qualify and book leads 24/7, plus admin automation
@@ -8,8 +11,11 @@
 - [Facebook & Instagram Ads](https://iamaftabahmed.com/services/facebook-ads/): offers, creative, lead forms and Meta tracking
 - [Lead Generation](https://iamaftabahmed.com/services/lead-generation/): ads, landing pages, CRM and speed-to-lead follow-up
 
-## Blog
-- [Blog index](https://iamaftabahmed.com/blog/): practical guides on ads, leads and automation
+## Blog (newest first)
+<!-- NEW POSTS GO HERE -->
+- [How much do Facebook ads cost for a small business in the US?](https://iamaftabahmed.com/blog/facebook-ads-cost-small-business/): what drives Facebook ad prices and how to set a starting budget
+- [Why your Facebook ads get clicks but no calls (and how to fix it)](https://iamaftabahmed.com/blog/facebook-ads-clicks-but-no-calls/): six causes of clicks without leads and a 7-day fix plan
 
 ## Contact
 - [Book a free 30-minute call](https://iamaftabahmed.com/#book)
+- [RSS feed](https://iamaftabahmed.com/feed.xml)
