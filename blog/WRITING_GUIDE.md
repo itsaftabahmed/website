@@ -1,0 +1,31 @@
+# Automated blog: how to publish one post
+
+Audience: US small-business owners (dental, real estate, accounting, home services, med spa, law, local services).
+Author voice: Aftab Ahmed, 8+ years in design and marketing, now AI, automation and marketing. Plain, direct, practical. "No hype."
+
+## Steps (do all of them, in this order)
+
+1. Open `blog/topics.md` and take the **first line that starts with `- [ ]`**. The part before `|` is the title; after `|` is the main search phrase.
+2. Make a URL slug from the title: lowercase, words joined by `-`, no stop-word clutter, max ~7 words (e.g. `facebook-ads-cost-small-business`).
+3. Create `blog/<slug>/index.html` by **copying the structure of `blog/facebook-ads-clicks-but-no-calls/index.html` exactly** (same head tags, fonts, `../blog.css`, header, hero, table of contents, article, FAQ, CTA box, footer). Replace:
+   - `<title>`: under ~60 characters, includes the search phrase, ends with "(2026)" only when the topic is time-sensitive.
+   - meta description: 140–160 characters, includes the search phrase, promises a concrete answer.
+   - og:title / og:description, JSON-LD `BlogPosting` (headline, description, today's date for datePublished and dateModified, keywords) and `FAQPage` (the same 3 questions as the FAQ section).
+   - hero kicker (2 topic tags), H1, lead paragraph, byline date (today, "Month D, YYYY") and read time.
+4. Article content rules:
+   - 1,200–1,800 words. Answer the search in the first 2 paragraphs.
+   - 5–8 `<h2>` sections with ids, listed in the "In this guide" box; one practical checklist (`<ul class="check">`) and one `<div class="callout">` tip.
+   - Include a step-by-step plan or checklist the reader can use today.
+   - FAQ with 3 real questions people search, each answered in 2–3 sentences.
+   - End with the CTA box: heading related to the topic, one sentence, button to `../../#book`.
+   - Link to 1–2 earlier posts on this blog where genuinely relevant (relative links like `../other-slug/`).
+   - **Never invent statistics, studies, client names, case results or quotes.** Prefer ranges and "typically", and say costs vary. No fake testimonials, no "we helped X get Y%".
+   - No keyword stuffing; use the search phrase naturally in the H1, first paragraph, one H2 and the meta description.
+   - US spelling and US context (dollars, US platforms and rules).
+5. Add a card for the post at the **top** of the list in `blog/index.html`, right under `<!-- NEW POSTS GO HERE (newest first) -->`, using the same `<a class="card">` markup.
+6. In the root `index.html`, add a matching `<a class="fpost">` card at the **top** of `<div class="fblog__list">` and keep **only the 3 newest** cards there (delete the oldest beyond 3).
+7. Add the post URL to `sitemap.xml` (`https://iamaftabahmed.com/blog/<slug>/`, lastmod today) and update the `/blog/` lastmod.
+8. In `blog/topics.md`, change that topic's `- [ ]` to `- [x]`.
+9. Commit with message `Blog: <title>` and push to **both** the working branch and `main` (`git push origin HEAD:main`). Retry pushes on network errors.
+
+If every topic is checked, write 20 new topics in the same format and style at the end of `blog/topics.md` (new searches US small-business owners make about ads, leads, follow-up and AI automation, not duplicates), then publish the first one.
