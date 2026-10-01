@@ -75,7 +75,7 @@ document.addEventListener('click', function (e) {
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../blog/blog.css">
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@graph": [{"@type": "ProfilePage", "url": "https://iamaftabahmed.com/about/", "name": "About Aftab Ahmed", "mainEntity": {"@id": "https://iamaftabahmed.com/#person"}}, {"@type": "Person", "@id": "https://iamaftabahmed.com/#person", "name": "Aftab Ahmed", "url": "https://iamaftabahmed.com/", "image": "https://iamaftabahmed.com/images/aftab-cutout.webp", "jobTitle": "AI Automation & Marketing Specialist", "description": "Designer turned systems builder with 8+ years in design and marketing, helping small businesses in the US, UK and Europe grow with AI automation, Google Ads, Facebook ads and lead generation.", "homeLocation": {"@type": "Country", "name": "Pakistan"}, "knowsAbout": ["AI automation", "AI chatbots", "Marketing automation", "CRM", "Google Ads", "Facebook ads", "Instagram ads", "Lead generation", "Landing pages", "Design"], "sameAs": ["https://www.youtube.com/@ItsAftab_Ahmed", "https://www.instagram.com/itsaftab.ahmed/", "https://www.tiktok.com/@itsaftab_ahmed", "https://www.linkedin.com/in/iamaftabahmed/"]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://iamaftabahmed.com/"}, {"@type": "ListItem", "position": 2, "name": "About", "item": "https://iamaftabahmed.com/about/"}]}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "ProfilePage", "url": "https://iamaftabahmed.com/about/", "name": "About Aftab Ahmed", "mainEntity": {"@id": "https://iamaftabahmed.com/#person"}}, {"@type": "Person", "@id": "https://iamaftabahmed.com/#person", "name": "Aftab Ahmed", "url": "https://iamaftabahmed.com/", "image": "https://iamaftabahmed.com/images/aftab-cutout.webp", "jobTitle": "AI Automation & Marketing Specialist", "description": "Designer turned systems builder with 8+ years in design and marketing, helping small businesses in the US, UK and Europe grow with AI automation, Google Ads, Facebook ads and lead generation.", "homeLocation": {"@type": "Country", "name": "Pakistan"}, "knowsAbout": ["AI automation", "AI chatbots", "Marketing automation", "CRM", "Google Ads", "Facebook ads", "Instagram ads", "Lead generation", "Landing pages", "Design"], "sameAs": ["https://www.youtube.com/@ItsAftab_Ahmed", "https://www.instagram.com/itsaftab.ahmed/", "https://www.tiktok.com/@itsaftab_ahmed", "https://www.linkedin.com/in/iamaftabahmed/"]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://iamaftabahmed.com/"}, {"@type": "ListItem", "position": 2, "name": "About", "item": "https://iamaftabahmed.com/about/"}]}, {"@type": "VideoObject", "name": "Aftab Ahmed intro — AI, Automation & Marketing", "description": "A one-minute introduction to Aftab Ahmed and how he helps small businesses grow with AI automation, ads and lead generation.", "thumbnailUrl": ["https://i.ytimg.com/vi/CI87I9J2kJg/maxresdefault.jpg", "https://i.ytimg.com/vi/CI87I9J2kJg/hqdefault.jpg"], "uploadDate": "2026-09-29", "embedUrl": "https://www.youtube.com/embed/CI87I9J2kJg", "contentUrl": "https://www.youtube.com/watch?v=CI87I9J2kJg", "publisher": {"@id": "https://iamaftabahmed.com/#person"}}]}
 </script>
 </head>
 <body>
@@ -94,6 +94,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div></section>
 
 <article>
+  <div class="avid" id="aboutVideo" role="button" tabindex="0" aria-label="Play Aftab's intro video">
+    <img src="https://i.ytimg.com/vi/CI87I9J2kJg/maxresdefault.jpg" alt="Aftab Ahmed intro video" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/CI87I9J2kJg/hqdefault.jpg'">
+    <span class="avid__play" aria-hidden="true"><svg width="20" height="23" viewBox="0 0 14 16" fill="#fff"><path d="M0 0L14 8L0 16Z"/></svg></span>
+    <span class="avid__cap">Hi, I'm Aftab · Watch my 1-minute intro</span>
+  </div>
+  <script>
+  (function(){
+    var v = document.getElementById('aboutVideo');
+    var play = function(){
+      if (v.querySelector('iframe')) return;
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube.com/embed/CI87I9J2kJg?si=O_qD2k703wOzlXTE&controls=0&autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3&modestbranding=1&playsinline=1';
+      f.title = 'Aftab Ahmed intro video';
+      f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      f.referrerPolicy = 'strict-origin-when-cross-origin'; f.allowFullscreen = true;
+      v.appendChild(f);
+      if (window.gtag) gtag('event', 'video_play', {video_title: 'About intro'});
+    };
+    v.addEventListener('click', play);
+    v.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); play(); } });
+  })();
+  </script>
+
   <h2 id="story">From design to systems</h2>
   <p>I spent 8+ years in design and marketing, delivering more than 1,500 projects for clients across the US, Europe and Asia. Over that time I kept seeing the same pattern: businesses invested in great-looking marketing, then lost leads because nobody replied fast enough, follow-ups slipped and teams were buried in repetitive admin.</p>
   <p>So I moved into AI and automation. Today I build the whole system: the ads and pages that bring the right people in, and the AI assistants and automations that reply instantly, qualify leads and book appointments while the business owner gets on with their work.</p>
