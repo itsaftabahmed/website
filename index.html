@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8J15RWPXC0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8J15RWPXC0');
+</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- Google Tag Manager -->
@@ -43,6 +52,7 @@ document.addEventListener('click', function (e) {
   if (!a) return;
   (window.dataLayer = window.dataLayer || []).push({event: 'book_call_click', link_text: (a.textContent || '').trim().slice(0, 60), page_path: location.pathname});
   if (window.fbq) fbq('track', 'Contact');
+  if (window.gtag) gtag('event', 'book_call_click', {link_text: (a.textContent || '').trim().slice(0, 60)});
 }, true);
 </script>
 <title>AI Automation &amp; Lead Generation for US Businesses | Aftab Ahmed</title>
@@ -1287,6 +1297,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           Cal.ns["30min"]("on", {action: "bookingSuccessful", callback: function () {
             (window.dataLayer = window.dataLayer || []).push({event: 'booking_completed', booking_type: '30min'});
             if (window.fbq) fbq('track', 'Schedule');
+            if (window.gtag) gtag('event', 'generate_lead', {method: 'cal_booking', booking_type: '30min'});
           }});
           Cal.ns["30min"]("ui", {
             "theme":"dark",
