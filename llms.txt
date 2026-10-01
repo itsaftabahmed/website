@@ -16,6 +16,9 @@
 - [Dental & Medical Practices](https://iamaftabahmed.com/industries/dental/): AI receptionist, missed-call text back, reminders and local ads for practices
 - [Real Estate & Property](https://iamaftabahmed.com/industries/real-estate/): instant lead replies, qualification, showing booking and nurture for agents
 - [Accounting & CPA Firms](https://iamaftabahmed.com/industries/accounting/): enquiry handling, automated onboarding and document reminders for firms
+- [Home Services](https://iamaftabahmed.com/industries/home-services/): missed-call text back, quote follow-up, booking and local ads for contractors
+- [Med Spas & Aesthetics](https://iamaftabahmed.com/industries/med-spa/): offer-led Meta ads, instant lead replies, booking and rebooking reminders
+- [Law Firms](https://iamaftabahmed.com/industries/law/): 24/7 intake, case screening, consultation booking and practice-area ads
 
 ## Blog (newest first)
 <!-- NEW POSTS GO HERE -->
