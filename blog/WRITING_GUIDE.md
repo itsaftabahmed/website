@@ -32,7 +32,7 @@ Author voice: Aftab Ahmed, 8+ years in design and marketing, now AI, automation 
    - No keyword stuffing; use the search phrase naturally in the H1, first paragraph, one H2 and the meta description.
    - US spelling and US context (dollars, US platforms and rules).
 5. Add a card for the post at the **top** of the list in `blog/index.html`, right under `<!-- NEW POSTS GO HERE (newest first) -->`, using the same `<a class="card">` markup.
-6. In the root `index.html`, add a matching `<a class="fpost">` card at the **top** of `<div class="fblog__list">` and keep **only the 3 newest** cards there (delete the oldest beyond 3).
+6. In the root `index.html`, add a matching `<a class="fpost">` card at the **top** of `<div class="fblog__list">` and keep **only the 3 newest** `fpost` cards there (delete the oldest beyond 3). Leave the `<a class="fnext">` "Coming soon" card as the last item; never delete it (it hides itself once there are 3 posts).
 6b. Once the new post is live, add one contextual link to it from an older related post or from the matching service page's "Related" list, so every post is linked from somewhere other than the blog index.
 6c. Add the post to the top of `feed.xml` (right under `<!-- NEW ITEMS GO HERE (newest first) -->`, same `<item>` format with title, link, guid, pubDate in RFC-822 GMT, dc:creator and description) and update `<lastBuildDate>`.
 6d. Add a line for the post at the top of the blog list in `llms.txt` (under `<!-- NEW POSTS GO HERE -->`): `- [Title](https://iamaftabahmed.com/blog/<slug>/): one-line summary`.

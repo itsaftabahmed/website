@@ -920,6 +920,28 @@ footer .foot{padding-top:46px}
 .fsvc a+a::before{content:"·";margin:0 12px;color:#444}
 .fsvc span{color:var(--muted);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:12px;margin-right:6px}
 .fsvc a{color:var(--soft)}.fsvc a:hover{color:#fff}
+
+/* ---------- footer (giant headline + blog strip + slim bar) ---------- */
+footer{padding:20px 0 34px}
+.fcta{text-align:center;padding:40px 0 64px;border-bottom:1px solid var(--line)}
+.fcta .kicker{justify-content:center}
+.fcta h3{margin:18px 0 30px;font-family:var(--display);font-stretch:112%;font-weight:900;font-size:clamp(40px,6.4vw,88px);line-height:.98;letter-spacing:-.03em}
+.fcta h3 span{color:var(--red)}
+.fblog{padding:46px 0 50px;border-bottom:1px solid var(--line)}
+.fblog__head{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.fblog__list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.fblog__list .fnext:nth-child(n+4){display:none}
+.fnext{display:flex;flex-direction:column;gap:8px;padding:22px;border-radius:18px;border:1px dashed #2e2e2e;background:transparent;transition:border-color .3s}
+.fnext:hover{border-color:rgba(224,17,25,.6)}
+.fnext b{font-size:17px;line-height:1.35}.fnext small{color:var(--muted);font-size:13px}
+.fbar{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding:30px 0 18px}
+.fbar .logo{font-size:20px}
+.fbar nav{display:flex;gap:26px;font-size:14.5px}.fbar nav a{color:var(--muted)}.fbar nav a:hover{color:#fff}
+.fsoc{display:flex;gap:8px}
+.fsoc a{width:38px;height:38px;border-radius:50%;border:1px solid var(--line-2);display:flex;align-items:center;justify-content:center;transition:border-color .2s,background .2s}
+.fsoc a:hover{background:var(--red);border-color:var(--red)}
+.fcopy{text-align:center;color:#6f6f6f;font-size:13.5px}
+@media (max-width:860px){.fblog__list{grid-template-columns:1fr}.fbar{flex-direction:column;text-align:center}.fbar nav{flex-wrap:wrap;justify-content:center;gap:16px 22px}.fcta{padding:20px 0 50px}}
 </style>
 </head>
 <body>
@@ -1327,22 +1349,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ================= FOOTER ================= -->
 <footer>
   <div class="wrap">
+    <div class="fcta">
+      <div class="kicker">Let's talk</div>
+      <h3>Put the busywork<br><span>on autopilot.</span></h3>
+      <a href="#book" class="btn btn--red">Book a free 30-minute call →</a>
+    </div>
+
     <!-- FOOTER BLOG: latest posts (newest first) -->
     <div class="fblog">
-      <div class="fblog__head"><div><div class="kicker">From the blog</div><h4>Latest guides on ads, leads &amp; automation</h4></div><a href="blog/" class="fblog__all">View all posts →</a></div>
+      <div class="fblog__head"><div class="kicker">From the blog</div><a href="blog/" class="fblog__all">View all →</a></div>
       <div class="fblog__list">
         <a class="fpost" href="blog/facebook-ads-cost-small-business/"><span class="fpost__tag">Facebook Ads · Budgeting</span><b>How much do Facebook ads cost for a small business in the US?</b><small>Oct 1, 2026 · 8 min read</small></a>
         <a class="fpost" href="blog/facebook-ads-clicks-but-no-calls/"><span class="fpost__tag">Facebook Ads · Lead generation</span><b>Why your Facebook ads get clicks but no calls (and how to fix it)</b><small>Oct 1, 2026 · 8 min read</small></a>
+        <a class="fnext" href="blog/"><span class="fpost__tag">Coming soon</span><b>New guides on ads, leads &amp; AI automation</b><small>New posts Mon · Wed · Fri</small></a>
       </div>
     </div>
-    <div class="foot">
-      <h3>Ready to put the busywork on autopilot?</h3>
-      <nav aria-label="Footer">
-        <a href="about/">About</a><a href="#services">Services</a><a href="#content">Content</a><a href="blog/">Blog</a><a href="#book">Book a call</a>
-      </nav>
+
+    <div class="fbar">
+      <a href="#top" class="logo">AFTAB <span>AHMED</span></a>
+      <nav aria-label="Footer"><a href="about/">About</a><a href="#services">Services</a><a href="blog/">Blog</a><a href="#book">Book a call</a></nav>
+      <div class="fsoc"><a href="https://www.instagram.com/itsaftab.ahmed/" aria-label="Instagram" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="3" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="#fff"/></svg></a>
+            <a href="https://www.youtube.com/@ItsAftab_Ahmed" aria-label="YouTube" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="2" y="5" width="16" height="16" rx="4"/><path d="M10 9l5 3-5 3z" fill="#fff"/></svg></a>
+            <a href="https://www.tiktok.com/@itsaftab_ahmed" aria-label="TikTok" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><path d="M14 3v12a4 4 0 1 1-4-4"/><path d="M14 3c0 3 2.5 5 5 5"/></svg></a>
+            <a href="https://www.linkedin.com/in/iamaftabahmed/" aria-label="LinkedIn" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="3" width="16" height="16" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg></a></div>
     </div>
-    <div class="foot-logo"><a href="#top" class="logo logo--lg">AFTAB <span>AHMED</span></a><p>AI, Automation &amp; Marketing for growing businesses.</p></div>
-    <div class="legal"><span>© <span id="year">2026</span> Aftab Ahmed. All rights reserved.</span><span>AI · Automation · Marketing</span></div>
+    <div class="fcopy">© <span id="year">2026</span> Aftab Ahmed</div>
   </div>
 </footer>
 
