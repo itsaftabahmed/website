@@ -914,7 +914,9 @@ footer{padding:80px 0 40px;overflow:hidden}
 .tile__more{position:relative;z-index:2;align-self:flex-start;color:var(--red-text);font-weight:700;font-size:14.5px;text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s}
 .tile__more:hover{border-color:var(--red-text)}
 .tile__links{display:flex;gap:18px;flex-wrap:wrap}
-.fsvc{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;padding:26px 0;border-bottom:1px solid var(--line);font-size:15px}
+.fsvc{display:flex;flex-wrap:wrap;gap:6px 0;align-items:center;padding:18px 0;font-size:13.5px}
+.fsvc a{color:var(--muted)!important;transition:color .2s}.fsvc a:hover{color:#fff!important}
+.fsvc a+a::before{content:"·";margin:0 12px;color:#444}
 .fsvc span{color:var(--muted);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:12px;margin-right:6px}
 .fsvc a{color:var(--soft)}.fsvc a:hover{color:#fff}
 </style>
@@ -1330,7 +1332,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a href="about/">About</a><a href="#services">Services</a><a href="#content">Content</a><a href="blog/">Blog</a><a href="#book">Book a call</a>
       </nav>
     </div>
-    <nav class="fsvc" aria-label="How I can help"><span>How I can help</span><a href="services/ai-automation/">Never miss a lead after hours</a><a href="services/google-ads/">Turn Google searches into booked calls</a><a href="services/facebook-ads/">Get calls from ads, not just clicks</a><a href="services/lead-generation/">Stop losing leads to slow follow-up</a></nav>
+    <nav class="fsvc" aria-label="Services"><a href="services/ai-automation/">AI assistants</a><a href="services/google-ads/">Google Ads</a><a href="services/facebook-ads/">Meta Ads</a><a href="services/lead-generation/">Lead follow-up</a></nav>
     <!-- FOOTER BLOG: latest posts (newest first) -->
     <div class="fblog">
       <div class="fblog__head"><div><div class="kicker">From the blog</div><h4>Latest guides on ads, leads &amp; automation</h4></div><a href="blog/" class="fblog__all">View all posts →</a></div>
