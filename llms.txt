@@ -22,6 +22,7 @@
 
 ## Blog (newest first)
 <!-- NEW POSTS GO HERE -->
+- [How to reduce no-shows at a dental office](https://iamaftabahmed.com/blog/reduce-dental-no-shows/): reminder schedule, text wording, fee policy and waitlist setup to cut dental no-shows
 - [How much do Facebook ads cost for a small business in the US?](https://iamaftabahmed.com/blog/facebook-ads-cost-small-business/): what drives Facebook ad prices and how to set a starting budget
 - [Why your Facebook ads get clicks but no calls (and how to fix it)](https://iamaftabahmed.com/blog/facebook-ads-clicks-but-no-calls/): six causes of clicks without leads and a 7-day fix plan
 

@@ -15,6 +15,7 @@ SV = {'ai': ('AI automation & AI chatbots', 'services/ai-automation/'),
       'lg': ('lead generation systems', 'services/lead-generation/')}
 # Blog posts that industry pages can link to in their Related box (key -> (title, path)).
 POSTS = {'fbcalls': ('Why your Facebook ads get clicks but no calls (and how to fix it)', 'blog/facebook-ads-clicks-but-no-calls/'),
+         'dentalnoshows': ('How to reduce no-shows at a dental office', 'blog/reduce-dental-no-shows/'),
          'fbcost': ('How much do Facebook ads cost for a small business in the US?', 'blog/facebook-ads-cost-small-business/')}
 
 I = [
@@ -51,7 +52,7 @@ I = [
   faq=[('Is an AI receptionist HIPAA compliant?','It can be set up with HIPAA-conscious tools, and it is configured to handle scheduling and general questions rather than collect clinical details. Which platforms fit depends on your current software and your own compliance requirements, so we confirm this together before anything goes live.'),
        ('Will patients know they\'re talking to AI?','The assistant is open about being a virtual assistant, and it\'s set up to be warm, clear and quick. Patients who want a person, or have a clinical question, are handed to your team with the full conversation attached.'),
        ('Does it work with my practice management software?','Often, yes, either directly or through your online booking system. If a direct connection isn\'t possible, the assistant can capture the request and alert your front desk to confirm the time.')],
-  rel=['ai','ga','fbcalls']),
+  rel=['ai','ga','dentalnoshows','fbcalls']),
  dict(slug='real-estate', name='Real Estate & Property', short='Real estate & property', forname='real estate & property', biz='business',
   title='Real Estate Lead Follow-Up & AI Automation for Agents',
   desc='Reply to every buyer and seller lead in seconds. AI follow-up, lead qualification, showing booking and ads for US real estate agents and property teams.',
