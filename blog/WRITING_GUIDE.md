@@ -38,6 +38,7 @@ Author voice: Aftab Ahmed, 8+ years in design and marketing, now AI, automation 
 6b. Once the new post is live, add one contextual link to it from an older related post or from the matching service page's "Related" list, so every post is linked from somewhere other than the blog index.
 6c. Add the post to the top of `feed.xml` (right under `<!-- NEW ITEMS GO HERE (newest first) -->`, same `<item>` format with title, link, guid, pubDate in RFC-822 GMT, dc:creator and description) and update `<lastBuildDate>`.
 6d. Add a line for the post at the top of the blog list in `llms.txt` (under `<!-- NEW POSTS GO HERE -->`): `- [Title](https://iamaftabahmed.com/blog/<slug>/): one-line summary`.
+6e. Write a ready-to-post social draft at `_tools/social/<YYYY-MM-DD>-<slug>.md` in the same format as the existing files there: a LinkedIn version (hook line, 3–5 short points from the post, link) and a short X/Threads version (under 280 characters with link). Same quality rules: no hype words, no em dashes, no hashtag stuffing (0–2 hashtags max).
 7. Add the post URL to `sitemap.xml` (`https://iamaftabahmed.com/blog/<slug>/`, lastmod today) and update the `/blog/` lastmod.
 8. In `blog/topics.md`, change that topic's `- [ ]` to `- [x]`.
 8b. After pushing (step 9), notify search engines instantly via IndexNow (Bing, Yandex, Seznam, Naver; also feeds ChatGPT/Copilot search). Run, best effort; if the network blocks it, just continue:
