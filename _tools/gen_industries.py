@@ -16,6 +16,7 @@ SV = {'ai': ('AI automation & AI chatbots', 'services/ai-automation/'),
 # Blog posts that industry pages can link to in their Related box (key -> (title, path)).
 POSTS = {'fbcalls': ('Why your Facebook ads get clicks but no calls (and how to fix it)', 'blog/facebook-ads-clicks-but-no-calls/'),
          'dentalnoshows': ('How to reduce no-shows at a dental office', 'blog/reduce-dental-no-shows/'),
+         'refollowup': ('Real estate lead follow-up scripts for text and email', 'blog/real-estate-follow-up-scripts/'),
          'fbcost': ('How much do Facebook ads cost for a small business in the US?', 'blog/facebook-ads-cost-small-business/')}
 
 I = [
@@ -86,7 +87,7 @@ I = [
   faq=[('Can the AI reply to Zillow and Realtor.com leads?','In most cases, yes. Portal leads usually arrive by email or through your CRM, and the automation can pick them up and reply by text and email within seconds. The exact setup depends on which portals and CRM you use.'),
        ('Will leads know they\'re talking to an assistant?','The assistant is set up to be clear that it\'s helping on your behalf and to sound natural and friendly. As soon as a lead wants to talk to you or is clearly serious, it hands over with the full conversation attached.'),
        ('Does this replace my CRM?','Not necessarily. If you already use a real estate CRM, the automation is built around it. If your leads are scattered across inboxes and spreadsheets, setting up a simple CRM is usually part of the first step.')],
-  rel=['ai','lg','fbcost']),
+  rel=['ai','lg','refollowup','fbcost']),
  dict(slug='accounting', name='Accounting & CPA Firms', short='Accounting & CPA', forname='accounting & CPA firms', biz='firm',
   title='AI Automation & Client Onboarding for CPA Firms',
   desc='Win more clients without the admin pile-up. AI enquiry handling, automated onboarding, document chasing and lead generation for US accounting and CPA firms.',
