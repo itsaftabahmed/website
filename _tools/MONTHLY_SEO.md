@@ -24,3 +24,4 @@ Runs once a month. Goal: keep the site technically clean, connect it to every pr
 
 ## Log
 - 2026-10-02: set up. Directory profiles created by owner (Clutch, UpCity, DesignRush, GoodFirms, Expertise.com); not yet indexed by search, so not yet in sameAs.
+- 2026-10-05: monthly run 1. Profiles: none of the directory profiles are indexed by search yet (searched name + domain + each directory); nothing added to sameAs. Not added: YouTube @AftabAIAgent and @iamaftabahmed (not confirmed as Aftab's). Technical: all 19 pages pass (no overflow at 390px, one H1, valid JSON-LD, no broken links); sitemap, llms.txt and feed.xml all consistent. Refresh: all posts are under a week old, so did an internal-linking refresh of facebook-ads-clicks-but-no-calls (links to the new follow-up scripts and no-shows posts + industries hub), dateModified 2026-10-05.
