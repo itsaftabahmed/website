@@ -35,7 +35,7 @@ When the queue is empty, do a **refresh run** instead (see below). Stop at about
 2. Run `python3 _tools/gen_industries.py`.
 3. Homepage `index.html`:
    - Add a chip link to `<div class="who">` in the "Built for businesses like yours" tile.
-   - In the industries live demo (`id="demo"`): if the industry already has a picker button (chiropractic `chiro`, insurance `insure`, mortgage `mortgage`, roofing `roof`, fitness `fitness`, auto repair `auto`), change that `<button class="pick">` into `<a class="pick" href="industries/<slug>/" data-k="...">` and set its `url` in the `D` data object to `industries/<slug>/`. Industries not yet in the demo don't need adding.
+   - In the industries live demo (`id="demo"`): if the industry is already one of its picker tiles (roofing `roof`, flooring `floor`, insurance `insure`, fitness `fitness`), change that `<button class="pick">` into `<a class="pick" href="industries/<slug>/" data-k="...">` (keep the icon and label). Don't add new tiles; the demo is limited to 9 high-value industries.
 4. `sitemap.xml`: add `https://iamaftabahmed.com/industries/<slug>/` (lastmod today) and update the `/industries/` lastmod.
 5. `llms.txt`: add a line under `## Industries` in the same format.
 6. `blog/WRITING_GUIDE.md`: add the new page to the list of industry pages posts should link to.
