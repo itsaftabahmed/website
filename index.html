@@ -2047,12 +2047,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   const _open = open; open = () => { hideSay(); _open(); };
   setInterval(() => { if (bot.classList.contains('in') && !calc.classList.contains('open') && !say.classList.contains('show')) { bot.classList.remove('hop'); void bot.offsetWidth; bot.classList.add('hop'); } }, 20000);   // little hop now and then
   let greeted = false; try { greeted = sessionStorage.getItem('abotGreeted') === '1'; } catch (e) {}
-  if (greeted || reduce) { comeIn(true); setTimeout(() => revealWa(false), 3000); }
+  if (greeted || reduce) comeIn(true);
   else {
     setTimeout(() => { if (!bot.classList.contains('in')) { bot.classList.add('peek'); psst.classList.add('show'); sfx.peek(); } }, 2500);   // slide out and peek
     setTimeout(() => { if (!calc.classList.contains('open')) { comeIn(); try { sessionStorage.setItem('abotGreeted', '1'); } catch (e) {} } }, 8000);
     setTimeout(() => showSay('calc', '<b>Quick question 👋</b><span>How much is busywork costing your business? Find out in 10 seconds.</span><em>Show me →</em>', 10000), 9000);   // job 1
-    setTimeout(() => revealWa(true), 26000);   // job 2
   }
 })();
 </script>
