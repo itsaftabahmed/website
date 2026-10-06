@@ -1167,7 +1167,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p class="demo__name" data-f="name">Example: Mike runs an HVAC company.</p>
           <h3 class="demo__head" data-f="head">Answer every call, even on a job</h3>
           <div class="demo__cnt"><div><b data-f="leads">7</b><span>new leads today</span></div><div><b>4s</b><span>average reply</span></div><div><b data-f="booked">5</b><span>booked</span></div></div>
-          <a class="btn btn--red demo__cta" href="industries/home-services/">See how it works for home services →</a>
+          <a class="btn btn--red demo__cta" href="#book">Book a free 30-minute call →</a>
         </div>
       </div>
       <div class="demo__stage" aria-hidden="true">
@@ -2470,7 +2470,7 @@ function init3D(){
   }
 
   const stage = root.querySelector('.demo__svg'), list = root.querySelector('.demo__ntf');
-  const nameEl = root.querySelector('[data-f=name]'), headEl = root.querySelector('[data-f=head]'), cta = root.querySelector('.demo__cta');
+  const nameEl = root.querySelector('[data-f=name]'), headEl = root.querySelector('[data-f=head]');
   const cLeads = root.querySelector('[data-f=leads]'), cBooked = root.querySelector('[data-f=booked]');
   const picks = [...root.querySelectorAll('.pick')];
   picks.forEach(b => { const svg = b.querySelector('svg'); if (svg) svg.innerHTML = person(b.dataset.k); });
@@ -2492,8 +2492,6 @@ function init3D(){
     stage.innerHTML = person(k); stage.classList.remove('happy', 'buzz');
     nameEl.textContent = 'Example: ' + p.name + ' ' + p.biz + '.';
     headEl.textContent = d.head;
-    cta.textContent = d.url === '#book' ? 'Book a call about ' + d.label + ' →' : 'See how it works for ' + d.label + ' →';
-    cta.setAttribute('href', d.url);
     let leads = d.leads, booked = d.booked;
     cLeads.textContent = leads; cBooked.textContent = booked;
     list.innerHTML = '';
