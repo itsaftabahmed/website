@@ -34,8 +34,8 @@ When the queue is empty, do a **refresh run** instead (see below). Stop at about
    - **Never invent statistics, client names, case results or quotes.**
 2. Run `python3 _tools/gen_industries.py`.
 3. Homepage `index.html`:
-   - Add a card to `<div class="inds">` (same `<a class="card ind">` markup) with a simple 24×24 line-icon SVG (stroke `#FF4A50`, stroke-width 1.8, no fill) that fits the industry, the short industry name and the H1 (shortened if long).
    - Add a chip link to `<div class="who">` in the "Built for businesses like yours" tile.
+   - In the industries live demo (`id="demo"`): if the industry already has a picker button (chiropractic `chiro`, insurance `insure`, mortgage `mortgage`, roofing `roof`, fitness `fitness`, auto repair `auto`), change that `<button class="pick">` into `<a class="pick" href="industries/<slug>/" data-k="...">` and set its `url` in the `D` data object to `industries/<slug>/` (so the button text becomes "See how it works for …"). Industries not yet in the demo don't need adding.
 4. `sitemap.xml`: add `https://iamaftabahmed.com/industries/<slug>/` (lastmod today) and update the `/industries/` lastmod.
 5. `llms.txt`: add a line under `## Industries` in the same format.
 6. `blog/WRITING_GUIDE.md`: add the new page to the list of industry pages posts should link to.
