@@ -12,9 +12,9 @@ When a new industry page is added, its 4 starter topics are spread through the q
 - [x] How much do Facebook ads cost for a small business in the US? | facebook ads cost small business
 - [x] How to reduce no-shows at a dental office | reduce dental no shows
 - [x] Real estate lead follow-up scripts for text and email | real estate follow up scripts
+- [x] Speed to lead: why the first 5 minutes decide the sale | speed to lead
 
 ## Queue (in publishing order)
-- [ ] Speed to lead: why the first 5 minutes decide the sale | speed to lead
 - [ ] Missed calls are costing your HVAC business jobs | hvac missed calls
 - [ ] How to automate client onboarding at an accounting firm | accounting client onboarding automation
 - [ ] Missed call text back: never lose a caller again | missed call text back
