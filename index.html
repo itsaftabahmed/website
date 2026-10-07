@@ -981,6 +981,7 @@ footer{padding:20px 0 34px}
 .m1__panel .msteps{margin:0;padding:10px;gap:6px}
 .m1__panel .mst{border-color:transparent;background:none;border-radius:14px}
 .m1__panel .mst.on{border-color:rgba(224,17,25,.5);background:rgba(224,17,25,.08)}
+.mst{cursor:pointer}.mst:not(.on):hover{opacity:1;border-color:#3a3a3a}.mst:focus-visible{outline:2px solid var(--red);outline-offset:2px}
 .m1__foot{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:24px}
 .m1__ex{margin:0;color:var(--muted);font-size:13.5px}
 .m1__stage{position:relative;display:flex;justify-content:flex-end;padding:10px 0}
@@ -2725,8 +2726,10 @@ function fig(k,pose){
   });
   const head = (k, d) => '<div class="mph__top"><svg viewBox="30 20 140 140">' + av(k) + '</svg><div><b>' + esc(d.biz) + '</b><small>● Assistant · replies instantly</small></div></div>';
 
-  function show(k, user) {
-    timers.forEach(clearTimeout); timers = [];
+  let cur = 'hvac';
+  function show(k, user, from) {
+    timers.forEach(clearTimeout); timers = []; cur = k; from = from || 0;
+    const q = [], at = (fn, ms) => q.push([fn, ms]);
     const d = D[k], x = X[k];
     tabs.forEach(b => b.classList.toggle('on', b.dataset.k === k));
     miniScene.innerHTML = scene(k);
@@ -2741,54 +2744,55 @@ function fig(k,pose){
     if (x.src === 'google') {
       scr.innerHTML = '<div class="mg"><div class="mg__bar">🔍 <span class="mg__q"></span><i class="mg__caret"></i></div><div class="mg__ad"><small>Sponsored</small><b>' + esc(x.ah) + '</b><p>' + esc(x.at) + '</p><div class="mg__cta"><span class="mg__call">📞 Call</span><span>Book online</span></div></div><div class="mg__r"><b>Local listing</b><p>Mon–Fri, 8–5</p></div><div class="mg__r"><b>Top 10 near you (2026)</b><p>Compare companies…</p></div><div class="mg__r"><b>Another company</b><p>Call for availability</p></div></div>';
       const q = scr.querySelector('.mg__q');
-      if (reduce) q.textContent = x.q; else [...x.q].forEach((ch, i) => later(() => { q.textContent += ch; }, 250 + i * 55));
+      if (reduce) q.textContent = x.q; else [...x.q].forEach((ch, i) => at(() => { q.textContent += ch; }, 250 + i * 55));
       const tq = reduce ? 0 : 250 + x.q.length * 55;
-      later(() => scr.querySelector('.mg').classList.add('ads'), tq + 250);
-      later(() => scr.querySelector('.mg__call').classList.add('tap'), tq + 1500);
+      at(() => scr.querySelector('.mg').classList.add('ads'), tq + 250);
+      at(() => scr.querySelector('.mg__call').classList.add('tap'), tq + 1500);
       var tMk = tq + 2100;
     } else {
       scr.innerHTML = '<div class="mi"><div class="mi__hd"><svg viewBox="30 20 140 140">' + av(k) + '</svg><div><b>' + esc(d.biz) + '</b><small>Sponsored</small></div></div><div class="mi__img"><svg viewBox="0 0 400 420" preserveAspectRatio="xMidYMid slice">' + scene(k) + '</svg><span>' + esc(x.ah) + '</span></div><div class="mi__cta">' + esc(x.cta) + ' <b>›</b></div><p>' + esc(x.at) + '</p></div>';
-      later(() => scr.querySelector('.mi').classList.add('ads'), 200);
-      later(() => scr.querySelector('.mi__cta').classList.add('tap'), 1900);
+      at(() => scr.querySelector('.mi').classList.add('ads'), 200);
+      at(() => scr.querySelector('.mi__cta').classList.add('tap'), 1900);
       var tMk = 2500;
     }
-    step(0, tMk);
+    at(() => step(0, tMk), 0);
     let t = reduce ? 0 : tMk;
     const tAI = t;
     // 2 · AI
-    later(() => {
+    at(() => {
       step(1, dAI); miniStat.textContent = 'Assistant replying…'; root.style.setProperty('--prog', '50%');
       pose({eyes:'down', mouth:'n', phone:'look', glow:1, head:7, brow:1});
       scr.innerHTML = head(k, d) + '<div class="mph__body"></div>';
     }, t);
     const add = (html, cls) => { const b = scr.querySelector('.mph__body'); if (!b) return null; const el = document.createElement('div'); el.className = cls; el.innerHTML = html; b.appendChild(el); return el; };
-    if (d.call && !reduce) { later(() => phone.classList.add('ring'), t - 600); later(() => phone.classList.remove('ring'), t + 200); }
+    if (d.call && !reduce) { at(() => phone.classList.add('ring'), t - 600); at(() => phone.classList.remove('ring'), t + 200); }
     t += 300;
-    later(() => add((d.call ? '📞 ' : '') + esc(x.via), 'msys' + (d.call ? ' msys--miss' : '')), t);
+    at(() => add((d.call ? '📞 ' : '') + esc(x.via), 'msys' + (d.call ? ' msys--miss' : '')), t);
     t += 600;
     d.m.forEach(([w, txt]) => {
       const ty = w === 'c' ? 850 : 650;
-      if (!reduce) later(() => { const el = add('<i></i><i></i><i></i>', 'mtyp' + (w === 'b' ? ' mtyp--b' : '')); later(() => el && el.remove(), ty); }, t);
+      if (!reduce) at(() => { const el = add('<i></i><i></i><i></i>', 'mtyp' + (w === 'b' ? ' mtyp--b' : '')); later(() => el && el.remove(), ty); }, t);
       t += reduce ? 0 : ty;
-      later(() => add(esc(txt), 'mmsg ' + (w === 'b' ? 'mmsg--b' : 'mmsg--c')), t);
+      at(() => add(esc(txt), 'mmsg ' + (w === 'b' ? 'mmsg--b' : 'mmsg--c')), t);
       t += reduce ? 0 : 850;
     });
     const pick = d.pick || 0;
-    later(() => add(d.t.map((v, i) => '<span data-i="' + i + '">' + esc(v) + '</span>').join(''), 'mchips'), t);
+    at(() => add(d.t.map((v, i) => '<span data-i="' + i + '">' + esc(v) + '</span>').join(''), 'mchips'), t);
     t += reduce ? 0 : 1000;
-    later(() => { const c = scr.querySelector('.mchips span[data-i="' + pick + '"]'); if (c) c.classList.add('tap'); }, t);
+    at(() => { const c = scr.querySelector('.mchips span[data-i="' + pick + '"]'); if (c) c.classList.add('tap'); }, t);
     t += reduce ? 0 : 550;
-    later(() => { add(esc(d.r), 'mmsg mmsg--c'); pose({eyes:'down', mouth:'smile', phone:'look', glow:1, head:5}); }, t);
+    at(() => { add(esc(d.r), 'mmsg mmsg--c'); pose({eyes:'down', mouth:'smile', phone:'look', glow:1, head:5}); }, t);
     t += reduce ? 0 : 1600;
     // 3 · AUTOMATION
     dAI = t - tAI;
+    const tAU = t;
     const dAU = 500 + x.au.length * 650 + 3200;
-    later(() => {
+    at(() => {
       step(2, dAU); miniStat.textContent = 'Booked ✓'; mini.classList.add('ok'); root.style.setProperty('--prog', '100%');
       pose({eyes:'closed', mouth:'open', phone:'hold', thumb:1, head:-4});
       scr.innerHTML = head(k, d) + '<div class="mau"><div class="mau__h">Happened automatically</div></div>';
     }, t);
-    x.au.forEach((a, i) => later(() => {
+    x.au.forEach((a, i) => at(() => {
       const box = scr.querySelector('.mau'); if (!box) return;
       const el = document.createElement('div'); el.className = 'mau__it' + (i < 3 ? ' ok' : '');
       el.innerHTML = '<i>' + a[0] + '</i><div><b>' + esc(a[1]) + '</b><small>' + esc(a[2]) + '</small></div><em>' + (i < 3 ? '✓' : '⏱') + '</em>';
@@ -2796,9 +2800,17 @@ function fig(k,pose){
     }, t + (reduce ? 0 : 500 + i * 650)));
     t += reduce ? 0 : 500 + x.au.length * 650 + 3200;
     const next = () => { if (hover) { later(next, 1500); return; } const i = tabs.findIndex(b => b.dataset.k === k); show(tabs[(i + 1) % tabs.length].dataset.k); };
-    if (auto && !user && !reduce) later(next, t);
+    if (auto && !user && !reduce) at(next, t);
+    const skip = reduce ? 0 : [0, tAI, tAU][from];
+    q.forEach(([fn, ms]) => { if (ms >= skip) later(fn, ms - skip); });
   }
   tabs.forEach(b => b.addEventListener('click', e => { e.preventDefault(); auto = false; show(b.dataset.k, true); }));
+  steps.forEach((s, i) => {
+    s.tabIndex = 0; s.setAttribute('role', 'button');
+    const replay = () => { auto = false; show(cur, true, i); };
+    s.addEventListener('click', replay);
+    s.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); replay(); } });
+  });
   let started = false;
   const go = () => { if (!started) { started = true; show('hvac'); } };
   if ('IntersectionObserver' in window) new IntersectionObserver((es, o) => { if (es.some(e => e.isIntersecting)) { o.disconnect(); go(); } }, {threshold: .2}).observe(root);
