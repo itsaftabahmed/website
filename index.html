@@ -948,7 +948,7 @@ footer{padding:20px 0 34px}
 .tools__row span:hover{border-color:var(--red);color:#fff}
 @media (max-width:640px){.tools{flex-direction:column;align-items:flex-start;gap:14px}}
 /* industries live demo (marketing → AI → automation) */
-.m1{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,440px);gap:60px;align-items:center}
+.m1{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,490px);gap:50px;align-items:center}
 .m1>*{min-width:0}
 .itabs{display:flex;flex-wrap:wrap;gap:7px;margin:30px 0 8px}
 .itab{padding:9px 15px;border-radius:99px;border:1px solid var(--line-2);background:none;color:var(--muted);font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;text-decoration:none;transition:background .25s,color .25s,border-color .25s}
@@ -1017,9 +1017,18 @@ footer{padding:20px 0 34px}
 .mau__it em{font-style:normal;font-size:12px;color:#888}
 .mau__it.ok{border-color:rgba(74,222,128,.35)}.mau__it.ok b,.mau__it.ok em{color:#4ade80}
 /* small owner card beside the phone */
-.mown{position:absolute;left:0;bottom:46px;width:140px;height:180px;border-radius:22px;overflow:hidden;border:1px solid #2c2c2c;box-shadow:0 24px 50px -10px rgba(0,0,0,.8);z-index:3;background:#0d0d0f;animation:mfloat 7s ease-in-out infinite reverse}
+.mown{position:absolute;left:0;bottom:40px;width:170px;height:225px;border-radius:22px;overflow:hidden;border:1px solid #2c2c2c;box-shadow:0 24px 50px -10px rgba(0,0,0,.8);z-index:3;background:#0d0d0f;animation:mfloat 7s ease-in-out infinite reverse}
 .mown__scene{position:absolute;inset:0;width:100%;height:100%}
-.mown__por{position:absolute;left:50%;bottom:34px;transform:translateX(-50%);height:76%}
+.mown__por{position:absolute;left:50%;bottom:36px;transform:translateX(-50%);height:88%;transition:opacity .16s;animation:mbreath 4.2s ease-in-out infinite}
+.mown__por.swap{opacity:.55}
+@keyframes mbreath{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-3px)}}
+.mown__por .eyes{transform-box:fill-box;transform-origin:center;animation:mblink 4.6s infinite}
+@keyframes mblink{0%,93%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+.mown::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(255,255,255,.04);pointer-events:none}
+.mown.ok{border-color:rgba(74,222,128,.45);box-shadow:0 24px 50px -10px rgba(0,0,0,.8),0 0 0 4px rgba(74,222,128,.1)}
+.m1__stage::before{content:"";position:absolute;right:40px;top:12%;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(224,17,25,.22),transparent 65%);pointer-events:none}
+.msteps{position:relative}
+.msteps::after{content:"";position:absolute;left:-1px;top:0;width:2px;height:var(--prog,0%);background:linear-gradient(#4ade80,#E01119);transition:height .9s var(--ease)}
 .mown__cap{position:absolute;left:0;right:0;bottom:0;padding:8px 10px;background:rgba(10,10,10,.85);backdrop-filter:blur(6px);border-top:1px solid #2a2a2a}
 .mown__cap b{display:block;font-size:10.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .mown__cap span{display:flex;align-items:center;gap:6px;font-size:10px;color:#f5b84b}
@@ -1028,8 +1037,8 @@ footer{padding:20px 0 34px}
 .mown.ok .mown__cap span{color:#4ade80}.mown.ok .mown__cap i{background:#4ade80}
 @media (max-width:980px){.m1{grid-template-columns:minmax(0,1fr);gap:30px}.m1__stage{max-width:460px;margin:0 auto;width:100%}}
 @media (max-width:640px){.itabs{flex-wrap:nowrap;overflow-x:auto;margin-right:-24px;padding-bottom:4px;scrollbar-width:none}.itabs::-webkit-scrollbar{display:none}.itab{flex:none}
-  .m1__stage{padding-left:0;justify-content:flex-end}.mph{width:280px;height:540px}.mown{width:118px;height:150px;left:0;bottom:30px}.mown__por{bottom:30px}.mst b{font-size:17px}}
-@media (prefers-reduced-motion:reduce){.mph,.mown{animation:none}}
+  .m1__stage{padding-left:0;justify-content:flex-end}.mph{width:280px;height:540px}.mown{width:132px;height:176px;left:0;bottom:24px}.mown__por{bottom:30px}.mst b{font-size:17px}}
+@media (prefers-reduced-motion:reduce){.mph,.mown,.mown__por,.mown__por .eyes{animation:none}}
 /* robot speech bubble + WhatsApp button it reveals */
 .abot-say{position:fixed;right:24px;bottom:122px;z-index:98;width:270px;padding:15px 36px 15px 17px;border-radius:18px 18px 4px 18px;background:rgba(18,18,18,.96);border:1px solid #2e2e2e;box-shadow:0 24px 60px -10px rgba(0,0,0,.85);cursor:pointer;opacity:0;transform:translateY(10px) scale(.96);transform-origin:bottom right;pointer-events:none;transition:opacity .35s,transform .45s cubic-bezier(.3,1.4,.5,1)}
 .abot-say.show{opacity:1;transform:none;pointer-events:auto}
@@ -1243,7 +1252,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="m1__stage" aria-hidden="true">
         <div class="mph"><div class="mph__isl"></div><div class="mph__scr"></div></div>
-        <div class="mown"><svg class="mown__scene" viewBox="0 0 400 420" preserveAspectRatio="xMidYMid slice"></svg><svg class="mown__por" viewBox="0 0 200 250"></svg>
+        <div class="mown"><svg class="mown__scene" viewBox="0 0 400 420" preserveAspectRatio="xMidYMid slice"></svg><svg class="mown__por" viewBox="0 0 220 300"></svg>
           <div class="mown__cap"><b data-f="mname">Mike · Rapid Air HVAC</b><span><i></i><em data-f="mstat">On a job</em></span></div></div>
       </div>
     </div>
@@ -2579,6 +2588,53 @@ function init3D(){
       '<rect width="400" height="420" fill="url(#vg)"/><defs><radialGradient id="vg" cx="50%" cy="55%" r="70%"><stop offset=".55" stop-color="rgba(0,0,0,0)"/><stop offset="1" stop-color="rgba(0,0,0,.6)"/></radialGradient></defs>';
   }
 
+  /* ---------- posable owner figure (blinks, looks at phone, smiles) ---------- */
+  let fid=0;
+function fig(k,pose){
+ const p=P[k],id='fg'+(fid++),sk=p.skin,skS=shade(sk,-.14),h=p.hair;
+ const top={coat:'#efefef',work:'#22344c',suit:'#1d2840',suit2:'#2a2a2e',blouse:'#3b2f3a',tee:'#1c1c1c'}[p.outfit],topS=shade(top,-.12);
+ let s=`<defs><linearGradient id="f${id}" x1="0" x2="1"><stop offset="0" stop-color="${sk}"/><stop offset="1" stop-color="${skS}"/></linearGradient><linearGradient id="t${id}" x1="0" x2="1"><stop offset="0" stop-color="${top}"/><stop offset="1" stop-color="${topS}"/></linearGradient></defs>`;
+ const FS=`url(#f${id})`,TS=`url(#t${id})`;
+ // torso
+ s+=`<path d="M20 300 C24 236 60 206 110 204 C160 206 196 236 200 300Z" fill="${TS}"/>`;
+ if(p.outfit==='coat')s+=`<path d="M92 206 L110 252 L128 206 Q110 212 92 206Z" fill="#76b8be"/><path d="M86 208 L104 300 M134 208 L116 300" stroke="rgba(0,0,0,.18)" stroke-width="2.5"/>`;
+ if(p.outfit==='work')s+=`<path d="M88 204 L110 232 L132 204 L142 214 L110 240 L78 214Z" fill="#2c4462"/><rect x="138" y="236" width="26" height="12" rx="3" fill="#E01119"/>`;
+ if(p.outfit==='blouse')s+=`<path d="M90 206 Q110 232 130 206" stroke="#5a4a58" stroke-width="3" fill="none"/><circle cx="110" cy="224" r="3" fill="#d9b26a"/>`;
+ // neck
+ s+=`<path d="M96 160 L96 206 Q110 216 124 206 L124 160Z" fill="${FS}"/><path d="M96 180 Q110 192 124 180 L124 170 Q110 182 96 170Z" fill="rgba(0,0,0,.18)"/>`;
+ // head group
+ s+=`<g class="hd" transform="rotate(${pose.head||0} 110 170)">`;
+ if(p.hs==='bun')s+=`<ellipse cx="110" cy="54" rx="20" ry="17" fill="${h}"/>`;
+ if(p.hs==='long')s+=`<path d="M64 106 C56 154 62 196 72 210 L148 210 C158 196 164 154 156 106Z" fill="${h}"/>`;
+ s+=`<ellipse cx="64" cy="112" rx="7" ry="13" fill="${FS}"/><ellipse cx="156" cy="112" rx="7" ry="13" fill="${FS}"/>`;
+ s+=`<path d="M110 50 C142 50 158 72 158 102 C158 128 152 146 142 158 C132 170 122 176 110 176 C98 176 88 170 78 158 C68 146 62 128 62 102 C62 72 78 50 110 50Z" fill="${FS}"/>`;
+ s+=`<path d="M142 84 C156 104 156 134 140 158 C132 168 122 174 114 175 C132 154 144 124 142 84Z" fill="rgba(0,0,0,.10)"/>`;
+ if(p.hs==='bun')s+=`<path d="M62 104 C60 66 82 46 110 46 C138 46 160 66 158 104 C152 84 138 72 110 70 C86 72 70 82 62 104Z" fill="${h}"/>`;
+ if(p.hs==='long')s+=`<path d="M60 114 C56 68 80 44 110 44 C140 44 164 68 160 114 C156 90 144 74 122 70 C106 78 86 84 72 86 C66 94 62 104 60 114Z" fill="${h}"/>`;
+ if(p.hs==='short')s+=`<path d="M62 98 C60 64 82 44 112 44 C142 44 160 64 158 96 C154 80 146 72 130 70 C120 76 94 76 80 74 C70 78 64 86 62 98Z" fill="${h}"/>`;
+ const by=pose.brow?-5:0, br=p.hair==='#8d8d8d'?'#666':h;
+ s+=`<path d="M80 ${96+by} Q90 ${90+by} 100 ${94+by} M120 ${94+by} Q130 ${90+by} 140 ${96+by}" stroke="${br}" stroke-width="3.2" fill="none" stroke-linecap="round"/>`;
+ if(pose.eyes==='closed') s+=`<path d="M82 111 Q90 115 99 111 M121 111 Q130 115 138 111" stroke="#2a1a12" stroke-width="2.6" fill="none" stroke-linecap="round"/>`;
+ else { const dy=pose.eyes==='down'?3:0; s+=`<g class="eyes"><path d="M82 110 Q90 104 99 110 Q90 114 82 110Z M121 110 Q130 104 138 110 Q130 114 121 110Z" fill="#fff" stroke="#2a1a12" stroke-width="1.2"/><circle cx="${91+(pose.eyes==='down'?2:0)}" cy="${109.5+dy*.6}" r="3.4" fill="#2a1a12"/><circle cx="${129.5+(pose.eyes==='down'?2:0)}" cy="${109.5+dy*.6}" r="3.4" fill="#2a1a12"/></g>`;
+   if(pose.eyes==='down') s+=`<path d="M81 108 Q90 105 100 108 M120 108 Q130 105 139 108" stroke="${skS}" stroke-width="3" fill="none"/>`; }
+ s+=`<path d="M110 114 Q107 128 104 133 Q110 136 116 133" stroke="${shade(sk,-.25)}" stroke-width="2" fill="none" stroke-linecap="round"/>`;
+ if(pose.mouth==='open') s+=`<path d="M96 146 Q110 162 124 146 Z" fill="#5a1e18"/><path d="M98 147 h24 l-2 4 h-20z" fill="#fff"/>`;
+ else if(pose.mouth==='smile') s+=`<path d="M95 147 Q110 158 125 147" stroke="${shade(sk,-.28)}" stroke-width="3" fill="none" stroke-linecap="round"/>`;
+ else s+=`<path d="M100 150 Q110 152 120 150" stroke="${shade(sk,-.25)}" stroke-width="2.8" fill="none" stroke-linecap="round"/>`;
+ s+=`</g>`;
+ // phone arm
+ if(pose.phone==='hold'||pose.phone==='look'){
+  const up=pose.phone==='look';
+  const px=up?126:134, py=up?176:214, rot=up?-14:-6;
+  s+=`<path d="M196 300 C200 270 192 ${up?236:256} ${px+30} ${py+60} L${px+12} ${py+66} C${px+40} ${py+90} 170 290 168 300Z" fill="${TS}"/>`;
+  s+=`<g transform="rotate(${rot} ${px+20} ${py+40})"><rect x="${px}" y="${py}" width="40" height="76" rx="7" fill="#111" stroke="#3a3a3a" stroke-width="2"/><rect class="scr" x="${px+3}" y="${py+4}" width="34" height="68" rx="5" fill="${pose.glow?'#ff3b42':'#2a0a0c'}"/></g>`;
+  s+=`<ellipse cx="${px+22}" cy="${py+66}" rx="15" ry="12" fill="${FS}"/>`;
+  if(pose.glow) s+=`<ellipse cx="${px+20}" cy="${py+30}" rx="46" ry="40" fill="rgba(255,60,60,.25)" filter="url(#gb)"/><defs><filter id="gb"><feGaussianBlur stdDeviation="10"/></filter></defs>`;
+ }
+ if(pose.thumb){ s+=`<path d="M24 300 C20 270 28 246 56 236 L66 244 C48 256 46 280 52 300Z" fill="${TS}"/><rect x="46" y="222" width="30" height="26" rx="9" fill="${FS}"/><path d="M52 230h22M52 236h22M52 242h20" stroke="${skS}" stroke-width="1.6" stroke-linecap="round"/><rect x="44" y="200" width="11" height="28" rx="5.5" fill="${FS}" transform="rotate(-12 49 226)"/>`; }
+ return s;}
+
+
   const D = {
     dental:  {name:'Dental', biz:'Bright Smile Dental', owner:'Dr. Lena', role:'runs a dental practice', pain:'New-patient calls missed during treatment', intro:'Website chat · 9:40 pm', call:0,
       m:[['c','Hi, I chipped my front tooth at dinner. Do you see emergencies?'],['b','Sorry about that! Yes, we keep same-day slots for emergencies. Are you in any pain right now?'],['c','A little. Mostly worried about how it looks.'],['b','Understood. Do you have dental insurance you’d like us to check?'],['c','Yes, Delta Dental.'],['b','Great, we’re in network with Delta. Dr. Lena can see you tomorrow. Which time works?']],
@@ -2637,7 +2693,8 @@ function init3D(){
   const steps = [...root.querySelectorAll('.mst')];
   const phone = $('.mph'), scr = $('.mph__scr'), mini = $('.mown'), miniScene = $('.mown__scene'), miniPor = $('.mown__por');
   const miniName = $('[data-f=mname]'), miniStat = $('[data-f=mstat]'), ex = $('[data-f=ex]');
-  let timers = [], auto = true;
+  let timers = [], auto = true, hover = false;
+  root.addEventListener('mouseenter', () => { hover = true; }); root.addEventListener('mouseleave', () => { hover = false; });
   const later = (fn, ms) => timers.push(setTimeout(fn, ms));
   const esc = t => t.replace(/</g, '&lt;');
   const step = n => steps.forEach((s, i) => { s.classList.toggle('on', i === n); s.classList.toggle('done', i < n); });
@@ -2647,7 +2704,10 @@ function init3D(){
     timers.forEach(clearTimeout); timers = [];
     const d = D[k], x = X[k];
     tabs.forEach(b => b.classList.toggle('on', b.dataset.k === k));
-    miniScene.innerHTML = scene(k); miniPor.innerHTML = av(k);
+    miniScene.innerHTML = scene(k);
+    const pose = (p, glow) => { miniPor.classList.add('swap'); setTimeout(() => { miniPor.innerHTML = fig(k, p); miniPor.classList.remove('swap'); }, reduce ? 0 : 160); };
+    pose({eyes:'open', mouth:'n', phone:'hold', head:0});
+    root.style.setProperty('--prog', '0%');
     miniName.textContent = d.owner + ' · ' + d.biz; miniStat.textContent = d.call ? 'On a job' : 'Away'; mini.classList.remove('ok');
     ex.textContent = 'Example: ' + d.owner + ' ' + d.role + '.';
     phone.classList.remove('ring');
@@ -2670,7 +2730,8 @@ function init3D(){
     let t = reduce ? 0 : tMk;
     // 2 · AI
     later(() => {
-      step(1); miniStat.textContent = 'Assistant replying…';
+      step(1); miniStat.textContent = 'Assistant replying…'; root.style.setProperty('--prog', '50%');
+      pose({eyes:'down', mouth:'n', phone:'look', glow:1, head:7, brow:1});
       scr.innerHTML = head(k, d) + '<div class="mph__body"></div>';
     }, t);
     const add = (html, cls) => { const b = scr.querySelector('.mph__body'); if (!b) return null; const el = document.createElement('div'); el.className = cls; el.innerHTML = html; b.appendChild(el); return el; };
@@ -2690,11 +2751,12 @@ function init3D(){
     t += reduce ? 0 : 1000;
     later(() => { const c = scr.querySelector('.mchips span[data-i="' + pick + '"]'); if (c) c.classList.add('tap'); }, t);
     t += reduce ? 0 : 550;
-    later(() => add(esc(d.r), 'mmsg mmsg--c'), t);
+    later(() => { add(esc(d.r), 'mmsg mmsg--c'); pose({eyes:'down', mouth:'smile', phone:'look', glow:1, head:5}); }, t);
     t += reduce ? 0 : 1600;
     // 3 · AUTOMATION
     later(() => {
-      step(2); miniStat.textContent = 'Booked ✓'; mini.classList.add('ok');
+      step(2); miniStat.textContent = 'Booked ✓'; mini.classList.add('ok'); root.style.setProperty('--prog', '100%');
+      pose({eyes:'closed', mouth:'open', phone:'hold', thumb:1, head:-4});
       scr.innerHTML = head(k, d) + '<div class="mau"><div class="mau__h">Happened automatically</div></div>';
     }, t);
     x.au.forEach((a, i) => later(() => {
@@ -2704,7 +2766,8 @@ function init3D(){
       box.appendChild(el);
     }, t + (reduce ? 0 : 500 + i * 650)));
     t += reduce ? 0 : 500 + x.au.length * 650 + 3200;
-    if (auto && !user && !reduce) later(() => { const i = tabs.findIndex(b => b.dataset.k === k); show(tabs[(i + 1) % tabs.length].dataset.k); }, t);
+    const next = () => { if (hover) { later(next, 1500); return; } const i = tabs.findIndex(b => b.dataset.k === k); show(tabs[(i + 1) % tabs.length].dataset.k); };
+    if (auto && !user && !reduce) later(next, t);
   }
   tabs.forEach(b => b.addEventListener('click', e => { e.preventDefault(); auto = false; show(b.dataset.k, true); }));
   let started = false;
