@@ -14,7 +14,8 @@ SV = {'ai': ('AI automation & AI chatbots', 'services/ai-automation/'),
       'fb': ('Facebook & Instagram ads', 'services/facebook-ads/'),
       'lg': ('lead generation systems', 'services/lead-generation/')}
 # Blog posts that industry pages can link to in their Related box (key -> (title, path)).
-POSTS = {'fbcalls': ('Why your Facebook ads get clicks but no calls (and how to fix it)', 'blog/facebook-ads-clicks-but-no-calls/'),
+POSTS = {'hvacmissed': ('Missed calls are costing your HVAC business jobs', 'blog/hvac-missed-calls/'),
+         'fbcalls': ('Why your Facebook ads get clicks but no calls (and how to fix it)', 'blog/facebook-ads-clicks-but-no-calls/'),
          'dentalnoshows': ('How to reduce no-shows at a dental office', 'blog/reduce-dental-no-shows/'),
          'refollowup': ('Real estate lead follow-up scripts for text and email', 'blog/real-estate-follow-up-scripts/'),
          'fbcost': ('How much do Facebook ads cost for a small business in the US?', 'blog/facebook-ads-cost-small-business/')}
@@ -155,7 +156,7 @@ I = [
   faq=[('Does missed-call text back work with my business number?','In most cases, yes. It can usually be added to your existing number through your phone provider or a business texting tool, so customers keep calling the number they already know.'),
        ('Can it give prices or quotes?','It can share starting prices or ranges you approve and collect the details and photos you need to quote. Final quotes stay with you, so nothing is promised that you haven\'t signed off on.'),
        ('Will it work with my scheduling or field service software?','Often, yes. Many field service tools can connect directly or through automation platforms. If not, bookings can go into a calendar with an alert to you or your office.')],
-  rel=['ai','ga','lg']),
+  rel=['ai','ga','hvacmissed']),
  dict(slug='med-spa', name='Med Spas & Aesthetics', short='Med spa', forname='med spas & aesthetics clinics', biz='clinic', who='client',
   title='Lead Generation & AI Booking for Med Spas | Aftab Ahmed',
   desc='Turn ad leads into booked consultations. Instant replies, AI booking, reminders and Facebook and Instagram ads for US med spas and aesthetics clinics.',

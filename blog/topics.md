@@ -8,6 +8,7 @@ dental, real estate, general, home services, accounting, general, med spa, law, 
 When a new industry page is added, its 4 starter topics are spread through the queue (see `_tools/INDUSTRY_GUIDE.md`).
 
 ## Published
+- [x] Missed calls are costing your HVAC business jobs | hvac missed calls
 - [x] Why your Facebook ads get clicks but no calls (and how to fix it) | facebook ads clicks but no calls
 - [x] How much do Facebook ads cost for a small business in the US? | facebook ads cost small business
 - [x] How to reduce no-shows at a dental office | reduce dental no shows
@@ -15,7 +16,6 @@ When a new industry page is added, its 4 starter topics are spread through the q
 - [x] Speed to lead: why the first 5 minutes decide the sale | speed to lead
 
 ## Queue (in publishing order)
-- [ ] Missed calls are costing your HVAC business jobs | hvac missed calls
 - [ ] How to automate client onboarding at an accounting firm | accounting client onboarding automation
 - [ ] Missed call text back: never lose a caller again | missed call text back
 - [ ] How med spas can reduce consultation no-shows | med spa no shows
