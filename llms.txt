@@ -22,6 +22,7 @@
 
 ## Blog (newest first)
 <!-- NEW POSTS GO HERE -->
+- [How to automate client onboarding at an accounting firm](https://iamaftabahmed.com/blog/accounting-client-onboarding-automation/): the onboarding steps a CPA or bookkeeping firm can automate, a sample flow, document security and a one-week setup plan
 - [Missed calls are costing your HVAC business jobs](https://iamaftabahmed.com/blog/hvac-missed-calls/): when HVAC companies miss calls, what each one is worth, and how to text back and book every caller
 - [Speed to lead: why the first 5 minutes decide the sale](https://iamaftabahmed.com/blog/speed-to-lead/): why fast replies win customers and how to answer every lead in seconds
 - [Real estate lead follow-up scripts for text and email](https://iamaftabahmed.com/blog/real-estate-follow-up-scripts/): first-text, portal, open house and seller scripts plus a 30-day follow-up plan for agents

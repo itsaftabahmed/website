@@ -14,7 +14,8 @@ SV = {'ai': ('AI automation & AI chatbots', 'services/ai-automation/'),
       'fb': ('Facebook & Instagram ads', 'services/facebook-ads/'),
       'lg': ('lead generation systems', 'services/lead-generation/')}
 # Blog posts that industry pages can link to in their Related box (key -> (title, path)).
-POSTS = {'hvacmissed': ('Missed calls are costing your HVAC business jobs', 'blog/hvac-missed-calls/'),
+POSTS = {'cpaonboard': ('How to automate client onboarding at an accounting firm', 'blog/accounting-client-onboarding-automation/'),
+         'hvacmissed': ('Missed calls are costing your HVAC business jobs', 'blog/hvac-missed-calls/'),
          'fbcalls': ('Why your Facebook ads get clicks but no calls (and how to fix it)', 'blog/facebook-ads-clicks-but-no-calls/'),
          'dentalnoshows': ('How to reduce no-shows at a dental office', 'blog/reduce-dental-no-shows/'),
          'refollowup': ('Real estate lead follow-up scripts for text and email', 'blog/real-estate-follow-up-scripts/'),
@@ -122,7 +123,7 @@ I = [
   faq=[('Is it safe to use AI with client financial information?','The assistant is set up to handle enquiries, scheduling and reminders, not to collect sensitive financial data in chat. Documents still go through your secure client portal, and the tools are chosen to fit your firm\'s security and confidentiality requirements.'),
        ('Will the AI give tax advice to clients?','No. It answers routine questions about your services and process and hands anything that needs professional judgment to your team. That keeps advice where it belongs and saves your staff time on the basics.'),
        ('Does it work with the software we already use?','Usually, yes. Automation is built around your existing tools, such as your CRM or practice management system, client portal, e-signature and calendar, rather than forcing you to switch.')],
-  rel=['ai','ga','lg']),
+  rel=['ai','lg','cpaonboard']),
  dict(slug='home-services', name='Home Services', short='Home services', forname='home service businesses', biz='business', who='customer',
   title='Lead Follow-Up & AI Automation for Home Service Businesses',
   desc='Answer every call, even from the job site. Missed-call text back, quote follow-up, booking and local ads for US HVAC, plumbing, roofing and more.',
