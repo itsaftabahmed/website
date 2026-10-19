@@ -19,6 +19,7 @@
 - [Home Services](https://iamaftabahmed.com/industries/home-services/): missed-call text back, quote follow-up, booking and local ads for contractors
 - [Med Spas & Aesthetics](https://iamaftabahmed.com/industries/med-spa/): offer-led Meta ads, instant lead replies, booking and rebooking reminders
 - [Law Firms](https://iamaftabahmed.com/industries/law/): 24/7 intake, case screening, consultation booking and practice-area ads
+- [Chiropractors & Physical Therapy](https://iamaftabahmed.com/industries/chiropractic/): new-patient booking, missed-call text back, care-plan reminders and local ads
 
 ## Blog (newest first)
 <!-- NEW POSTS GO HERE -->

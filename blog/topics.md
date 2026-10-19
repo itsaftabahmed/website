@@ -19,6 +19,7 @@ When a new industry page is added, its 4 starter topics are spread through the q
 ## Queue (in publishing order)
 - [ ] Missed call text back: never lose a caller again | missed call text back
 - [ ] How med spas can reduce consultation no-shows | med spa no shows
+- [ ] How chiropractors can get more new patients without discounts | chiropractor new patients
 - [ ] Law firm client intake: how to stop losing potential cases | law firm client intake
 - [ ] AI receptionists: answering calls and booking appointments 24/7 | ai receptionist for small business
 - [ ] Facebook ads for dentists: a practical guide | facebook ads for dentists
@@ -28,6 +29,7 @@ When a new industry page is added, its 4 starter topics are spread through the q
 - [ ] Facebook ads for accountants and CPA firms | facebook ads for accountants
 - [ ] What can an AI chatbot actually do for a service business? | ai chatbot for small business
 - [ ] Facebook ads for med spas and aesthetic clinics | facebook ads for med spa
+- [ ] How to reduce no-shows at a chiropractic clinic | chiropractic no shows
 - [ ] Facebook ads for law firms: what works and what gets rejected | facebook ads for lawyers
 - [ ] AI automation for small businesses: where to start | ai automation for small business
 - [ ] Dental front desk phone scripts that book more new patients | dental phone scripts
@@ -37,6 +39,7 @@ When a new industry page is added, its 4 starter topics are spread through the q
 - [ ] Tax season workflow automation for CPA firms | tax season automation
 - [ ] Lead generation for small businesses: the complete 2026 guide | lead generation for small business
 - [ ] Med spa lead follow-up: turning Instagram leads into bookings | med spa lead follow up
+- [ ] Why patients drop off care plans (and how to keep them coming back) | chiropractic patient retention
 - [ ] AI intake for law firms: what it can and can't do | ai intake for law firms
 - [ ] Why your website gets traffic but no leads | website traffic but no leads
 - [ ] Google Ads for dentists: keywords, budgets and landing pages | google ads for dentists
@@ -46,6 +49,7 @@ When a new industry page is added, its 4 starter topics are spread through the q
 - [ ] Facebook ad account disabled? What to do next | facebook ad account disabled
 - [ ] Why your Facebook leads never answer the phone | facebook leads not answering
 - [ ] Google Ads for med spas and cosmetic clinics | google ads for med spa
+- [ ] Google Ads for chiropractors: what to bid on and what to skip | google ads for chiropractors
 - [ ] Google Ads for law firms on a small budget | google ads for law firms
 - [ ] Google Ads vs Facebook ads: which is better for leads? | google ads vs facebook ads for leads
 - [ ] How to get more new dental patients without discounting | how to get more dental patients
