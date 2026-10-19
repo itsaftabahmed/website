@@ -14,7 +14,8 @@ SV = {'ai': ('AI automation & AI chatbots', 'services/ai-automation/'),
       'fb': ('Facebook & Instagram ads', 'services/facebook-ads/'),
       'lg': ('lead generation systems', 'services/lead-generation/')}
 # Blog posts that industry pages can link to in their Related box (key -> (title, path)).
-POSTS = {'mctb': ('Missed call text back: never lose a caller again', 'blog/missed-call-text-back/'),
+POSTS = {'medspanoshow': ('How med spas can reduce consultation no-shows', 'blog/med-spa-no-shows/'),
+         'mctb': ('Missed call text back: never lose a caller again', 'blog/missed-call-text-back/'),
          'cpaonboard': ('How to automate client onboarding at an accounting firm', 'blog/accounting-client-onboarding-automation/'),
          'hvacmissed': ('Missed calls are costing your HVAC business jobs', 'blog/hvac-missed-calls/'),
          'fbcalls': ('Why your Facebook ads get clicks but no calls (and how to fix it)', 'blog/facebook-ads-clicks-but-no-calls/'),
@@ -192,7 +193,7 @@ I = [
   faq=[('Are there rules for med spa advertising on Facebook and Instagram?','Yes. Meta has policies on health and cosmetic ads, such as avoiding before-and-after claims that imply guaranteed results or target body image negatively. Campaigns are written to stay within those policies and any rules that apply to your services.'),
        ('Can the AI answer questions about treatments?','It can answer general questions you approve, such as what a treatment involves, typical downtime and price ranges. Medical questions and suitability are always handed to your licensed staff.'),
        ('Will this work with my booking software?','Usually, yes. Most med spa booking platforms can connect directly or through automation tools, so appointments land in the calendar you already use.')],
-  rel=['fb','ai','fbcalls']),
+  rel=['fb','ai','medspanoshow','fbcalls']),
  dict(slug='law', name='Law Firms', short='Law firm', forname='law firms', biz='firm', who='client',
   title='Client Intake Automation & Lead Generation for Law Firms',
   desc='Never lose a potential client to voicemail. AI intake, instant follow-up, consultation booking and Google Ads for US law firms and solo attorneys.',

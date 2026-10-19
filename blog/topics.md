@@ -8,6 +8,7 @@ dental, real estate, general, home services, accounting, general, med spa, law, 
 When a new industry page is added, its 4 starter topics are spread through the queue (see `_tools/INDUSTRY_GUIDE.md`).
 
 ## Published
+- [x] How med spas can reduce consultation no-shows | med spa no shows
 - [x] Missed call text back: never lose a caller again | missed call text back
 - [x] How to automate client onboarding at an accounting firm | accounting client onboarding automation
 - [x] Missed calls are costing your HVAC business jobs | hvac missed calls
@@ -18,7 +19,6 @@ When a new industry page is added, its 4 starter topics are spread through the q
 - [x] Speed to lead: why the first 5 minutes decide the sale | speed to lead
 
 ## Queue (in publishing order)
-- [ ] How med spas can reduce consultation no-shows | med spa no shows
 - [ ] How chiropractors can get more new patients without discounts | chiropractor new patients
 - [ ] Law firm client intake: how to stop losing potential cases | law firm client intake
 - [ ] AI receptionists: answering calls and booking appointments 24/7 | ai receptionist for small business

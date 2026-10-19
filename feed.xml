@@ -6,8 +6,16 @@
   <atom:link href="https://iamaftabahmed.com/feed.xml" rel="self" type="application/rss+xml"/>
   <description>Practical guides on Google Ads, Facebook ads, lead generation and AI automation for US small businesses.</description>
   <language>en-us</language>
-  <lastBuildDate>Mon, 19 Oct 2026 13:30:00 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 19 Oct 2026 14:00:00 GMT</lastBuildDate>
 <!-- NEW ITEMS GO HERE (newest first) -->
+  <item>
+    <title>How med spas can reduce consultation no-shows</title>
+    <link>https://iamaftabahmed.com/blog/med-spa-no-shows/</link>
+    <guid isPermaLink="true">https://iamaftabahmed.com/blog/med-spa-no-shows/</guid>
+    <pubDate>Mon, 19 Oct 2026 14:00:00 GMT</pubDate>
+    <dc:creator>Aftab Ahmed</dc:creator>
+    <description>How deposits, smart reminders, pre-visit content and waitlists cut consultation no-shows at med spas, without scaring off new clients.</description>
+  </item>
   <item>
     <title>Missed call text back: never lose a caller again</title>
     <link>https://iamaftabahmed.com/blog/missed-call-text-back/</link>
