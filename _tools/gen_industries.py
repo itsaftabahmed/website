@@ -14,7 +14,8 @@ SV = {'ai': ('AI automation & AI chatbots', 'services/ai-automation/'),
       'fb': ('Facebook & Instagram ads', 'services/facebook-ads/'),
       'lg': ('lead generation systems', 'services/lead-generation/')}
 # Blog posts that industry pages can link to in their Related box (key -> (title, path)).
-POSTS = {'medspanoshow': ('How med spas can reduce consultation no-shows', 'blog/med-spa-no-shows/'),
+POSTS = {'chironew': ('How chiropractors can get more new patients without discounts', 'blog/chiropractor-new-patients/'),
+         'medspanoshow': ('How med spas can reduce consultation no-shows', 'blog/med-spa-no-shows/'),
          'mctb': ('Missed call text back: never lose a caller again', 'blog/missed-call-text-back/'),
          'cpaonboard': ('How to automate client onboarding at an accounting firm', 'blog/accounting-client-onboarding-automation/'),
          'hvacmissed': ('Missed calls are costing your HVAC business jobs', 'blog/hvac-missed-calls/'),
@@ -261,7 +262,7 @@ I = [
   faq=[('Is this HIPAA compliant?','Chiropractic and PT clinics are generally covered by HIPAA, so the setup is built to keep health details out of open texts and uses tools that will sign a Business Associate Agreement where patient information is handled. Your own compliance review still applies, and no automation is a compliance guarantee on its own.'),
        ('Will patients know they\'re talking to an AI?','The assistant is set up to be clear about what it is, and it hands anything clinical or sensitive to your team. Most patients care that they get a fast, helpful answer and an easy way to book.'),
        ('Does it work with our scheduling or EHR software?','Often, yes. Many practice management and scheduling tools can connect directly or through automation platforms. Where they can\'t, bookings can go to a calendar with an alert to the front desk.')],
-  rel=['ai','ga','dentalnoshows']),
+  rel=['ai','ga','chironew','dentalnoshows']),
 ]
 
 def head(title, desc, url, ld, extra=''):
