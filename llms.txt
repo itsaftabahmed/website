@@ -23,6 +23,7 @@
 
 ## Blog (newest first)
 <!-- NEW POSTS GO HERE -->
+- [Missed call text back: never lose a caller again](https://iamaftabahmed.com/blog/missed-call-text-back/): how missed call text back works, first-text templates by industry, A2P 10DLC and opt-out rules, and setup on an existing number
 - [How to automate client onboarding at an accounting firm](https://iamaftabahmed.com/blog/accounting-client-onboarding-automation/): the onboarding steps a CPA or bookkeeping firm can automate, a sample flow, document security and a one-week setup plan
 - [Missed calls are costing your HVAC business jobs](https://iamaftabahmed.com/blog/hvac-missed-calls/): when HVAC companies miss calls, what each one is worth, and how to text back and book every caller
 - [Speed to lead: why the first 5 minutes decide the sale](https://iamaftabahmed.com/blog/speed-to-lead/): why fast replies win customers and how to answer every lead in seconds
