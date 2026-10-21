@@ -14,7 +14,8 @@ SV = {'ai': ('AI automation & AI chatbots', 'services/ai-automation/'),
       'fb': ('Facebook & Instagram ads', 'services/facebook-ads/'),
       'lg': ('lead generation systems', 'services/lead-generation/')}
 # Blog posts that industry pages can link to in their Related box (key -> (title, path)).
-POSTS = {'chironew': ('How chiropractors can get more new patients without discounts', 'blog/chiropractor-new-patients/'),
+POSTS = {'lawintake': ('Law firm client intake: how to stop losing potential cases', 'blog/law-firm-client-intake/'),
+         'chironew': ('How chiropractors can get more new patients without discounts', 'blog/chiropractor-new-patients/'),
          'medspanoshow': ('How med spas can reduce consultation no-shows', 'blog/med-spa-no-shows/'),
          'mctb': ('Missed call text back: never lose a caller again', 'blog/missed-call-text-back/'),
          'cpaonboard': ('How to automate client onboarding at an accounting firm', 'blog/accounting-client-onboarding-automation/'),
@@ -228,7 +229,7 @@ I = [
   faq=[('Will the AI give legal advice?','No. It is set up only to handle intake: collecting contact details and basic facts, answering general questions about your firm and booking consultations. It makes clear that no attorney-client relationship is formed and that legal questions go to an attorney.'),
        ('What about confidentiality?','The intake assistant collects only what\'s needed to screen and book, and the tools are chosen with confidentiality in mind. Anything sensitive is handed to your team, and the setup is reviewed with you before launch.'),
        ('Does it follow attorney advertising rules?','Ads and intake messages are written to avoid guarantees and misleading claims. Advertising rules vary by state, so final wording is reviewed by you before anything goes live.')],
-  rel=['ai','ga','lg']),
+  rel=['ai','ga','lawintake']),
  dict(slug='chiropractic', name='Chiropractors & Physical Therapy', short='Chiropractic & PT', forname='chiropractors & physical therapy clinics', biz='clinic', who='patient',
   title='AI Receptionist & Lead Follow-Up for Chiropractors',
   desc='Book more new patients and keep care plans on track. AI receptionist, missed-call text back, reminders and local ads for US chiropractic and PT clinics.',
