@@ -6,8 +6,16 @@
   <atom:link href="https://iamaftabahmed.com/feed.xml" rel="self" type="application/rss+xml"/>
   <description>Practical guides on Google Ads, Facebook ads, lead generation and AI automation for US small businesses.</description>
   <language>en-us</language>
-  <lastBuildDate>Wed, 21 Oct 2026 13:00:00 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 23 Oct 2026 13:00:00 GMT</lastBuildDate>
 <!-- NEW ITEMS GO HERE (newest first) -->
+  <item>
+    <title>AI receptionists: answering calls and booking appointments 24/7</title>
+    <link>https://iamaftabahmed.com/blog/ai-receptionist-small-business/</link>
+    <guid isPermaLink="true">https://iamaftabahmed.com/blog/ai-receptionist-small-business/</guid>
+    <pubDate>Fri, 23 Oct 2026 13:00:00 GMT</pubDate>
+    <dc:creator>Aftab Ahmed</dc:creator>
+    <description>What an AI receptionist really does for a small business: answering calls and texts 24/7, booking appointments, handing off to your team, and where its limits are.</description>
+  </item>
   <item>
     <title>Law firm client intake: how to stop losing potential cases</title>
     <link>https://iamaftabahmed.com/blog/law-firm-client-intake/</link>
