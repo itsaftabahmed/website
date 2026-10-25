@@ -2,3 +2,5 @@
 exclude:
   - blog/WRITING_GUIDE.md
   - blog/topics.md
+  - research_notes
+  - reports
