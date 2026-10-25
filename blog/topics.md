@@ -23,21 +23,25 @@ When a new industry page is added, its 4 starter topics are spread through the q
 
 ## Queue (in publishing order)
 - [ ] Facebook ads for dentists: a practical guide | facebook ads for dentists
+- [ ] AI receptionist vs answering service: which is right for your business? | ai receptionist vs answering service
 - [ ] Facebook ads for real estate agents that generate real buyer leads | facebook ads for real estate agents
 - [ ] How to follow up with leads automatically (SMS, email, calls) | automated lead follow up
 - [ ] Facebook ads for home service businesses (HVAC, plumbing, roofing) | facebook ads for home services
 - [ ] Facebook ads for accountants and CPA firms | facebook ads for accountants
 - [ ] What can an AI chatbot actually do for a service business? | ai chatbot for small business
+- [ ] Google Ads vs Facebook Ads for local service businesses | google ads vs facebook ads for local business
 - [ ] Facebook ads for med spas and aesthetic clinics | facebook ads for med spa
 - [ ] How to reduce no-shows at a chiropractic clinic | chiropractic no shows
 - [ ] Facebook ads for law firms: what works and what gets rejected | facebook ads for lawyers
 - [ ] AI automation for small businesses: where to start | ai automation for small business
 - [ ] Dental front desk phone scripts that book more new patients | dental phone scripts
+- [ ] Missed call text back vs voicemail: what customers actually do | missed call text back vs voicemail
 - [ ] How fast should agents respond to Zillow leads? | zillow lead response time
 - [ ] How much do Google Ads cost for a small business in the US? | google ads cost small business
 - [ ] How contractors can follow up on quotes and win more jobs | contractor quote follow up
 - [ ] Tax season workflow automation for CPA firms | tax season automation
 - [ ] Lead generation for small businesses: the complete 2026 guide | lead generation for small business
+- [ ] CRM vs spreadsheet for lead follow-up: when to switch | crm vs spreadsheet for small business
 - [ ] Med spa lead follow-up: turning Instagram leads into bookings | med spa lead follow up
 - [ ] Why patients drop off care plans (and how to keep them coming back) | chiropractic patient retention
 - [ ] AI intake for law firms: what it can and can't do | ai intake for law firms

@@ -29,9 +29,12 @@ Author voice: Aftab Ahmed, 8+ years in design and marketing, now AI, automation 
      - Link to 1–2 earlier posts on this blog where genuinely relevant (relative links like `../other-slug/`).
      - Keep the "Related" box above the CTA with the 2–3 most relevant service pages / posts.
    - Keep the template's breadcrumb (`Home / Blog / <short title>`), canonical URL (`https://iamaftabahmed.com/blog/<slug>/`), og:url, article:published_time and the `BreadcrumbList` JSON-LD, updated for the new post.
+   - **Sources (helps Google trust and AI citations):** link 2–4 authoritative primary sources where they genuinely support a claim (government agencies such as IRS, FTC, HHS, FCC; official platform help docs from Google or Meta; professional bodies such as the ABA or CTIA; original research). Link them inline where the claim is made and list them in the `<div class="sources"><b>Sources and further reading</b><ul>…</ul></div>` box above the author box, and add the same URLs to a `citation` array in the BlogPosting JSON-LD. Only use URLs you have confirmed exist (via web search results); never guess a URL. No links to competitors' sales pages.
+   - Keep the `<div class="abox">` "About the author" box (copied from the template) between the sources box and the Related box.
    - **Never invent statistics, studies, client names, case results or quotes.** Prefer ranges and "typically", and say costs vary. No fake testimonials, no "we helped X get Y%".
    - No keyword stuffing; use the search phrase naturally in the H1, first paragraph, one H2 and the meta description.
    - US spelling and US context (dollars, US platforms and rules).
+5a. Share image: run `NODE_PATH=$(npm root -g) node _tools/og.js <slug>` to create `images/og/<slug>.png` (1200x630), and set `og:image`, `twitter:image` and the JSON-LD `image` to `https://iamaftabahmed.com/images/og/<slug>.png` (the template already has the width/height tags).
 5. Add a card for the post at the **top** of the list in `blog/index.html`, right under `<!-- NEW POSTS GO HERE (newest first) -->`, using the same `<a class="card">` markup.
 6. In the root `index.html`, add a matching `<a class="fpost">` card at the **top** of `<div class="fblog__list">` and keep **only the 3 newest** `fpost` cards there (delete the oldest beyond 3). Leave the `<a class="fnext">` "Coming soon" card as the last item; never delete it (it hides itself once there are 3 posts).
 6a. If the post is about one industry, also add it to that industry page's Related box: in `_tools/gen_industries.py` add `'<short-key>': ('<Title>', 'blog/<slug>/')` to `POSTS`, put the key first in that industry's `rel` list (keep at most 3 post keys, drop the oldest), and run `python3 _tools/gen_industries.py`.
@@ -54,6 +57,7 @@ Google ranks pages on how helpful and original they are, not on who or what wrot
 - **No filler phrases.** Never use: "In today's fast-paced world", "in the digital age", "unlock", "unleash", "elevate", "game-changer", "dive in/deep dive", "navigate the landscape", "it's important to note", "in conclusion", "whether you're X or Y", "look no further", "seamless", "robust", "leverage" (as a verb), "supercharge".
 - **No em dashes (—).** Use commas, periods or parentheses.
 - **Vary rhythm.** Mix short and long sentences; don't start consecutive paragraphs the same way; avoid groups of exactly three adjectives in a row.
+- **Comparison posts.** When the topic is an "X vs Y" or "best X for Y" question, include a fair comparison table, say who each option suits, and give a clear recommendation with the reason. Don't trash competitors or name specific vendors you can't describe accurately.
 - **No repeated structure across posts.** Change the order of sections, the example industry and the opening style (a question, a scenario, a direct answer, a common myth) from post to post.
 - **Plain text only.** Type normal characters; never paste invisible or special Unicode characters.
 - **Fact-check claims.** Platform features, policies and settings must be current; if unsure, describe the principle rather than a specific button.

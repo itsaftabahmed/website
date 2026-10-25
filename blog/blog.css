@@ -56,3 +56,8 @@ article a:not(.btn){color:var(--red-text);text-decoration:underline;text-underli
 .avid__cap{position:absolute;left:22px;bottom:18px;z-index:2;font-weight:700;color:#fff;font-size:15px}
 .avid iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:5}
 @media (max-width:600px){.avid{border-radius:18px}.avid__play{width:60px;height:60px}.avid__cap{font-size:13px;left:16px;bottom:14px}}
+
+.sources,.abox{border:1px solid var(--line);border-radius:16px;padding:18px 22px;margin:28px 0;background:var(--surface)}
+.sources b,.abox b{display:block;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.sources ul{margin:0;padding-left:18px}.sources li{margin:4px 0;font-size:15px}.sources a{color:var(--soft)}
+.abox{border-left:3px solid var(--red)}.abox p{margin:0 0 6px;color:var(--soft)}.abox a{color:#fff}.abox__l{font-size:14px}
