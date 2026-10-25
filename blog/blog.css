@@ -60,4 +60,4 @@ article a:not(.btn){color:var(--red-text);text-decoration:underline;text-underli
 .sources,.abox{border:1px solid var(--line);border-radius:16px;padding:18px 22px;margin:28px 0;background:var(--surface)}
 .sources b,.abox b{display:block;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
 .sources ul{margin:0;padding-left:18px}.sources li{margin:4px 0;font-size:15px}.sources a{color:var(--soft)}
-.abox{border-left:3px solid var(--red)}.abox p{margin:0 0 6px;color:var(--soft)}.abox a{color:#fff}.abox__l{font-size:14px}
+.abox{border-left:3px solid var(--red);display:flex;gap:16px;align-items:flex-start}.abox__img{width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:top;background:#1d1d1d;flex:none}.abox p{margin:0 0 6px;color:var(--soft)}.abox a{color:#fff}.abox__l{font-size:14px}
