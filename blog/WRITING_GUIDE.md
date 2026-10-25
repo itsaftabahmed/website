@@ -3,6 +3,8 @@
 Audience: US small-business owners (dental, real estate, accounting, home services, med spa, law, local services).
 Author voice: Aftab Ahmed, 8+ years in design and marketing, now AI, automation and marketing. Plain, direct, practical. "No hype."
 
+Pace: 2 posts a week (Monday and Thursday). Google ranks helpful, original content, not volume, and its scaled-content policy targets sites publishing lots of low-value pages. Each post should be the most useful answer on its topic: specific steps, a worked example, real sources and the author's view.
+
 ## Steps (do all of them, in this order)
 
 1. Open `blog/topics.md` and take the **first line that starts with `- [ ]`**. The part before `|` is the title; after `|` is the main search phrase.
