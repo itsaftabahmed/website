@@ -266,6 +266,73 @@ I = [
   rel=['ai','ga','chironew','dentalnoshows']),
 ]
 
+# ---- Project examples (owner-provided; client names kept private; no outcome numbers claimed) ----
+PROJECTS = [
+ dict(id='hvac', ind='HVAC', title='Turning more inquiries into booked service calls', market='Austin, Texas', scope='Google Ads, landing page, CRM and follow-up automation', duration='90 days',
+  challenge=['The business received inquiries while its technicians were out on jobs. The owner handled callbacks between service visits, and new leads were scattered across email, voicemail and a spreadsheet.', 'The business needed a consistent process for responding to inquiries and recording which customers had booked.'],
+  approach=['The system connects Google Ads to a landing page focused on residential HVAC services. An inquiry form collects the service needed, ZIP code and preferred callback time.', 'Every submission creates a CRM record and sends an acknowledgment. The office receives a notification, while follow-up tasks flag inquiries awaiting contact. Staff confirm availability before booking a service visit.'],
+  tracked=['First response time', 'Booked service calls', 'Weekly time spent on inquiry admin'],
+  stages=['Inquiry from ad', 'Acknowledgment sent', 'Office callback', 'Service call booked']),
+ dict(id='flooring', ind='Flooring', title='Helping homeowners take the next step', market='Charlotte, North Carolina', scope='Meta Ads, landing pages, inquiry qualification and estimate follow-up', duration='12 weeks',
+  challenge=['The business\'s ads generated messages, but staff often lacked the details needed to arrange an estimate. They repeatedly asked about flooring type, room size and location.', 'Some inquiries never progressed beyond the first conversation.'],
+  approach=['Separate landing pages explain hardwood installation and luxury vinyl flooring. Each page includes an inquiry form collecting basic project details and the homeowner\'s preferred consultation time.', 'New requests enter a CRM with a task for the estimator. A short acknowledgment explains the next step, and reminders help the team follow up with homeowners who have requested an estimate.'],
+  tracked=['Scheduled estimates', 'Completeness of project details', 'Time spent on follow-up'],
+  stages=['Landing page', 'Project details captured', 'Estimator task', 'Estimate scheduled']),
+ dict(id='insurance', ind='Insurance', title='Bringing quote inquiries into one process', market='Columbus, Ohio', scope='Inquiry forms, CRM integration and agent follow-up tasks', duration='10 weeks',
+  challenge=['Quote inquiries arrived through website forms, ad campaigns and direct messages. Agents managed their own notes, making it difficult to identify unanswered requests.', 'The agency needed clearer ownership of each inquiry and a reliable record of follow-up activity.'],
+  approach=['All inquiry sources feed into a shared CRM. Requests are organized by the insurance category the prospect selects and assigned to an agent.', 'The system sends a receipt confirmation and creates follow-up tasks. Licensed agents remain responsible for discussing coverage, giving recommendations and preparing quotes.'],
+  tracked=['Inquiries contacted within one business day', 'Booked consultations', 'Unassigned requests'],
+  stages=['New request', 'Assigned to agent', 'Contacted', 'Consultation booked']),
+ dict(id='dental', ind='Dental', title='Making new-patient inquiries easier to manage', market='Raleigh, North Carolina', scope='Administrative website assistant, appointment requests and front-desk notifications', duration='90 days',
+  challenge=['The front desk balanced patient arrivals, phone calls and online inquiries. Prospective patients who contacted the practice outside office hours waited until staff returned.', 'The practice wanted to capture these requests consistently and reduce repeated administrative questions.'],
+  approach=['A website assistant answers practice-approved questions about opening hours, location and how to request an appointment. It captures minimal contact information and passes appointment requests to the front desk.', 'Staff review requests and confirm appointments. Questions about symptoms or treatment go directly to the practice team.'],
+  tracked=['Confirmed appointments', 'Callback time', 'Time spent on administrative inquiries'],
+  stages=['Question answered', 'Appointment request', 'Front desk review', 'Appointment confirmed']),
+ dict(id='real-estate', ind='Real estate', title='Keeping property inquiries moving', market='Tampa, Florida', scope='Property landing pages, CRM routing and showing follow-up', duration='8 weeks',
+  challenge=['The agency\'s agents received property inquiries through several channels. Requests were forwarded manually, and agents sometimes lacked a clear record of which listing a prospect was interested in.', 'The team needed a consistent handoff from first inquiry to agent conversation.'],
+  approach=['Property landing pages pass the listing reference and inquiry details into the CRM. Each request is assigned to an agent and triggers an acknowledgment.', 'Agents receive follow-up tasks, record contact attempts and arrange showings. Confirmed showing details feed into reminder messages.'],
+  tracked=['Agent response time', 'Booked showings', 'Inquiries awaiting follow-up'],
+  stages=['Assigned', 'Contacted', 'Showing requested', 'Showing confirmed']),
+ dict(id='roofing', ind='Roofing', title='Following up on estimate requests', market='Denver, Colorado', scope='Google Ads, estimate-request landing page and CRM automation', duration='12 weeks',
+  challenge=['The owner managed estimate requests alongside site visits and project supervision. Requests often lacked essential details, and follow-up depended on handwritten notes.', 'The business needed an organized way to review requests and arrange inspections.'],
+  approach=['A focused landing page collects the property location, type of roofing request and preferred callback window. Optional photo uploads help staff understand the request before calling.', 'The CRM gives each inquiry a status and creates follow-up tasks. Inspection reminders are sent once staff confirm a time with the homeowner.'],
+  tracked=['Scheduled inspections', 'Same-day callbacks', 'Weekly time spent on inquiry admin'],
+  stages=['Estimate request', 'Details and photos', 'Callback', 'Inspection scheduled']),
+ dict(id='accounting', ind='Accounting', title='Organizing consultation and onboarding requests', market='Manchester, United Kingdom', scope='Consultation landing page, CRM and onboarding task automation', duration='90 days',
+  challenge=['The firm received inquiries about bookkeeping, payroll and year-end accounts through a general contact form. Staff repeatedly had to clarify what each prospect needed before arranging a call.', 'After a prospect became a client, onboarding tasks were managed through separate email threads.'],
+  approach=['A consultation form collects business type, service interest and preferred contact time. Inquiries enter the CRM with tasks for the right team member.', 'Once the firm accepts a client, an onboarding checklist assigns responsibilities and sends instructions for submitting documents through the firm\'s secure portal.'],
+  tracked=['Completeness of consultation requests', 'Onboarding turnaround', 'Administrative workload'],
+  stages=['Consultation request', 'Team member assigned', 'Client accepted', 'Onboarding checklist']),
+ dict(id='med-spa', ind='Med spa', title='Helping inquiries become consultations', market='Scottsdale, Arizona', scope='Meta Ads, consultation landing pages and inquiry follow-up', duration='10 weeks',
+  challenge=['The clinic received interest through social media but struggled to keep track of consultation requests. Staff handled messages between appointments, and the next step was often unclear to prospective clients.', 'The clinic needed a consistent process for booking inquiries.'],
+  approach=['Campaigns send visitors to a consultation page that explains the booking process clearly. Inquiries enter a CRM and trigger an acknowledgment explaining when staff will respond.', 'Clinic staff handle suitability questions and confirm consultations. Reminders share appointment information once a booking is agreed.'],
+  tracked=['Confirmed consultations', 'First response time', 'Consultation attendance'],
+  stages=['Consultation request', 'Acknowledgment', 'Staff follow-up', 'Consultation confirmed']),
+ dict(id='law', ind='Law firm', title='Making initial inquiries easier to track', market='Phoenix, Arizona', scope='Initial inquiry forms, intake tracking and consultation scheduling', duration='90 days',
+  challenge=['The firm received prospective-client inquiries through phone messages and its website. Staff copied details by hand into separate records, which made intake status hard to track.', 'The firm needed a consistent administrative process for reviewing requests and arranging the next step.'],
+  approach=['An initial inquiry form collects minimal contact details and a broad matter category, and steers people away from submitting confidential case details.', 'Requests enter an intake pipeline and create a staff review task. The firm handles conflict checks, suitability decisions and legal discussions before confirming the next step.'],
+  tracked=['Inquiries reviewed within one business day', 'Staff assignment', 'Time spent entering details'],
+  stages=['Received', 'Assigned', 'Under review', 'Consultation arranged']),
+ dict(id='chiropractic', ind='Chiropractic', title='Creating a clearer appointment-request journey', market='Nashville, Tennessee', scope='Google Ads, new-patient landing page and appointment-request follow-up', duration='12 weeks',
+  challenge=['The practice\'s website attracted visitors but offered only a general contact form with little guidance about booking. The front desk had to clarify whether people wanted practice information or an appointment.', 'The practice needed a more direct inquiry journey and clearer tracking.'],
+  approach=['A new-patient landing page explains the appointment-request process and provides practice-approved administrative information.', 'Requests enter a central queue, trigger an acknowledgment and notify the front desk. Staff answer clinical questions and confirm availability. Confirmed bookings receive reminders.'],
+  tracked=['Appointment requests', 'Confirmed first appointments', 'First response time'],
+  stages=['Appointment request', 'Acknowledgment', 'Front desk follow-up', 'First visit confirmed']),
+]
+PJ = {x['id']: x for x in PROJECTS}
+IND_PROJ = {'dental': ['dental'], 'real-estate': ['real-estate'], 'accounting': ['accounting'], 'home-services': ['hvac', 'roofing'], 'med-spa': ['med-spa'], 'law': ['law'], 'chiropractic': ['chiropractic']}
+
+def flow(x):
+    return '<div class="pflow" aria-label="Workflow">' + '<i aria-hidden="true">→</i>'.join(f'<span>{e(t)}</span>' for t in x['stages']) + '</div>'
+
+def proj_block(x, up):
+    return f'''<div class="pcase"><div class="kicker">{e(x['ind'])} · {e(x['market'])}</div><h3>{e(x['title'])}</h3>
+  <p class="pmeta"><b>Scope:</b> {e(x['scope'])} · <b>Duration:</b> {e(x['duration'])}</p>
+  <p>{e(x['challenge'][0])}</p><p>{e(x['approach'][0])} {e(x['approach'][1])}</p>
+  {flow(x)}
+  <p class="pmeta"><b>Tracked:</b> {e(', '.join(x['tracked']))} · <a href="{up}case-studies/#{x['id']}">Read the full case study</a></p></div>'''
+
+
 def head(title, desc, url, ld, extra=''):
     return f'''<!doctype html>
 <html lang="en">
@@ -302,7 +369,7 @@ def topbar(up):
     return f'<header class="top"><div class="wrap"><a class="logo" href="{up}">AFTAB <span>AHMED</span></a><a class="btn" href="{up}#book">Book a call</a></div></header>\n'
 
 def foot(up):
-    return f'''<footer><div class="wrap"><span>© 2026 Aftab Ahmed · AI, Automation &amp; Marketing</span><nav><a href="{up}">Home</a><a href="{up}industries/">Industries</a><a href="{up}blog/">Blog</a><a href="{up}#book">Book a call</a><a href="{up}privacy/">Privacy</a></nav></div></footer>
+    return f'''<footer><div class="wrap"><span>© 2026 Aftab Ahmed · AI, Automation &amp; Marketing</span><nav><a href="{up}">Home</a><a href="{up}industries/">Industries</a><a href="{up}case-studies/">Case studies</a><a href="{up}blog/">Blog</a><a href="{up}#book">Book a call</a><a href="{up}privacy/">Privacy</a></nav></div></footer>
 </body>
 </html>
 '''
@@ -359,6 +426,7 @@ def page(it):
   <ol class="steps">{journey}</ol>
 
   <div class="callout">You stay in control: anything sensitive, complex or high-value is handed to you or your team, with the full conversation attached.</div>
+{('  <h2 id="example">Case study: what does this look like in practice?</h2>' + chr(10) + '  <p>Client names are kept private. Here is how a similar system was set up for another business in this industry.</p>' + chr(10) + chr(10).join('  ' + proj_block(PJ[k], '../../') for k in IND_PROJ.get(it['slug'], [])) + chr(10)) if IND_PROJ.get(it['slug']) else ''}
 
   <h2 id="fit">Who is this for?</h2>
   <ul class="check">{fit}</ul>
@@ -490,3 +558,53 @@ def privacy():
 os.makedirs(f'{ROOT}/privacy', exist_ok=True)
 open(f'{ROOT}/privacy/index.html', 'w').write(privacy())
 print('privacy ok')
+
+def work():
+    url = U + 'case-studies/'
+    title = 'Case Studies: Lead Follow-Up Systems for Service Businesses'
+    desc = 'Ten case studies of lead follow-up, CRM and AI automation systems for service businesses: HVAC, dental, law firms, real estate, med spas, roofing and more.'
+    ld = {"@context": "https://schema.org", "@graph": [
+      {"@type": "CollectionPage", "name": "Case studies", "url": url, "description": desc, "author": {"@id": U + "#person"},
+       "mainEntity": {"@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": f"{x['ind']}: {x['title']}", "url": url + '#' + x['id']} for i, x in enumerate(PROJECTS)]}},
+      {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": U}, {"@type": "ListItem", "position": 2, "name": "Case studies", "item": url}]}]}
+    toc = ''.join(f'<li><a href="#{x["id"]}">{e(x["ind"])}: {e(x["title"])}</a></li>' for x in PROJECTS)
+    body = ''
+    for x in PROJECTS:
+        ch = ''.join(f'<p>{e(t)}</p>' for t in x['challenge']); ap = ''.join(f'<p>{e(t)}</p>' for t in x['approach'])
+        tr = ''.join(f'<li>{e(t)}</li>' for t in x['tracked'])
+        body += f'''
+  <section class="pcase pcase--full" id="{x['id']}">
+    <div class="kicker">{e(x['ind'])} · {e(x['market'])}</div>
+    <h2>{e(x['title'])}</h2>
+    <p class="pmeta"><b>Scope:</b> {e(x['scope'])} · <b>Duration:</b> {e(x['duration'])}</p>
+    <h3>The challenge</h3>{ch}
+    <h3>The approach</h3>{ap}
+    {flow(x)}
+    <h3>What we tracked</h3><ul class="check">{tr}</ul>
+  </section>
+'''
+    return head(title, desc, url, ld, '') + topbar('../') + f'''
+<section class="hero"><div class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="../">Home</a><span>/</span>Case studies</nav>
+  <div class="kicker">Case studies · Service businesses</div>
+  <h1>Case studies: how service businesses stopped losing inquiries</h1>
+  <p class="lead">Ten case studies showing how inquiries, CRM records and follow-up were organized for service businesses, from HVAC in Austin to a law firm in Phoenix. Client names are kept private, and each case study shows the problem, the system and what was tracked.</p>
+  <a class="btn" href="../#book">Book a free 30-minute call →</a>
+</div></section>
+
+<article>
+  <div class="takeaways"><b>What these case studies have in common</b><ul><li>Every inquiry lands in one place (a CRM) instead of scattered across email, voicemail and spreadsheets.</li><li>People get an instant acknowledgment, and the team gets a task so no request is forgotten.</li><li>Automation handles the admin; staff, agents and clinicians keep every professional decision.</li><li>Each system is measured on response time, booked appointments and time saved on admin.</li></ul></div>
+  <div class="toc"><b>Case studies</b><ol>{toc}</ol></div>
+{body}
+  <div class="related"><b>Related</b><ul><li><a href="../industries/">Industries I work with</a></li><li><a href="../services/lead-generation/">Lead generation systems</a></li><li><a href="../services/ai-automation/">AI automation and AI assistants</a></li><li><a href="../blog/speed-to-lead/">Speed to lead: why the first 5 minutes decide the sale</a></li></ul></div>
+  <div class="cta">
+    <h2>Want a system like this for your business?</h2>
+    <p>Book a free 30-minute call. I'll look at how your inquiries are handled today and show you what to build first.</p>
+    <a class="btn" href="../#book">Book a free call →</a>
+  </div>
+</article>
+''' + foot('../')
+
+os.makedirs(f'{ROOT}/case-studies', exist_ok=True)
+open(f'{ROOT}/case-studies/index.html', 'w').write(work())
+print('work ok')
