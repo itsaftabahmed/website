@@ -31,6 +31,7 @@ Ignore hype (e.g. "llms.txt boosts rankings", AI-specific rewriting tricks) unle
 
 ## 3. Finish
 
+- If a change is confirmed, also update the matching file in `.claude/skills/seo/references/` (and the snapshot date) so the SEO skill stays current.
 - Add a dated entry to the log below: what changed, source URL, and what (if anything) was done.
 - If site files changed: test (390px, one H1, valid JSON-LD, no broken links), commit as `Search update check: <date>` and push to the working branch and `main`.
 - Reply with a 3–5 line summary. If nothing relevant happened, say so in one line.
