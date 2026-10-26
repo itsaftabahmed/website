@@ -8,6 +8,7 @@ dental, real estate, general, home services, accounting, general, med spa, law, 
 When a new industry page is added, its 4 starter topics are spread through the queue (see `_tools/INDUSTRY_GUIDE.md`).
 
 ## Published
+- [x] Facebook ads for dentists: a practical guide | facebook ads for dentists
 - [x] AI receptionists: answering calls and booking appointments 24/7 | ai receptionist for small business
 - [x] Law firm client intake: how to stop losing potential cases | law firm client intake
 - [x] How chiropractors can get more new patients without discounts | chiropractor new patients
@@ -22,7 +23,6 @@ When a new industry page is added, its 4 starter topics are spread through the q
 - [x] Speed to lead: why the first 5 minutes decide the sale | speed to lead
 
 ## Queue (in publishing order)
-- [ ] Facebook ads for dentists: a practical guide | facebook ads for dentists
 - [ ] AI receptionist vs answering service: which is right for your business? | ai receptionist vs answering service
 - [ ] Facebook ads for real estate agents that generate real buyer leads | facebook ads for real estate agents
 - [ ] How to follow up with leads automatically (SMS, email, calls) | automated lead follow up

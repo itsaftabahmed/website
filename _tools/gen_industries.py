@@ -14,7 +14,8 @@ SV = {'ai': ('AI automation & AI chatbots', 'services/ai-automation/'),
       'fb': ('Facebook & Instagram ads', 'services/facebook-ads/'),
       'lg': ('lead generation systems', 'services/lead-generation/')}
 # Blog posts that industry pages can link to in their Related box (key -> (title, path)).
-POSTS = {'lawintake': ('Law firm client intake: how to stop losing potential cases', 'blog/law-firm-client-intake/'),
+POSTS = {'fbdentists': ('Facebook ads for dentists: a practical guide', 'blog/facebook-ads-for-dentists/'),
+         'lawintake': ('Law firm client intake: how to stop losing potential cases', 'blog/law-firm-client-intake/'),
          'chironew': ('How chiropractors can get more new patients without discounts', 'blog/chiropractor-new-patients/'),
          'medspanoshow': ('How med spas can reduce consultation no-shows', 'blog/med-spa-no-shows/'),
          'mctb': ('Missed call text back: never lose a caller again', 'blog/missed-call-text-back/'),
@@ -59,7 +60,7 @@ I = [
   faq=[('Is an AI receptionist HIPAA compliant?','It can be set up with HIPAA-conscious tools, and it is configured to handle scheduling and general questions rather than collect clinical details. Which platforms fit depends on your current software and your own compliance requirements, so we confirm this together before anything goes live.'),
        ('Will patients know they\'re talking to AI?','The assistant is open about being a virtual assistant, and it\'s set up to be warm, clear and quick. Patients who want a person, or have a clinical question, are handed to your team with the full conversation attached.'),
        ('Does it work with my practice management software?','Often, yes, either directly or through your online booking system. If a direct connection isn\'t possible, the assistant can capture the request and alert your front desk to confirm the time.')],
-  rel=['ai','ga','dentalnoshows','fbcalls']),
+  rel=['ai','ga','fbdentists','dentalnoshows','fbcalls']),
  dict(slug='real-estate', name='Real Estate & Property', short='Real estate & property', forname='real estate & property', biz='business',
   title='Real Estate Lead Follow-Up & AI Automation for Agents',
   desc='Reply to every buyer and seller lead in seconds. AI follow-up, lead qualification, showing booking and ads for US real estate agents and property teams.',
