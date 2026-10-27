@@ -26,6 +26,7 @@ Worth doing:
 - **VideoObject** for embedded videos: name, description, thumbnailUrl, uploadDate in full ISO 8601 with timezone (e.g. 2026-09-29T09:00:00+00:00), contentUrl/embedUrl.
 - **FAQPage**: optional, harmless, no rich results since May 2026.
 - **CollectionPage/ItemList** for hubs and case-study lists.
+Note (Oct 2026): Google stopped showing review snippets for healthcare web pages (reported Oct 7, 2026).
 Avoid: self-serving Review/AggregateRating for your own business (no stars, policy risk), markup for content not on the page, LocalBusiness with a virtual address.
 
 Validate: parse every JSON-LD block; use Google's Rich Results Test / Schema Markup Validator when online.

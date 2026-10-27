@@ -37,4 +37,5 @@ Ignore hype (e.g. "llms.txt boosts rankings", AI-specific rewriting tricks) unle
 - Reply with a 3–5 line summary. If nothing relevant happened, say so in one line.
 
 ## Log
+- 2026-10-27: weekly check. No confirmed Google core/spam update or AI-crawler doc change in the last 7 days. Logged recent items: Sept spam update completed Oct 8; Google dropped review snippets for healthcare pages (Oct 7, site uses no review markup); Google testing tracking parameters on AI Overviews/AI Mode links (Oct 2, would help GA4 attribution); crawl-rate doc added Retry-After info (no action). Updated SEO skill references. Sources: seroundtable.com headlines for Oct 2-8, 2026.
 - 2026-10-25: set up after deep research. Applied: logo + Organization details in homepage schema, static counter values, H1 spacing, shorter titles, sitemap dates for changed pages, research folders excluded from Jekyll.

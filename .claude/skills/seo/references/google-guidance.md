@@ -21,7 +21,7 @@ Verify time-sensitive items with a web search before quoting them; Google change
 
 ## Core and spam updates (dates)
 - 2025 core: Mar 13–27, Jun 30–Jul 17, Dec 11–29. 2025 spam: Aug 26–Sep 21/22.
-- 2026 core: Mar 27–~Apr 8, May 21–Jun 2 (plus a Discover-only core update from Feb 5). 2026 spam: Mar 24, Jun 24, Aug 18–21, Sep 24–Oct 8.
+- 2026 core: Mar 27–~Apr 8, May 21–Jun 2 (plus a Discover-only core update from Feb 5). 2026 spam: Mar 24, Jun 24, Aug 18–21, Sep 24–Oct 8 (completed Oct 8).
 - During a rollout, don't make big site changes or draw conclusions; compare Search Console after it completes.
 
 ## Structured data status

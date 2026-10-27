@@ -18,6 +18,8 @@
 4. Reports → Acquisition → Traffic acquisition → switch the primary dimension to the new channel group.
 Treat counts as a floor: many AI apps strip referrers (Claude rarely passes one). AI referrals were ~0.3% of web traffic in 2025–26 studies.
 
+Watch: Google was reported (Oct 2, 2026) testing URL tracking parameters on links in AI Overviews and AI Mode. If it rolls out, AI Overview clicks may become identifiable in GA4 by those parameters; update the channel group when confirmed.
+
 ## Manual AI visibility panel (monthly)
 - Fixed list of 20–50 buyer prompts ("best AI automation consultant for dental practices", "how much does an AI receptionist cost"…).
 - Run each several times in ChatGPT, Perplexity, Gemini, Google AI Mode, Copilot and Claude; log whether the brand is mentioned, which pages are cited, and which competitors/sources appear. AI answers rarely repeat exactly (SparkToro: <1 in 100 chance of the same list twice), so track share of mentions over time.
