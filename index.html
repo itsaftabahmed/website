@@ -1779,7 +1779,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     const fill = () => load().then(res => {
       if (!res) return;   // keep the fallback cards if the feed can't be reached
-      const cards = res.items.map(it => ({id:idOf(it), title:it.title})).filter(v => v.id).slice(0, MAX);
+      const cards = res.items.map(it => ({id:idOf(it), title:String(it.title || '').replace(/#\w+/g, '').replace(/\s+/g, ' ').trim()})).filter(v => v.id).slice(0, MAX);
       if (!cards.length) return;
       rail.innerHTML = cards.map(v => {
         const href = res.shorts ? 'https://www.youtube.com/shorts/' + v.id : 'https://www.youtube.com/watch?v=' + v.id;
