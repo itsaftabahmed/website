@@ -1783,7 +1783,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       if (!cards.length) return;
       rail.innerHTML = cards.map(v => {
         const href = res.shorts ? 'https://www.youtube.com/shorts/' + v.id : 'https://www.youtube.com/watch?v=' + v.id;
-        const thumb = 'https://i.ytimg.com/vi/' + v.id + (res.shorts ? '/oardefault.jpg' : '/hqdefault.jpg');
+        const thumb = 'https://i.ytimg.com/vi/' + v.id + '/hqdefault.jpg';   // always exists (oardefault often returns a grey placeholder)
         return '<a class="short io in" href="' + href + '" data-yt="' + v.id + '" target="_blank" rel="noopener" aria-label="Watch: ' + esc(v.title) + '">' +
           '<div class="short__thumb"><img src="' + thumb + '" alt="" loading="lazy" referrerpolicy="no-referrer">' +
           '<span class="short__platform">' + (res.shorts ? 'YouTube Shorts' : 'YouTube') + '</span>' +
