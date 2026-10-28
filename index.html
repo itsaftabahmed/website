@@ -1759,7 +1759,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     const load = async () => {
       try {   // 1. list saved on this site by the "Update YouTube Shorts" GitHub Action (most reliable)
         const r = await fetch('shorts.json', {cache: 'no-cache'});
-        if (r.ok) { const j = await r.json(); if (j.items && j.items.length) return {items: j.items.map(v => ({guid: 'yt:video:' + v.id, title: v.title})), shorts: !!j.shorts}; }
+        if (r.ok) { const j = await r.json(); if (j.items && j.items.length) return {items: j.items.map(v => ({guid: 'yt:video:' + v.id, title: v.title, thumb: v.thumb})), shorts: !!j.shorts}; }
       } catch (e) {}
       for (const f of feeds) {   // 2. live feed through public proxies (fallback)
         try {
@@ -1779,20 +1779,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     const fill = () => load().then(res => {
       if (!res) return;   // keep the fallback cards if the feed can't be reached
-      const cards = res.items.map(it => ({id:idOf(it), title:String(it.title || '').replace(/#\w+/g, '').replace(/\s+/g, ' ').trim()})).filter(v => v.id).slice(0, MAX);
+      const cards = res.items.map(it => ({id:idOf(it), thumb:it.thumb, title:String(it.title || '').replace(/#\w+/g, '').replace(/\s+/g, ' ').trim()})).filter(v => v.id).slice(0, MAX);
       if (!cards.length) return;
       rail.innerHTML = cards.map(v => {
         const href = res.shorts ? 'https://www.youtube.com/shorts/' + v.id : 'https://www.youtube.com/watch?v=' + v.id;
-        const thumb = 'https://i.ytimg.com/vi/' + v.id + '/hqdefault.jpg';   // always exists (oardefault often returns a grey placeholder)
+        const thumb = v.thumb || 'https://i.ytimg.com/vi/' + v.id + '/maxresdefault.jpg';   // best size picked by the GitHub Action
         return '<a class="short io in" href="' + href + '" data-yt="' + v.id + '" target="_blank" rel="noopener" aria-label="Watch: ' + esc(v.title) + '">' +
           '<div class="short__thumb"><img src="' + thumb + '" alt="" loading="lazy" referrerpolicy="no-referrer">' +
           '<span class="short__platform">' + (res.shorts ? 'YouTube Shorts' : 'YouTube') + '</span>' +
           '<span class="short__play">' + play + '</span><span class="short__title">' + esc(v.title) + '</span></div></a>';
       }).join('');
-      rail.querySelectorAll('img').forEach(img => img.addEventListener('error', () => {
-        if (!img.dataset.fb) { img.dataset.fb = 1; img.src = img.src.replace(/\/(oar|hq)default\.jpg$/, '/hqdefault.jpg'); }
-        else img.style.display = 'none';
-      }));
+      const next = img => {   // fall back to smaller sizes if a thumbnail is missing (YouTube serves a 120px grey image for missing ones)
+        const order = ['oardefault', 'maxresdefault', 'hq720', 'sddefault', 'hqdefault'];
+        const m = img.src.match(/\/(\w+)\.jpg$/); const i = m ? order.indexOf(m[1]) : -1;
+        if (i > -1 && i < order.length - 1) img.src = img.src.replace(/\/\w+\.jpg$/, '/' + order[i + 1] + '.jpg'); else img.style.display = 'none';
+      };
+      rail.querySelectorAll('img').forEach(img => {
+        img.addEventListener('error', () => next(img));
+        img.addEventListener('load', () => { if (img.naturalWidth <= 120) next(img); });
+      });
       rail.scrollLeft = 0;
     });
     if ('IntersectionObserver' in window) {

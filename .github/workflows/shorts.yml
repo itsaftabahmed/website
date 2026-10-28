@@ -21,6 +21,29 @@ jobs:
           feeds = [('https://www.youtube.com/feeds/videos.xml?playlist_id=UUSH' + CH[2:], True),
                    ('https://www.youtube.com/feeds/videos.xml?channel_id=' + CH, False)]
           ns = {'a': 'http://www.w3.org/2005/Atom', 'yt': 'http://www.youtube.com/xml/schemas/2015'}
+          import struct
+          def size(url):
+              # returns (width, height) of a JPEG at url, or None if missing
+              try:
+                  data = urllib.request.urlopen(urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'}), timeout=20).read()
+              except Exception:
+                  return None
+              i = 2
+              while i < len(data) - 9:
+                  if data[i] != 0xFF: i += 1; continue
+                  m = data[i + 1]
+                  if m in (0xC0, 0xC1, 0xC2):
+                      h, w = struct.unpack('>HH', data[i + 5:i + 9]); return (w, h)
+                  i += 2 + struct.unpack('>H', data[i + 2:i + 4])[0]
+              return None
+          def best_thumb(vid):
+              base = 'https://i.ytimg.com/vi/' + vid + '/'
+              s = size(base + 'oardefault.jpg')          # vertical Shorts cover, when YouTube has made it
+              if s and s[1] > s[0] and s[1] >= 640: return base + 'oardefault.jpg'
+              for name in ('maxresdefault.jpg', 'hq720.jpg', 'sddefault.jpg'):
+                  s = size(base + name)
+                  if s and s[0] > 120: return base + name
+              return base + 'hqdefault.jpg'
           out = None
           for url, shorts in feeds:
               try:
@@ -28,6 +51,8 @@ jobs:
                   clean = lambda t: re.sub(r'\s+', ' ', re.sub(r'#\w+', '', t)).strip()
                   items = [{'id': e.findtext('yt:videoId', '', ns), 'title': clean(e.findtext('a:title', '', ns)), 'published': e.findtext('a:published', '', ns)} for e in ET.fromstring(xml).findall('a:entry', ns)]
                   items = [i for i in items if i['id']][:10]
+                  for i in items:
+                      i['thumb'] = best_thumb(i['id'])
                   if items:
                       out = {'shorts': shorts, 'items': items}; break
               except Exception as ex:
