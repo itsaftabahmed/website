@@ -1,5 +1,6 @@
 # Saves the latest YouTube Shorts from @ItsAftab_Ahmed to shorts.json once a day,
 # so the homepage "Content" section loads them from this site instead of third-party proxies.
+# Run manually from the Actions tab ("Run workflow") or wait for the 6-hourly schedule.
 name: Update YouTube Shorts
 on:
   schedule:
