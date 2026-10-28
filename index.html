@@ -269,6 +269,14 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #ff
 .short__title{position:absolute;left:18px;right:18px;bottom:18px;z-index:2;font-size:17px;font-weight:700;line-height:1.3}
 .short__play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(.9);z-index:2;width:60px;height:60px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;padding-left:4px;opacity:0;transition:opacity .25s,transform .25s var(--ease)}
 .short:hover .short__play,.short:focus-visible .short__play{opacity:1;transform:translate(-50%,-50%) scale(1)}
+/* clean cards: thumbnail + play button; title only on hover */
+.short__platform{display:none}
+.short__play{opacity:1;transform:translate(-50%,-50%) scale(1);width:56px;height:56px;box-shadow:0 8px 24px rgba(0,0,0,.45)}
+.short:hover .short__play{transform:translate(-50%,-50%) scale(1.08)}
+.short__thumb::after{opacity:0;transition:opacity .3s}
+.short:hover .short__thumb::after,.short:focus-visible .short__thumb::after{opacity:1}
+.short__title{opacity:0;transform:translateY(6px);transition:opacity .3s,transform .3s}
+.short:hover .short__title,.short:focus-visible .short__title{opacity:1;transform:none}
 .rail-ctrl{display:flex;gap:10px}
 .rail-ctrl button{width:52px;height:52px;border-radius:50%;border:1px solid var(--line-2);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
 .rail-ctrl button:hover{background:rgba(255,255,255,.06)}
