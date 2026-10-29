@@ -6,8 +6,16 @@
   <atom:link href="https://iamaftabahmed.com/feed.xml" rel="self" type="application/rss+xml"/>
   <description>Practical guides on Google Ads, Facebook ads, lead generation and AI automation for US small businesses.</description>
   <language>en-us</language>
-  <lastBuildDate>Mon, 26 Oct 2026 13:30:00 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 29 Oct 2026 13:30:00 GMT</lastBuildDate>
 <!-- NEW ITEMS GO HERE (newest first) -->
+  <item>
+    <title>AI receptionist vs answering service: which is right for your business?</title>
+    <link>https://iamaftabahmed.com/blog/ai-receptionist-vs-answering-service/</link>
+    <guid isPermaLink="true">https://iamaftabahmed.com/blog/ai-receptionist-vs-answering-service/</guid>
+    <pubDate>Thu, 29 Oct 2026 13:30:00 GMT</pubDate>
+    <dc:creator>Aftab Ahmed</dc:creator>
+    <description>A fair comparison of AI receptionists and live answering services: booking, cost, difficult calls, privacy, and a simple way to decide which fits your business.</description>
+  </item>
   <item>
     <title>Facebook ads for dentists: a practical guide</title>
     <link>https://iamaftabahmed.com/blog/facebook-ads-for-dentists/</link>

@@ -26,6 +26,7 @@
 
 ## Blog (newest first)
 <!-- NEW POSTS GO HERE -->
+- [AI receptionist vs answering service: which is right for your business?](https://iamaftabahmed.com/blog/ai-receptionist-vs-answering-service/): how an AI receptionist compares with a live answering service on booking, cost, difficult calls and privacy, and how to choose or combine them
 - [Facebook ads for dentists: a practical guide](https://iamaftabahmed.com/blog/facebook-ads-for-dentists/): offers, targeting, Meta health ad rules, pixel and HIPAA cautions, budgets and lead follow-up for dental practices advertising on Facebook and Instagram
 - [AI receptionists: answering calls and booking appointments 24/7](https://iamaftabahmed.com/blog/ai-receptionist-small-business/): what an AI receptionist does for a small business, how it compares with answering services, its limits, and how to set one up well
 - [Law firm client intake: how to stop losing potential cases](https://iamaftabahmed.com/blog/law-firm-client-intake/): how law firms lose potential cases at intake and how fast replies, consistent screening, early conflict checks and consultation booking fix it

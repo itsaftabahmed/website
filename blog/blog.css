@@ -77,3 +77,4 @@ article a:not(.btn){color:var(--red-text);text-decoration:underline;text-underli
 .vidwrap b{display:block;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--red-text);margin-bottom:6px}
 .vidwrap p{margin:0;color:var(--soft)}
 @media (max-width:520px){.vidwrap{flex-direction:column;align-items:flex-start}.vid{width:min(100%,260px)}}
+@media(max-width:600px){article table.wrap th,article table.wrap td{padding:8px 6px;overflow-wrap:anywhere}article table.wrap.cols3{font-size:13.5px}article table.wrap.cols3 th{font-size:11px;letter-spacing:.03em}article table.wrap.cols3 td:first-child{width:28%;padding-right:8px}}

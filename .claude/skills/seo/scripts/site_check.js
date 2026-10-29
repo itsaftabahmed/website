@@ -12,7 +12,7 @@ const pages = [...sm.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1].replace(D, 
     const p = await ctx.newPage(); const errs = []; p.on('pageerror', e => errs.push(e.message));
     if (!fs.existsSync(R + '/' + pg)) { console.log('MISSING FILE', pg); bad++; continue; }
     await p.goto('file://' + R + '/' + pg); await p.waitForTimeout(500);
-    const r = await p.evaluate(() => ({ sw: document.documentElement.scrollWidth, w: innerWidth, tl: document.title.length,
+    const r = await p.evaluate(() => ({ sw: document.documentElement.scrollWidth, w: Math.min(innerWidth, screen.width), tl: document.title.length,
       d: ((document.querySelector('meta[name=description]') || {}).content || '').length, h1: document.querySelectorAll('h1').length,
       can: !!document.querySelector('link[rel=canonical]'),
       ld: [...document.querySelectorAll('script[type="application/ld+json"]')].filter(s => { try { JSON.parse(s.textContent); return false; } catch (e) { return true; } }).length,
