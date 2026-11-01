@@ -26,6 +26,7 @@ When a new industry page is added, its 4 starter topics are spread through the q
 ## Queue (in publishing order)
 - [ ] Facebook ads for real estate agents that generate real buyer leads | facebook ads for real estate agents
 - [ ] How to follow up with leads automatically (SMS, email, calls) | automated lead follow up
+- [ ] How insurance agents can follow up on quote requests faster | insurance lead follow up
 - [ ] Facebook ads for home service businesses (HVAC, plumbing, roofing) | facebook ads for home services
 - [ ] Facebook ads for accountants and CPA firms | facebook ads for accountants
 - [ ] What can an AI chatbot actually do for a service business? | ai chatbot for small business
@@ -35,6 +36,7 @@ When a new industry page is added, its 4 starter topics are spread through the q
 - [ ] Facebook ads for law firms: what works and what gets rejected | facebook ads for lawyers
 - [ ] AI automation for small businesses: where to start | ai automation for small business
 - [ ] Dental front desk phone scripts that book more new patients | dental phone scripts
+- [ ] Facebook ads for insurance agents: what works and what gets rejected | facebook ads for insurance agents
 - [ ] Missed call text back vs voicemail: what customers actually do | missed call text back vs voicemail
 - [ ] How fast should agents respond to Zillow leads? | zillow lead response time
 - [ ] How much do Google Ads cost for a small business in the US? | google ads cost small business
@@ -44,6 +46,7 @@ When a new industry page is added, its 4 starter topics are spread through the q
 - [ ] CRM vs spreadsheet for lead follow-up: when to switch | crm vs spreadsheet for small business
 - [ ] Med spa lead follow-up: turning Instagram leads into bookings | med spa lead follow up
 - [ ] Why patients drop off care plans (and how to keep them coming back) | chiropractic patient retention
+- [ ] How insurance agencies can automate renewal reminders and reviews | insurance renewal reminders
 - [ ] AI intake for law firms: what it can and can't do | ai intake for law firms
 - [ ] Why your website gets traffic but no leads | website traffic but no leads
 - [ ] Google Ads for dentists: keywords, budgets and landing pages | google ads for dentists
@@ -53,6 +56,7 @@ When a new industry page is added, its 4 starter topics are spread through the q
 - [ ] Facebook ad account disabled? What to do next | facebook ad account disabled
 - [ ] Why your Facebook leads never answer the phone | facebook leads not answering
 - [ ] Google Ads for med spas and cosmetic clinics | google ads for med spa
+- [ ] Buying insurance leads vs generating your own: what agents should know | buying insurance leads
 - [ ] Google Ads for chiropractors: what to bid on and what to skip | google ads for chiropractors
 - [ ] Google Ads for law firms on a small budget | google ads for law firms
 - [ ] Google Ads vs Facebook ads: which is better for leads? | google ads vs facebook ads for leads

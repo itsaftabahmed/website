@@ -7,7 +7,7 @@ Audience: US small-business owners in that industry. Voice: Aftab Ahmed, plain, 
 ## Queue (next industry first)
 
 - [x] chiropractic | Chiropractors & Physical Therapy
-- [ ] insurance | Insurance Agencies
+- [x] insurance | Insurance Agencies
 - [ ] mortgage | Mortgage Brokers & Loan Officers
 - [ ] roofing | Roofing & Remodeling
 - [ ] fitness | Fitness Studios & Gyms
@@ -59,3 +59,4 @@ Pick the industry page that was refreshed least recently (track it in the log be
 ## Refresh log
 - 2026-10-01: dental, real-estate, accounting, home-services, med-spa, law created
 - 2026-10-19: chiropractic created (catch-up for the Oct 15 run, skipped while GitHub access was down)
+- 2026-11-01: insurance created; dental refreshed (Related now links the AI receptionist posts and Facebook ads for dentists; HIPAA FAQ now mentions BAAs and health details staying out of open texts)

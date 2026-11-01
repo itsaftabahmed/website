@@ -24,7 +24,10 @@ POSTS = {'fbdentists': ('Facebook ads for dentists: a practical guide', 'blog/fa
          'fbcalls': ('Why your Facebook ads get clicks but no calls (and how to fix it)', 'blog/facebook-ads-clicks-but-no-calls/'),
          'dentalnoshows': ('How to reduce no-shows at a dental office', 'blog/reduce-dental-no-shows/'),
          'refollowup': ('Real estate lead follow-up scripts for text and email', 'blog/real-estate-follow-up-scripts/'),
-         'fbcost': ('How much do Facebook ads cost for a small business in the US?', 'blog/facebook-ads-cost-small-business/')}
+         'fbcost': ('How much do Facebook ads cost for a small business in the US?', 'blog/facebook-ads-cost-small-business/'),
+         'airec': ('AI receptionists: answering calls and booking appointments 24/7', 'blog/ai-receptionist-small-business/'),
+         'aivsans': ('AI receptionist vs answering service: which is right for your business?', 'blog/ai-receptionist-vs-answering-service/'),
+         'speed': ('Speed to lead: why the first 5 minutes decide the sale', 'blog/speed-to-lead/')}
 
 I = [
  dict(slug='dental', name='Dental & Medical Practices', short='Dental & medical', forname='dental & medical practices', biz='practice',
@@ -57,10 +60,10 @@ I = [
            'Reminders go out automatically before the visit, with an easy way to reschedule.',
            'After the visit, they get a thank-you and a review request.'],
   fit=['General, cosmetic and family dental practices','Orthodontists, oral surgeons and specialty clinics','Medical, chiropractic, physio and wellness clinics','Practices with a busy front desk and more calls than hands'],
-  faq=[('Is an AI receptionist HIPAA compliant?','It can be set up with HIPAA-conscious tools, and it is configured to handle scheduling and general questions rather than collect clinical details. Which platforms fit depends on your current software and your own compliance requirements, so we confirm this together before anything goes live.'),
+  faq=[('Is an AI receptionist HIPAA compliant?','It can be set up with HIPAA-conscious tools, and it is configured to handle scheduling and general questions rather than collect clinical details. It uses tools that will sign a Business Associate Agreement where patient information is handled, and health details are kept out of open texts. Which platforms fit depends on your current software and your own compliance requirements, so we confirm this together before anything goes live. No automation is a compliance guarantee on its own.'),
        ('Will patients know they\'re talking to AI?','The assistant is open about being a virtual assistant, and it\'s set up to be warm, clear and quick. Patients who want a person, or have a clinical question, are handed to your team with the full conversation attached.'),
        ('Does it work with my practice management software?','Often, yes, either directly or through your online booking system. If a direct connection isn\'t possible, the assistant can capture the request and alert your front desk to confirm the time.')],
-  rel=['ai','ga','fbdentists','dentalnoshows','fbcalls']),
+  rel=['ai','ga','aivsans','airec','fbdentists']),
  dict(slug='real-estate', name='Real Estate & Property', short='Real estate & property', forname='real estate & property', biz='business',
   title='Real Estate Lead Follow-Up & AI Automation for Agents',
   desc='Reply to every buyer and seller lead in seconds. AI follow-up, lead qualification, showing booking and ads for US real estate agents and property teams.',
@@ -265,6 +268,40 @@ I = [
        ('Will patients know they\'re talking to an AI?','The assistant is set up to be clear about what it is, and it hands anything clinical or sensitive to your team. Most patients care that they get a fast, helpful answer and an easy way to book.'),
        ('Does it work with our scheduling or EHR software?','Often, yes. Many practice management and scheduling tools can connect directly or through automation platforms. Where they can\'t, bookings can go to a calendar with an alert to the front desk.')],
   rel=['ai','ga','chironew','dentalnoshows']),
+ dict(slug='insurance', name='Insurance Agencies', short='Insurance', forname='insurance agencies', biz='agency', who='client',
+  title='Lead Follow-Up & AI Assistant for Insurance Agencies',
+  desc='Reply to every quote request in seconds, book more consultations and keep renewals on track. Lead follow-up, AI assistants and ads for US insurance agencies.',
+  h1='Reach every quote request before another agent does',
+  lead='For independent and captive insurance agencies: reply to quote requests in seconds, get the details your agents need up front, book the consultation, and follow up at renewal time without anyone keeping a spreadsheet.',
+  card='Instant quote-request replies, agent routing, consultation booking and renewal follow-up.',
+  takeaways=['People shopping for insurance often request quotes from several agencies at once, so the first useful reply has a real advantage.',
+             'Automated replies collect the basics (coverage type, ZIP code, current renewal date) and route each request to the right agent.',
+             'An AI assistant handles routine questions and booking, while licensed agents handle coverage advice and quotes.',
+             'Renewal and cross-sell reminders run on a schedule, so existing clients hear from you before a competitor calls them.'],
+  pains_h='Why do insurance agencies lose quote requests?',
+  pains_a='Because shoppers contact several agencies at once, and requests from forms, ads and phone calls land in different places with no one clearly responsible for the first reply.',
+  pains=[('Slow replies to quote requests','Agents are on calls or in appointments, so web and ad leads wait hours while the shopper hears from other agencies.'),
+         ('Missing details','Requests arrive without the coverage type, vehicle or property details, so the first call is spent gathering basics instead of quoting.'),
+         ('Leads with no clear owner','Requests sit in a shared inbox or an agent\'s personal notes, and nobody can see which ones were never contacted.'),
+         ('Renewals that slip by','Without reminders, clients reach their renewal date without a review, and some shop around and leave.')],
+  fix_h='How does automation help an insurance agency?',
+  fix_a='It replies to every request right away, collects the details agents need, assigns each lead to an agent and books the conversation, so your licensed staff spend their time advising and quoting.',
+  fixes=[('Instant quote-request replies','Every form, ad lead and missed call gets a reply within seconds by text and email, with a link to book a call.','lg'),
+         ('Smart intake questions','A short set of questions captures coverage type, ZIP code and renewal date before the agent calls.','ai'),
+         ('AI assistant for routine questions','Answers office hours, lines of coverage you write and how quoting works, and books into an agent\'s calendar. Coverage questions go to a licensed agent.','ai'),
+         ('Agent routing & follow-up tasks','Leads are assigned by line of business or territory, with reminders when a request hasn\'t been contacted.','lg'),
+         ('Search ads for high-intent shoppers','Google Ads for searches like "home insurance quote near me" or "commercial auto insurance agent".','ga'),
+         ('Renewal & cross-sell reminders','Scheduled check-ins before renewal dates and prompts to review other coverage clients may need.','lg')],
+  journey=['A homeowner gets a renewal notice with a higher premium and searches for a local insurance agent on a weekday evening.',
+           'They fill in a quote form on your site and get a text within seconds confirming you received it.',
+           'The text asks three quick questions about the property and their renewal date, then offers times to talk with an agent.',
+           'They book a call for the next morning, and the assigned agent sees the details in the CRM before dialing.',
+           'After they become a client, a reminder goes out ahead of next year\'s renewal so the agent can review coverage first.'],
+  fit=['Independent agencies writing personal and commercial lines','Captive agents running their own office','Agencies buying leads or running Google and Facebook ads','Small agencies without a dedicated intake person'],
+  faq=[('Can the AI give quotes or coverage advice?','No. It is set up for administrative tasks: replying to requests, collecting basic details, answering general questions about your agency and booking calls. Coverage recommendations and quotes come from your licensed agents, in line with your state\'s licensing rules.'),
+       ('What about consent rules for texting and calling leads?','Automated texts and calls are regulated under the TCPA and state laws, so forms are set up to collect clear consent, messages include opt-out instructions, and replies go only to people who contacted you. Your own compliance review and any carrier marketing rules still apply.'),
+       ('Does it work with our agency management system or CRM?','Often, yes. Many agency management systems and CRMs can connect directly or through automation platforms. Where they can\'t, leads can go to a simple CRM or shared calendar with alerts to your team.')],
+  rel=['lg','ai','aivsans','speed']),
 ]
 
 # ---- Project examples (owner-provided; client names kept private; no outcome numbers claimed) ----
@@ -321,7 +358,7 @@ PROJECTS = [
   stages=['Appointment request', 'Acknowledgment', 'Front desk follow-up', 'First visit confirmed']),
 ]
 PJ = {x['id']: x for x in PROJECTS}
-IND_PROJ = {'dental': ['dental'], 'real-estate': ['real-estate'], 'accounting': ['accounting'], 'home-services': ['hvac', 'roofing'], 'med-spa': ['med-spa'], 'law': ['law'], 'chiropractic': ['chiropractic']}
+IND_PROJ = {'dental': ['dental'], 'real-estate': ['real-estate'], 'accounting': ['accounting'], 'home-services': ['hvac', 'roofing'], 'med-spa': ['med-spa'], 'law': ['law'], 'chiropractic': ['chiropractic'], 'insurance': ['insurance']}
 
 def flow(x):
     return '<div class="pflow" aria-label="Workflow">' + '<i aria-hidden="true">→</i>'.join(f'<span>{e(t)}</span>' for t in x['stages']) + '</div>'
