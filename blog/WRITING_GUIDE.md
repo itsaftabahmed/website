@@ -7,6 +7,8 @@ Pace: 2 posts a week (Monday and Thursday). Google ranks helpful, original conte
 
 ## Steps (do all of them, in this order)
 
+Shortcut: write the post as a config file outside the repo and run `python3 _tools/mkpost.py <config.py>` (keys listed at the top of the script). It builds the page from the template and does steps 3, 5, 5a, 6, 6a (POSTS/rel), 6c, 6d, 6e, 7 and 8. You still do 6b, run `python3 _tools/gen_industries.py` when the post belongs to an industry, test, and commit.
+
 1. Open `blog/topics.md` and take the **first line that starts with `- [ ]`**. The part before `|` is the title; after `|` is the main search phrase.
 2. Make a URL slug from the title: lowercase, words joined by `-`, no stop-word clutter, max ~7 words (e.g. `facebook-ads-cost-small-business`).
 3. Create `blog/<slug>/index.html` by **copying the structure (including the Google Analytics tag right after `<head>`, the Google Tag Manager, Meta Pixel and Clarity tracking codes at the top of `<head>` and the GTM `<noscript>` right after `<body>`, unchanged) of `blog/facebook-ads-clicks-but-no-calls/index.html` exactly** (same head tags, fonts, `../blog.css`, header, hero, table of contents, article, FAQ, CTA box, footer). Replace:

@@ -14,7 +14,8 @@ SV = {'ai': ('AI automation & AI chatbots', 'services/ai-automation/'),
       'fb': ('Facebook & Instagram ads', 'services/facebook-ads/'),
       'lg': ('lead generation systems', 'services/lead-generation/')}
 # Blog posts that industry pages can link to in their Related box (key -> (title, path)).
-POSTS = {'fbdentists': ('Facebook ads for dentists: a practical guide', 'blog/facebook-ads-for-dentists/'),
+POSTS = {'fbrealestate': ('Facebook ads for real estate agents that generate real buyer leads', 'blog/facebook-ads-for-real-estate-agents/'),
+         'fbdentists': ('Facebook ads for dentists: a practical guide', 'blog/facebook-ads-for-dentists/'),
          'lawintake': ('Law firm client intake: how to stop losing potential cases', 'blog/law-firm-client-intake/'),
          'chironew': ('How chiropractors can get more new patients without discounts', 'blog/chiropractor-new-patients/'),
          'medspanoshow': ('How med spas can reduce consultation no-shows', 'blog/med-spa-no-shows/'),
@@ -97,7 +98,7 @@ I = [
   faq=[('Can the AI reply to Zillow and Realtor.com leads?','In most cases, yes. Portal leads usually arrive by email or through your CRM, and the automation can pick them up and reply by text and email within seconds. The exact setup depends on which portals and CRM you use.'),
        ('Will leads know they\'re talking to an assistant?','The assistant is set up to be clear that it\'s helping on your behalf and to sound natural and friendly. As soon as a lead wants to talk to you or is clearly serious, it hands over with the full conversation attached.'),
        ('Does this replace my CRM?','Not necessarily. If you already use a real estate CRM, the automation is built around it. If your leads are scattered across inboxes and spreadsheets, setting up a simple CRM is usually part of the first step.')],
-  rel=['ai','lg','refollowup','fbcost']),
+  rel=['ai','lg','fbrealestate','refollowup','fbcost']),
  dict(slug='accounting', name='Accounting & CPA Firms', short='Accounting & CPA', forname='accounting & CPA firms', biz='firm',
   title='AI Automation & Client Onboarding for CPA Firms',
   desc='Win more clients without the admin pile-up. AI enquiry handling, automated onboarding, document chasing and lead generation for US accounting and CPA firms.',
