@@ -2,6 +2,7 @@
 
 ## Crawl and index
 - **robots.txt**: allow Googlebot, Bingbot, Applebot and AI search/user bots (OAI-SearchBot, ChatGPT-User, Claude-SearchBot, Claude-User, PerplexityBot, Perplexity-User). Training bots (GPTBot, ClaudeBot, Google-Extended, Applebot-Extended, CCBot, Meta-ExternalAgent) are a business decision; blocking them doesn't hurt search visibility. Include `Sitemap:`.
+- **Cloudflare (or another CDN) in front of the site**: check its bot settings. Cloudflare can block AI crawlers by default and its "Bot Preference Sync"/managed robots.txt prepends its own rules to robots.txt. Turn these off (or allow AI search bots) if the site wants AI search visibility, and keep SSL mode "Full" with GitHub Pages.
 - **XML sitemap**: every indexable URL, accurate `<lastmod>` only for meaningful content changes (Google and Bing ignore untrustworthy lastmod; Bing uses it to schedule AI-search recrawls). No noindex/redirected URLs.
 - **IndexNow**: key file at the root, POST changed URLs to api.indexnow.org after each publish (Bing, Yandex, Seznam, Naver). Automate it (CI job on push) where possible.
 - **Canonical**: self-referencing absolute canonical on every page; consistent trailing slashes; one version of the domain (https, www or not) with 301 redirects.

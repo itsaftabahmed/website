@@ -32,6 +32,9 @@ Verify time-sensitive items with a web search before quoting them; Google change
 ## Search Console changes
 - Jun 2025: AI Mode clicks/impressions counted inside "Web" totals. Jun 2025: Insights report. Nov 2025: branded vs non-branded queries filter. Jun 2026: separate AI features reports (impressions only, no clicks or queries) and the AI opt-out setting.
 
+## AI training opt-out (announced Oct 30, 2026)
+- Google plans to support a shared AI-training preference token in robots.txt (IETF AIPREF), together with other AI providers, starting in 2027. If a site uses it to opt out and doesn't name Google-Extended, Google treats it as disallowing Google-Extended. It doesn't affect Search ranking or Googlebot indexing. Source: developers.google.com/search/blog/2026/10/ai-training-control.
+
 ## llms.txt
 - Gary Illyes (Jul 2025): Google doesn't support it and has no plans to. John Mueller compared it to the keywords meta tag. The May 2026 guide lists it as something to skip.
 
