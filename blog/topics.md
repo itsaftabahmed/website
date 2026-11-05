@@ -5,6 +5,7 @@ To change the plan: reorder, add or delete lines. Format: `- [ ] Title | primary
 
 The queue rotates through the industries so every industry page gets supporting posts evenly:
 dental, real estate, general, home services, accounting, general, med spa, law, general (then repeat).
+AI receptionist topics are placed every 2nd or 3rd post because it is the fastest-growing search in this niche (see `_tools/KEYWORDS.md`).
 When a new industry page is added, its 4 starter topics are spread through the queue (see `_tools/INDUSTRY_GUIDE.md`).
 
 ## Published
@@ -27,26 +28,37 @@ When a new industry page is added, its 4 starter topics are spread through the q
 ## Queue (in publishing order)
 - [ ] How to follow up with leads automatically (SMS, email, calls) | automated lead follow up
 - [ ] How insurance agents can follow up on quote requests faster | insurance lead follow up
+- [ ] How much does an AI receptionist cost? Pricing explained for small businesses | ai receptionist cost
 - [ ] Facebook ads for home service businesses (HVAC, plumbing, roofing) | facebook ads for home services
 - [ ] Facebook ads for accountants and CPA firms | facebook ads for accountants
+- [ ] AI receptionist for dental offices: what it handles and what it shouldn't | ai receptionist for dental office
 - [ ] What can an AI chatbot actually do for a service business? | ai chatbot for small business
 - [ ] Google Ads vs Facebook Ads for local service businesses | google ads vs facebook ads for local business
+- [ ] Virtual receptionist vs AI receptionist: which is better for a small business? | virtual receptionist vs ai receptionist
 - [ ] Facebook ads for med spas and aesthetic clinics | facebook ads for med spa
 - [ ] How to reduce no-shows at a chiropractic clinic | chiropractic no shows
+- [ ] AI receptionist for HVAC and home service businesses | ai receptionist for hvac
 - [ ] Facebook ads for law firms: what works and what gets rejected | facebook ads for lawyers
 - [ ] AI automation for small businesses: where to start | ai automation for small business
+- [ ] Is an AI receptionist HIPAA compliant? What dental practices should know | hipaa compliant ai receptionist
 - [ ] Dental front desk phone scripts that book more new patients | dental phone scripts
 - [ ] Facebook ads for insurance agents: what works and what gets rejected | facebook ads for insurance agents
+- [ ] How to choose an AI receptionist: questions to ask before you buy | best ai receptionist for small business
 - [ ] Missed call text back vs voicemail: what customers actually do | missed call text back vs voicemail
 - [ ] How fast should agents respond to Zillow leads? | zillow lead response time
+- [ ] AI receptionist for law firms: answer every new case call | ai receptionist for law firms
 - [ ] How much do Google Ads cost for a small business in the US? | google ads cost small business
 - [ ] How contractors can follow up on quotes and win more jobs | contractor quote follow up
+- [ ] Med spa advertising: what works on Google, Facebook and Instagram | med spa advertising
 - [ ] Tax season workflow automation for CPA firms | tax season automation
 - [ ] Lead generation for small businesses: the complete 2026 guide | lead generation for small business
+- [ ] AI receptionist for real estate agents: never miss a buyer call | ai receptionist for real estate
 - [ ] CRM vs spreadsheet for lead follow-up: when to switch | crm vs spreadsheet for small business
 - [ ] Med spa lead follow-up: turning Instagram leads into bookings | med spa lead follow up
+- [ ] Marketing for med spas: the complete 2026 playbook | med spa marketing
 - [ ] Why patients drop off care plans (and how to keep them coming back) | chiropractic patient retention
 - [ ] How insurance agencies can automate renewal reminders and reviews | insurance renewal reminders
+- [ ] AI receptionist for med spas: booking consultations around the clock | ai receptionist for med spa
 - [ ] AI intake for law firms: what it can and can't do | ai intake for law firms
 - [ ] Why your website gets traffic but no leads | website traffic but no leads
 - [ ] Google Ads for dentists: keywords, budgets and landing pages | google ads for dentists
@@ -75,10 +87,8 @@ When a new industry page is added, its 4 starter topics are spread through the q
 - [ ] Lead generation for home service businesses | home services lead generation
 - [ ] Lead generation for accounting firms | lead generation for accountants
 - [ ] Retargeting on Facebook: bringing back visitors who didn't book | facebook retargeting small business
-- [ ] Marketing for med spas: the complete 2026 playbook | med spa marketing
 - [ ] Lead generation for law firms | law firm lead generation
 - [ ] Advantage+ campaigns: should small businesses use them? | advantage plus campaigns small business
-- [ ] Is an AI receptionist HIPAA compliant? What dental practices should know | hipaa compliant ai receptionist
 - [ ] Open house follow-up: turning sign-ins into clients | open house follow up
 - [ ] Instagram ads vs Facebook ads for local businesses | instagram ads vs facebook ads
 - [ ] Booking automation for home service businesses | home service booking automation
