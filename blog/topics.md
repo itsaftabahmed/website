@@ -9,6 +9,7 @@ AI receptionist topics are placed every 2nd or 3rd post because it is the fastes
 When a new industry page is added, its 4 starter topics are spread through the queue (see `_tools/INDUSTRY_GUIDE.md`).
 
 ## Published
+- [x] How to follow up with leads automatically (SMS, email, calls) | automated lead follow up
 - [x] Facebook ads for real estate agents that generate real buyer leads | facebook ads for real estate agents
 - [x] AI receptionist vs answering service: which is right for your business? | ai receptionist vs answering service
 - [x] Facebook ads for dentists: a practical guide | facebook ads for dentists
@@ -26,7 +27,6 @@ When a new industry page is added, its 4 starter topics are spread through the q
 - [x] Speed to lead: why the first 5 minutes decide the sale | speed to lead
 
 ## Queue (in publishing order)
-- [ ] How to follow up with leads automatically (SMS, email, calls) | automated lead follow up
 - [ ] How insurance agents can follow up on quote requests faster | insurance lead follow up
 - [ ] How much does an AI receptionist cost? Pricing explained for small businesses | ai receptionist cost
 - [ ] Facebook ads for home service businesses (HVAC, plumbing, roofing) | facebook ads for home services
