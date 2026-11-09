@@ -14,7 +14,8 @@ SV = {'ai': ('AI automation & AI chatbots', 'services/ai-automation/'),
       'fb': ('Facebook & Instagram ads', 'services/facebook-ads/'),
       'lg': ('lead generation systems', 'services/lead-generation/')}
 # Blog posts that industry pages can link to in their Related box (key -> (title, path)).
-POSTS = {'fbrealestate': ('Facebook ads for real estate agents that generate real buyer leads', 'blog/facebook-ads-for-real-estate-agents/'),
+POSTS = {'inslead': ('How insurance agents can follow up on quote requests faster', 'blog/insurance-lead-follow-up/'),
+         'fbrealestate': ('Facebook ads for real estate agents that generate real buyer leads', 'blog/facebook-ads-for-real-estate-agents/'),
          'fbdentists': ('Facebook ads for dentists: a practical guide', 'blog/facebook-ads-for-dentists/'),
          'lawintake': ('Law firm client intake: how to stop losing potential cases', 'blog/law-firm-client-intake/'),
          'chironew': ('How chiropractors can get more new patients without discounts', 'blog/chiropractor-new-patients/'),
@@ -302,7 +303,7 @@ I = [
   faq=[('Can the AI give quotes or coverage advice?','No. It is set up for administrative tasks: replying to requests, collecting basic details, answering general questions about your agency and booking calls. Coverage recommendations and quotes come from your licensed agents, in line with your state\'s licensing rules.'),
        ('What about consent rules for texting and calling leads?','Automated texts and calls are regulated under the TCPA and state laws, so forms are set up to collect clear consent, messages include opt-out instructions, and replies go only to people who contacted you. Your own compliance review and any carrier marketing rules still apply.'),
        ('Does it work with our agency management system or CRM?','Often, yes. Many agency management systems and CRMs can connect directly or through automation platforms. Where they can\'t, leads can go to a simple CRM or shared calendar with alerts to your team.')],
-  rel=['lg','ai','aivsans','speed']),
+  rel=['lg','ai','inslead','aivsans','speed']),
 ]
 
 # ---- Project examples (owner-provided; client names kept private; no outcome numbers claimed) ----
