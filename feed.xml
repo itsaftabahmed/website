@@ -6,8 +6,16 @@
   <atom:link href="https://iamaftabahmed.com/feed.xml" rel="self" type="application/rss+xml"/>
   <description>Practical guides on Google Ads, Facebook ads, lead generation and AI automation for US small businesses.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 05 Nov 2026 14:00:00 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 09 Nov 2026 14:00:00 GMT</lastBuildDate>
 <!-- NEW ITEMS GO HERE (newest first) -->
+  <item>
+    <title>How insurance agents can follow up on quote requests faster</title>
+    <link>https://iamaftabahmed.com/blog/insurance-lead-follow-up/</link>
+    <guid isPermaLink="true">https://iamaftabahmed.com/blog/insurance-lead-follow-up/</guid>
+    <pubDate>Mon, 09 Nov 2026 14:00:00 GMT</pubDate>
+    <dc:creator>Aftab Ahmed</dc:creator>
+    <description>A practical insurance lead follow-up system: instant replies to quote requests, the questions to ask first, agent routing, a 10-day sequence and renewal follow-up.</description>
+  </item>
   <item>
     <title>How to follow up with leads automatically (SMS, email, calls)</title>
     <link>https://iamaftabahmed.com/blog/automated-lead-follow-up/</link>
