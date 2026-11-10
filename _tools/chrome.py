@@ -2,6 +2,7 @@
 # Edit the lists below, then run: python3 _tools/chrome.py   (rewrites the header/footer of all inner pages)
 # gen_industries.py and mkpost.py import nav() and footer() from here.
 import glob, os, re
+from social_icons import SOCIAL3D
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SERVICES = [('services/ai-automation/', 'AI Automation &amp; AI Chatbots', 'Answer, qualify and book leads 24/7'),
@@ -56,7 +57,7 @@ def nav(up):
 
 def footer(up):
     col = lambda title, items: f'<div><b>{title}</b>' + ''.join(f'<a href="{h}"{x}>{t}</a>' for h, t, x in items) + '</div>'
-    soc = ''.join(f'<a href="{h}" rel="noopener" aria-label="{n}">{s}</a>' for h, s, n in SOCIAL)
+    soc = ''.join(f'<a href="{h}" rel="noopener" aria-label="{n}">{SOCIAL3D[n.lower()]}</a>' for h, s, n in SOCIAL)
     return (f'<footer class="ft"><div class="wrap">'
             f'<div class="ft__cta"><div><span class="ft__k">Let\'s talk</span><b>Ready for a business that <br>keeps working when you\'re not?</b></div><a class="btn" href="{up}#book">Book a free 30-minute call →</a></div>'
             f'<div class="ft__g">'

@@ -204,3 +204,5 @@ body:has(article .cta) .ft__cta{display:none}
 .ft__big{font-family:var(--display);font-weight:900;font-size:clamp(44px,11.2vw,140px);line-height:.85;letter-spacing:-.03em;text-align:center;white-space:nowrap;margin-top:44px;background:linear-gradient(180deg,#262626,#0c0c0c 85%);-webkit-background-clip:text;background-clip:text;color:transparent;user-select:none}
 footer.ft .ft__b{margin-top:0}
 @media (max-width:760px){.ft__cta{flex-direction:column;align-items:flex-start;padding:28px 24px}.ft__cta br{display:none}}
+.ft__soc{gap:12px}footer.ft .ft__soc a{width:44px;height:44px;border:0;border-radius:0;padding:0;filter:drop-shadow(0 6px 10px rgba(0,0,0,.45));transition:transform .25s cubic-bezier(.34,1.56,.64,1)}
+footer.ft .ft__soc a svg{width:44px;height:44px}footer.ft .ft__soc a:hover{transform:translateY(-4px) rotate(-6deg) scale(1.08)}
