@@ -49,4 +49,8 @@ if __name__ == '__main__':
         t = re.sub(r'<header class="top">.*?</header>', lambda m: nav(up), s, 1, flags=re.S)
         t = re.sub(r'<footer[^>]*>.*?</footer>(\s*<script src="[^"]*site\.js" defer></script>)?', lambda m: footer(up), t, 1, flags=re.S)
         if t != s: open(p, 'w').write(t); n += 1
+    p = f'{ROOT}/404.html'; s = open(p).read()   # 404 is served from any path, so it uses absolute links
+    t = re.sub(r'<header class="top">.*?</header>', lambda m: nav('/'), s, 1, flags=re.S)
+    t = re.sub(r'<footer[^>]*>.*?</footer>(\s*<script src="[^"]*site\.js" defer></script>)?', lambda m: footer('/'), t, 1, flags=re.S)
+    if t != s: open(p, 'w').write(t); n += 1
     print('updated', n, 'pages')
