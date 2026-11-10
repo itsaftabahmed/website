@@ -31,9 +31,10 @@ def news():
     title, path = latest_post()
     crumb = re.search(r'<nav class="crumbs".*?</a><span>/</span>([^<]+)</nav>', open(f'{ROOT}/{path}index.html').read(), re.S)
     label = crumb.group(1).strip() if crumb else short(title, 26)   # the post's short breadcrumb title
-    return [('tools/missed-call-calculator/', 'Free missed call calculator', 'Free tool: what missed calls cost you', '🧮'),
-            (path, 'New guide: ' + label.lower().capitalize(), 'New guide: ' + title, '📘'),
-            ('#book', 'Taking new clients this month', 'Taking new clients this month: book a free call', '📅')]
+    guide = 'New guide: ' + label.lower().capitalize()
+    return [('tools/missed-call-calculator/', 'Free missed call calculator', 'Free tool: what missed calls cost you', 'calc'),
+            (path, guide, guide, 'guide'),
+            ('#book', 'Taking new clients this month', 'Taking new clients: book a free call', 'cal')]
 
 def ann(up):
     msgs = ''.join(f'<span class="ann__m{" on" if i == 0 else ""}" data-href="{up}{h}">{t} <b>→</b></span>' for i, (h, t, l, e) in enumerate(news()))
