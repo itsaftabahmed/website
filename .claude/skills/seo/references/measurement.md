@@ -10,6 +10,9 @@
 ## Bing Webmaster Tools
 - Import from Search Console, submit sitemap, check AI Performance (Copilot/Bing AI citations, cited pages, grounding queries; no clicks).
 
+## ChatGPT (watch)
+- Nov 2026: OpenAI reportedly building a Search Console-style tool for businesses to track visibility in ChatGPT. When it launches, verify the site and add it to the monthly checks.
+
 ## GA4: AI search channel (step by step)
 1. Admin → Data display → Channel groups → Create new channel group (copy of default), e.g. "Channels with AI".
 2. Add new channel "AI search": Source matches regex
