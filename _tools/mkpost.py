@@ -6,6 +6,8 @@
 # After running: add a link to the new post from an older post or service page (WRITING_GUIDE step 6b),
 # and run `python3 _tools/gen_industries.py` if posts_key was set.
 import json, os, re, sys, subprocess, html
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import chrome
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 U = 'https://iamaftabahmed.com/'
 ns = {}; exec(open(sys.argv[1]).read(), ns); c = ns['C']
@@ -26,7 +28,7 @@ track = tpl[tpl.index('<head>') + 6:tpl.index('<title>')]
 body_track = tpl[tpl.index('<body>') + 6:tpl.index('<header')]
 icon = re.search(r'<link rel="icon"[^>]*>', tpl).group(0)
 abox = re.search(r'  <div class="abox">.*?</div></div>\n', tpl, re.S).group(0)
-footer = re.search(r'<footer>.*?</footer>', tpl, re.S).group(0)
+footer = chrome.footer('../../')
 
 person = {"@type": "Person", "@id": f"{U}#person", "name": "Aftab Ahmed", "url": f"{U}about/", "jobTitle": "AI Automation & Marketing Specialist"}
 ld = {"@context": "https://schema.org", "@graph": [
@@ -44,6 +46,12 @@ faq = ''.join(f'  <h3>{e(q)}</h3>\n  <p>{x}</p>\n' for q, x in c['faq'])
 srcs = ''.join(f'<li><a href="{a(u)}" rel="noopener">{e(t)}</a></li>' for t, u in c['sources'])
 rel = ''.join(f'    <li><a href="{h}">{e(t)}</a></li>\n' for h, t in c['related'])
 tk = ''.join(f'<li>{e(t)}</li>' for t in c['takeaways'])
+
+TOOL = '    <div class="toc__tool"><b>Free tool</b><span>See what missed calls cost you each month.</span><a href="../../tools/missed-call-calculator/">Open the calculator →</a></div>\n'
+MID = '  <div class="midcta"><div><b>Want this set up for you?</b><p>Book a free 30-minute call and I\'ll show you how it would work in your business.</p></div><a class="btn" href="../../#book">Book a free call →</a></div>\n\n'
+body = c['body'].rstrip()
+_h = [m.start() for m in re.finditer(r'  <h2 id="', body)]
+if len(_h) >= 4: body = body[:_h[len(_h) // 2]] + MID + body[_h[len(_h) // 2]:]   # booking prompt mid-post
 
 page = f'''<!doctype html>
 <html lang="en">
@@ -75,7 +83,7 @@ page = f'''<!doctype html>
 {json.dumps(ld, ensure_ascii=False)}
 </script>
 </head>
-<body>{body_track}<header class="top"><div class="wrap"><a class="logo" href="../../">AFTAB <span>AHMED</span></a><a class="btn" href="../../#book">Book a call</a></div></header>
+<body>{body_track}{chrome.nav('../../')}
 
 <section class="hero"><div class="wrap">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">Home</a><span>/</span><a href="../">Blog</a><span>/</span>{e(c['crumb'])}</nav>
@@ -91,9 +99,9 @@ page = f'''<!doctype html>
   <div class="toc"><b>In this guide</b>
     <ol>
 {toc}    </ol>
-  </div>
+{TOOL}  </div>
 
-{c['body'].rstrip()}
+{body}
 
   <h2 id="faq">FAQ</h2>
 {faq}

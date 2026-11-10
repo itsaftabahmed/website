@@ -1,6 +1,8 @@
 # Generates /industries/ (hub + one page per industry) and /privacy/.
 # Edit the I list below, then run: python3 _tools/gen_industries.py
-import json, os, html, re
+import json, os, html, re, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import chrome
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 U = 'https://iamaftabahmed.com/'
 src = open(f'{ROOT}/services/ai-automation/index.html').read()
@@ -406,10 +408,10 @@ def head(title, desc, url, ld, extra=''):
 '''
 
 def topbar(up):
-    return f'<header class="top"><div class="wrap"><a class="logo" href="{up}">AFTAB <span>AHMED</span></a><a class="btn" href="{up}#book">Book a call</a></div></header>\n'
+    return chrome.nav(up) + '\n'
 
 def foot(up):
-    return f'''<footer><div class="wrap"><span>© 2026 Aftab Ahmed · AI, Automation &amp; Marketing</span><nav><a href="{up}">Home</a><a href="{up}industries/">Industries</a><a href="{up}case-studies/">Case studies</a><a href="{up}blog/">Blog</a><a href="{up}#book">Book a call</a><a href="{up}privacy/">Privacy</a></nav></div></footer>
+    return chrome.footer(up) + f'''
 </body>
 </html>
 '''
