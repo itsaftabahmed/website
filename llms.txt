@@ -25,6 +25,9 @@
 - [Chiropractors & Physical Therapy](https://iamaftabahmed.com/industries/chiropractic/): new-patient booking, missed-call text back, care-plan reminders and local ads
 - [Insurance Agencies](https://iamaftabahmed.com/industries/insurance/): instant quote-request replies, agent routing, consultation booking and renewal follow-up
 
+## Free tools
+- [Missed call cost calculator](https://iamaftabahmed.com/tools/missed-call-calculator/): estimate the monthly revenue a service business loses to unanswered calls and what a text-back or AI receptionist could recover
+
 ## Blog (newest first)
 <!-- NEW POSTS GO HERE -->
 - [How insurance agents can follow up on quote requests faster](https://iamaftabahmed.com/blog/insurance-lead-follow-up/): how insurance agencies can reply to quote requests within minutes, collect quoting details up front, route leads to the right agent, run a 10-day follow-up sequence and follow up at renewal
