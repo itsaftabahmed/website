@@ -1081,6 +1081,8 @@ footer{padding:20px 0 34px}
 .abot-wa:hover{filter:brightness(1.06)}
 .abot.reach{rotate:-18deg}
 .abot.hop{animation:ahop .6s cubic-bezier(.3,1.6,.5,1)}
+.abot__badge--new{width:auto;right:-6px;padding:0 6px;border-radius:999px;font-size:9.5px;letter-spacing:.06em;animation:nbPulse 1.6s infinite}@keyframes nbPulse{0%{box-shadow:0 0 0 0 rgba(224,17,25,.7)}80%,100%{box-shadow:0 0 0 9px rgba(224,17,25,0)}}
+.abot-say.news{width:300px}a.abot-opt{text-decoration:none}a.abot-opt span{flex:none}
 @keyframes ahop{0%,100%{translate:0 0}40%{translate:0 -26px}70%{translate:0 0}85%{translate:0 -6px}}
 @media (max-width:700px){.abot-say{right:14px;bottom:100px;width:min(270px,calc(100vw - 28px))}.abot-wa{bottom:30px;right:30px}.abot-wa.out{right:100px}}
 @media (prefers-reduced-motion:reduce){.abot-wa,.abot-say{transition:none}.abot-wa.out::after{animation:none}}
@@ -1094,7 +1096,12 @@ footer{padding:20px 0 34px}
 .fcols a{display:block;padding:5px 0;color:#D9D9D9;text-decoration:none;font-size:15px;overflow-wrap:anywhere}.fcols a:hover{color:#fff}
 .fbar__tag{color:#9E9E9E;font-size:14px}
 @media (max-width:760px){.fcols{grid-template-columns:1fr 1fr}}
+.ann{position:absolute;top:0;left:0;right:0;z-index:51}
+.nav{top:62px}.nav.scrolled{top:16px}
+@media (max-width:760px){.nav{top:58px}.nav.scrolled{top:12px}}
 </style>
+<link rel="stylesheet" href="blog/ann.css">
+<script src="blog/ann.js" defer></script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -1104,6 +1111,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="progress" id="progress" aria-hidden="true"></div>
 
 <!-- ================= NAV ================= -->
+<!--ann--><div class="ann"><a class="ann__in" href="tools/missed-call-calculator/" aria-live="polite"><span class="ann__new">NEW</span><span class="ann__msgs"><span class="ann__m on" data-href="tools/missed-call-calculator/">Free missed call calculator <b>→</b></span><span class="ann__m" data-href="blog/insurance-lead-follow-up/">New guide: Insurance lead follow-up <b>→</b></span><span class="ann__m" data-href="#book">Taking new clients this month <b>→</b></span></span><span class="ann__dots" aria-hidden="true"><i class="on"></i><i></i><i></i></span></a></div><!--/ann-->
 <nav class="nav" id="nav" aria-label="Main">
   <div class="wrap nav__bar">
     <a href="#top" class="logo">AFTAB <span>AHMED</span></a>
@@ -2084,21 +2092,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   addEventListener('keydown', e => { if (e.key === 'Escape' && calc.classList.contains('open')) close(); });
   // ---- speech bubble: job 1 = savings calculator, job 2 = reveal the WhatsApp button ----
   const say = document.getElementById('abotSay'), sayIn = document.getElementById('abotSayIn'), wa = document.getElementById('abotWa');
+  // ---- what's new: filled from the site's announcements by _tools/chrome.py ----
+  const NEWS = /*news*/[{"href": "tools/missed-call-calculator/", "text": "Free tool: what missed calls cost you", "icon": "🧮"}, {"href": "blog/insurance-lead-follow-up/", "text": "New guide: How insurance agents can follow up on quote requests faster", "icon": "📘"}, {"href": "#book", "text": "Taking new clients this month: book a free call", "icon": "📅"}]/*/news*/, newsKey = NEWS.map(n => n.href).join('|');
+  let newsSeen = false; try { newsSeen = localStorage.getItem('abotNews') === newsKey; } catch (e) {}
+  const markSeen = () => { newsSeen = true; bot.classList.remove('news'); badge.style.display = 'none'; try { localStorage.setItem('abotNews', newsKey); } catch (e) {} };
+  if (!newsSeen && NEWS.length) { bot.classList.add('news'); badge.textContent = 'NEW'; badge.classList.add('abot__badge--new'); }
   let sayMode = '', sayT;
   const hideSay = () => { say.classList.remove('show'); clearTimeout(sayT); };
-  const showSay = (mode, html, ms) => { if (calc.classList.contains('open')) return; sayMode = mode; sayIn.innerHTML = html; say.classList.toggle('wa', mode === 'wa'); say.classList.toggle('menu', mode === 'menu'); say.classList.add('show'); sfx.pop(); clearTimeout(sayT); sayT = setTimeout(hideSay, ms); };
+  const showSay = (mode, html, ms) => { if (calc.classList.contains('open')) return; sayMode = mode; sayIn.innerHTML = html; say.classList.toggle('wa', mode === 'wa'); say.classList.toggle('menu', mode === 'menu'); say.classList.toggle('news', mode === 'news'); say.classList.add('show'); sfx.pop(); clearTimeout(sayT); sayT = setTimeout(hideSay, ms); };
   say.addEventListener('click', e => {
     if (e.target.id === 'abotSayX') { hideSay(); return; }
+    if (sayMode === 'news') { if (e.target.closest('a')) { hideSay(); } return; }
     if (sayMode === 'menu') {
       const o = e.target.closest('.abot-opt'); if (!o) return;
-      hideSay(); if (o.dataset.a === 'calc') open(); else revealWa(true);
+      hideSay(); if (o.dataset.a === 'news') showNews(); else if (o.dataset.a === 'calc') open(); else revealWa(true);
       return;
     }
     hideSay(); if (sayMode === 'calc') open(); else wa.click();
   });
   // clicking the robot asks what the visitor wants: savings calculator or WhatsApp
-  const menu = () => showSay('menu', '<b>Hi! How can I help? 👋</b><button type="button" class="abot-opt" data-a="calc">📊 What’s busywork costing me?</button><button type="button" class="abot-opt abot-opt--wa" data-a="wa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3a.5.5 0 0 0 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.7-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3z"/></svg>Chat with Aftab on WhatsApp</button>', 20000);
-  bot.addEventListener('click', () => { if (calc.classList.contains('open')) close(); else if (say.classList.contains('show') && sayMode === 'menu') hideSay(); else { comeIn(true); menu(); } });
+  const showNews = () => { showSay('news', '<b>What’s new 🆕</b>' + NEWS.map(n => '<a class="abot-opt" href="' + n.href + '"><span>' + n.icon + '</span>' + n.text + '</a>').join(''), 15000); markSeen(); };
+  const menu = () => showSay('menu', '<b>Hi! How can I help? 👋</b><button type="button" class="abot-opt" data-a="news">🆕 What’s new</button><button type="button" class="abot-opt" data-a="calc">📊 What’s busywork costing me?</button><button type="button" class="abot-opt abot-opt--wa" data-a="wa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3a.5.5 0 0 0 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.7-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3z"/></svg>Chat with Aftab on WhatsApp</button>', 20000);
+  bot.addEventListener('click', () => { if (calc.classList.contains('open')) close(); else if (say.classList.contains('show') && sayMode === 'menu') hideSay(); else { comeIn(true); if (!newsSeen && NEWS.length) showNews(); else menu(); } });
   const revealWa = (talk) => {
     if (wa.classList.contains('out')) { wa.classList.remove('mini'); if (talk) showSay('wa', '<b>Here you go! 💬</b><span>Tap the green button to message Aftab on WhatsApp.</span>', 9000); return; }
     bot.classList.add('reach'); setTimeout(() => { bot.classList.remove('reach'); wa.classList.add('out'); }, reduce ? 0 : 450);   // reaches behind its back and pulls the button out
@@ -2107,13 +2122,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   };
   wa.addEventListener('click', () => { (window.dataLayer = window.dataLayer || []).push({event: 'whatsapp_click', page_path: location.pathname}); if (window.fbq) fbq('track', 'Contact'); if (window.gtag) gtag('event', 'whatsapp_click'); });
   const _open = open; open = () => { hideSay(); _open(); };
-  setInterval(() => { if (bot.classList.contains('in') && !calc.classList.contains('open') && !say.classList.contains('show')) { bot.classList.remove('hop'); void bot.offsetWidth; bot.classList.add('hop'); } }, 20000);   // little hop now and then
+  const hop = () => { if (bot.classList.contains('in') && !calc.classList.contains('open') && !say.classList.contains('show')) { bot.classList.remove('hop'); void bot.offsetWidth; bot.classList.add('hop'); } };
+  setInterval(hop, 20000);   // little hop now and then
+  if (!reduce) setInterval(() => { if (!newsSeen) hop(); }, 3500);   // keeps jumping until the visitor checks what's new
   let greeted = false; try { greeted = sessionStorage.getItem('abotGreeted') === '1'; } catch (e) {}
-  if (greeted || reduce) comeIn(true);
+  if (greeted || reduce) { comeIn(true); if (!newsSeen && NEWS.length && !reduce) setTimeout(showNews, 4000); }
   else {
     setTimeout(() => { if (!bot.classList.contains('in')) { bot.classList.add('peek'); psst.classList.add('show'); sfx.peek(); } }, 2500);   // slide out and peek
     setTimeout(() => { if (!calc.classList.contains('open')) { comeIn(); try { sessionStorage.setItem('abotGreeted', '1'); } catch (e) {} } }, 8000);
-    setTimeout(() => showSay('calc', '<b>Quick question 👋</b><span>How much is busywork costing your business? Find out in 10 seconds.</span><em>Show me →</em>', 10000), 9000);   // job 1
+    setTimeout(() => { if (!newsSeen && NEWS.length) showNews(); else showSay('calc', '<b>Quick question 👋</b><span>How much is busywork costing your business? Find out in 10 seconds.</span><em>Show me →</em>', 10000); }, 9000);   // job 1: what's new, else the calculator
   }
 })();
 </script>

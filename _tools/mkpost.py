@@ -25,7 +25,7 @@ def sub(p, old, new):
 # Template: tracking scripts, author box and footer come from an existing post.
 tpl = rd('blog/hvac-missed-calls/index.html')
 track = tpl[tpl.index('<head>') + 6:tpl.index('<title>')]
-body_track = tpl[tpl.index('<body>') + 6:tpl.index('<header')]
+body_track = tpl[tpl.index('<body>') + 6:re.search(r'<div class=\"ann\">|<header', tpl).start()]
 icon = re.search(r'<link rel="icon"[^>]*>', tpl).group(0)
 abox = re.search(r'  <div class="abox">.*?</div></div>\n', tpl, re.S).group(0)
 footer = chrome.footer('../../')
@@ -188,3 +188,4 @@ subprocess.run(['node', f'{ROOT}/_tools/og.js', slug], check=True, env={**os.env
 text = re.sub('<[^>]+>', ' ', c['body'] + c['lead'] + ' '.join(x for q, x in c['faq']))
 bad = [w for w in ('delve', 'game-changer', 'unlock', 'leverage', 'seamless', 'cutting-edge', 'in today', 'revolutioniz', 'skyrocket') if w in text.lower()]
 print(slug, 'words', len(text.split()), 'title', len(c['ttag']), 'desc', len(c['desc']), 'emdash', page.count('—'), 'bad', bad)
+chrome.apply()   # refresh menus, footers and the announcement (newest post) on every page

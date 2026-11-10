@@ -7,7 +7,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 U = 'https://iamaftabahmed.com/'
 src = open(f'{ROOT}/services/ai-automation/index.html').read()
 TRACK_HEAD = src[src.index('<head>') + 6:src.index('<title>')].strip('\n')   # GA4, GTM, Pixel, Clarity, conversion events
-TRACK_BODY = src[src.index('<body>') + 6:src.index('<header')].strip('\n')  # GTM noscript
+TRACK_BODY = src[src.index('<body>') + 6:re.search(r'<div class=\"ann\">|<header', src).start()].strip('\n')  # GTM noscript
 ICON = re.search(r'<link rel="icon" href="([^"]+)"', src).group(1)
 e = lambda t: html.escape(t, quote=False)
 
