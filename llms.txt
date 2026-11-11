@@ -26,6 +26,7 @@
 - [Insurance Agencies](https://iamaftabahmed.com/industries/insurance/): instant quote-request replies, agent routing, consultation booking and renewal follow-up
 
 ## Free tools
+- [AI receptionist live demo](https://iamaftabahmed.com/demo/): chat with an example AI receptionist for a dental office, HVAC company, law firm, med spa or real estate agency and watch it answer and book an appointment
 - [Missed call cost calculator](https://iamaftabahmed.com/tools/missed-call-calculator/): estimate the monthly revenue a service business loses to unanswered calls and what a text-back or AI receptionist could recover
 
 ## Blog (newest first)
