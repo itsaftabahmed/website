@@ -8,12 +8,21 @@ Audience: US small-business owners in that industry. Voice: Aftab Ahmed, plain, 
 
 - [x] chiropractic | Chiropractors & Physical Therapy
 - [x] insurance | Insurance Agencies
-- [ ] mortgage | Mortgage Brokers & Loan Officers
+- [ ] flooring | Flooring Companies
 - [ ] roofing | Roofing & Remodeling
+- [ ] junk-removal | Junk Removal & Dumpster Rental
+- [ ] mortgage | Mortgage Brokers & Loan Officers
+- [ ] foundation-repair | Foundation Repair & Waterproofing
 - [ ] fitness | Fitness Studios & Gyms
+- [ ] septic | Septic & Drain Services
 - [ ] auto-repair | Auto Repair Shops
+- [ ] tree-service | Tree Service Companies
+- [ ] concrete-fencing | Concrete, Paving & Fencing Contractors
+- [ ] pest-control | Pest & Wildlife Control
+- [ ] pool | Pool Builders & Pool Service
+- [ ] commercial-cleaning | Commercial Cleaning Companies
 
-When the queue is empty, do a **refresh run** instead (see below). Stop at about 12 industries total; don't add new lines to the queue on your own.
+When the queue is empty, do a **refresh run** instead (see below). The owner wants the site broad: well-known industries mixed with low-competition trades (updated 2026-11-11). Don't add new lines to the queue on your own. Flooring and roofing have matching case studies in `PROJECTS`; map them in `IND_PROJ`.
 
 ## Every run
 
