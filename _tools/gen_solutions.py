@@ -9,6 +9,7 @@ e = lambda t: html.escape(t, quote=False)
 src = open(f'{ROOT}/services/ai-automation/index.html').read()
 TRACK = src[src.index('<head>') + 6:src.index('<title>')]
 BODY_TRACK = src[src.index('<body>') + 6:re.search(r'<div class="ann">|<header', src).start()]
+PRICE_FROM = 297   # shown on every solution page as 'Plans start from $297'
 ICON = re.search(r'<link rel="icon"[^>]*>', src).group(0)
 
 def phone(top, rows):
@@ -171,14 +172,20 @@ SOL = [
   related=[('blog/accounting-client-onboarding-automation/', 'How to automate client onboarding at an accounting firm'), ('solutions/lead-follow-up/', 'Fix slow follow-up'), ('services/ai-automation/', 'AI automation and AI chatbots'), ('industries/accounting/', 'Automation for accounting and CPA firms')]),
 ]
 
+COST_Q = 'How much does it cost?'
+COST_A = f'Plans start from ${PRICE_FROM}. The final price depends on what needs to be built and connected, such as your calendar, CRM and phone system. On a free 30-minute call you get a clear quote before anything starts.'
+def faq(x):
+    return [(q, a) for q, a in x['faq'] if q != COST_Q] + [(COST_Q, COST_A)]
+
 def page(x):
     url = f'{U}solutions/{x["slug"]}/'; up = '../../'
     ld = {"@context": "https://schema.org", "@graph": [
         {"@type": "Service", "name": x['title'].split(':')[0], "serviceType": x['name'], "url": url, "description": x['desc'],
-         "provider": {"@type": "Person", "@id": f"{U}#person", "name": "Aftab Ahmed", "url": f"{U}about/"}, "areaServed": {"@type": "Country", "name": "United States"}},
+         "provider": {"@type": "Person", "@id": f"{U}#person", "name": "Aftab Ahmed", "url": f"{U}about/"}, "areaServed": {"@type": "Country", "name": "United States"},
+         "offers": {"@type": "Offer", "priceSpecification": {"@type": "PriceSpecification", "minPrice": PRICE_FROM, "priceCurrency": "USD"}}},
         {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": U},
          {"@type": "ListItem", "position": 2, "name": "Solutions", "item": url}, {"@type": "ListItem", "position": 3, "name": x['name'], "item": url}]},
-        {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in x['faq']]}]}
+        {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq(x)]}]}
     li = lambda xs: ''.join(f'<li>{e(t)}</li>' for t in xs)
     q, who, role = x['quote']; cid, ck, ct, flow = x['case']
     fl = '<i aria-hidden="true">→</i>'.join(f'<span>{e(s)}</span>' for s in flow)
@@ -213,6 +220,7 @@ def page(x):
   <div class="kicker">{e(x['kicker'])}</div>
   <h1>{e(x['h1'])}</h1>
   <p class="lead">{e(x['lead'])}</p>
+  <p class="sv-price">Plans start from <b>${PRICE_FROM}</b> · Free 30-minute call, no obligation</p>
   <a class="btn" href="{up}#book">Book a free 30-minute call →</a> <a class="btn" href="{up}{x['btn2'][0]}" style="background:none;border:1px solid #3a3a3a;box-shadow:none;margin-left:6px">{e(x['btn2'][1])}</a>
 </div>
 {x['visual']}</div></section>
@@ -235,7 +243,7 @@ def page(x):
   <div class="sv-proof"><figure class="sv-card"><blockquote>{e(q)}</blockquote><figcaption><b>{e(who)}</b><small>{e(role)}</small></figcaption></figure><div class="sv-card"><div class="kicker">Case study · {e(ck)}</div><h3>{e(ct)}</h3><div class="pflow">{fl}</div><p><a href="{up}case-studies/#{cid}">Read the case study →</a></p></div></div>
 
   <h2 id="faq">FAQ</h2>
-{''.join(f'  <h3>{e(q)}</h3>' + chr(10) + f'  <p>{e(a)}</p>' + chr(10) for q, a in x['faq'])}
+{''.join(f'  <h3>{e(q)}</h3>' + chr(10) + f'  <p>{e(a)}</p>' + chr(10) for q, a in faq(x))}
   <div class="related"><b>Related</b><ul>{''.join(f'<li><a href="{up}{h}">{e(t)}</a></li>' for h, t in x['related'])}</ul></div>
 
   <div class="cta">

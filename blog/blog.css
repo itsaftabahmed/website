@@ -212,3 +212,4 @@ footer.ft .ft__soc a svg{width:44px;height:44px}footer.ft .ft__soc a:hover{trans
 @media (max-width:1060px){.ft__g{grid-template-columns:1fr 1fr 1fr}.ft__g>div:first-child{grid-column:1/-1}}
 @media (max-width:980px){.nav__menu--sol{max-height:none}}
 @media (max-width:600px){.ft__g{grid-template-columns:1fr 1fr}}
+.sv-price{margin:-4px 0 18px;color:var(--soft);font-size:15px}.sv-price b{color:#fff;font-size:17px}
