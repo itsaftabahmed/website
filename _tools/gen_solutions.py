@@ -9,7 +9,7 @@ e = lambda t: html.escape(t, quote=False)
 src = open(f'{ROOT}/services/ai-automation/index.html').read()
 TRACK = src[src.index('<head>') + 6:src.index('<title>')]
 BODY_TRACK = src[src.index('<body>') + 6:re.search(r'<div class="ann">|<header', src).start()]
-PRICE_FROM = 297   # shown on every solution page as 'Plans start from $297'
+PRICE_FROM = 297   # monthly; shown on every solution page as 'Plans start from $297/month'
 ICON = re.search(r'<link rel="icon"[^>]*>', src).group(0)
 
 def phone(top, rows):
@@ -173,7 +173,7 @@ SOL = [
 ]
 
 COST_Q = 'How much does it cost?'
-COST_A = f'Plans start from ${PRICE_FROM}. The final price depends on what needs to be built and connected, such as your calendar, CRM and phone system. On a free 30-minute call you get a clear quote before anything starts.'
+COST_A = f'Plans start from ${PRICE_FROM} per month. The final price depends on what needs to be built and connected, such as your calendar, CRM and phone system. On a free 30-minute call you get a clear quote before anything starts.'
 def faq(x):
     return [(q, a) for q, a in x['faq'] if q != COST_Q] + [(COST_Q, COST_A)]
 
@@ -182,7 +182,7 @@ def page(x):
     ld = {"@context": "https://schema.org", "@graph": [
         {"@type": "Service", "name": x['title'].split(':')[0], "serviceType": x['name'], "url": url, "description": x['desc'],
          "provider": {"@type": "Person", "@id": f"{U}#person", "name": "Aftab Ahmed", "url": f"{U}about/"}, "areaServed": {"@type": "Country", "name": "United States"},
-         "offers": {"@type": "Offer", "priceSpecification": {"@type": "PriceSpecification", "minPrice": PRICE_FROM, "priceCurrency": "USD"}}},
+         "offers": {"@type": "Offer", "priceSpecification": {"@type": "UnitPriceSpecification", "minPrice": PRICE_FROM, "priceCurrency": "USD", "unitText": "month"}}},
         {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": U},
          {"@type": "ListItem", "position": 2, "name": "Solutions", "item": url}, {"@type": "ListItem", "position": 3, "name": x['name'], "item": url}]},
         {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq(x)]}]}
@@ -220,7 +220,7 @@ def page(x):
   <div class="kicker">{e(x['kicker'])}</div>
   <h1>{e(x['h1'])}</h1>
   <p class="lead">{e(x['lead'])}</p>
-  <p class="sv-price">Plans start from <b>${PRICE_FROM}</b> · Free 30-minute call, no obligation</p>
+  <p class="sv-price">Plans start from <b>${PRICE_FROM}/month</b> · Free 30-minute call, no obligation</p>
   <a class="btn" href="{up}#book">Book a free 30-minute call →</a> <a class="btn" href="{up}{x['btn2'][0]}" style="background:none;border:1px solid #3a3a3a;box-shadow:none;margin-left:6px">{e(x['btn2'][1])}</a>
 </div>
 {x['visual']}</div></section>
