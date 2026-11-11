@@ -9,6 +9,11 @@ SERVICES = [('services/ai-automation/', 'AI Automation &amp; AI Chatbots', 'Answ
             ('services/lead-generation/', 'Lead Generation Systems', 'Landing pages, CRM and follow-up'),
             ('services/google-ads/', 'Google Ads Management', 'High-intent local searches'),
             ('services/facebook-ads/', 'Facebook &amp; Instagram Ads', 'Offers that fill your calendar')]
+SOLUTIONS = [('solutions/missed-calls/', 'Stop missed calls', 'AI receptionist and instant text back'),
+             ('solutions/lead-follow-up/', 'Fix slow follow-up', 'Reply to every lead in seconds'),
+             ('solutions/no-shows/', 'Reduce no-shows', 'Reminders and easy rescheduling'),
+             ('solutions/ads-not-converting/', 'Fix ads that don’t convert', 'Offer, page, tracking and follow-up'),
+             ('solutions/busywork/', 'Automate busywork', 'Onboarding, admin, reviews and reports')]
 INDUSTRIES = [('industries/dental/', 'Dental &amp; medical'), ('industries/real-estate/', 'Real estate'),
               ('industries/home-services/', 'Home services'), ('industries/law/', 'Law firms'),
               ('industries/med-spa/', 'Med spas'), ('industries/accounting/', 'Accounting &amp; CPA'),
@@ -45,13 +50,14 @@ def ann(up):
             f'<span class="ann__msgs">{msgs}</span><span class="ann__dots" aria-hidden="true">{dots}</span></a></div>')
 
 def nav(up):
-    svc = ''.join(f'<a href="{up}{h}">{t}<small>{d}</small></a>' for h, t, d in SERVICES)
+    svc = ('<span class="nav__grp">Problems we solve</span>' + ''.join(f'<a href="{up}{h}">{t}<small>{d}</small></a>' for h, t, d in SOLUTIONS)
+           + '<span class="nav__grp">Services</span>' + ''.join(f'<a href="{up}{h}" class="nav__sm">{t}</a>' for h, t, d in SERVICES))
     ind = ''.join(f'<a href="{up}{h}">{t}</a>' for h, t in INDUSTRIES) + f'<a href="{up}industries/">All industries →</a>'
     links = ''.join(f'<a class="nav__l" href="{up}{h}">{t}</a>' for h, t in LINKS)
     return (ann(up) + f'<header class="top"><div class="wrap"><a class="logo" href="{up}">AFTAB <span>AHMED</span></a>'
             f'<button type="button" class="nav__burger" aria-label="Menu" aria-expanded="false" aria-controls="siteNav"><i></i><i></i><i></i></button>'
             f'<nav class="nav" id="siteNav" aria-label="Main">'
-            f'<div class="nav__dd"><button type="button" class="nav__l" aria-expanded="false">Services</button><div class="nav__menu">{svc}</div></div>'
+            f'<div class="nav__dd"><button type="button" class="nav__l" aria-expanded="false">Solutions</button><div class="nav__menu nav__menu--sol">{svc}</div></div>'
             f'<div class="nav__dd"><button type="button" class="nav__l" aria-expanded="false">Industries</button><div class="nav__menu nav__menu--2">{ind}</div></div>'
             f'{links}<a class="btn" href="{up}#book">Book a call</a></nav></div></header>')
 
@@ -62,6 +68,7 @@ def footer(up):
             f'<div class="ft__cta"><div><span class="ft__k">Let\'s talk</span><b>Ready for a business that <br>keeps working when you\'re not?</b></div><a class="btn" href="{up}#book">Book a free 30-minute call →</a></div>'
             f'<div class="ft__g">'
             f'<div><a class="logo" href="{up}">AFTAB <span>AHMED</span></a><p>AI automation, ads and lead follow-up for US service businesses.</p><div class="ft__soc">{soc}</div></div>'
+            + col('Solutions', [(up + h, t, '') for h, t, d in SOLUTIONS])
             + col('Services', [(up + h, t, '') for h, t, d in SERVICES])
             + col('Industries', [(up + h, t, '') for h, t in INDUSTRIES[:4]] + [(up + 'industries/', 'All industries →', '')])
             + col('Resources', [(up + 'blog/', 'Blog', ''), (up + 'case-studies/', 'Case studies', ''), (up + 'tools/missed-call-calculator/', 'Missed call calculator', ''), (up + 'about/', 'About', '')])

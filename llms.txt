@@ -14,6 +14,13 @@
 ## Case studies
 - [Case studies](https://iamaftabahmed.com/case-studies/): ten anonymized lead follow-up, CRM and automation projects for HVAC, flooring, insurance, dental, real estate, roofing, accounting, med spa, law and chiropractic businesses
 
+## Solutions (problems I fix)
+- [Stop missed calls](https://iamaftabahmed.com/solutions/missed-calls/): ai receptionist and instant text back
+- [Fix slow follow-up](https://iamaftabahmed.com/solutions/lead-follow-up/): reply to every lead in seconds
+- [Reduce no-shows](https://iamaftabahmed.com/solutions/no-shows/): reminders and easy rescheduling
+- [Fix ads that don’t convert](https://iamaftabahmed.com/solutions/ads-not-converting/): offer, page, tracking and follow-up
+- [Automate busywork](https://iamaftabahmed.com/solutions/busywork/): onboarding, admin, reviews and reports
+
 ## Industries
 - [Industries overview](https://iamaftabahmed.com/industries/): how AI automation and lead generation apply to specific US industries
 - [Dental & Medical Practices](https://iamaftabahmed.com/industries/dental/): AI receptionist, missed-call text back, reminders and local ads for practices
