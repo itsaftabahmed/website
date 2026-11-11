@@ -3,7 +3,7 @@
 //   POST /lead   saves a lead (D1 database) and emails it to you (Email Routing)
 //   GET  /leads?key=ADMIN_KEY            private list of leads
 //   GET  /leads.csv?key=ADMIN_KEY        CSV download
-// Bindings (Worker > Settings > Bindings): AI = Workers AI, DB = D1 database, EMAIL = Send email.
+// Bindings (Worker > Settings > Bindings): AI = Workers AI, DB = D1 database, EMAIL = Email Service (or the older Send email).
 // Variables: NOTIFY_TO = your verified email, FROM = leads@iamaftabahmed.com, ADMIN_KEY = a long secret.
 import { EmailMessage } from 'cloudflare:email';
 
@@ -76,7 +76,11 @@ async function notify(env, L) {
   const raw = [`From: Website Leads <${from}>`, `To: <${env.NOTIFY_TO}>`, `Reply-To: <${L.email}>`, `Subject: ${subject}`,
     `Message-ID: <${crypto.randomUUID()}@iamaftabahmed.com>`, `Date: ${new Date().toUTCString()}`, 'MIME-Version: 1.0',
     'Content-Type: text/plain; charset=utf-8', 'Content-Transfer-Encoding: 8bit', '', body].join('\r\n');
-  await env.EMAIL.send(new EmailMessage(from, env.NOTIFY_TO, raw));
+  try {   // Cloudflare Email Service binding (object form)
+    await env.EMAIL.send({ from: { email: from, name: 'Website Leads' }, to: env.NOTIFY_TO, replyTo: L.email, subject, text: body.replace(/\r\n/g, '\n') });
+  } catch (e) {   // older "Send email" binding (raw message form)
+    await env.EMAIL.send(new EmailMessage(from, env.NOTIFY_TO, raw));
+  }
 }
 
 async function leads(url, env) {
