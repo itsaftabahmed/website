@@ -1,0 +1,9 @@
+/* ---------- lead forms ---------- */
+.lead{display:grid;gap:10px}.lead .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.lead input,.lead select,.lead textarea{width:100%;font:inherit;font-size:15px;color:#fff;background:#0d0d0d;border:1px solid #333;border-radius:12px;padding:11px 13px;outline:none}
+.lead input:focus,.lead select:focus,.lead textarea:focus{border-color:#E01119}
+.lead textarea{min-height:84px;resize:vertical}.lead .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.lead button{justify-self:start;border:0;cursor:pointer;font-family:inherit}
+.lead__msg{font-size:14px;color:#9E9E9E;min-height:0}.lead__msg.ok{color:#7fe0a0}.lead__msg.err{color:#ff8a8f}.lead__msg a{color:inherit}
+.lead--done input,.lead--done select,.lead--done textarea,.lead--done button{display:none}
+@media (max-width:520px){.lead .row2{grid-template-columns:1fr}}

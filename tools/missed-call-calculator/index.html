@@ -95,6 +95,7 @@ document.addEventListener('click', function (e) {
 .mc__rows b{color:#fff}
 .mc__rec{background:rgba(224,17,25,.08);border:1px solid rgba(224,17,25,.35);border-radius:16px;padding:16px}
 .mc__rec p{margin:0;color:var(--soft);font-size:15px}.mc__rec b{color:#fff;font-size:22px}
+.mc__lead{margin-top:6px;padding-top:16px;border-top:1px solid var(--line)}
 .mc__out .btn{align-self:flex-start}
 @media (max-width:760px){.mc{grid-template-columns:1fr}.mc__out{position:static}}
 </style>
@@ -148,6 +149,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="mc__rec"><p>A fast reply could win back about</p><b id="mcRecM">$0</b><p>a month (<span id="mcRecY">$0</span> a year)</p></div>
       <a class="btn" href="../../#book" id="mcBookBtn">Get a free plan to recover this →</a>
+      <form class="lead mc__lead" data-lead="calculator" data-ok="Thanks! I’ll email you a short plan for recovering these calls within one business day.">
+        <b style="color:#fff;font-size:15px">Or get a free plan by email</b>
+        <input name="name" placeholder="First name" autocomplete="given-name" aria-label="First name">
+        <input type="email" name="email" required placeholder="Email address" autocomplete="email" aria-label="Email address">
+        <input name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn" type="submit" style="background:none;border:1px solid #3a3a3a;box-shadow:none">Send me a plan</button>
+        <p class="lead__msg" aria-live="polite"></p>
+      </form>
     </div>
   </div>
 
@@ -225,8 +234,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   document.getElementById('mcBookBtn').addEventListener('click',function(){
     (window.dataLayer=window.dataLayer||[]).push({event:'calculator_cta',tool:'missed_call',lost_month:document.getElementById('mcLostM').textContent});
   });
+  var lf=document.querySelector('.mc__lead'); if(lf) lf.leadExtra=function(){ return 'Industry: '+document.getElementById('mcInd').selectedOptions[0].text+'; calls/week '+el.mcCalls.value+'; missed '+el.mcMiss.value+'%; new '+el.mcNew.value+'%; book '+el.mcBook.value+'%; value $'+el.mcVal.value+'; lost/month '+document.getElementById('mcLostM').textContent; };
   set('dental');
 })();
 </script>
+<script src="../../blog/lead.js" defer></script>
 </body>
 </html>

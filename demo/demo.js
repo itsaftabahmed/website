@@ -1,6 +1,6 @@
 // AI receptionist demo. Uses the Cloudflare Worker when WORKER_URL is set; otherwise (or on any error) a guided script.
 (function () {
-  var API = '';   // site Worker, e.g. 'https://site-api.yourname.workers.dev' (see _tools/site-worker)
+  var API = 'https://site-api.itsaftabahmedhere.workers.dev';   // site Worker, e.g. 'https://site-api.yourname.workers.dev' (see _tools/site-worker)
   var WORKER_URL = API ? API + '/demo' : '';
   var BIZ = {
     dental: { tab: 'Dental', name: 'Bright Smile Dental', av: 'BS', hi: 'Hi, this is Bright Smile Dental! How can I help you today?', who: 'Dr. Lee', visit: 'visit',
