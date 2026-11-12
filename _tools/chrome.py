@@ -74,7 +74,7 @@ def footer(up):
             + col('Resources', [(up + 'blog/', 'Blog', ''), (up + 'case-studies/', 'Case studies', ''), (up + 'tools/missed-call-calculator/', 'Missed call calculator', ''), (up + 'about/', 'About', '')])
             + col('Contact', [('mailto:hello@iamaftabahmed.com', 'hello@iamaftabahmed.com', ''), (up + '#book', 'Book a free call', ''), (up + 'privacy/', 'Privacy', '')])
             + f'</div><div class="ft__big" aria-hidden="true">AFTAB AHMED</div><div class="ft__b"><span>© 2026 Aftab Ahmed · AI, Automation &amp; Marketing</span><span>Serving businesses across the United States</span></div></div></footer>\n'
-            f'<script src="{up}blog/site.js" defer></script><script src="{up}blog/ann.js" defer></script><script src="{up}blog/book.js" defer></script>')
+            f'<script src="{up}blog/site.js" defer></script><script src="{up}blog/ann.js" defer></script><script src="{up}blog/book.js?v=3" defer></script>')
 
 def apply():
     n = 0
@@ -84,11 +84,11 @@ def apply():
         up = '../' * rel.count('/')
         s = open(p).read()
         t = re.sub(r'(<div class="ann">.*?</a></div>)?<header class="top">.*?</header>', lambda m: nav(up), s, 1, flags=re.S)
-        t = re.sub(r'<footer[^>]*>.*?</footer>(\s*<script src="[^"]*site\.js" defer></script>(<script src="[^"]*ann\.js" defer></script>)?(<script src="[^"]*book\.js" defer></script>)?)?', lambda m: footer(up), t, 1, flags=re.S)
+        t = re.sub(r'<footer[^>]*>.*?</footer>(\s*<script src="[^"]*site\.js" defer></script>(<script src="[^"]*ann\.js" defer></script>)?(<script src="[^"]*book\.js[^"]*" defer></script>)?)?', lambda m: footer(up), t, 1, flags=re.S)
         if t != s: open(p, 'w').write(t); n += 1
     p = f'{ROOT}/404.html'; s = open(p).read()   # 404 is served from any path, so it uses absolute links
     t = re.sub(r'(<div class="ann">.*?</a></div>)?<header class="top">.*?</header>', lambda m: nav('/'), s, 1, flags=re.S)
-    t = re.sub(r'<footer[^>]*>.*?</footer>(\s*<script src="[^"]*site\.js" defer></script>(<script src="[^"]*ann\.js" defer></script>)?(<script src="[^"]*book\.js" defer></script>)?)?', lambda m: footer('/'), t, 1, flags=re.S)
+    t = re.sub(r'<footer[^>]*>.*?</footer>(\s*<script src="[^"]*site\.js" defer></script>(<script src="[^"]*ann\.js" defer></script>)?(<script src="[^"]*book\.js[^"]*" defer></script>)?)?', lambda m: footer('/'), t, 1, flags=re.S)
     if t != s: open(p, 'w').write(t); n += 1
     # homepage: announcement capsule + bot news (between markers)
     p = f'{ROOT}/index.html'; s = open(p).read()

@@ -1,5 +1,11 @@
-// Booking pop-up: [data-book] buttons and links ending in #call open the Cal.com calendar in a modal. #book links scroll to the homepage contact section.
+// Booking pop-up: "Book a call" buttons open the Cal.com calendar in a modal on every page.
+// On the homepage, #book links scroll to the contact section instead (its "Pick a time" button opens the pop-up).
 (function () {
+  var me = document.currentScript && document.currentScript.src;
+  if (me && !document.querySelector('link[href*="book.css"]')) {   // load the pop-up styles even where a cached stylesheet lacks them
+    var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = me.replace(/book\.js(\?.*)?$/, 'book.css'); document.head.appendChild(l);
+  }
+  var HOME = !!document.querySelector('.ct#contact');
   var CAL_LINK = 'aftab-ahmed-4rjr3m/30min', NS = '30min', modal, booted = false, lastFocus;
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   function track(ev, extra) { (window.dataLayer = window.dataLayer || []).push(Object.assign({ event: ev }, extra || {})); }
@@ -37,15 +43,15 @@
     modal.classList.remove('open'); document.documentElement.classList.remove('bk-lock');
     setTimeout(function () { modal.hidden = true; }, reduce ? 0 : 250);
     if (lastFocus && lastFocus.focus) lastFocus.focus();
-    if (location.hash === '#call') history.replaceState(null, '', location.pathname + location.search);
+    if (location.hash === '#call' || (!HOME && location.hash === '#book')) history.replaceState(null, '', location.pathname + location.search);
   }
   document.addEventListener('click', function (e) {
-    var a = e.target.closest && e.target.closest('[data-book], a[href$="#call"]');
+    var a = e.target.closest && e.target.closest(HOME ? '[data-book], a[href$="#call"]' : '[data-book], a[href$="#call"], a[href$="#book"]');
     if (!a || e.metaKey || e.ctrlKey || e.shiftKey) return;
     if (a.href) { var url = new URL(a.href, location.href); if (url.origin !== location.origin) return; }
     e.preventDefault(); open();
   });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
   window.openBooking = open;
-  if (location.hash === '#call') { if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', open); else open(); }
+  if (location.hash === '#call' || (!HOME && location.hash === '#book')) { if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', open); else open(); }
 })();
