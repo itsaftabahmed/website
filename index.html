@@ -1253,6 +1253,29 @@ footer.ft .ft__soc a svg{width:44px;height:44px}footer.ft .ft__soc a:hover{trans
 .mg__bar svg{width:14px;height:14px;color:#5f6368;flex:none}.mg__top{color:#188038}.mg__call svg{width:11px;height:11px;vertical-align:-1px}
 .msys svg{width:12px;height:12px;vertical-align:-2px}
 .mau__it i svg{width:16px;height:16px;color:#FF4A50}.mau__it.ok i{background:rgba(224,17,25,.12)}.mau__it em svg{width:13px;height:13px;vertical-align:-2px}
+/* demo stage: framed backdrop, larger phone, live status chips */
+@media (min-width:981px){.m1{grid-template-columns:minmax(0,1fr) minmax(0,540px);gap:44px}}
+.m1__stage{min-height:690px;align-items:center;justify-content:flex-end;padding:34px 34px 34px 0}
+.m1__stage::before{right:10px;top:8%;width:520px;height:520px;background:radial-gradient(circle,rgba(224,17,25,.34),transparent 62%)}
+.mstg{position:absolute;inset:0 0 0 70px;border-radius:36px;border:1px solid #2a1416;background:
+  radial-gradient(420px 320px at 70% 20%,rgba(224,17,25,.20),transparent 70%),
+  radial-gradient(#2b2b2b 1px,transparent 1.4px) 0 0/22px 22px,linear-gradient(160deg,#141012,#0b0b0b);overflow:hidden}
+.mstg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,#0b0b0b)}
+.mph{width:330px;height:620px;z-index:2}
+.mown{left:8px;bottom:64px;width:190px;height:250px;border-radius:26px}
+.mchip{position:absolute;z-index:4;display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;font-size:12.5px;font-weight:700;color:#fff;background:rgba(18,18,18,.92);border:1px solid #333;box-shadow:0 14px 30px -10px #000;backdrop-filter:blur(8px);opacity:0;transform:translateY(10px) scale(.94);transition:opacity .45s var(--ease),transform .55s cubic-bezier(.34,1.56,.64,1),border-color .4s;white-space:nowrap}
+.mchip i{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 4px rgba(224,17,25,.22)}
+.mchip--1{left:24px;top:54px}.mchip--2{left:0;top:42%}.mchip--3{left:40px;bottom:14px}
+#demo[data-step="0"] .mchip--1,#demo[data-step="1"] .mchip--1,#demo[data-step="2"] .mchip--1,
+#demo[data-step="1"] .mchip--2,#demo[data-step="2"] .mchip--2,#demo[data-step="2"] .mchip--3{opacity:1;transform:none}
+#demo[data-step="1"] .mchip--1,#demo[data-step="2"] .mchip--1,#demo[data-step="2"] .mchip--2{border-color:rgba(74,222,128,.4)}
+#demo[data-step="1"] .mchip--1 i,#demo[data-step="2"] .mchip--1 i,#demo[data-step="2"] .mchip--2 i,#demo[data-step="2"] .mchip--3 i{background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.2)}
+#demo[data-step="2"] .mchip--3{border-color:rgba(74,222,128,.5);background:rgba(12,32,20,.95)}
+.m1__ph{position:relative}.m1__ph::after{content:"";position:absolute;left:0;bottom:-1px;height:2px;width:var(--prog,0%);background:linear-gradient(90deg,var(--red),#ff8a8f);box-shadow:0 0 12px var(--red);transition:width .8s var(--ease)}
+.m1__res{opacity:.35;transition:opacity .5s,border-color .5s,background .5s}#demo[data-step="2"] .m1__res{opacity:1}
+@media (max-width:980px){.m1__stage{min-height:0;padding:26px 16px 26px 0}.mstg{inset:0 0 0 40px}}
+@media (max-width:640px){.mph{width:270px;height:520px}.mown{width:128px;height:170px;left:0;bottom:40px}.mstg{inset:0 -6px 0 30px;border-radius:28px}.mchip{font-size:11px;padding:7px 11px}.mchip--1{left:0;top:10px}.mchip--2{left:auto;right:0;top:10px}.mchip--3{left:0;bottom:4px}.m1__stage{padding:44px 12px 40px 0}}
+@media (prefers-reduced-motion:reduce){.mchip{transition:none}}
 .nav{top:62px}.nav.scrolled{top:16px}
 @media (max-width:760px){.nav{top:58px}.nav.scrolled{top:12px}}
 .fsoc a.s3d,.fsoc a{border:0!important;background:none!important;width:44px;height:44px;padding:0;filter:drop-shadow(0 6px 10px rgba(0,0,0,.45));transition:transform .25s cubic-bezier(.34,1.56,.64,1)}.fsoc a svg,.socials a svg{width:44px!important;height:44px!important}.socials a{border:0!important;background:none!important;box-shadow:none!important;width:46px!important;height:46px!important;padding:0!important;filter:drop-shadow(0 6px 10px rgba(0,0,0,.45));transition:transform .25s cubic-bezier(.34,1.56,.64,1)}.socials a:hover{transform:translateY(-4px) rotate(-6deg) scale(1.08)}.fsoc a:hover{transform:translateY(-4px) rotate(-6deg) scale(1.08)}
@@ -1456,6 +1479,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p class="m1__ex" data-f="ex">Example: Mike runs an HVAC company.</p>
       </div>
       <div class="m1__stage" aria-hidden="true">
+        <div class="mstg"></div>
+        <span class="mchip mchip--1"><i></i>Found you on search</span>
+        <span class="mchip mchip--2"><i></i>Replied in seconds</span>
+        <span class="mchip mchip--3"><i></i>Booked. No call needed</span>
         <div class="mph"><div class="mph__isl"></div><div class="mph__scr"></div></div>
         <div class="mown"><svg class="mown__scene" viewBox="0 0 400 420" preserveAspectRatio="xMidYMid slice"></svg><svg class="mown__por" viewBox="0 0 220 300"></svg>
           <div class="mown__cap"><b data-f="mname">Mike · Rapid Air HVAC</b><span><i></i><em data-f="mstat">On a job</em></span></div></div>
@@ -2822,11 +2849,11 @@ function fig(k,pose){
   root.addEventListener('mouseenter', () => { hover = true; }); root.addEventListener('mouseleave', () => { hover = false; });
   const later = (fn, ms) => timers.push(setTimeout(fn, ms));
   const esc = t => t.replace(/</g, '&lt;');
-  const step = (n, dur) => steps.forEach((s, i) => {
+  const step = (n, dur) => { root.dataset.step = n; steps.forEach((s, i) => {
     s.classList.toggle('done', i < n);
     if (i === n) { s.classList.remove('on'); s.style.setProperty('--sd', (dur || 3000) + 'ms'); void s.offsetWidth; s.classList.add('on'); }
     else s.classList.remove('on');
-  });
+  }); };
   const head = (k, d) => '<div class="mph__top"><svg viewBox="30 20 140 140">' + av(k) + '</svg><div><b>' + esc(d.biz) + '</b><small>● Assistant · replies instantly</small></div></div>';
 
   let cur = 'hvac';
