@@ -12,8 +12,8 @@ ICON = re.search(r'<link rel="icon" href="([^"]+)"', src).group(1)
 e = lambda t: html.escape(t, quote=False)
 
 SV = {'ai': ('AI automation & AI chatbots', 'services/ai-automation/'),
-      'ga': ('Google Ads management', 'services/google-ads/'),
-      'fb': ('Facebook & Instagram ads', 'services/facebook-ads/'),
+      'ga': ('Get found on Google', 'services/google-ads/'),
+      'fb': ('Win customers on social media', 'services/facebook-ads/'),
       'lg': ('lead generation systems', 'services/lead-generation/')}
 # Blog posts that industry pages can link to in their Related box (key -> (title, path)).
 POSTS = {'inslead': ('How insurance agents can follow up on quote requests faster', 'blog/insurance-lead-follow-up/'),
