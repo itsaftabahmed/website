@@ -1257,10 +1257,6 @@ footer.ft .ft__soc a svg{width:44px;height:44px}footer.ft .ft__soc a:hover{trans
 @media (min-width:981px){.m1{grid-template-columns:minmax(0,1fr) minmax(0,540px);gap:44px}}
 .m1__stage{min-height:690px;align-items:center;justify-content:flex-end;padding:34px 34px 34px 0}
 .m1__stage::before{right:10px;top:8%;width:520px;height:520px;background:radial-gradient(circle,rgba(224,17,25,.34),transparent 62%)}
-.mstg{position:absolute;inset:0 0 0 70px;border-radius:36px;border:1px solid #2a1416;background:
-  radial-gradient(420px 320px at 70% 20%,rgba(224,17,25,.20),transparent 70%),
-  radial-gradient(#2b2b2b 1px,transparent 1.4px) 0 0/22px 22px,linear-gradient(160deg,#141012,#0b0b0b);overflow:hidden}
-.mstg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,#0b0b0b)}
 .mph{width:330px;height:620px;z-index:2}
 .mown{left:8px;bottom:64px;width:190px;height:250px;border-radius:26px}
 .mchip{position:absolute;z-index:4;display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;font-size:12.5px;font-weight:700;color:#fff;background:rgba(18,18,18,.92);border:1px solid #333;box-shadow:0 14px 30px -10px #000;backdrop-filter:blur(8px);opacity:0;transform:translateY(10px) scale(.94);transition:opacity .45s var(--ease),transform .55s cubic-bezier(.34,1.56,.64,1),border-color .4s;white-space:nowrap}
@@ -1273,9 +1269,31 @@ footer.ft .ft__soc a svg{width:44px;height:44px}footer.ft .ft__soc a:hover{trans
 #demo[data-step="2"] .mchip--3{border-color:rgba(74,222,128,.5);background:rgba(12,32,20,.95)}
 .m1__ph{position:relative}.m1__ph::after{content:"";position:absolute;left:0;bottom:-1px;height:2px;width:var(--prog,0%);background:linear-gradient(90deg,var(--red),#ff8a8f);box-shadow:0 0 12px var(--red);transition:width .8s var(--ease)}
 .m1__res{opacity:.35;transition:opacity .5s,border-color .5s,background .5s}#demo[data-step="2"] .m1__res{opacity:1}
-@media (max-width:980px){.m1__stage{min-height:0;padding:26px 16px 26px 0}.mstg{inset:0 0 0 40px}}
-@media (max-width:640px){.mph{width:270px;height:520px}.mown{width:128px;height:170px;left:0;bottom:40px}.mstg{inset:0 -6px 0 30px;border-radius:28px}.mchip{font-size:11px;padding:7px 11px}.mchip--1{left:0;top:10px}.mchip--2{left:auto;right:0;top:10px}.mchip--3{left:0;bottom:4px}.m1__stage{padding:44px 12px 40px 0}}
+@media (max-width:980px){.m1__stage{min-height:0;padding:26px 16px 26px 0}}
+@media (max-width:640px){.mph{width:270px;height:520px}.mown{width:128px;height:170px;left:0;bottom:40px}.mchip{font-size:11px;padding:7px 11px}.mchip--1{left:0;top:10px}.mchip--2{left:auto;right:0;top:10px}.mchip--3{left:0;bottom:4px}.m1__stage{padding:44px 12px 40px 0}}
 @media (prefers-reduced-motion:reduce){.mchip{transition:none}}
+/* demo polish: tabs under headline, header stepper, ghost numerals, clean phone aura */
+.m1__inds{margin-top:26px;min-width:0}
+.m1__inds .m1__pick{padding:0;margin-bottom:10px}
+.m1__inds .itabs{margin:0;gap:2px;min-width:0}
+.m1__panel{margin-top:18px}
+.m1__panel .msteps{border-top:0}
+.m1__stp{display:flex;align-items:center;gap:8px;font-style:normal}
+.m1__stp b{font-weight:800;color:#666;transition:color .4s}
+.m1__stp i{width:22px;height:2px;border-radius:2px;background:#2e2e2e;transition:background .4s}
+#demo[data-step="0"] .m1__stp b:nth-of-type(1),#demo[data-step="1"] .m1__stp b:nth-of-type(2),#demo[data-step="2"] .m1__stp b:nth-of-type(3){color:var(--red-text)}
+#demo[data-step="1"] .m1__stp b:nth-of-type(1),#demo[data-step="2"] .m1__stp b:nth-of-type(1),#demo[data-step="2"] .m1__stp b:nth-of-type(2){color:#4ade80}
+#demo[data-step="1"] .m1__stp i:nth-of-type(1),#demo[data-step="2"] .m1__stp i{background:#4ade80}
+.msteps{counter-reset:mst}.m1__panel .mst{counter-increment:mst;padding-top:16px;padding-bottom:16px}
+.m1__panel .mst::after{content:"0" counter(mst);position:absolute;right:58px;top:50%;transform:translateY(-50%);font-family:var(--display);font-weight:800;font-size:54px;line-height:1;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1px #262626;pointer-events:none;transition:-webkit-text-stroke-color .4s}
+.m1__panel .mst.on::after{-webkit-text-stroke-color:rgba(224,17,25,.55)}
+.m1__panel .mst b{font-size:19px}
+.m1__panel .mst.on{background:linear-gradient(90deg,rgba(224,17,25,.16),rgba(224,17,25,.03));border-color:rgba(224,17,25,.45);box-shadow:0 18px 40px -22px rgba(224,17,25,.7)}
+.m1__stage::before{right:-10px;top:6%;width:560px;height:560px;background:radial-gradient(circle,rgba(224,17,25,.38),rgba(224,17,25,.10) 45%,transparent 66%)}
+.m1__stage::after{content:"";position:absolute;right:54px;bottom:6px;width:300px;height:26px;border-radius:50%;background:radial-gradient(ellipse,rgba(0,0,0,.9),transparent 70%);filter:blur(6px);pointer-events:none}
+.mph{box-shadow:0 0 0 1.5px #3a3a3a,0 0 0 10px rgba(255,255,255,.02),0 60px 120px -30px rgba(224,17,25,.75)}
+.mown{box-shadow:0 30px 60px -12px rgba(0,0,0,.9),0 0 0 6px rgba(10,10,10,.6)}
+@media (max-width:640px){.m1__panel .mst::after{font-size:40px;right:50px}.m1__stp{display:none}}
 .nav{top:62px}.nav.scrolled{top:16px}
 @media (max-width:760px){.nav{top:58px}.nav.scrolled{top:12px}}
 .fsoc a.s3d,.fsoc a{border:0!important;background:none!important;width:44px;height:44px;padding:0;filter:drop-shadow(0 6px 10px rgba(0,0,0,.45));transition:transform .25s cubic-bezier(.34,1.56,.64,1)}.fsoc a svg,.socials a svg{width:44px!important;height:44px!important}.socials a{border:0!important;background:none!important;box-shadow:none!important;width:46px!important;height:46px!important;padding:0!important;filter:drop-shadow(0 6px 10px rgba(0,0,0,.45));transition:transform .25s cubic-bezier(.34,1.56,.64,1)}.socials a:hover{transform:translateY(-4px) rotate(-6deg) scale(1.08)}.fsoc a:hover{transform:translateY(-4px) rotate(-6deg) scale(1.08)}
@@ -1465,9 +1483,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="m1__copy">
         <div class="kicker">See it working</div>
         <h2 class="h2">From first search<br>to booked job. <span class="m1__red">Automatically.</span></h2>
+        <div class="m1__inds"><div class="m1__pick">Pick your industry</div><div class="itabs" role="tablist" aria-label="Industries"><a class="itab" href="industries/dental/" data-k="dental">Dental</a><a class="itab" href="industries/med-spa/" data-k="medspa">Med spa</a><a class="itab" href="industries/real-estate/" data-k="realty">Real estate</a><a class="itab" href="industries/home-services/" data-k="hvac">HVAC</a><button type="button" class="itab" data-k="roof">Roofing</button><button type="button" class="itab" data-k="floor">Flooring</button><a class="itab" href="industries/insurance/" data-k="insure">Insurance</a><button type="button" class="itab" data-k="fitness">Fitness</button><a class="itab" href="industries/law/" data-k="law">Law firms</a></div></div>
         <div class="m1__panel">
-        <div class="m1__ph"><span><i></i>Live example</span><em>Found · Answered · Booked</em></div>
-        <div class="m1__pick">Pick your industry</div><div class="itabs" role="tablist" aria-label="Industries"><a class="itab" href="industries/dental/" data-k="dental">Dental</a><a class="itab" href="industries/med-spa/" data-k="medspa">Med spa</a><a class="itab" href="industries/real-estate/" data-k="realty">Real estate</a><a class="itab" href="industries/home-services/" data-k="hvac">HVAC</a><button type="button" class="itab" data-k="roof">Roofing</button><button type="button" class="itab" data-k="floor">Flooring</button><a class="itab" href="industries/insurance/" data-k="insure">Insurance</a><button type="button" class="itab" data-k="fitness">Fitness</button><a class="itab" href="industries/law/" data-k="law">Law firms</a></div>
+        <div class="m1__ph"><span><i></i>Live example</span><em class="m1__stp"><b>Found</b><i></i><b>Answered</b><i></i><b>Booked</b></em></div>
         <ol class="msteps">
           <li class="mst"><span class="mst__ic mst__ic--3d"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><defs> <linearGradient id="sr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff5a60"/><stop offset=".55" stop-color="#E01119"/><stop offset="1" stop-color="#8f0a10"/></linearGradient> <linearGradient id="srs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b30d14"/><stop offset="1" stop-color="#5c0509"/></linearGradient> <linearGradient id="sw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#d9d9de"/></linearGradient> <linearGradient id="sws" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c4c4cc"/><stop offset="1" stop-color="#8d8d97"/></linearGradient> <linearGradient id="sd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3a3f"/><stop offset="1" stop-color="#151517"/></linearGradient> <linearGradient id="sgl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".75"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient> <radialGradient id="ssh" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".55"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient> <linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6ff2a1"/><stop offset="1" stop-color="#16a34a"/></linearGradient> </defs><ellipse cx="30" cy="58" rx="16" ry="3" fill="url(#ssh)"/> <path d="M28 8c1.6 9.5 5.5 13.4 15 15-9.5 1.6-13.4 5.5-15 15-1.6-9.5-5.5-13.4-15-15 9.5-1.6 13.4-5.5 15-15z" fill="url(#srs)" transform="translate(0 3)"/> <path d="M28 8c1.6 9.5 5.5 13.4 15 15-9.5 1.6-13.4 5.5-15 15-1.6-9.5-5.5-13.4-15-15 9.5-1.6 13.4-5.5 15-15z" fill="url(#sr)"/> <path d="M28 10c1 6 3 9 6 11-4-1-6.5-.8-6 1.5-1-4.5-3.5-6-8-7 5-1 7-3 8-5.5z" fill="url(#sgl)" opacity=".8"/> <path d="M47 34c.8 4.6 2.6 6.4 7.2 7.2-4.6.8-6.4 2.6-7.2 7.2-.8-4.6-2.6-6.4-7.2-7.2 4.6-.8 6.4-2.6 7.2-7.2z" fill="url(#sw)"/></svg></span><div><em>01 · Found</em><b>They find you first</b><p>You show up where they search: Google, maps and AI answers.</p></div><span class="mst__ck" aria-hidden="true">✓</span><span class="mst__bar"></span></li>
           <li class="mst"><span class="mst__ic mst__ic--3d"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><defs> <linearGradient id="tr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff5a60"/><stop offset=".55" stop-color="#E01119"/><stop offset="1" stop-color="#8f0a10"/></linearGradient> <linearGradient id="trs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b30d14"/><stop offset="1" stop-color="#5c0509"/></linearGradient> <linearGradient id="tw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#d9d9de"/></linearGradient> <linearGradient id="tws" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c4c4cc"/><stop offset="1" stop-color="#8d8d97"/></linearGradient> <linearGradient id="td" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3a3f"/><stop offset="1" stop-color="#151517"/></linearGradient> <linearGradient id="tgl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".75"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient> <radialGradient id="tsh" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".55"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient> <linearGradient id="tg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6ff2a1"/><stop offset="1" stop-color="#16a34a"/></linearGradient> </defs><ellipse cx="32" cy="58" rx="18" ry="3.5" fill="url(#tsh)"/> <path d="M32 9c12.7 0 23 8.3 23 18.5S44.7 46 32 46c-2.4 0-4.7-.3-6.9-.8L14 51l3-9.3C12.1 38.4 9 33.3 9 27.5 9 17.3 19.3 9 32 9z" fill="#0f6b33" transform="translate(0 3)"/> <path d="M32 9c12.7 0 23 8.3 23 18.5S44.7 46 32 46c-2.4 0-4.7-.3-6.9-.8L14 51l3-9.3C12.1 38.4 9 33.3 9 27.5 9 17.3 19.3 9 32 9z" fill="url(#tg)"/> <circle cx="23" cy="28" r="3" fill="#fff"/><circle cx="32" cy="28" r="3" fill="#fff"/><circle cx="41" cy="28" r="3" fill="#fff"/> <path d="M20 12c6-3 18-3.5 25 1-9-1.5-19-1-27 3z" fill="url(#tgl)" opacity=".7"/></svg></span><div><em>02 · Answered</em><b>An instant, smart reply</b><p>Your assistant answers in seconds, asks the right questions and offers times.</p></div><span class="mst__ck" aria-hidden="true">✓</span><span class="mst__bar"></span></li>
@@ -1479,7 +1497,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p class="m1__ex" data-f="ex">Example: Mike runs an HVAC company.</p>
       </div>
       <div class="m1__stage" aria-hidden="true">
-        <div class="mstg"></div>
         <span class="mchip mchip--1"><i></i>Found you on search</span>
         <span class="mchip mchip--2"><i></i>Replied in seconds</span>
         <span class="mchip mchip--3"><i></i>Booked. No call needed</span>
