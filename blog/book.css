@@ -1,0 +1,17 @@
+/* "Book a call" pop-up (all pages) */
+.bk{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:20px}
+.bk[hidden]{display:none}
+.bk__ov{position:absolute;inset:0;background:rgba(0,0,0,.66);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;transition:opacity .25s}
+.bk__box{position:relative;width:min(960px,100%);max-height:calc(100vh - 40px);overflow:auto;background:#111;border:1px solid #2c2c2c;border-radius:28px;padding:28px 28px 18px;box-shadow:0 40px 100px -20px #000,0 0 60px -20px rgba(224,17,25,.5);transform:translateY(24px) scale(.97);opacity:0;transition:transform .35s cubic-bezier(.34,1.56,.64,1),opacity .25s;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#fff}
+.bk.open .bk__ov{opacity:1}.bk.open .bk__box{transform:none;opacity:1}
+.bk__x{position:absolute;right:16px;top:16px;width:38px;height:38px;border-radius:50%;border:1px solid #333;background:#161616;color:#bbb;font-size:15px;cursor:pointer;z-index:2}.bk__x:hover{color:#fff;border-color:#E01119}
+.bk__k{color:#FF4A50;font-weight:800;letter-spacing:.14em;font-size:12px;text-transform:uppercase}
+.bk__head h2{font-family:'Archivo','Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(24px,3vw,32px);line-height:1.1;letter-spacing:-.02em;margin:8px 0 6px}
+.bk__head p{margin:0 0 16px;color:#9E9E9E;font-size:15px;max-width:620px}
+.bk__cal{min-height:560px;border-radius:20px;overflow:hidden;background:#0d0d0d;border:1px solid #242424;position:relative}
+.bk__load{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:6px}.bk__load i{width:8px;height:8px;border-radius:50%;background:#E01119;animation:bkL 1s infinite}.bk__load i:nth-child(2){animation-delay:.15s}.bk__load i:nth-child(3){animation-delay:.3s}
+@keyframes bkL{40%{transform:translateY(-6px);opacity:.5}}
+.bk__alt{margin:12px 0 0;font-size:13px;color:#777;text-align:center}.bk__alt a{color:#bbb}
+html.bk-lock,html.bk-lock body{overflow:hidden}
+@media (max-width:640px){.bk{padding:0;align-items:flex-end}.bk__box{border-radius:24px 24px 0 0;max-height:94vh;padding:22px 14px 14px}.bk__cal{min-height:70vh}}
+@media (prefers-reduced-motion:reduce){.bk__ov,.bk__box{transition:none}}
