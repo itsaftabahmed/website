@@ -18,7 +18,7 @@ INDUSTRIES = [('industries/dental/', 'Dental &amp; medical'), ('industries/real-
               ('industries/home-services/', 'Home services'), ('industries/law/', 'Law firms'),
               ('industries/med-spa/', 'Med spas'), ('industries/accounting/', 'Accounting &amp; CPA'),
               ('industries/chiropractic/', 'Chiropractic &amp; PT'), ('industries/insurance/', 'Insurance agencies')]
-LINKS = [('case-studies/', 'Case studies'), ('blog/', 'Blog'), ('tools/missed-call-calculator/', 'Free tools'), ('about/', 'About')]
+LINKS = [('#pricing', 'Pricing'), ('case-studies/', 'Case studies'), ('blog/', 'Blog'), ('tools/missed-call-calculator/', 'Free tools'), ('about/', 'About')]
 SOCIAL = [('https://www.linkedin.com/in/iamaftabahmed/', 'in', 'LinkedIn'), ('https://www.youtube.com/@ItsAftab_Ahmed', 'YT', 'YouTube'),
           ('https://www.instagram.com/itsaftab.ahmed/', 'IG', 'Instagram'), ('https://www.tiktok.com/@itsaftab_ahmed', 'TT', 'TikTok')]
 
