@@ -1,4 +1,4 @@
-// "Book a call" pop-up: every link to #book opens the Cal.com calendar in a modal on any page.
+// Booking pop-up: [data-book] buttons and links ending in #call open the Cal.com calendar in a modal. #book links scroll to the homepage contact section.
 (function () {
   var CAL_LINK = 'aftab-ahmed-4rjr3m/30min', NS = '30min', modal, booted = false, lastFocus;
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -37,16 +37,15 @@
     modal.classList.remove('open'); document.documentElement.classList.remove('bk-lock');
     setTimeout(function () { modal.hidden = true; }, reduce ? 0 : 250);
     if (lastFocus && lastFocus.focus) lastFocus.focus();
-    if (location.hash === '#book') history.replaceState(null, '', location.pathname + location.search);
+    if (location.hash === '#call') history.replaceState(null, '', location.pathname + location.search);
   }
   document.addEventListener('click', function (e) {
-    var a = e.target.closest && e.target.closest('a[href$="#book"]');
+    var a = e.target.closest && e.target.closest('[data-book], a[href$="#call"]');
     if (!a || e.metaKey || e.ctrlKey || e.shiftKey) return;
-    var url = new URL(a.href, location.href);
-    if (url.origin !== location.origin) return;
+    if (a.href) { var url = new URL(a.href, location.href); if (url.origin !== location.origin) return; }
     e.preventDefault(); open();
   });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
   window.openBooking = open;
-  if (location.hash === '#book') { if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', open); else open(); }
+  if (location.hash === '#call') { if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', open); else open(); }
 })();
