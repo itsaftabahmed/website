@@ -38,6 +38,7 @@
 
 ## Blog (newest first)
 <!-- NEW POSTS GO HERE -->
+- [How much does an AI receptionist cost? Pricing explained for small businesses](https://iamaftabahmed.com/blog/ai-receptionist-cost/): what an AI receptionist costs a small business: typical monthly ranges, the four billing models, setup and extra fees, a worked example for 300 calls a month and how the cost compares with staff and missed calls
 - [How insurance agents can follow up on quote requests faster](https://iamaftabahmed.com/blog/insurance-lead-follow-up/): how insurance agencies can reply to quote requests within minutes, collect quoting details up front, route leads to the right agent, run a 10-day follow-up sequence and follow up at renewal
 - [How to follow up with leads automatically (SMS, email, calls)](https://iamaftabahmed.com/blog/automated-lead-follow-up/): how service businesses can set up automated lead follow-up by text, email and calls, with a 14-day sequence, timing rules, consent basics and human handoff
 - [Facebook ads for real estate agents that generate real buyer leads](https://iamaftabahmed.com/blog/facebook-ads-for-real-estate-agents/): how real estate agents can get serious buyer leads from Facebook and Instagram ads within the housing ad rules, with intent-filtering offers, lead form settings and fast follow-up

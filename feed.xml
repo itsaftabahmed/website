@@ -6,8 +6,16 @@
   <atom:link href="https://iamaftabahmed.com/feed.xml" rel="self" type="application/rss+xml"/>
   <description>Practical guides on Google Ads, Facebook ads, lead generation and AI automation for US small businesses.</description>
   <language>en-us</language>
-  <lastBuildDate>Mon, 09 Nov 2026 14:00:00 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 12 Nov 2026 14:00:00 GMT</lastBuildDate>
 <!-- NEW ITEMS GO HERE (newest first) -->
+  <item>
+    <title>How much does an AI receptionist cost? Pricing explained for small businesses</title>
+    <link>https://iamaftabahmed.com/blog/ai-receptionist-cost/</link>
+    <guid isPermaLink="true">https://iamaftabahmed.com/blog/ai-receptionist-cost/</guid>
+    <pubDate>Thu, 12 Nov 2026 14:00:00 GMT</pubDate>
+    <dc:creator>Aftab Ahmed</dc:creator>
+    <description>What an AI receptionist really costs: typical monthly ranges, per-minute vs flat pricing, setup fees, hidden extras and a worked example for 300 calls a month.</description>
+  </item>
   <item>
     <title>How insurance agents can follow up on quote requests faster</title>
     <link>https://iamaftabahmed.com/blog/insurance-lead-follow-up/</link>

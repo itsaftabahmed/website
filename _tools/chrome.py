@@ -37,7 +37,7 @@ def news():
     title, path = latest_post()
     crumb = re.search(r'<nav class="crumbs".*?</a><span>/</span>([^<]+)</nav>', open(f'{ROOT}/{path}index.html').read(), re.S)
     label = crumb.group(1).strip() if crumb else short(title, 26)   # the post's short breadcrumb title
-    guide = 'New guide: ' + label.lower().capitalize()
+    guide = 'New guide: ' + (label if label[:2].isupper() else label[:1].upper() + label[1:])   # keep acronyms like AI
     return [('tools/missed-call-calculator/', 'Free missed call calculator', 'Free tool: what missed calls cost you', 'calc'),
             (path, guide, guide, 'guide'),
             ('#book', 'Taking new clients this month', 'Taking new clients: book a free call', 'cal')]
