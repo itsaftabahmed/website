@@ -7,8 +7,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SERVICES = [('services/ai-automation/', 'AI Automation &amp; AI Chatbots', 'Answer, qualify and book leads 24/7'),
             ('services/lead-generation/', 'Lead Generation Systems', 'Landing pages, CRM and follow-up'),
-            ('services/google-ads/', 'Google Ads Management', 'High-intent local searches'),
-            ('services/facebook-ads/', 'Facebook &amp; Instagram Ads', 'Offers that fill your calendar')]
+            ('services/google-ads/', 'Get Found on Google', 'Show up when locals search'),
+            ('services/facebook-ads/', 'Win Customers on Social Media', 'Offers that fill your calendar')]
 SOLUTIONS = [('solutions/missed-calls/', 'Stop missed calls', 'AI receptionist and instant text back'),
              ('solutions/lead-follow-up/', 'Fix slow follow-up', 'Reply to every lead in seconds'),
              ('solutions/no-shows/', 'Reduce no-shows', 'Reminders and easy rescheduling'),
