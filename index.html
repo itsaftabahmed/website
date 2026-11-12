@@ -1101,6 +1101,23 @@ footer{padding:20px 0 34px}
 .fbar__tag{color:#9E9E9E;font-size:14px}
 @media (max-width:760px){.fcols{grid-template-columns:1fr 1fr}}
 .ann{position:absolute;top:0;left:0;right:0;z-index:51}
+.nav__dd{position:relative}.nav__l{font:inherit;padding:10px 16px;border:0;border-radius:999px;background:none;font-size:14px;font-weight:600;color:var(--soft);cursor:pointer;transition:background .2s,color .2s}
+.nav__l:hover,.nav__dd.open>.nav__l{background:rgba(255,255,255,.06);color:#fff}
+.nav__l::after{content:"";display:inline-block;margin-left:7px;border:4px solid transparent;border-top-color:currentColor;transform:translateY(3px);opacity:.6}
+.nav__menu{display:none;position:absolute;top:calc(100% + 14px);left:-22px;min-width:330px;background:#111;border:1px solid var(--line);border-radius:18px;padding:12px;box-shadow:0 30px 70px -20px #000;z-index:60}
+.nav__menu::before{content:"";position:absolute;left:0;right:0;top:-16px;height:16px}
+.nav__menu--2{min-width:400px;grid-template-columns:1fr 1fr}
+.nav__dd:hover .nav__menu,.nav__dd.open .nav__menu,.nav__dd:focus-within .nav__menu{display:block}
+.nav__dd:hover .nav__menu--2,.nav__dd.open .nav__menu--2,.nav__dd:focus-within .nav__menu--2{display:grid}
+.nav__links .nav__menu a{display:block;padding:10px 12px;border-radius:12px;color:#fff;font-weight:600;font-size:15px}
+.nav__links .nav__menu a::after{display:none}
+.nav__links .nav__menu a:hover{background:#1c1c1c}.nav__menu small{display:block;color:var(--muted);font-weight:400;font-size:13px}
+.nav__grp{display:block;padding:8px 12px 4px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--red-text);font-weight:800}
+.nav__links .nav__menu a.nav__sm{display:inline-block;padding:7px 12px;font-size:14px}
+.nav__menu--sol{min-width:360px}
+@media (max-width:760px){.nav.open .nav__links{max-height:calc(100vh - 140px);overflow:auto}.nav__dd{width:100%}.nav__l{width:100%;text-align:left;padding:16px;font-size:14px}
+.nav__dd:hover .nav__menu,.nav__dd:focus-within .nav__menu{display:none}
+.nav__dd.open .nav__menu{display:block;position:static;min-width:0;box-shadow:none;border:0;background:none;padding:0 0 8px 8px}.nav__dd.open .nav__menu--2{display:grid}}
 .nav{top:62px}.nav.scrolled{top:16px}
 @media (max-width:760px){.nav{top:58px}.nav.scrolled{top:12px}}
 .fsoc a.s3d,.fsoc a{border:0!important;background:none!important;width:44px;height:44px;padding:0;filter:drop-shadow(0 6px 10px rgba(0,0,0,.45));transition:transform .25s cubic-bezier(.34,1.56,.64,1)}.fsoc a svg,.socials a svg{width:44px!important;height:44px!important}.socials a{border:0!important;background:none!important;box-shadow:none!important;width:46px!important;height:46px!important;padding:0!important;filter:drop-shadow(0 6px 10px rgba(0,0,0,.45));transition:transform .25s cubic-bezier(.34,1.56,.64,1)}.socials a:hover{transform:translateY(-4px) rotate(-6deg) scale(1.08)}.fsoc a:hover{transform:translateY(-4px) rotate(-6deg) scale(1.08)}
@@ -1113,6 +1130,14 @@ footer{padding:20px 0 34px}
 .cform__card{background:var(--surface-2,#141414);border:1px solid var(--line);border-radius:28px;padding:30px}
 .cform__card .hlead{margin:0;padding:0;border:0;max-width:none;width:100%}
 .cform__card .hlead textarea{min-height:120px}
+.cform__hd{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:20px}.cform__hd b{display:block;font-size:20px}.cform__hd small{color:var(--muted);font-size:14px}
+.cform__live{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--soft);background:#0d0d0d;border:1px solid var(--line);border-radius:999px;padding:7px 12px}.cform__live i{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 0 rgba(34,197,94,.6);animation:cfp 2s infinite}
+@keyframes cfp{70%{box-shadow:0 0 0 8px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+.cform__topics{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}.cform__topics span{width:100%;font-size:13px;color:var(--muted);margin-bottom:2px}
+.cform__topics button{font:inherit;font-size:14px;color:#ddd;background:#0d0d0d;border:1px solid #333;border-radius:999px;padding:8px 14px;cursor:pointer;transition:.2s}.cform__topics button:hover{border-color:#E01119}.cform__topics button.on{background:rgba(224,17,25,.15);border-color:#E01119;color:#fff}
+.cform__card .hlead button[type=submit]{width:100%;justify-self:stretch;justify-content:center}
+.cform__card .lead__msg:empty{display:none}.cform__note svg{vertical-align:-2px;margin-right:4px}.cform__note{margin:14px 0 0;font-size:13px;color:var(--muted);text-align:center}
+@media (prefers-reduced-motion:reduce){.cform__live i{animation:none}}
 @media (max-width:860px){.cform{grid-template-columns:1fr!important}.cform__card{padding:20px}}
 </style>
 <link rel="stylesheet" href="blog/ann.css">
@@ -1135,8 +1160,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap nav__bar">
     <a href="#top" class="logo">AFTAB <span>AHMED</span></a>
     <div class="nav__links" id="navLinks">
-      <a href="#services">Services</a>
-      <a href="industries/">Industries</a>
+      <div class="nav__dd"><button type="button" class="nav__l" aria-expanded="false">Solutions</button><div class="nav__menu nav__menu--sol"><span class="nav__grp">Problems we solve</span><a href="solutions/missed-calls/">Stop missed calls<small>AI receptionist and instant text back</small></a><a href="solutions/lead-follow-up/">Fix slow follow-up<small>Reply to every lead in seconds</small></a><a href="solutions/no-shows/">Reduce no-shows<small>Reminders and easy rescheduling</small></a><a href="solutions/ads-not-converting/">Fix ads that don’t convert<small>Offer, page, tracking and follow-up</small></a><a href="solutions/busywork/">Automate busywork<small>Onboarding, admin, reviews and reports</small></a><span class="nav__grp">Services</span><a href="services/ai-automation/" class="nav__sm">AI Automation &amp; AI Chatbots</a><a href="services/lead-generation/" class="nav__sm">Lead Generation Systems</a><a href="services/google-ads/" class="nav__sm">Google Ads Management</a><a href="services/facebook-ads/" class="nav__sm">Facebook &amp; Instagram Ads</a></div></div>
+      <div class="nav__dd"><button type="button" class="nav__l" aria-expanded="false">Industries</button><div class="nav__menu nav__menu--2"><a href="industries/dental/">Dental &amp; medical</a><a href="industries/real-estate/">Real estate</a><a href="industries/home-services/">Home services</a><a href="industries/law/">Law firms</a><a href="industries/med-spa/">Med spas</a><a href="industries/accounting/">Accounting &amp; CPA</a><a href="industries/chiropractic/">Chiropractic &amp; PT</a><a href="industries/insurance/">Insurance agencies</a><a href="industries/">All industries →</a></div></div>
       <a href="case-studies/">Case studies</a>
       <a href="blog/">Blog</a>
       <a href="tools/missed-call-calculator/">Free tools</a>
@@ -1500,6 +1525,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="cform__me"><img src="images/aftab-cutout.webp" alt="" width="52" height="52" loading="lazy"><span><b>Aftab Ahmed</b><small>Replies to every message himself</small></span></div>
       </div>
       <div class="cform__card">
+          <div class="cform__hd"><div><b>Send a message</b><small>Takes about a minute</small></div><span class="cform__live"><i></i>Replies within 1 business day</span></div>
+          <div class="cform__topics" role="group" aria-label="What is slowing you down?"><span>What’s slowing you down?</span><button type="button">Missed calls</button><button type="button">Slow lead follow-up</button><button type="button">Ads not converting</button><button type="button">No-shows</button><button type="button">Too much busywork</button></div>
           <form class="lead hlead cform__f" data-lead="contact">
                         <div class="row2"><input name="name" required placeholder="Your name" autocomplete="name" aria-label="Your name"><input type="email" name="email" required placeholder="Email" autocomplete="email" aria-label="Email"></div>
             <div class="row2"><input name="business" placeholder="Business name" autocomplete="organization" aria-label="Business name"><input name="phone" placeholder="Phone (optional)" autocomplete="tel" aria-label="Phone"></div>
@@ -1509,6 +1536,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <button class="btn btn--red" type="submit">Send message →</button>
             <p class="lead__msg" aria-live="polite"></p>
           </form>
+          <p class="cform__note"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> No spam, no mailing list. Your message goes straight to me.</p>
       </div>
         <div class="cform__more">
           <div class="mails">
@@ -1574,6 +1602,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
   toggle.addEventListener('click', () => { const o = nav.classList.toggle('open'); toggle.setAttribute('aria-expanded', o); });
   document.querySelectorAll('#navLinks a').forEach(a => a.addEventListener('click', () => { nav.classList.remove('open'); toggle.setAttribute('aria-expanded', false); }));
+  document.querySelectorAll('.nav__dd > button').forEach(b => b.addEventListener('click', e => { const dd = b.parentNode, o = !dd.classList.contains('open'); document.querySelectorAll('.nav__dd.open').forEach(d => { d.classList.remove('open'); d.firstChild.setAttribute('aria-expanded', 'false'); }); dd.classList.toggle('open', o); b.setAttribute('aria-expanded', o); e.stopPropagation(); }));
+  document.addEventListener('click', e => { if (!e.target.closest('.nav__dd')) document.querySelectorAll('.nav__dd.open').forEach(d => d.classList.remove('open')); });
 
   // Missing images → show the placeholder pattern instead of a broken icon
   document.querySelectorAll('img').forEach(img => {
@@ -2043,7 +2073,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     play:  () => { tone(523, 0, .08, .04, 'triangle'); tone(784, .08, .18, .035, 'sine'); },  // intro video starts
     region:() => tone(988, 0, .06, .025, 'sine')                                           // globe region picked
   };
-  document.querySelectorAll('.btn, .nav__links a, .socials a').forEach(el => {
+  document.querySelectorAll('.btn, .nav__links > a, .socials a').forEach(el => {
     if (fine) el.addEventListener('pointerenter', () => ui(uiSfx.hover));
     el.addEventListener('click', () => ui(uiSfx.click));
   });
@@ -2864,5 +2894,6 @@ function fig(k,pose){
   else go();
 })();
 </script>
+<script>document.querySelectorAll('.cform__topics button').forEach(function(b){b.addEventListener('click',function(){b.classList.toggle('on');var t=document.querySelector('.cform__f textarea'),on=[].map.call(document.querySelectorAll('.cform__topics button.on'),function(x){return x.textContent});var rest=t.value.replace(/^Topics: .*\n?/,'');t.value=(on.length?'Topics: '+on.join(', ')+'\n':'')+rest;t.focus()})})</script>
 </body>
 </html>
