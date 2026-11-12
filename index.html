@@ -1133,8 +1133,6 @@ footer{padding:20px 0 34px}
 .cform__hd{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:20px}.cform__hd b{display:block;font-size:20px}.cform__hd small{color:var(--muted);font-size:14px}
 .cform__live{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--soft);background:#0d0d0d;border:1px solid var(--line);border-radius:999px;padding:7px 12px}.cform__live i{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 0 rgba(34,197,94,.6);animation:cfp 2s infinite}
 @keyframes cfp{70%{box-shadow:0 0 0 8px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
-.cform__topics{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}.cform__topics span{width:100%;font-size:13px;color:var(--muted);margin-bottom:2px}
-.cform__topics button{font:inherit;font-size:14px;color:#ddd;background:#0d0d0d;border:1px solid #333;border-radius:999px;padding:8px 14px;cursor:pointer;transition:.2s}.cform__topics button:hover{border-color:#E01119}.cform__topics button.on{background:rgba(224,17,25,.15);border-color:#E01119;color:#fff}
 .cform__card .hlead button[type=submit]{width:100%;justify-self:stretch;justify-content:center}
 .cform__card .lead__msg:empty{display:none}.cform__note svg{vertical-align:-2px;margin-right:4px}.cform__note{margin:14px 0 0;font-size:13px;color:var(--muted);text-align:center}
 @media (prefers-reduced-motion:reduce){.cform__live i{animation:none}}
@@ -1526,7 +1524,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="cform__card">
           <div class="cform__hd"><div><b>Send a message</b><small>Takes about a minute</small></div><span class="cform__live"><i></i>Replies within 1 business day</span></div>
-          <div class="cform__topics" role="group" aria-label="What is slowing you down?"><span>What’s slowing you down?</span><button type="button">Missed calls</button><button type="button">Slow lead follow-up</button><button type="button">Ads not converting</button><button type="button">No-shows</button><button type="button">Too much busywork</button></div>
           <form class="lead hlead cform__f" data-lead="contact">
                         <div class="row2"><input name="name" required placeholder="Your name" autocomplete="name" aria-label="Your name"><input type="email" name="email" required placeholder="Email" autocomplete="email" aria-label="Email"></div>
             <div class="row2"><input name="business" placeholder="Business name" autocomplete="organization" aria-label="Business name"><input name="phone" placeholder="Phone (optional)" autocomplete="tel" aria-label="Phone"></div>
@@ -2894,6 +2891,5 @@ function fig(k,pose){
   else go();
 })();
 </script>
-<script>document.querySelectorAll('.cform__topics button').forEach(function(b){b.addEventListener('click',function(){b.classList.toggle('on');var t=document.querySelector('.cform__f textarea'),on=[].map.call(document.querySelectorAll('.cform__topics button.on'),function(x){return x.textContent});var rest=t.value.replace(/^Topics: .*\n?/,'');t.value=(on.length?'Topics: '+on.join(', ')+'\n':'')+rest;t.focus()})})</script>
 </body>
 </html>
