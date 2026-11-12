@@ -28,6 +28,23 @@ def latest_post():
     m = re.search(r'<a class="card" href="([^"]+)">\s*<div class="kicker">[^<]*</div>\s*<h2>([^<]+)</h2>', b)
     return (m.group(2), 'blog/' + m.group(1)) if m else ('Latest guides', 'blog/')
 
+def latest_guides(n=3):
+    """Newest n posts for the homepage "Latest guides" list: (kicker, title, path, date, read)."""
+    b = open(f'{ROOT}/blog/index.html').read()
+    out = []
+    for m in re.finditer(r'<a class="card" href="([^"]+)">\s*<div class="kicker">([^<]*)</div>\s*<h2>([^<]+)</h2>', b):
+        post = open(f'{ROOT}/blog/{m.group(1)}index.html').read()
+        d = re.search(r'"datePublished": "(\d{4})-(\d\d)-(\d\d)"', post)
+        mins = re.search(r'(\d+) min read', post)
+        mon = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][int(d.group(2)) - 1] if d else ''
+        out.append((m.group(2), m.group(3), 'blog/' + m.group(1), f'{mon} {int(d.group(3))}, {d.group(1)}' if d else '', mins.group(1) if mins else ''))
+        if len(out) == n: break
+    return out
+
+def guides_html():
+    arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>'
+    return ''.join(f'<a class="lg" href="{h}"><span class="lg__k">{k}</span><b>{t}</b><small>{d}{" · " + r + " min read" if r else ""}</small><i>{arrow}</i></a>' for k, t, h, d, r in latest_guides())
+
 def short(t, n=34):
     t = re.split(r'[:?(]', t)[0].strip()
     return t if len(t) <= n else t[:n].rsplit(' ', 1)[0] + '…'
@@ -94,6 +111,7 @@ def apply():
     p = f'{ROOT}/index.html'; s = open(p).read()
     t = re.sub(r'<!--ann-->.*?<!--/ann-->', lambda m: '<!--ann-->' + ann('') + '<!--/ann-->', s, 1, flags=re.S)
     import json
+    t = re.sub(r'<!--guides-->.*?<!--/guides-->', lambda m: '<!--guides-->' + guides_html() + '<!--/guides-->', t, 1, flags=re.S)   # homepage latest guides
     t = re.sub(r'<!--ft-->.*?<!--/ft-->', lambda m: '<!--ft-->' + footer('', bare=True) + '<!--/ft-->', t, 1, flags=re.S)   # homepage uses the shared footer
     t = re.sub(r'/\*news\*/.*?/\*/news\*/', lambda m: '/*news*/' + json.dumps([{'href': h, 'text': l, 'icon': e} for h, x, l, e in news()], ensure_ascii=False) + '/*/news*/', t, 1, flags=re.S)
     if t != s: open(p, 'w').write(t); n += 1

@@ -40,7 +40,7 @@ Shortcut: write the post as a config file outside the repo and run `python3 _too
    - US spelling and US context (dollars, US platforms and rules).
 5a. Share image: run `NODE_PATH=$(npm root -g) node _tools/og.js <slug>` to create `images/og/<slug>.png` (1200x630), and set `og:image`, `twitter:image` and the JSON-LD `image` to `https://iamaftabahmed.com/images/og/<slug>.png` (the template already has the width/height tags).
 5. Add a card for the post at the **top** of the list in `blog/index.html`, right under `<!-- NEW POSTS GO HERE (newest first) -->`, using the same `<a class="card">` markup.
-6. (Skip.) The homepage no longer lists blog posts; it uses the shared site footer. `mkpost.py` handles this automatically.
+6. (Automatic.) The homepage "Latest guides" list shows the 3 newest posts from `blog/index.html`; `python3 _tools/chrome.py` (run at the end of `mkpost.py`) refreshes it.
 6a. If the post is about one industry, also add it to that industry page's Related box: in `_tools/gen_industries.py` add `'<short-key>': ('<Title>', 'blog/<slug>/')` to `POSTS`, put the key first in that industry's `rel` list (keep at most 3 post keys, drop the oldest), and run `python3 _tools/gen_industries.py`.
 6b. Once the new post is live, add one contextual link to it from an older related post or from the matching service page's "Related" list, so every post is linked from somewhere other than the blog index.
 6c. Add the post to the top of `feed.xml` (right under `<!-- NEW ITEMS GO HERE (newest first) -->`, same `<item>` format with title, link, guid, pubDate in RFC-822 GMT, dc:creator and description) and update `<lastBuildDate>`.
