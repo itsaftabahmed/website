@@ -1136,7 +1136,7 @@ footer{padding:20px 0 34px}
 .ct__g:has(input:focus-visible){outline:2px solid var(--red);outline-offset:2px}
 .ct__gi{flex:none;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#ff5a60,#b30d14);box-shadow:inset 0 2px 0 rgba(255,255,255,.35),0 8px 16px -6px rgba(224,17,25,.7)}
 .ct__g b{display:block;font-size:14px;color:#fff}.ct__g small{display:block;color:var(--muted);font-size:12px;line-height:1.35}
-.ct__ci{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(145deg,#ff5a60,#b30d14);box-shadow:inset 0 2px 0 rgba(255,255,255,.35),0 10px 20px -8px rgba(224,17,25,.8);margin-bottom:18px}
+.ct__ci{width:60px;height:60px;border-radius:18px;display:grid;place-items:center;background:#1b1011;border:1px solid #5a1a1e;box-shadow:0 14px 30px -12px rgba(224,17,25,.8);margin-bottom:18px}.ct__ci svg{width:40px;height:40px;filter:drop-shadow(0 4px 6px rgba(0,0,0,.5))}
 .ct__t{font-size:24px}.ct__card--call p{color:var(--soft);font-size:15px;line-height:1.6;margin:8px 0 20px}
 .ct__days{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:20px}
 .ct__days button{font:inherit;cursor:pointer;background:#0d0d0d;border:1px solid #333;border-radius:12px;padding:10px 0;color:var(--muted);font-size:12px;transition:border-color .2s,transform .2s}.ct__days button:hover{border-color:var(--red);transform:translateY(-2px)}
@@ -1158,6 +1158,86 @@ footer{padding:20px 0 34px}
 .pr__list{list-style:none;padding:0;margin:0 0 26px;color:var(--soft);font-size:15px}.pr__list li{position:relative;padding:8px 0 8px 28px;border-bottom:1px solid var(--line)}.pr__list li::before{content:"✓";position:absolute;left:0;color:var(--red-text);font-weight:800}
 .pr__btn{width:100%;justify-content:center}
 @media (max-width:900px){.pr{grid-template-columns:1fr;gap:28px;padding:26px}.pr__card{padding:22px}.pr__num b{font-size:56px}}
+/* ===== journey road ===== */
+.jr{position:relative;margin:0 auto;max-width:1240px;aspect-ratio:1240/520}
+.jr::before{content:"";position:absolute;inset:8% 4%;background:radial-gradient(ellipse at 50% 55%,rgba(224,17,25,.16),transparent 62%);pointer-events:none}
+.jr svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.jr__road{fill:none;stroke:#161616;stroke-width:46;stroke-linecap:round}
+.jr__edge{fill:none;stroke:#242424;stroke-width:50;stroke-linecap:round}
+.jr__dash{fill:none;stroke:#3a3a3a;stroke-width:2.5;stroke-dasharray:14 16;stroke-linecap:round}
+.jr__go{fill:none;stroke:url(#jrg);stroke-width:5;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;filter:drop-shadow(0 0 10px #E01119)}
+.jr.play .jr__go{animation:jrDraw 4.6s linear forwards}
+.jr__car{opacity:0}.jr.play .jr__car{opacity:1}
+@keyframes jrDraw{to{stroke-dashoffset:0}}
+
+.jr__pin{position:absolute;transform:translate(-50%,-50%);width:72px;height:72px;border-radius:22px;display:grid;place-items:center;background:#141414;border:1px solid #2e2e2e;transition:all .5s var(--ease);z-index:3}
+.jr__pin svg{position:static;width:46px;height:46px;filter:grayscale(1) brightness(.55);transition:filter .5s,transform .5s var(--ease)}
+.jr__pin b{position:absolute;right:-9px;top:-9px;width:26px;height:26px;border-radius:50%;background:#0a0a0a;border:1px solid #444;font-size:12px;display:grid;place-items:center;color:#aaa;transition:all .5s var(--ease)}
+.jr__pin.on{background:#1b1011;border-color:#E01119;box-shadow:0 0 0 10px rgba(224,17,25,.12),0 18px 40px -10px rgba(224,17,25,.85);transform:translate(-50%,-50%) scale(1.08)}
+.jr__pin.on svg{filter:drop-shadow(0 6px 8px rgba(0,0,0,.5));transform:translateY(-2px)}
+.jr__pin.on b{background:var(--red);color:#fff;border-color:var(--red)}
+.jr__p1{left:26%;top:38.5%}.jr__p2{left:52%;top:61.5%}.jr__p3{left:78%;top:38.5%}
+
+.jr__card{position:absolute;width:25.5%;min-width:250px;background:rgba(20,20,20,.92);border:1px solid var(--line);border-radius:24px;padding:20px 22px;opacity:.28;transform:translate(-50%,14px);transition:opacity .6s var(--ease),transform .6s var(--ease),border-color .6s,box-shadow .6s;z-index:2;backdrop-filter:blur(6px)}
+.jr__card.on{opacity:1;transform:translate(-50%,0);border-color:#4a1a1d;box-shadow:0 26px 60px -26px rgba(224,17,25,.6)}
+.jr__c1{left:26%;top:54%}.jr__c2{left:52%;bottom:55%}.jr__c3{left:78%;top:54%}
+.jr__card .n{font-size:12px;font-weight:800;color:var(--red-text);letter-spacing:.1em}
+.jr__card h3{font-size:21px;margin:4px 0 6px}
+.jr__card p{color:var(--muted);margin:0;line-height:1.55;font-size:14.5px}
+.jr__mini{margin-top:14px;background:#0d0d0d;border:1px solid #2e2e2e;border-radius:14px;padding:10px 12px;font-size:12px;color:#bbb}
+.jr__days{display:grid;grid-template-columns:repeat(5,1fr);gap:5px}.jr__days span{background:#1a1a1a;border-radius:8px;padding:6px 0;text-align:center}
+.jr__card.on .jr__days span:nth-child(2){background:var(--red);color:#fff;animation:jrPulse 1.6s .5s 3}
+.jr__row{display:flex;gap:8px;align-items:center;margin:4px 0}.jr__row i{flex:none;width:15px;height:15px;border-radius:5px;border:1.5px solid #555;position:relative;transition:all .3s}
+.jr__card.on .jr__row i{background:var(--red);border-color:var(--red)}
+.jr__card.on .jr__row:nth-child(1) i{transition-delay:.3s}.jr__card.on .jr__row:nth-child(2) i{transition-delay:.7s}.jr__card.on .jr__row:nth-child(3) i{transition-delay:1.1s}
+.jr__row i::after{content:"";position:absolute;left:4px;top:1px;width:4px;height:8px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg);opacity:0;transition:opacity .3s inherit}
+.jr__card.on .jr__row i::after{opacity:1}
+.jr__bars{display:flex;gap:6px;align-items:flex-end;height:44px}.jr__bars i{flex:1;background:linear-gradient(#ff5a60,#b30d14);border-radius:4px 4px 0 0;transform:scaleY(.15);transform-origin:bottom;transition:transform .9s var(--ease)}
+.jr__bars i:nth-child(1){height:30%}.jr__bars i:nth-child(2){height:45%}.jr__bars i:nth-child(3){height:62%}.jr__bars i:nth-child(4){height:80%}.jr__bars i:nth-child(5){height:100%}
+.jr__card.on .jr__bars i{transform:none}.jr__card.on .jr__bars i:nth-child(2){transition-delay:.12s}.jr__card.on .jr__bars i:nth-child(3){transition-delay:.24s}.jr__card.on .jr__bars i:nth-child(4){transition-delay:.36s}.jr__card.on .jr__bars i:nth-child(5){transition-delay:.48s}
+@keyframes jrPulse{50%{box-shadow:0 0 0 6px rgba(224,17,25,.28)}}
+
+.jr__end{position:absolute;width:0;height:0;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;z-index:3}
+.jr__end i{position:absolute;left:0;top:0;transform:translate(-50%,-50%);border-radius:50%;display:grid;place-items:center}
+.jr__end em{position:absolute;left:0;transform:translateX(-50%);font-style:normal}
+.jr__start{left:3.55%;top:50%;color:#888}
+.jr__start i{width:18px;height:18px;background:#fff;box-shadow:0 0 0 7px rgba(255,255,255,.12)}
+.jr__start em{top:34px}
+.jr__finish{left:96.13%;top:38.46%;color:#777;transition:color .5s}
+.jr__finish i{width:46px;height:46px;background:#1a1a1a;border:1px solid #333;transition:background .5s,color .5s,border-color .5s,box-shadow .5s}
+.jr__finish i svg{position:static;width:20px;height:20px}
+.jr__finish em{top:36px}
+.jr__finish.on{color:#fff}.jr__finish.on i{background:#fff;color:#E01119;border-color:#fff;box-shadow:0 0 0 10px rgba(255,255,255,.1),0 0 40px rgba(224,17,25,.9);animation:jrPop .6s var(--ease)}
+@keyframes jrPop{50%{transform:translate(-50%,-50%) scale(1.25)}}
+
+@media (max-width:900px){
+  .jr{aspect-ratio:auto;max-width:520px;padding-left:54px}
+  .jr::before,.jr > svg,.jr__start{display:none}
+  .jr::after{content:"";position:absolute;left:25px;top:20px;bottom:60px;width:3px;border-radius:3px;background:linear-gradient(var(--red),#ff6a6f);transform:scaleY(0);transform-origin:top;transition:transform 3.6s linear}
+  .jr.play::after{transform:scaleY(1)}
+  .jr__card{position:relative;left:auto!important;top:auto!important;bottom:auto!important;width:auto;min-width:0;transform:translateY(14px);margin-bottom:16px}
+  .jr__card.on{transform:none}
+  .jr__pin{left:0!important;top:auto!important;width:50px;height:50px;border-radius:16px;transform:none!important;position:absolute}
+  .jr__pin svg{width:32px;height:32px}
+  .jr__p1{margin-top:18px}.jr__p2{margin-top:18px}.jr__p3{margin-top:18px}
+  .jr__finish{position:relative;left:auto;top:auto;width:auto;height:46px;margin:6px 0 0 -52px;display:flex;align-items:center;gap:14px}.jr__finish i,.jr__finish em{position:static;transform:none}.jr__finish.on i{animation:none}
+}
+@media (prefers-reduced-motion:reduce){.jr__go{stroke-dashoffset:0!important;animation:none!important}.jr__car{display:none}.jr__card,.jr__pin,.jr__finish{transition:none}}
+/* shared site footer (same as inner pages; markup comes from _tools/chrome.py) */
+footer.ft{padding:54px 0 26px;margin-top:40px;background:#0c0c0c;border:0}
+footer.ft .wrap{display:block}
+.ft__cta{display:none}
+.ft__g{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr 1fr 1.2fr;gap:26px}
+.ft__g b{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+footer.ft .ft__g a{display:block;margin:0;padding:5px 0;color:var(--soft);font-size:15px;overflow-wrap:anywhere}
+footer.ft .ft__g a:hover{color:#fff}
+footer.ft .ft__g a.logo{color:#fff;font-size:17px;padding:0}
+.ft__g p{color:var(--muted);font-size:15px;margin:14px 0 18px;max-width:300px}
+.ft__soc{display:flex;gap:12px}footer.ft .ft__soc a{width:44px;height:44px;padding:0;display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 6px 10px rgba(0,0,0,.45));transition:transform .25s cubic-bezier(.34,1.56,.64,1)}
+footer.ft .ft__soc a svg{width:44px;height:44px}footer.ft .ft__soc a:hover{transform:translateY(-4px) rotate(-6deg) scale(1.08)}
+.ft__big{font-family:var(--display);font-weight:900;font-size:clamp(44px,11.2vw,140px);line-height:.85;letter-spacing:-.03em;text-align:center;white-space:nowrap;margin-top:44px;background:linear-gradient(180deg,#262626,#0c0c0c 85%);-webkit-background-clip:text;background-clip:text;color:transparent;user-select:none}
+.ft__b{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;border-top:1px solid var(--line);padding-top:20px;font-size:13.5px;color:var(--muted)}
+@media (max-width:860px){.ft__g{grid-template-columns:1fr 1fr}.ft__g>div:first-child{grid-column:1/-1}}
 .nav{top:62px}.nav.scrolled{top:16px}
 @media (max-width:760px){.nav{top:58px}.nav.scrolled{top:12px}}
 .fsoc a.s3d,.fsoc a{border:0!important;background:none!important;width:44px;height:44px;padding:0;filter:drop-shadow(0 6px 10px rgba(0,0,0,.45));transition:transform .25s cubic-bezier(.34,1.56,.64,1)}.fsoc a svg,.socials a svg{width:44px!important;height:44px!important}.socials a{border:0!important;background:none!important;box-shadow:none!important;width:46px!important;height:46px!important;padding:0!important;filter:drop-shadow(0 6px 10px rgba(0,0,0,.45));transition:transform .25s cubic-bezier(.34,1.56,.64,1)}.socials a:hover{transform:translateY(-4px) rotate(-6deg) scale(1.08)}.fsoc a:hover{transform:translateY(-4px) rotate(-6deg) scale(1.08)}
@@ -1185,7 +1265,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="nav__links" id="navLinks">
       <div class="nav__dd"><button type="button" class="nav__l" aria-expanded="false">Solutions</button><div class="nav__menu nav__menu--sol"><span class="nav__grp">Problems we solve</span><a href="solutions/missed-calls/">Stop missed calls<small>AI receptionist and instant text back</small></a><a href="solutions/lead-follow-up/">Fix slow follow-up<small>Reply to every lead in seconds</small></a><a href="solutions/no-shows/">Reduce no-shows<small>Reminders and easy rescheduling</small></a><a href="solutions/ads-not-converting/">Fix ads that don’t convert<small>Offer, page, tracking and follow-up</small></a><a href="solutions/busywork/">Automate busywork<small>Onboarding, admin, reviews and reports</small></a><span class="nav__grp">Services</span><a href="services/ai-automation/" class="nav__sm">AI Automation &amp; AI Chatbots</a><a href="services/lead-generation/" class="nav__sm">Lead Generation Systems</a><a href="services/google-ads/" class="nav__sm">Google Ads Management</a><a href="services/facebook-ads/" class="nav__sm">Facebook &amp; Instagram Ads</a></div></div>
       <div class="nav__dd"><button type="button" class="nav__l" aria-expanded="false">Industries</button><div class="nav__menu nav__menu--2"><a href="industries/dental/">Dental &amp; medical</a><a href="industries/real-estate/">Real estate</a><a href="industries/home-services/">Home services</a><a href="industries/law/">Law firms</a><a href="industries/med-spa/">Med spas</a><a href="industries/accounting/">Accounting &amp; CPA</a><a href="industries/chiropractic/">Chiropractic &amp; PT</a><a href="industries/insurance/">Insurance agencies</a><a href="industries/">All industries →</a></div></div>
-      <a href="#pricing">Pricing</a>
       <a href="case-studies/">Case studies</a>
       <a href="blog/">Blog</a>
       <a href="tools/missed-call-calculator/">Free tools</a>
@@ -1244,6 +1323,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <main>
 
 <!-- ================= INTRO VIDEO ================= -->
+<!-- ================= MEET AFTAB ================= -->
 <section class="section" id="intro">
   <div class="wrap intro">
     <div>
@@ -1265,7 +1345,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- ================= SERVICES (BENTO) ================= -->
+<!-- ================= WHAT I DO ================= -->
 <section class="section" id="services" style="padding-top:0">
   <div class="wrap">
     <div class="head">
@@ -1336,15 +1416,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <svg class="spark" id="spark"></svg>
         </div>
       </article>
-      <article class="card tile t-who">
-        <h3>Built for businesses like yours</h3>
-        <div class="who"><a href="industries/dental/">Medical &amp; dental</a><a href="industries/real-estate/">Real estate</a><a href="industries/accounting/">Accounting firms</a><a href="industries/home-services/">Home services</a><a href="industries/med-spa/">Med spas</a><a href="industries/law/">Law firms</a><a href="industries/chiropractic/">Chiropractic &amp; PT</a><a href="industries/insurance/">Insurance agencies</a></div>
-      </article>
     </div>
   </div>
 </section>
 
-<!-- ================= INDUSTRIES (live demo) ================= -->
+<!-- ================= LIVE EXAMPLE ================= -->
 <section class="section" id="industries" style="padding-top:0">
   <div class="wrap">
     <div class="m1" id="demo">
@@ -1372,103 +1448,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- ================= NUMBERS ================= -->
-<section aria-label="Track record">
+<!-- ================= HOW IT WORKS ================= -->
+<section class="section" id="how" style="padding-top:0">
   <div class="wrap">
-    <div class="sp">
-      <div class="sp__cell">
-        <div class="sp__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF4A50" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg></div>
-        <div class="sp__num"><span class="count" data-to="1500">1,500</span><em>+</em></div>
-        <div class="sp__label">Projects delivered</div>
-        <p class="sp__sub">For clients across the US, Europe and Asia.</p>
-      </div>
-      <div class="sp__cell">
-        <div class="sp__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF4A50" stroke-width="2"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/></svg></div>
-        <div class="sp__num"><span class="count" data-to="8">8</span><em>+</em></div>
-        <div class="sp__label">Years in design</div>
-        <p class="sp__sub">Where it all started, long before AI.</p>
-      </div>
-      <div class="sp__cell">
-        <div class="sp__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF4A50" stroke-width="2"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg></div>
-        <div class="sp__num"><span class="count" data-to="5">5</span></div>
-        <div class="sp__label">Years building with AI</div>
-        <p class="sp__sub">Automation and AI systems since 2021.</p>
-      </div>
-      <div class="sp__cell">
-        <div class="sp__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF4A50" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg></div>
-        <div class="sp__num"><span class="count" data-to="3">3</span></div>
-        <div class="sp__label">Continents served</div>
-        <p class="sp__sub">The US, Europe and Asia.</p>
-      </div>
-    </div>
-  </div>
-</section>
+    <div class="head"><div><div class="kicker">How it works</div><h2 class="h2">From first call<br><em>to results</em></h2></div><p class="lead">Three stops. You always know where you are and what comes next.</p></div>
+    <div class="jr" id="jr">
+    <svg viewBox="0 0 1240 520" aria-hidden="true"><defs><linearGradient id="jrg" x1="0" x2="1"><stop offset="0" stop-color="#E01119"/><stop offset="1" stop-color="#ff8a8f"/></linearGradient>
+      <radialGradient id="jrc"><stop offset="0" stop-color="#fff"/><stop offset=".45" stop-color="#ff6a6f"/><stop offset="1" stop-color="#E01119" stop-opacity="0"/></radialGradient></defs>
+      <path id="jrPath" class="jr__edge" d="M 44 260 C 150 260 200 200 322 200 S 520 320 645 320 S 850 200 967 200 S 1120 200 1192 200"/>
+      <path class="jr__road" d="M 44 260 C 150 260 200 200 322 200 S 520 320 645 320 S 850 200 967 200 S 1120 200 1192 200"/>
+      <path class="jr__dash" d="M 44 260 C 150 260 200 200 322 200 S 520 320 645 320 S 850 200 967 200 S 1120 200 1192 200"/>
+      <path class="jr__go" pathLength="1" d="M 44 260 C 150 260 200 200 322 200 S 520 320 645 320 S 850 200 967 200 S 1120 200 1192 200"/>
+      <g class="jr__car"><circle r="26" fill="url(#jrc)"/><circle r="7" fill="#fff"/>
+        <animateMotion id="jrMove" dur="4.6s" begin="indefinite" fill="freeze" calcMode="linear"><mpath href="#jrPath"/></animateMotion></g>
+    </svg>
 
-<!-- ================= WORLDWIDE (3D GLOBE) ================= -->
-<section class="section" id="world" style="padding-bottom:0">
-  <div class="wrap world">
-    <div class="world__copy">
-      <div class="kicker">Worldwide</div>
-      <h2 class="h2">Built in Pakistan,<br><em>working worldwide</em></h2>
-      <p class="lead" style="margin-top:20px">I work remotely with businesses across the US, Europe and Asia, with clear communication at every step. Pick a region to explore.</p>
-      <ul class="world__list">
-        <li><button type="button" data-region="us"><span class="wdot"></span>United States<svg class="wgo" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8h12M9 3l5 5-5 5"/></svg></button></li>
-        <li><button type="button" data-region="eu"><span class="wdot"></span>United Kingdom &amp; Europe<svg class="wgo" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8h12M9 3l5 5-5 5"/></svg></button></li>
-        <li><button type="button" data-region="as"><span class="wdot"></span>Asia<svg class="wgo" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8h12M9 3l5 5-5 5"/></svg></button></li>
-        <li><button type="button" data-region="pk"><span class="wdot wdot--home"></span>Pakistan<small>Home base</small></button></li>
-      </ul>
-    </div>
-    <div class="globe" id="globe">
-      <canvas role="img" aria-label="3D globe with connections from Pakistan to clients in the US, Europe and Asia"></canvas>
-      <div class="globe__labels" aria-hidden="true"></div>
-      <div class="globe__chip globe__chip--tl"><b>3</b><span>continents<br>served</span></div>
-      <div class="globe__chip globe__chip--br"><span class="dot"></span>Remote-first, worldwide</div>
-      <span class="globe__hint">Drag to spin</span>
-    </div>
-  </div>
-</section>
+    <span class="jr__end jr__start"><i></i><em>Today</em></span>
 
-<!-- ================= CONTENT / SHORTS ================= -->
-<section class="section" id="content">
-  <div class="wrap">
-    <div class="head">
-      <div><div class="kicker">Content</div><h2 class="h2">I share what's<br>working, as it happens</h2>
-        <a class="live-badge" href="https://www.youtube.com/@ItsAftab_Ahmed" target="_blank" rel="noopener"><i></i>Latest from my YouTube channel</a></div>
-      <div class="rail-ctrl">
-        <button type="button" id="prev" aria-label="Previous videos"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2"><path d="M14 8H2M7 3L2 8l5 5"/></svg></button>
-        <button type="button" id="next" aria-label="Next videos"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2"><path d="M2 8h12M9 3l5 5-5 5"/></svg></button>
-      </div>
-    </div>
-    <!-- Fallback cards; replaced by real videos from shorts.json (GitHub Action) or the live feed -->
-    <div class="rail" id="rail">
-      <a class="short" href="https://www.youtube.com/@ItsAftab_Ahmed/shorts" target="_blank" rel="noopener"><div class="short__thumb ph"><img src="images/short-1.jpg" alt="" loading="lazy" decoding="async"><span class="short__platform">YouTube Shorts</span><span class="short__play"><svg width="16" height="18" viewBox="0 0 14 16" fill="#fff"><path d="M0 0L14 8L0 16Z"/></svg></span><span class="short__title">Watch my latest Shorts</span></div></a>
-      <a class="short" href="https://www.instagram.com/itsaftab.ahmed/" target="_blank" rel="noopener"><div class="short__thumb ph"><img src="images/short-2.jpg" alt="" loading="lazy" decoding="async"><span class="short__platform">Instagram</span><span class="short__play"><svg width="16" height="18" viewBox="0 0 14 16" fill="#fff"><path d="M0 0L14 8L0 16Z"/></svg></span><span class="short__title">Follow along on Instagram</span></div></a>
-      <a class="short" href="https://www.tiktok.com/@itsaftab_ahmed" target="_blank" rel="noopener"><div class="short__thumb ph"><img src="images/short-3.jpg" alt="" loading="lazy" decoding="async"><span class="short__platform">TikTok</span><span class="short__play"><svg width="16" height="18" viewBox="0 0 14 16" fill="#fff"><path d="M0 0L14 8L0 16Z"/></svg></span><span class="short__title">Follow along on TikTok</span></div></a>
-      <a class="short" href="https://www.youtube.com/@ItsAftab_Ahmed/shorts" target="_blank" rel="noopener"><div class="short__thumb ph"><img src="images/short-4.jpg" alt="" loading="lazy" decoding="async"><span class="short__platform">YouTube Shorts</span><span class="short__play"><svg width="16" height="18" viewBox="0 0 14 16" fill="#fff"><path d="M0 0L14 8L0 16Z"/></svg></span><span class="short__title">Watch my latest Shorts</span></div></a>
-      <a class="short" href="https://www.instagram.com/itsaftab.ahmed/" target="_blank" rel="noopener"><div class="short__thumb ph"><img src="images/short-5.jpg" alt="" loading="lazy" decoding="async"><span class="short__platform">Instagram</span><span class="short__play"><svg width="16" height="18" viewBox="0 0 14 16" fill="#fff"><path d="M0 0L14 8L0 16Z"/></svg></span><span class="short__title">Follow along on Instagram</span></div></a>
-      <a class="short" href="https://www.tiktok.com/@itsaftab_ahmed" target="_blank" rel="noopener"><div class="short__thumb ph"><img src="images/short-6.jpg" alt="" loading="lazy" decoding="async"><span class="short__platform">TikTok</span><span class="short__play"><svg width="16" height="18" viewBox="0 0 14 16" fill="#fff"><path d="M0 0L14 8L0 16Z"/></svg></span><span class="short__title">Follow along on TikTok</span></div></a>
-    </div>
-    <div class="platforms">
-      <a class="btn btn--ghost" href="https://www.youtube.com/@ItsAftab_Ahmed" target="_blank" rel="noopener">YouTube</a>
-      <a class="btn btn--ghost" href="https://www.instagram.com/itsaftab.ahmed/" target="_blank" rel="noopener">Instagram</a>
-      <a class="btn btn--ghost" href="https://www.tiktok.com/@itsaftab_ahmed" target="_blank" rel="noopener">TikTok</a>
-    </div>
-  </div>
-</section>
+    <span class="jr__pin jr__p1" data-at="0.245"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><defs> <linearGradient id="kr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff5a60"/><stop offset=".55" stop-color="#E01119"/><stop offset="1" stop-color="#8f0a10"/></linearGradient> <linearGradient id="krs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b30d14"/><stop offset="1" stop-color="#5c0509"/></linearGradient> <linearGradient id="kw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#d9d9de"/></linearGradient> <linearGradient id="kws" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c4c4cc"/><stop offset="1" stop-color="#8d8d97"/></linearGradient> <linearGradient id="kd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3a3f"/><stop offset="1" stop-color="#151517"/></linearGradient> <linearGradient id="kgl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".75"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient> <radialGradient id="ksh" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".55"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient> <linearGradient id="kg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6ff2a1"/><stop offset="1" stop-color="#16a34a"/></linearGradient> </defs><ellipse cx="32" cy="58" rx="20" ry="3.5" fill="url(#ksh)"/> <rect x="11" y="13" width="42" height="42" rx="9" fill="url(#kws)"/> <rect x="11" y="10" width="42" height="42" rx="9" fill="url(#kw)"/> <path d="M11 19a9 9 0 0 1 9-9h24a9 9 0 0 1 9 9v4H11z" fill="url(#kr)"/> <rect x="20" y="5" width="5" height="11" rx="2.5" fill="url(#kd)"/><rect x="39" y="5" width="5" height="11" rx="2.5" fill="url(#kd)"/> <path d="M22 37l6 6 13-13" fill="none" stroke="url(#krs)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" transform="translate(0 1.5)"/> <path d="M22 37l6 6 13-13" fill="none" stroke="url(#kr)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/> <path d="M18 11.5h28a7 7 0 0 1 5 2.2c-9-1.2-27-1-36 .8a7 7 0 0 1 3-3z" fill="url(#kgl)" opacity=".7"/></svg><b>1</b></span>
+    <article class="jr__card jr__c1" data-at="0.245"><div class="n">STEP 1</div><h3>Book a call</h3><p>We talk through your goals and where your business is losing time or leads.</p>
+      <div class="jr__mini"><div class="jr__days"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span></div></div></article>
 
-<!-- ================= PROCESS ================= -->
-<section class="section" style="padding-top:0">
-  <div class="wrap">
-    <div class="head"><div><div class="kicker">How it works</div><h2 class="h2">From first call<br>to results</h2></div></div>
-    <div class="steps">
-      <div class="card step"><span class="step__n">Step 1</span><h3>Book a call</h3><p>We talk through your goals and where your business is losing time or leads.</p></div>
-      <div class="card step"><span class="step__n">Step 2</span><h3>Get a clear plan</h3><p>You get a simple plan for what to build first and why, before anything starts.</p></div>
-      <div class="card step"><span class="step__n">Step 3</span><h3>We build, you grow</h3><p>I set everything up, test it properly and hand it over running.</p></div>
-    </div>
-    <div class="values">
-      <div>No hype. Speed over slowness.<br>Work before money.</div>
-      <p>The three rules behind every project I take on, from the first call to the handover.</p>
-    </div>
+    <span class="jr__pin jr__p2" data-at="0.53"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><defs> <linearGradient id="br" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff5a60"/><stop offset=".55" stop-color="#E01119"/><stop offset="1" stop-color="#8f0a10"/></linearGradient> <linearGradient id="brs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b30d14"/><stop offset="1" stop-color="#5c0509"/></linearGradient> <linearGradient id="bw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#d9d9de"/></linearGradient> <linearGradient id="bws" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c4c4cc"/><stop offset="1" stop-color="#8d8d97"/></linearGradient> <linearGradient id="bd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3a3f"/><stop offset="1" stop-color="#151517"/></linearGradient> <linearGradient id="bgl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".75"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient> <radialGradient id="bsh" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".55"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient> <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6ff2a1"/><stop offset="1" stop-color="#16a34a"/></linearGradient> </defs><ellipse cx="32" cy="58" rx="20" ry="3.5" fill="url(#bsh)"/> <path d="M14 14c0-3 2.4-5 5.4-5H50v42H19.4c-3 0-5.4 2.2-5.4 5z" fill="url(#brs)"/> <path d="M18 47h30v8H19.5a3.6 3.6 0 0 1-3.6-3.6v-1A3.4 3.4 0 0 1 18 47z" fill="url(#bw)"/><path d="M19 50.5h28" stroke="#b9b9c2" stroke-width="1"/> <path d="M14 12c0-3 2.4-5 5.4-5H50v40H19.4c-3 0-5.4 2.2-5.4 5z" fill="url(#br)"/> <rect x="22" y="15" width="20" height="13" rx="3" fill="url(#bw)"/><rect x="25" y="19" width="14" height="2" rx="1" fill="#E01119"/><rect x="25" y="23" width="9" height="2" rx="1" fill="#c9c9cf"/> <path d="M19.5 8H48a3 3 0 0 1 1.5.4c-9 .6-23 .9-33.4 3.4A5.4 5.4 0 0 1 19.5 8z" fill="url(#bgl)" opacity=".7"/></svg><b>2</b></span>
+    <article class="jr__card jr__c2" data-at="0.53"><div class="n">STEP 2</div><h3>Get a clear plan</h3><p>A simple plan for what to build first and why, before anything starts.</p>
+      <div class="jr__mini"><div class="jr__row"><i></i>What to build first</div><div class="jr__row"><i></i>Why it matters</div><div class="jr__row"><i></i>Scope and price agreed</div></div></article>
+
+    <span class="jr__pin jr__p3" data-at="0.80"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><defs> <linearGradient id="hr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff5a60"/><stop offset=".55" stop-color="#E01119"/><stop offset="1" stop-color="#8f0a10"/></linearGradient> <linearGradient id="hrs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b30d14"/><stop offset="1" stop-color="#5c0509"/></linearGradient> <linearGradient id="hw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#d9d9de"/></linearGradient> <linearGradient id="hws" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c4c4cc"/><stop offset="1" stop-color="#8d8d97"/></linearGradient> <linearGradient id="hd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3a3f"/><stop offset="1" stop-color="#151517"/></linearGradient> <linearGradient id="hgl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".75"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient> <radialGradient id="hsh" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".55"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient> <linearGradient id="hg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6ff2a1"/><stop offset="1" stop-color="#16a34a"/></linearGradient> </defs><ellipse cx="32" cy="58" rx="22" ry="3.5" fill="url(#hsh)"/> <rect x="12" y="37" width="12" height="16" rx="3.5" fill="url(#hws)"/><rect x="12" y="34" width="12" height="16" rx="3.5" fill="url(#hw)"/><rect x="14" y="36" width="3" height="8.636363636363635" rx="1.5" fill="url(#hgl)" opacity=".7"/><rect x="26" y="27" width="12" height="26" rx="3.5" fill="url(#hws)"/><rect x="26" y="24" width="12" height="26" rx="3.5" fill="url(#hw)"/><rect x="28" y="26" width="3" height="13.18181818181818" rx="1.5" fill="url(#hgl)" opacity=".7"/><rect x="40" y="15" width="12" height="38" rx="3.5" fill="url(#hrs)"/><rect x="40" y="12" width="12" height="38" rx="3.5" fill="url(#hr)"/><rect x="42" y="14" width="3" height="18.636363636363633" rx="1.5" fill="url(#hgl)" opacity=".7"/> <path d="M13 28l14-10 13 5 12-12" fill="none" stroke="url(#hd)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg><b>3</b></span>
+    <article class="jr__card jr__c3" data-at="0.80"><div class="n">STEP 3</div><h3>We build, you grow</h3><p>I set everything up, test it properly and hand it over running.</p>
+      <div class="jr__mini"><div class="jr__bars"><i></i><i></i><i></i><i></i><i></i></div></div></article>
+
+    <span class="jr__end jr__finish" data-at="0.99"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4M5 4h12l-2.5 4L17 12H5"/></svg></i><em>Results</em></span>
+  </div>
   </div>
 </section>
 
@@ -1514,51 +1524,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </script>
 </section>
 
-<!-- ================= FAQ ================= -->
-<section class="section" id="pricing" style="padding-top:0">
-  <div class="wrap">
-    <div class="pr">
-      <div class="pr__l">
-        <div class="kicker">Pricing</div>
-        <h2 class="h2">Simple monthly <em>plans</em></h2>
-        <p class="lead" style="margin-top:18px">Every business is different, so your plan is built around what you need. We agree on the scope and the price on a free call before anything starts.</p>
-      </div>
-      <div class="pr__card">
-        <span class="pr__from">Plans start from</span>
-        <div class="pr__num"><b>$297</b><span>/month</span></div>
-        <div class="pr__lbl">What changes the price</div>
-        <ul class="pr__list"><li>What we set up: AI receptionist, lead follow-up, ads or automation</li><li>How many services, locations and channels you have</li><li>How much ongoing work each month needs</li></ul>
-        <a href="#book" class="btn btn--red pr__btn">Get your price on a free call →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="faq" style="padding-top:0">
-  <div class="wrap faq">
-    <div>
-      <div class="kicker">FAQ</div>
-      <h2 class="h2">Questions,<br>answered</h2>
-      <p class="lead" style="margin-top:20px">Anything else? Ask me on the call.</p>
-    </div>
-    <div>
-      <details open><summary>Who do you work with?<i><svg width="14" height="14" viewBox="0 0 14 14" stroke="#fff" stroke-width="2"><path d="M7 1v12M1 7h12"/></svg></i></summary>
-        <p>Mostly dental and medical practices, real estate teams, accounting firms, home service businesses, med spas and law firms in the US, UK and Europe. Any growing business that's losing time or leads to busywork is a good fit.</p></details>
-      <details><summary>Do you work with businesses in my city?<i><svg width="14" height="14" viewBox="0 0 14 14" stroke="#fff" stroke-width="2"><path d="M7 1v12M1 7h12"/></svg></i></summary>
-        <p>Yes. I work remotely with businesses in all 50 US states, from big cities like Dallas, Houston, Los Angeles, New York, Chicago and Miami to small towns. Calls, setup and support all happen online, so your location doesn't limit what we can build.</p></details>
-      <details><summary>Do I need to be technical?<i><svg width="14" height="14" viewBox="0 0 14 14" stroke="#fff" stroke-width="2"><path d="M7 1v12M1 7h12"/></svg></i></summary>
-        <p>No. I handle the setup end to end and walk you and your team through everything, so you know exactly how it works.</p></details>
-      <details><summary>How much does it cost?<i><svg width="14" height="14" viewBox="0 0 14 14" stroke="#fff" stroke-width="2"><path d="M7 1v12M1 7h12"/></svg></i></summary>
-        <p>Plans start from $297 a month. Your price depends on what we set up and how much ongoing work it needs. We agree on the scope and the price on a free call before anything starts.</p></details>
-      <details><summary>What happens on the call?<i><svg width="14" height="14" viewBox="0 0 14 14" stroke="#fff" stroke-width="2"><path d="M7 1v12M1 7h12"/></svg></i></summary>
-        <p>It's a 30-minute conversation about your goals and where your business is losing time or leads. You'll leave with a clear idea of what's possible, whether we work together or not.</p></details>
-      <details><summary>How is this different from hiring an agency?<i><svg width="14" height="14" viewBox="0 0 14 14" stroke="#fff" stroke-width="2"><path d="M7 1v12M1 7h12"/></svg></i></summary>
-        <p>You get AI, automation and marketing from one partner who understands how they fit together — no passing work between vendors and nothing lost in between.</p></details>
-    </div>
-  </div>
-</section>
-
-<!-- ================= BOOK A CALL ================= -->
+<!-- ================= CONTACT ================= -->
 <section class="section" id="book" style="padding-top:0">
   <div class="wrap ct" id="contact">
     <div class="ct__head">
@@ -1581,7 +1547,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </form>
       </div>
       <div class="ct__card ct__card--call">
-        <span class="ct__ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span>
+        <span class="ct__ci"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><defs> <linearGradient id="kr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff5a60"/><stop offset=".55" stop-color="#E01119"/><stop offset="1" stop-color="#8f0a10"/></linearGradient> <linearGradient id="krs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b30d14"/><stop offset="1" stop-color="#5c0509"/></linearGradient> <linearGradient id="kw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#d9d9de"/></linearGradient> <linearGradient id="kws" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c4c4cc"/><stop offset="1" stop-color="#8d8d97"/></linearGradient> <linearGradient id="kd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3a3f"/><stop offset="1" stop-color="#151517"/></linearGradient> <linearGradient id="kgl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".75"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient> <radialGradient id="ksh" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".55"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient> <linearGradient id="kg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6ff2a1"/><stop offset="1" stop-color="#16a34a"/></linearGradient> </defs><ellipse cx="32" cy="58" rx="20" ry="3.5" fill="url(#ksh)"/> <rect x="11" y="13" width="42" height="42" rx="9" fill="url(#kws)"/> <rect x="11" y="10" width="42" height="42" rx="9" fill="url(#kw)"/> <path d="M11 19a9 9 0 0 1 9-9h24a9 9 0 0 1 9 9v4H11z" fill="url(#kr)"/> <rect x="20" y="5" width="5" height="11" rx="2.5" fill="url(#kd)"/><rect x="39" y="5" width="5" height="11" rx="2.5" fill="url(#kd)"/> <path d="M22 37l6 6 13-13" fill="none" stroke="url(#krs)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" transform="translate(0 1.5)"/> <path d="M22 37l6 6 13-13" fill="none" stroke="url(#kr)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/> <path d="M18 11.5h28a7 7 0 0 1 5 2.2c-9-1.2-27-1-36 .8a7 7 0 0 1 3-3z" fill="url(#kgl)" opacity=".7"/></svg></span>
         <b class="ct__t">Book a free call</b>
         <p>30 minutes on video. We look at your business and where customers and time are slipping away.</p>
         <div class="ct__days" id="ctDays" aria-label="Pick a day"></div>
@@ -1605,42 +1571,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- ================= FAQ ================= -->
+<section class="section" id="faq" style="padding-top:0">
+  <div class="wrap faq">
+    <div>
+      <div class="kicker">FAQ</div>
+      <h2 class="h2">Questions,<br>answered</h2>
+      <p class="lead" style="margin-top:20px">Anything else? Send me a message or ask on the call.</p>
+    </div>
+    <div>
+      <details open><summary>Who do you work with?<i><svg width="14" height="14" viewBox="0 0 14 14" stroke="#fff" stroke-width="2"><path d="M7 1v12M1 7h12"/></svg></i></summary>
+        <p>Mostly dental and medical practices, real estate teams, accounting firms, home service businesses, med spas and law firms in the US, UK and Europe. Any growing business that's losing time or leads to busywork is a good fit.</p></details>
+      <details><summary>Do you work with businesses in my city?<i><svg width="14" height="14" viewBox="0 0 14 14" stroke="#fff" stroke-width="2"><path d="M7 1v12M1 7h12"/></svg></i></summary>
+        <p>Yes. I work remotely with businesses in all 50 US states, from big cities like Dallas, Houston, Los Angeles, New York, Chicago and Miami to small towns. Calls, setup and support all happen online, so your location doesn't limit what we can build.</p></details>
+      <details><summary>Do I need to be technical?<i><svg width="14" height="14" viewBox="0 0 14 14" stroke="#fff" stroke-width="2"><path d="M7 1v12M1 7h12"/></svg></i></summary>
+        <p>No. I handle the setup end to end and walk you and your team through everything, so you know exactly how it works.</p></details>
+      <details><summary>How much does it cost?<i><svg width="14" height="14" viewBox="0 0 14 14" stroke="#fff" stroke-width="2"><path d="M7 1v12M1 7h12"/></svg></i></summary>
+        <p>Plans start from $297 a month. Your price depends on what we set up and how much ongoing work it needs. We agree on the scope and the price on a free call before anything starts.</p></details>
+      <details><summary>What happens on the call?<i><svg width="14" height="14" viewBox="0 0 14 14" stroke="#fff" stroke-width="2"><path d="M7 1v12M1 7h12"/></svg></i></summary>
+        <p>It's a 30-minute conversation about your goals and where your business is losing time or leads. You'll leave with a clear idea of what's possible, whether we work together or not.</p></details>
+      <details><summary>How is this different from hiring an agency?<i><svg width="14" height="14" viewBox="0 0 14 14" stroke="#fff" stroke-width="2"><path d="M7 1v12M1 7h12"/></svg></i></summary>
+        <p>You get AI, automation and marketing from one partner who understands how they fit together — no passing work between vendors and nothing lost in between.</p></details>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <!-- ================= FOOTER ================= -->
-<footer>
-  <div class="wrap">
-    <div class="fcta">
-      <div class="kicker">Let's talk</div>
-      <h3>Put the busywork<br><span>on autopilot.</span></h3>
-      <a href="#book" class="btn btn--red">Book a free 30-minute call →</a>
-    </div>
-
-    <!-- FOOTER BLOG: latest posts (newest first) -->
-    <div class="fblog">
-      <div class="fblog__head"><div class="kicker">From the blog</div><a href="blog/" class="fblog__all">View all →</a></div>
-      <div class="fblog__list">
-        <a class="fpost" href="blog/ai-receptionist-cost/"><span class="fpost__tag">AI receptionist · Pricing</span><b>How much does an AI receptionist cost? Pricing explained for small businesses</b><small>Nov 12, 2026 · 8 min read</small></a>
-        <a class="fpost" href="blog/insurance-lead-follow-up/"><span class="fpost__tag">Insurance · Follow-up</span><b>How insurance agents can follow up on quote requests faster</b><small>Nov 9, 2026 · 8 min read</small></a>
-        <a class="fpost" href="blog/automated-lead-follow-up/"><span class="fpost__tag">Lead generation</span><b>How to follow up with leads automatically (SMS, email, calls)</b><small>Nov 5, 2026 · 9 min read</small></a>
-        <a class="fnext" href="blog/"><span class="fpost__tag">Coming soon</span><b>New guides on ads, leads &amp; AI automation</b><small>New posts every Mon &amp; Thu</small></a>
-      </div>
-    </div>
-
-    <div class="fcols"><div><b>Solutions</b><a href="solutions/missed-calls/">Stop missed calls</a><a href="solutions/lead-follow-up/">Fix slow follow-up</a><a href="solutions/no-shows/">Reduce no-shows</a><a href="solutions/ads-not-converting/">Fix ads that don’t convert</a><a href="solutions/busywork/">Automate busywork</a></div><div><b>Services</b><a href="services/ai-automation/">AI Automation &amp; AI Chatbots</a><a href="services/lead-generation/">Lead Generation Systems</a><a href="services/google-ads/">Google Ads Management</a><a href="services/facebook-ads/">Facebook &amp; Instagram Ads</a></div><div><b>Industries</b><a href="industries/dental/">Dental &amp; medical</a><a href="industries/real-estate/">Real estate</a><a href="industries/home-services/">Home services</a><a href="industries/law/">Law firms</a><a href="industries/">All industries →</a></div><div><b>Resources</b><a href="blog/">Blog</a><a href="case-studies/">Case studies</a><a href="tools/missed-call-calculator/">Missed call calculator</a><a href="about/">About</a></div><div><b>Contact</b><a href="mailto:hello@iamaftabahmed.com">hello@iamaftabahmed.com</a><a href="#book">Book a free call</a><a href="privacy/">Privacy</a></div></div>
-
-    <div class="fbar">
-      <a href="#top" class="logo">AFTAB <span>AHMED</span></a>
-      <span class="fbar__tag">AI automation, ads and lead follow-up for US service businesses.</span>
-      <div class="fsoc"><a href="https://www.instagram.com/itsaftab.ahmed/" aria-label="Instagram" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"> <defs><linearGradient id="igt" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7a3cff"/><stop offset=".45" stop-color="#e1306c"/><stop offset="1" stop-color="#ffb13d"/></linearGradient> <linearGradient id="igg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient> <radialGradient id="igs" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".6"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient></defs> <ellipse cx="32" cy="58.5" rx="21" ry="3.6" fill="url(#igs)"/> <rect x="8" y="9" width="48" height="46" rx="13" fill="#8a1d4a"/> <rect x="8" y="5" width="48" height="46" rx="13" fill="url(#igt)"/> <path d="M21 6.5h22c6 0 10.5 3 12 7.5-11-3.5-31-3.5-46 0 1.5-4.5 6-7.5 12-7.5z" fill="url(#igg)" opacity=".85"/> <g fill="none" stroke="#7a1a40" stroke-width="3.6" transform="translate(0 1.8)"><rect x="19" y="15" width="26" height="26" rx="8"/><circle cx="32" cy="28" r="6.3"/></g> <g fill="none" stroke="#fff" stroke-width="3.6"><rect x="19" y="15" width="26" height="26" rx="8"/><circle cx="32" cy="28" r="6.3"/></g><circle cx="39.6" cy="20.6" r="2" fill="#fff"/></svg></a>
-            <a href="https://www.youtube.com/@ItsAftab_Ahmed" aria-label="YouTube" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"> <defs><linearGradient id="ytt" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff4a50"/><stop offset="1" stop-color="#c40c13"/></linearGradient> <linearGradient id="ytg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient> <radialGradient id="yts" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".6"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient></defs> <ellipse cx="32" cy="58.5" rx="21" ry="3.6" fill="url(#yts)"/> <rect x="8" y="9" width="48" height="46" rx="13" fill="#7d070c"/> <rect x="8" y="5" width="48" height="46" rx="13" fill="url(#ytt)"/> <path d="M21 6.5h22c6 0 10.5 3 12 7.5-11-3.5-31-3.5-46 0 1.5-4.5 6-7.5 12-7.5z" fill="url(#ytg)" opacity=".85"/> <path d="M27 19.5l14 8.5-14 8.5z" fill="#7d070c" transform="translate(0 2)"/><path d="M27 19.5l14 8.5-14 8.5z" fill="#fff" stroke="#fff" stroke-width="3" stroke-linejoin="round"/></svg></a>
-            <a href="https://www.tiktok.com/@itsaftab_ahmed" aria-label="TikTok" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"> <defs><linearGradient id="ttt" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2e2e33"/><stop offset="1" stop-color="#0b0b0d"/></linearGradient> <linearGradient id="ttg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient> <radialGradient id="tts" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".6"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient></defs> <ellipse cx="32" cy="58.5" rx="21" ry="3.6" fill="url(#tts)"/> <rect x="8" y="9" width="48" height="46" rx="13" fill="#000"/> <rect x="8" y="5" width="48" height="46" rx="13" fill="url(#ttt)"/> <path d="M21 6.5h22c6 0 10.5 3 12 7.5-11-3.5-31-3.5-46 0 1.5-4.5 6-7.5 12-7.5z" fill="url(#ttg)" opacity=".85"/> <path d="M34.5 13h5c.5 4 3 6.6 7 7v5c-2.7 0-5.1-.8-7-2.1V33a8.7 8.7 0 1 1-8.7-8.7c.6 0 1.1 0 1.6.1v5.2a3.6 3.6 0 1 0 2.1 3.3z" fill="#25F4EE" transform="translate(-1.5 -1.2)"/> <path d="M34.5 13h5c.5 4 3 6.6 7 7v5c-2.7 0-5.1-.8-7-2.1V33a8.7 8.7 0 1 1-8.7-8.7c.6 0 1.1 0 1.6.1v5.2a3.6 3.6 0 1 0 2.1 3.3z" fill="#FE2C55" transform="translate(1.5 1.2)"/> <path d="M34.5 13h5c.5 4 3 6.6 7 7v5c-2.7 0-5.1-.8-7-2.1V33a8.7 8.7 0 1 1-8.7-8.7c.6 0 1.1 0 1.6.1v5.2a3.6 3.6 0 1 0 2.1 3.3z" fill="#fff"/></svg></a>
-            <a href="https://www.linkedin.com/in/iamaftabahmed/" aria-label="LinkedIn" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"> <defs><linearGradient id="lit" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2d8cff"/><stop offset="1" stop-color="#0a5bc4"/></linearGradient> <linearGradient id="lig" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient> <radialGradient id="lis" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".6"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient></defs> <ellipse cx="32" cy="58.5" rx="21" ry="3.6" fill="url(#lis)"/> <rect x="8" y="9" width="48" height="46" rx="13" fill="#073f8a"/> <rect x="8" y="5" width="48" height="46" rx="13" fill="url(#lit)"/> <path d="M21 6.5h22c6 0 10.5 3 12 7.5-11-3.5-31-3.5-46 0 1.5-4.5 6-7.5 12-7.5z" fill="url(#lig)" opacity=".85"/> <g fill="#06306b" transform="translate(0 1.6)"><rect x="18" y="24" width="6.5" height="17" rx="1.6"/><circle cx="21.2" cy="17.5" r="3.9"/><path d="M28.5 24h6.2v2.6c1.2-1.9 3.4-3.1 6.2-3.1 5 0 6.9 3.2 6.9 8.2V41h-6.5v-8.2c0-2.3-.6-3.9-2.8-3.9s-3.4 1.6-3.4 3.9V41h-6.6z"/></g> <g fill="#fff"><rect x="18" y="24" width="6.5" height="17" rx="1.6"/><circle cx="21.2" cy="17.5" r="3.9"/><path d="M28.5 24h6.2v2.6c1.2-1.9 3.4-3.1 6.2-3.1 5 0 6.9 3.2 6.9 8.2V41h-6.5v-8.2c0-2.3-.6-3.9-2.8-3.9s-3.4 1.6-3.4 3.9V41h-6.6z"/></g></svg></a></div>
-    </div>
-    <div class="fmail"><span>Start a project <a href="mailto:hello@iamaftabahmed.com">hello@iamaftabahmed.com</a></span><span>Press &amp; partnerships <a href="mailto:pr@iamaftabahmed.com">pr@iamaftabahmed.com</a></span></div>
-    <div class="fcopy">© <span id="year">2026</span> Aftab Ahmed · <a href="privacy/" style="color:inherit">Privacy</a></div>
-  </div>
-</footer>
+<!--ft--><footer class="ft"><div class="wrap"><div class="ft__cta"><div><span class="ft__k">Let's talk</span><b>Ready for a business that <br>keeps working when you're not?</b></div><a class="btn" href="#book">Book a free 30-minute call →</a></div><div class="ft__g"><div><a class="logo" href="">AFTAB <span>AHMED</span></a><p>AI automation, ads and lead follow-up for US service businesses.</p><div class="ft__soc"><a href="https://www.linkedin.com/in/iamaftabahmed/" rel="noopener" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"> <defs><linearGradient id="lit" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2d8cff"/><stop offset="1" stop-color="#0a5bc4"/></linearGradient> <linearGradient id="lig" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient> <radialGradient id="lis" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".6"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient></defs> <ellipse cx="32" cy="58.5" rx="21" ry="3.6" fill="url(#lis)"/> <rect x="8" y="9" width="48" height="46" rx="13" fill="#073f8a"/> <rect x="8" y="5" width="48" height="46" rx="13" fill="url(#lit)"/> <path d="M21 6.5h22c6 0 10.5 3 12 7.5-11-3.5-31-3.5-46 0 1.5-4.5 6-7.5 12-7.5z" fill="url(#lig)" opacity=".85"/> <g fill="#06306b" transform="translate(0 1.6)"><rect x="18" y="24" width="6.5" height="17" rx="1.6"/><circle cx="21.2" cy="17.5" r="3.9"/><path d="M28.5 24h6.2v2.6c1.2-1.9 3.4-3.1 6.2-3.1 5 0 6.9 3.2 6.9 8.2V41h-6.5v-8.2c0-2.3-.6-3.9-2.8-3.9s-3.4 1.6-3.4 3.9V41h-6.6z"/></g> <g fill="#fff"><rect x="18" y="24" width="6.5" height="17" rx="1.6"/><circle cx="21.2" cy="17.5" r="3.9"/><path d="M28.5 24h6.2v2.6c1.2-1.9 3.4-3.1 6.2-3.1 5 0 6.9 3.2 6.9 8.2V41h-6.5v-8.2c0-2.3-.6-3.9-2.8-3.9s-3.4 1.6-3.4 3.9V41h-6.6z"/></g></svg></a><a href="https://www.youtube.com/@ItsAftab_Ahmed" rel="noopener" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"> <defs><linearGradient id="ytt" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff4a50"/><stop offset="1" stop-color="#c40c13"/></linearGradient> <linearGradient id="ytg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient> <radialGradient id="yts" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".6"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient></defs> <ellipse cx="32" cy="58.5" rx="21" ry="3.6" fill="url(#yts)"/> <rect x="8" y="9" width="48" height="46" rx="13" fill="#7d070c"/> <rect x="8" y="5" width="48" height="46" rx="13" fill="url(#ytt)"/> <path d="M21 6.5h22c6 0 10.5 3 12 7.5-11-3.5-31-3.5-46 0 1.5-4.5 6-7.5 12-7.5z" fill="url(#ytg)" opacity=".85"/> <path d="M27 19.5l14 8.5-14 8.5z" fill="#7d070c" transform="translate(0 2)"/><path d="M27 19.5l14 8.5-14 8.5z" fill="#fff" stroke="#fff" stroke-width="3" stroke-linejoin="round"/></svg></a><a href="https://www.instagram.com/itsaftab.ahmed/" rel="noopener" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"> <defs><linearGradient id="igt" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7a3cff"/><stop offset=".45" stop-color="#e1306c"/><stop offset="1" stop-color="#ffb13d"/></linearGradient> <linearGradient id="igg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient> <radialGradient id="igs" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".6"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient></defs> <ellipse cx="32" cy="58.5" rx="21" ry="3.6" fill="url(#igs)"/> <rect x="8" y="9" width="48" height="46" rx="13" fill="#8a1d4a"/> <rect x="8" y="5" width="48" height="46" rx="13" fill="url(#igt)"/> <path d="M21 6.5h22c6 0 10.5 3 12 7.5-11-3.5-31-3.5-46 0 1.5-4.5 6-7.5 12-7.5z" fill="url(#igg)" opacity=".85"/> <g fill="none" stroke="#7a1a40" stroke-width="3.6" transform="translate(0 1.8)"><rect x="19" y="15" width="26" height="26" rx="8"/><circle cx="32" cy="28" r="6.3"/></g> <g fill="none" stroke="#fff" stroke-width="3.6"><rect x="19" y="15" width="26" height="26" rx="8"/><circle cx="32" cy="28" r="6.3"/></g><circle cx="39.6" cy="20.6" r="2" fill="#fff"/></svg></a><a href="https://www.tiktok.com/@itsaftab_ahmed" rel="noopener" aria-label="TikTok"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"> <defs><linearGradient id="ttt" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2e2e33"/><stop offset="1" stop-color="#0b0b0d"/></linearGradient> <linearGradient id="ttg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient> <radialGradient id="tts" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".6"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient></defs> <ellipse cx="32" cy="58.5" rx="21" ry="3.6" fill="url(#tts)"/> <rect x="8" y="9" width="48" height="46" rx="13" fill="#000"/> <rect x="8" y="5" width="48" height="46" rx="13" fill="url(#ttt)"/> <path d="M21 6.5h22c6 0 10.5 3 12 7.5-11-3.5-31-3.5-46 0 1.5-4.5 6-7.5 12-7.5z" fill="url(#ttg)" opacity=".85"/> <path d="M34.5 13h5c.5 4 3 6.6 7 7v5c-2.7 0-5.1-.8-7-2.1V33a8.7 8.7 0 1 1-8.7-8.7c.6 0 1.1 0 1.6.1v5.2a3.6 3.6 0 1 0 2.1 3.3z" fill="#25F4EE" transform="translate(-1.5 -1.2)"/> <path d="M34.5 13h5c.5 4 3 6.6 7 7v5c-2.7 0-5.1-.8-7-2.1V33a8.7 8.7 0 1 1-8.7-8.7c.6 0 1.1 0 1.6.1v5.2a3.6 3.6 0 1 0 2.1 3.3z" fill="#FE2C55" transform="translate(1.5 1.2)"/> <path d="M34.5 13h5c.5 4 3 6.6 7 7v5c-2.7 0-5.1-.8-7-2.1V33a8.7 8.7 0 1 1-8.7-8.7c.6 0 1.1 0 1.6.1v5.2a3.6 3.6 0 1 0 2.1 3.3z" fill="#fff"/></svg></a></div></div><div><b>Solutions</b><a href="solutions/missed-calls/">Stop missed calls</a><a href="solutions/lead-follow-up/">Fix slow follow-up</a><a href="solutions/no-shows/">Reduce no-shows</a><a href="solutions/ads-not-converting/">Fix ads that don’t convert</a><a href="solutions/busywork/">Automate busywork</a></div><div><b>Services</b><a href="services/ai-automation/">AI Automation &amp; AI Chatbots</a><a href="services/lead-generation/">Lead Generation Systems</a><a href="services/google-ads/">Google Ads Management</a><a href="services/facebook-ads/">Facebook &amp; Instagram Ads</a></div><div><b>Industries</b><a href="industries/dental/">Dental &amp; medical</a><a href="industries/real-estate/">Real estate</a><a href="industries/home-services/">Home services</a><a href="industries/law/">Law firms</a><a href="industries/">All industries →</a></div><div><b>Resources</b><a href="blog/">Blog</a><a href="case-studies/">Case studies</a><a href="tools/missed-call-calculator/">Missed call calculator</a><a href="about/">About</a></div><div><b>Contact</b><a href="mailto:hello@iamaftabahmed.com">hello@iamaftabahmed.com</a><a href="#book">Book a free call</a><a href="privacy/">Privacy</a></div></div><div class="ft__big" aria-hidden="true">AFTAB AHMED</div><div class="ft__b"><span>© 2026 Aftab Ahmed · AI, Automation &amp; Marketing</span><span>Serving businesses across the United States</span></div></div></footer><!--/ft-->
 
 <script>
 (function(){
@@ -1688,10 +1647,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   } else counts.forEach(run);
 
   // Shorts carousel: buttons + drag to scroll
-  const rail = document.getElementById('rail');
+  const rail = document.getElementById('rail') || document.createElement('div');   // carousel is optional
   const step = () => rail.querySelector('.short').offsetWidth + 20;
-  document.getElementById('prev').addEventListener('click', () => rail.scrollBy({left:-step(), behavior:'smooth'}));
-  document.getElementById('next').addEventListener('click', () => rail.scrollBy({left: step(), behavior:'smooth'}));
+  document.getElementById('prev')?.addEventListener('click', () => rail.scrollBy({left:-step(), behavior:'smooth'}));
+  document.getElementById('next')?.addEventListener('click', () => rail.scrollBy({left: step(), behavior:'smooth'}));
   let down = false, sx = 0, sl = 0, moved = false;
   rail.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse') return; down = true; moved = false; sx = e.clientX; sl = rail.scrollLeft; rail.style.scrollSnapType = 'none'; });
   window.addEventListener('pointermove', e => { if (!down) return; const dx = e.clientX - sx; if (Math.abs(dx) > 5) moved = true; rail.scrollLeft = sl - dx; });
@@ -2057,7 +2016,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     targets.forEach(t => ro.observe(t));
   } else targets.forEach(t => t.classList.add('in'));
 
-  document.getElementById('year').textContent = new Date().getFullYear();
+  const yr = document.getElementById('year'); if (yr) yr.textContent = new Date().getFullYear();
 })();
 </script>
 
@@ -2946,5 +2905,15 @@ function fig(k,pose){
 </script>
 <script>(function(){var w=document.getElementById('ctDays');if(!w)return;var d=new Date(),n=0,D=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],h='';while(n<5){d.setDate(d.getDate()+1);var g=d.getDay();if(g&&g<6){h+='<button type="button" data-book>'+D[g]+'<b>'+d.getDate()+'</b></button>';n++}}w.innerHTML=h;
 var f=document.querySelector('.ct__f');if(f)f.leadExtra=function(){var c=f.querySelector('input[name=goal]:checked');return c?'Goal: '+c.value:''}})()</script>
+<script>
+(function(){var jr=document.getElementById('jr'),DUR=4600,ts=[];
+function play(){ts.forEach(clearTimeout);ts=[];jr.classList.remove('play');jr.querySelectorAll('.on').forEach(function(e){e.classList.remove('on')});void jr.offsetWidth;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){jr.querySelectorAll('[data-at]').forEach(function(e){e.classList.add('on')});return}
+  jr.classList.add('play');var m=document.getElementById('jrMove');if(m&&m.beginElement)try{m.beginElement()}catch(e){}
+  var small=matchMedia('(max-width:900px)').matches;
+  jr.querySelectorAll('[data-at]').forEach(function(e){ts.push(setTimeout(function(){e.classList.add('on')},(small?3600:DUR)*parseFloat(e.dataset.at)))})}
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){play();io.disconnect()}})},{threshold:.35});io.observe(jr)}else play();
+})();
+</script>
 </body>
 </html>

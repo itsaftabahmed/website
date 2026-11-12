@@ -18,7 +18,7 @@ INDUSTRIES = [('industries/dental/', 'Dental &amp; medical'), ('industries/real-
               ('industries/home-services/', 'Home services'), ('industries/law/', 'Law firms'),
               ('industries/med-spa/', 'Med spas'), ('industries/accounting/', 'Accounting &amp; CPA'),
               ('industries/chiropractic/', 'Chiropractic &amp; PT'), ('industries/insurance/', 'Insurance agencies')]
-LINKS = [('#pricing', 'Pricing'), ('case-studies/', 'Case studies'), ('blog/', 'Blog'), ('tools/missed-call-calculator/', 'Free tools'), ('about/', 'About')]
+LINKS = [('case-studies/', 'Case studies'), ('blog/', 'Blog'), ('tools/missed-call-calculator/', 'Free tools'), ('about/', 'About')]
 SOCIAL = [('https://www.linkedin.com/in/iamaftabahmed/', 'in', 'LinkedIn'), ('https://www.youtube.com/@ItsAftab_Ahmed', 'YT', 'YouTube'),
           ('https://www.instagram.com/itsaftab.ahmed/', 'IG', 'Instagram'), ('https://www.tiktok.com/@itsaftab_ahmed', 'TT', 'TikTok')]
 
@@ -61,7 +61,7 @@ def nav(up):
             f'<div class="nav__dd"><button type="button" class="nav__l" aria-expanded="false">Industries</button><div class="nav__menu nav__menu--2">{ind}</div></div>'
             f'{links}<a class="btn" href="{up}#book">Book a call</a></nav></div></header>')
 
-def footer(up):
+def footer(up, bare=False):   # bare: markup only (the homepage loads its own scripts)
     col = lambda title, items: f'<div><b>{title}</b>' + ''.join(f'<a href="{h}"{x}>{t}</a>' for h, t, x in items) + '</div>'
     soc = ''.join(f'<a href="{h}" rel="noopener" aria-label="{n}">{SOCIAL3D[n.lower()]}</a>' for h, s, n in SOCIAL)
     return (f'<footer class="ft"><div class="wrap">'
@@ -73,8 +73,8 @@ def footer(up):
             + col('Industries', [(up + h, t, '') for h, t in INDUSTRIES[:4]] + [(up + 'industries/', 'All industries →', '')])
             + col('Resources', [(up + 'blog/', 'Blog', ''), (up + 'case-studies/', 'Case studies', ''), (up + 'tools/missed-call-calculator/', 'Missed call calculator', ''), (up + 'about/', 'About', '')])
             + col('Contact', [('mailto:hello@iamaftabahmed.com', 'hello@iamaftabahmed.com', ''), (up + '#book', 'Book a free call', ''), (up + 'privacy/', 'Privacy', '')])
-            + f'</div><div class="ft__big" aria-hidden="true">AFTAB AHMED</div><div class="ft__b"><span>© 2026 Aftab Ahmed · AI, Automation &amp; Marketing</span><span>Serving businesses across the United States</span></div></div></footer>\n'
-            f'<script src="{up}blog/site.js" defer></script><script src="{up}blog/ann.js" defer></script><script src="{up}blog/book.js?v=3" defer></script>')
+            + f'</div><div class="ft__big" aria-hidden="true">AFTAB AHMED</div><div class="ft__b"><span>© 2026 Aftab Ahmed · AI, Automation &amp; Marketing</span><span>Serving businesses across the United States</span></div></div></footer>'
+            + ('' if bare else f'\n<script src="{up}blog/site.js" defer></script><script src="{up}blog/ann.js" defer></script><script src="{up}blog/book.js?v=3" defer></script>'))
 
 def apply():
     n = 0
@@ -94,6 +94,7 @@ def apply():
     p = f'{ROOT}/index.html'; s = open(p).read()
     t = re.sub(r'<!--ann-->.*?<!--/ann-->', lambda m: '<!--ann-->' + ann('') + '<!--/ann-->', s, 1, flags=re.S)
     import json
+    t = re.sub(r'<!--ft-->.*?<!--/ft-->', lambda m: '<!--ft-->' + footer('', bare=True) + '<!--/ft-->', t, 1, flags=re.S)   # homepage uses the shared footer
     t = re.sub(r'/\*news\*/.*?/\*/news\*/', lambda m: '/*news*/' + json.dumps([{'href': h, 'text': l, 'icon': e} for h, x, l, e in news()], ensure_ascii=False) + '/*/news*/', t, 1, flags=re.S)
     if t != s: open(p, 'w').write(t); n += 1
     print('updated', n, 'pages')

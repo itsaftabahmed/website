@@ -135,10 +135,11 @@ sub('blog/index.html', '  <!-- NEW POSTS GO HERE (newest first) -->\n', f'''  <!
 # Homepage "From the blog": newest first, keep 3
 s = rd('index.html')
 m = re.search(r'(<div class="fblog__list">\n)((?:        <a class="fpost".*\n)*)', s)
-posts = m.group(2).splitlines(keepends=True)
-new = f'        <a class="fpost" href="blog/{slug}/"><span class="fpost__tag">{e(c["fpost_tag"])}</span><b>{e(c["title"])}</b><small>{c["date_s"]} · {c["read"]} min read</small></a>\n'
-s = s[:m.start(2)] + ''.join(([new] + posts)[:3]) + s[m.end(2):]
-wr('index.html', s)
+if m:   # the homepage no longer lists posts (it uses the shared footer); kept for when a list is added back
+    posts = m.group(2).splitlines(keepends=True)
+    new = f'        <a class="fpost" href="blog/{slug}/"><span class="fpost__tag">{e(c["fpost_tag"])}</span><b>{e(c["title"])}</b><small>{c["date_s"]} · {c["read"]} min read</small></a>\n'
+    s = s[:m.start(2)] + ''.join(([new] + posts)[:3]) + s[m.end(2):]
+    wr('index.html', s)
 # RSS
 s = rd('feed.xml')
 s = re.sub(r'<lastBuildDate>[^<]*</lastBuildDate>', f'<lastBuildDate>{c["rfc"]}</lastBuildDate>', s, 1)
