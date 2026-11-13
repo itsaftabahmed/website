@@ -34,6 +34,8 @@
 
 ## Free tools
 - [AI receptionist live demo](https://iamaftabahmed.com/demo/): chat with an example AI receptionist for a dental office, HVAC company, law firm, med spa or real estate agency and watch it answer and book an appointment
+- [Free tools](https://iamaftabahmed.com/tools/): all free calculators and demos for service businesses
+- [AI receptionist cost calculator](https://iamaftabahmed.com/tools/ai-receptionist-cost-calculator/): compare what an AI receptionist costs on flat, per-minute, per-call and bundle pricing from your own call volume
 - [Missed call cost calculator](https://iamaftabahmed.com/tools/missed-call-calculator/): estimate the monthly revenue a service business loses to unanswered calls and what a text-back or AI receptionist could recover
 
 ## Blog (newest first)

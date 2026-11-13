@@ -18,7 +18,7 @@ INDUSTRIES = [('industries/dental/', 'Dental &amp; medical'), ('industries/real-
               ('industries/home-services/', 'Home services'), ('industries/law/', 'Law firms'),
               ('industries/med-spa/', 'Med spas'), ('industries/accounting/', 'Accounting &amp; CPA'),
               ('industries/chiropractic/', 'Chiropractic &amp; PT'), ('industries/insurance/', 'Insurance agencies')]
-LINKS = [('case-studies/', 'Case studies'), ('blog/', 'Blog'), ('tools/missed-call-calculator/', 'Free tools'), ('about/', 'About')]
+LINKS = [('case-studies/', 'Case studies'), ('blog/', 'Blog'), ('tools/', 'Free tools'), ('about/', 'About')]
 SOCIAL = [('https://www.linkedin.com/in/iamaftabahmed/', 'in', 'LinkedIn'), ('https://www.youtube.com/@ItsAftab_Ahmed', 'YT', 'YouTube'),
           ('https://www.instagram.com/itsaftab.ahmed/', 'IG', 'Instagram'), ('https://www.tiktok.com/@itsaftab_ahmed', 'TT', 'TikTok')]
 
@@ -55,7 +55,7 @@ def news():
     crumb = re.search(r'<nav class="crumbs".*?</a><span>/</span>([^<]+)</nav>', open(f'{ROOT}/{path}index.html').read(), re.S)
     label = crumb.group(1).strip() if crumb else short(title, 26)   # the post's short breadcrumb title
     guide = 'New guide: ' + (label if label[:2].isupper() else label[:1].upper() + label[1:])   # keep acronyms like AI
-    return [('tools/missed-call-calculator/', 'Free missed call calculator', 'Free tool: what missed calls cost you', 'calc'),
+    return [('tools/ai-receptionist-cost-calculator/', 'New: AI receptionist cost tool', 'New free tool: AI receptionist cost calculator', 'calc'),
             (path, guide, guide, 'guide'),
             ('#book', 'Taking new clients this month', 'Taking new clients: book a free call', 'cal')]
 

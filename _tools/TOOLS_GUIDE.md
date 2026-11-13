@@ -8,7 +8,7 @@ Audience: US small-business owners (dental, real estate, home services, med spa,
 
 Format: `slug | Tool name | main search phrase | what it does`
 
-- [ ] ai-receptionist-cost-calculator | AI receptionist cost calculator | ai receptionist cost calculator | Enter monthly calls and average call length; compares the bill on the four pricing models (flat, per minute, per call, bundle plus overage) with editable rates.
+- [x] ai-receptionist-cost-calculator | AI receptionist cost calculator | ai receptionist cost calculator | Enter monthly calls and average call length; compares the bill on the four pricing models (flat, per minute, per call, bundle plus overage) with editable rates.
 - [ ] speed-to-lead-calculator | Speed to lead calculator | speed to lead calculator | Enter leads per month, current reply time and close rate; shows how many leads wait too long and what faster replies could be worth.
 - [ ] no-show-cost-calculator | No-show cost calculator | no show cost calculator | Enter appointments per week, no-show rate and average visit value; shows the monthly and yearly cost and the effect of cutting no-shows.
 - [ ] google-ads-budget-calculator | Google Ads budget calculator | google ads budget calculator small business | Enter target new customers, close rate, conversion rate and cost per click; works back to the monthly budget and cost per customer.
@@ -85,3 +85,5 @@ The goal of each tool is search traffic that turns into leads. A tool that works
 ## Log
 
 Add one line per run: date, tool, path.
+
+- 2026-11-13: AI receptionist cost calculator, `/tools/ai-receptionist-cost-calculator/` (built by `_tools/gen_tool_aicost.py`, which also builds the hub `tools/index.html`; add new tools to its `TOOLS` list). Hub created, menu "Free tools" now points to `/tools/`.

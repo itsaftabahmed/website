@@ -29,6 +29,7 @@ When a new industry page is added, its 4 starter topics are spread through the q
 - [x] Speed to lead: why the first 5 minutes decide the sale | speed to lead
 
 ## Queue (in publishing order)
+- [ ] AI receptionist pricing models compared: per minute vs flat rate vs per call | ai receptionist pricing models
 - [ ] Facebook ads for home service businesses (HVAC, plumbing, roofing) | facebook ads for home services
 - [ ] Facebook ads for accountants and CPA firms | facebook ads for accountants
 - [ ] AI receptionist for dental offices: what it handles and what it shouldn't | ai receptionist for dental office
