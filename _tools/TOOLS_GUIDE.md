@@ -87,3 +87,4 @@ The goal of each tool is search traffic that turns into leads. A tool that works
 Add one line per run: date, tool, path.
 
 - 2026-11-13: AI receptionist cost calculator, `/tools/ai-receptionist-cost-calculator/` (built by `_tools/gen_tool_aicost.py`, which also builds the hub `tools/index.html`; add new tools to its `TOOLS` list). Hub created, menu "Free tools" now points to `/tools/`.
+  - Follow-up the same day: added links into the tool from `solutions/missed-calls`, `services/ai-automation` and the two other AI receptionist posts; footer "Resources" now links to `/tools/`. Lesson for future runs: the announcement link does not count as a contextual link, so check step 6 and "Links into the tool" by hand.

@@ -46,7 +46,7 @@ SOL = [
        ('Can I keep my existing phone number?', 'Usually, yes. Calls can be forwarded to the AI after hours, when lines are busy or after a set number of rings, so customers keep calling the number they know.'),
        ('What happens with urgent or complicated calls?', 'You decide the rules. Emergencies, complaints or anything outside the script can be transferred to you, sent as an instant alert, or booked as a priority callback.'),
        ('How much does it cost?', 'It depends on call volume and what needs connecting, such as your calendar and CRM. Most setups combine a one-time build with a monthly running cost. On a free call I’ll give you a clear quote.')],
-  related=[('demo/', 'Try the AI receptionist live demo'), ('tools/missed-call-calculator/', 'Missed call cost calculator'),
+  related=[('demo/', 'Try the AI receptionist live demo'), ('tools/ai-receptionist-cost-calculator/', 'AI receptionist cost calculator'), ('tools/missed-call-calculator/', 'Missed call cost calculator'),
            ('blog/missed-call-text-back/', 'Missed call text back: never lose a caller again'), ('blog/ai-receptionist-vs-answering-service/', 'AI receptionist vs answering service'),
            ('services/ai-automation/', 'AI automation and AI receptionists')]),
 

@@ -88,7 +88,7 @@ def footer(up, bare=False):   # bare: markup only (the homepage loads its own sc
             + col('Solutions', [(up + h, t, '') for h, t, d in SOLUTIONS])
             + col('Services', [(up + h, t, '') for h, t, d in SERVICES])
             + col('Industries', [(up + h, t, '') for h, t in INDUSTRIES[:4]] + [(up + 'industries/', 'All industries →', '')])
-            + col('Resources', [(up + 'blog/', 'Blog', ''), (up + 'case-studies/', 'Case studies', ''), (up + 'tools/missed-call-calculator/', 'Missed call calculator', ''), (up + 'about/', 'About', '')])
+            + col('Resources', [(up + 'blog/', 'Blog', ''), (up + 'case-studies/', 'Case studies', ''), (up + 'tools/', 'Free tools', ''), (up + 'about/', 'About', '')])
             + col('Contact', [('mailto:hello@iamaftabahmed.com', 'hello@iamaftabahmed.com', ''), (up + '#book', 'Book a free call', ''), (up + 'privacy/', 'Privacy', '')])
             + f'</div><div class="ft__big" aria-hidden="true">AFTAB AHMED</div><div class="ft__b"><span>© 2026 Aftab Ahmed · AI, Automation &amp; Marketing</span><span>Serving businesses across the United States</span></div></div></footer>'
             + ('' if bare else f'\n<script src="{up}blog/site.js" defer></script><script src="{up}blog/ann.js" defer></script><script src="{up}blog/book.js?v=3" defer></script>'))
