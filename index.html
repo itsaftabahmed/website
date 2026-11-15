@@ -1337,6 +1337,20 @@ footer.ft .ft__soc a svg{width:44px;height:44px}footer.ft .ft__soc a:hover{trans
 @media (max-width:640px){.stack{margin-top:-20px;font-size:13px;gap:14px}}
 @media (prefers-reduced-motion:reduce){.stack__tr{animation:none}}
 .tcard__m{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;margin:0 0 16px;padding:8px 14px;border-radius:999px;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.35);color:#4ade80;font-size:14px;font-weight:800;line-height:1.3}.tcard__m svg{flex:none;width:16px;height:16px}
+.cmp{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:var(--r-lg);background:radial-gradient(520px 300px at 90% 0,rgba(224,17,25,.16),transparent 70%),var(--surface);padding:40px}
+.cmp__h{margin-bottom:26px}.cmp__h .h2{margin-top:14px}.cmp__h .h2{font-size:clamp(30px,3.6vw,48px)}
+.cmp__g{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cmp__c{border-radius:var(--r-md);padding:26px;display:flex;flex-direction:column}
+.cmp__c>b{font-family:var(--display);font-stretch:112%;font-size:22px;letter-spacing:-.02em}.cmp__c>small{color:var(--muted);font-size:14px;margin-top:4px}
+.cmp__c ul{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:12px}
+.cmp__c li{display:flex;gap:12px;align-items:flex-start;font-size:16px;line-height:1.45;color:var(--soft)}
+.cmp__c li i{flex:none;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;margin-top:-1px}.cmp__c li svg{width:13px;height:13px}
+.cmp__c--old{background:#0f0f0f;border:1px solid var(--line)}.cmp__c--old>b{color:#bdbdbd}.cmp__c--old li{color:var(--muted)}.cmp__c--old li i{background:#1d1d1d;color:#777}
+.cmp__c--new{background:linear-gradient(160deg,#2a0a0c,#151011);border:1px solid rgba(224,17,25,.45);box-shadow:0 26px 60px -30px rgba(224,17,25,.7)}
+.cmp__c--new li{color:#fff}.cmp__c--new li i{background:rgba(74,222,128,.14);color:#4ade80}
+.cmp__c--new .btn{align-self:flex-start;margin-top:22px}
+.cmp__src{margin:18px 0 0;font-size:13px;color:#777}.cmp__src a{color:var(--muted);text-decoration:underline}
+@media (max-width:860px){.cmp{padding:22px;border-radius:var(--r-md)}.cmp__g{grid-template-columns:1fr}.cmp__c{padding:20px}.cmp__c--new .btn{align-self:stretch;justify-content:center;text-align:center}}
 .nav{top:62px}.nav.scrolled{top:16px}
 @media (max-width:760px){.nav{top:58px}.nav.scrolled{top:12px}}
 .fsoc a.s3d,.fsoc a{border:0!important;background:none!important;width:44px;height:44px;padding:0;filter:drop-shadow(0 6px 10px rgba(0,0,0,.45));transition:transform .25s cubic-bezier(.34,1.56,.64,1)}.fsoc a svg,.socials a svg{width:44px!important;height:44px!important}.socials a{border:0!important;background:none!important;box-shadow:none!important;width:46px!important;height:46px!important;padding:0!important;filter:drop-shadow(0 6px 10px rgba(0,0,0,.45));transition:transform .25s cubic-bezier(.34,1.56,.64,1)}.socials a:hover{transform:translateY(-4px) rotate(-6deg) scale(1.08)}.fsoc a:hover{transform:translateY(-4px) rotate(-6deg) scale(1.08)}
@@ -1529,6 +1543,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <svg class="spark" id="spark"></svg>
         </div>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY SWITCH ================= -->
+<section class="section" id="compare" style="padding-top:0">
+  <div class="wrap">
+    <div class="cmp">
+      <div class="cmp__h"><div class="kicker">Why switch?</div><h2 class="h2">Hiring staff vs. <em>your 24/7 system</em></h2></div>
+      <div class="cmp__g">
+        <div class="cmp__c cmp__c--old"><b>The old way</b><small>Manual follow-up and extra staff</small><ul><li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></i>$3,000 to $3,500+ a month for one receptionist</li><li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></i>Misses calls after 5 pm and on weekends</li><li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></i>Leads wait hours for a reply</li><li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></i>Manual CRM entry and forgotten follow-ups</li></ul></div>
+        <div class="cmp__c cmp__c--new"><b>Your 24/7 system</b><small>AI and automation, set up for you</small><ul><li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></i>A fraction of the cost of one hire</li><li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></i>Answers in seconds, 24/7, and books the job</li><li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></i>Instant text, voice and chat follow-up</li><li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></i>Reminders, reviews and reports run automatically</li></ul><a class="btn btn--red" href="#book">See what it would cost you →</a></div>
+      </div>
+      <p class="cmp__src">Receptionist cost based on the <a href="https://www.bls.gov/ooh/office-and-administrative-support/receptionists.htm" rel="noopener">U.S. Bureau of Labor Statistics median pay</a> of $18.27 an hour (May 2025), before taxes and benefits. Compare your own numbers with the <a href="tools/ai-receptionist-cost-calculator/">AI receptionist cost calculator</a>.</p>
     </div>
   </div>
 </section>
@@ -2134,7 +2162,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
 
   // scroll reveal with stagger (also triggers the chat, flow and bar animations)
-  const targets = document.querySelectorAll('.world__copy, .globe, .sp, .head, .m1__copy, .tools, .intro > *, .tile, .short, .project, .step, .values, .tmarq, .faq > *, .faq details, .book, .foot, .pah, .pa, .why, .lgh, .inds, .ct__head, .pr__l, .ct__card, .pr__card');
+  const targets = document.querySelectorAll('.world__copy, .globe, .sp, .head, .m1__copy, .tools, .intro > *, .tile, .short, .project, .step, .values, .tmarq, .faq > *, .faq details, .book, .foot, .cmp, .pah, .pa, .why, .lgh, .inds, .ct__head, .pr__l, .ct__card, .pr__card');
   targets.forEach(el => {
     if (reduce) { el.classList.add('in'); return; }
     el.classList.add('io');
