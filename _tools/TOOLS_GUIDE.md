@@ -75,7 +75,7 @@ The goal of each tool is search traffic that turns into leads. A tool that works
    - Add the new tool's card at the top of the hub.
 5. Add the tool to `sitemap.xml` (lastmod today) and to the tools list in `llms.txt` (one line: name, URL, what it does).
 6. Add one contextual link to the new tool from the most relevant existing page (a solution page via `_tools/gen_solutions.py`, a blog post, or the other calculator), so it is linked from somewhere besides the hub.
-7. In `_tools/chrome.py` `news()`, point the first announcement item at the new tool (path, short label under 30 characters starting with "New free tool:" or the tool name, icon `calc`), then run `python3 _tools/chrome.py`.
+7. In `_tools/chrome.py` `news()`, point the first item (used by the homepage chat bot) at the new tool. Do not change `ANN`: the top announcement bar is pinned to one message by the owner (path, short label under 30 characters starting with "New free tool:" or the tool name, icon `calc`), then run `python3 _tools/chrome.py`.
 8. Write a social draft at `_tools/social/<YYYY-MM-DD>-tool-<slug>.md` (LinkedIn version and a short X/Threads version, same rules as blog drafts).
 9. Check the box in the queue above.
 10. Test: `NODE_PATH=$(npm root -g) node .claude/skills/seo/scripts/site_check.js . https://iamaftabahmed.com` must report 0 issues. Also open the new page in headless Chromium at 1366px and 390px: no JS errors, no horizontal scroll, change two inputs and confirm the result changes, and confirm the lead form is wired. Keep screenshots out of the repo.

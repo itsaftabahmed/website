@@ -59,12 +59,13 @@ def news():
             (path, guide, guide, 'guide'),
             ('#book', 'Taking new clients this month', 'Taking new clients: book a free call', 'cal')]
 
+# The top announcement is pinned to one message (owner's choice, Nov 2026). news() still feeds the homepage bot.
+ANN = ('tools/missed-call-calculator/', 'Calculate how much missed calls are costing your business')
+
 def ann(up):
-    msgs = ''.join(f'<span class="ann__m{" on" if i == 0 else ""}" data-href="{up}{h}">{t} <b>→</b></span>' for i, (h, t, l, e) in enumerate(news()))
-    on = ' class="on"'
-    dots = ''.join('<i' + (on if i == 0 else '') + '></i>' for i in range(len(news())))
-    return (f'<div class="ann"><a class="ann__in" href="{up}{news()[0][0]}" aria-live="polite"><span class="ann__new">NEW</span>'
-            f'<span class="ann__msgs">{msgs}</span><span class="ann__dots" aria-hidden="true">{dots}</span></a></div>')
+    h, t = ANN
+    return (f'<div class="ann"><a class="ann__in" href="{up}{h}"><span class="ann__new">NEW</span>'
+            f'<span class="ann__msgs"><span class="ann__m on" data-href="{up}{h}">{t} <b>→</b></span></span></a></div>')
 
 def nav(up):
     svc = ('<span class="nav__grp">Problems we solve</span>' + ''.join(f'<a href="{up}{h}">{t}<small>{d}</small></a>' for h, t, d in SOLUTIONS)

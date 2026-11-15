@@ -14,7 +14,7 @@ D = {
   visual=phone('Bright Smile Dental · 9:14 pm', [('miss', 'Missed call from (512) 555-0142'), ('me', 'Hi, this is Bright Smile Dental. Sorry we missed you! Are you looking to book a visit?'), ('you', 'Yes, I have a toothache. Anything tomorrow?'), ('me', 'I have 9:30 am or 2:00 pm tomorrow with Dr. Lee. Which works?'), ('you', '9:30 please'), ('ok', '✓ Booked · Tue 9:30 am · added to calendar')]),
   before=['Calls and messages wait until someone is free', 'After-hours inquiries get a reply the next day', 'Your team answers the same questions all day'],
   after=['Every inquiry answered in seconds, day or night', 'Appointments booked straight into your calendar', 'Your team only handles what needs a person'],
-  quote=('“Our biggest problem wasn’t getting leads — it was following up with them fast enough. Aftab connected our ads, CRM, SMS and automated follow-up so every enquiry was contacted immediately. We stopped losing good leads simply because the team was busy.”', 'Sarah Mitchell', 'Managing Director, Healthcare Practice'),
+  quote=('“Our biggest problem wasn’t getting leads — it was following up with them fast enough. Aftab connected our ads, CRM, SMS and automated follow-up so every inquiry was contacted immediately. We stopped losing good leads simply because the team was busy.”', 'Sarah Mitchell', 'Managing Director, Healthcare Practice'),
   case=('dental', 'Dental · Raleigh, North Carolina', 'Making new-patient inquiries easier to manage', ['Question answered', 'Appointment request', 'Front desk review', 'Appointment confirmed'])),
  'lead-generation': dict(
   visual='<div class="sv-panel" aria-hidden="true"><div class="sv-panel__h">New leads today</div>'
@@ -32,7 +32,7 @@ D = {
          '<div class="sv-ok">✓ New call · 2 min 14 sec · booked for today</div><div class="sv-ex">Example ad</div></div>',
   before=['Clicks from people who were never going to buy', 'Ads pointing at a general homepage', 'No idea which keywords bring real calls'],
   after=['Budget focused on searches with buying intent', 'Landing pages built for one service and one action', 'Calls and bookings tracked back to the keyword'],
-  quote=('“We were spending money on ads but the leads weren’t turning into actual conversations. Aftab rebuilt the campaign, improved the messaging and fixed our follow-up. We started getting better-quality enquiries and finally had a system that moved leads toward booking.”', 'Daniel Morris', 'Founder, Property Services Company'),
+  quote=('“We were spending money on ads but the leads weren’t turning into actual conversations. Aftab rebuilt the campaign, improved the messaging and fixed our follow-up. We started getting better-quality inquiries and finally had a system that moved leads toward booking.”', 'Daniel Morris', 'Founder, Property Services Company'),
   case=('roofing', 'Roofing · Denver, Colorado', 'Following up on estimate requests', ['Estimate request', 'Details and photos', 'Callback', 'Inspection scheduled'])),
  'facebook-ads': dict(
   visual='<div class="sv-panel sv-panel--fb" aria-hidden="true"><div class="sv-fbh"><span class="sv-av">GS</span><div><b>Glow Studio Med Spa</b><small>Sponsored</small></div></div>'
@@ -40,7 +40,7 @@ D = {
          '<div class="sv-fbf"><span>Free consultation</span><span class="sv-call">Book now</span></div><div class="sv-ok">✓ New lead · text sent in 40 seconds</div><div class="sv-ex">Example ad</div></div>',
   before=['Boosted posts with no clear offer', 'Leads that never answer the phone', 'Results that swing from week to week'],
   after=['A specific offer people want to claim', 'Instant follow-up while they still remember you', 'Steady testing of creative, audience and landing page'],
-  quote=('“We had tried Meta Ads before and assumed they just didn’t work for our business. Aftab changed the offer, creative and landing page instead of simply changing the targeting. The campaigns became much more consistent and started bringing in enquiries we actually wanted.”', 'James Carter', 'Owner, Home Services Business'),
+  quote=('“We had tried Meta Ads before and assumed they just didn’t work for our business. Aftab changed the offer, creative and landing page instead of simply changing the targeting. The campaigns became much more consistent and started bringing in inquiries we actually wanted.”', 'James Carter', 'Owner, Home Services Business'),
   case=('med-spa', 'Med spa · Scottsdale, Arizona', 'Helping inquiries become consultations', ['Consultation request', 'Acknowledgment', 'Staff follow-up', 'Consultation confirmed'])),
 }
 

@@ -128,7 +128,7 @@ When a new industry page is added, its 4 starter topics are spread through the q
 - [ ] How to reduce no-shows for appointments | reduce appointment no shows
 - [ ] Reviving old leads: database reactivation campaigns | database reactivation campaign
 - [ ] SMS marketing for small businesses: rules and best practices | sms marketing small business
-- [ ] Email follow-up templates for new enquiries | lead follow up email templates
+- [ ] Email follow-up templates for new inquiries | lead follow up email templates
 - [ ] How AI qualifies and books leads while you sleep | ai lead qualification
 - [ ] AI vs a human assistant: cost, quality and when to use each | ai assistant vs virtual assistant
 - [ ] How to automate appointment booking and reminders | automate appointment booking
