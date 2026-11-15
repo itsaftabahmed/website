@@ -1327,10 +1327,16 @@ footer.ft .ft__soc a svg{width:44px;height:44px}footer.ft .ft__soc a:hover{trans
 .pa:hover i{background:var(--red);border-color:var(--red);color:#fff;transform:rotate(45deg)}
 @media (max-width:1100px){.pal{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:760px){.pah{display:block}.pah .lead{margin-top:12px}.pal{grid-template-columns:1fr 1fr;gap:10px}.pa:last-child{grid-column:1/-1}.pa{padding:18px 16px;gap:12px;border-radius:var(--r-md)}.pa q{font-size:16px}.pa i{display:none}.pa__i{width:44px;height:44px;border-radius:13px}.pa__i svg{width:28px;height:28px}}
-.stack{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 18px;margin:-30px auto 10px;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);color:var(--muted);font-size:14px;font-weight:600;letter-spacing:.02em}
-.stack__l{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#6a6a6a;margin-right:4px}
-.stack i{width:4px;height:4px;border-radius:50%;background:#3a3a3a}
-@media (max-width:640px){.stack{margin-top:-20px;font-size:13px;gap:8px 12px}}
+.stack{display:flex;align-items:center;gap:22px;margin:-30px auto 10px;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);color:var(--muted);font-size:14px;font-weight:600;letter-spacing:.02em}
+.stack__l{flex:none;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#6a6a6a}
+.stack__vp{flex:1;min-width:0;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.stack__tr{display:flex;align-items:center;gap:18px;width:max-content;animation:stackMove 45s linear infinite}
+.stack__tr span{white-space:nowrap}.stack i{flex:none;width:4px;height:4px;border-radius:50%;background:#3a3a3a}
+.stack:hover .stack__tr{animation-play-state:paused}
+@keyframes stackMove{to{transform:translateX(-50%)}}
+@media (max-width:640px){.stack{margin-top:-20px;font-size:13px;gap:14px}}
+@media (prefers-reduced-motion:reduce){.stack__tr{animation:none}}
+.tcard__m{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;margin:0 0 16px;padding:8px 14px;border-radius:999px;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.35);color:#4ade80;font-size:14px;font-weight:800;line-height:1.3}.tcard__m svg{flex:none;width:16px;height:16px}
 .nav{top:62px}.nav.scrolled{top:16px}
 @media (max-width:760px){.nav{top:58px}.nav.scrolled{top:12px}}
 .fsoc a.s3d,.fsoc a{border:0!important;background:none!important;width:44px;height:44px;padding:0;filter:drop-shadow(0 6px 10px rgba(0,0,0,.45));transition:transform .25s cubic-bezier(.34,1.56,.64,1)}.fsoc a svg,.socials a svg{width:44px!important;height:44px!important}.socials a{border:0!important;background:none!important;box-shadow:none!important;width:46px!important;height:46px!important;padding:0!important;filter:drop-shadow(0 6px 10px rgba(0,0,0,.45));transition:transform .25s cubic-bezier(.34,1.56,.64,1)}.socials a:hover{transform:translateY(-4px) rotate(-6deg) scale(1.08)}.fsoc a:hover{transform:translateY(-4px) rotate(-6deg) scale(1.08)}
@@ -1435,7 +1441,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div></div>
   </div>
 </section>
-<div class="wrap"><div class="stack" aria-label="Tools I build with"><span class="stack__l">Built with</span><span>GoHighLevel</span><i></i><span>n8n</span><i></i><span>OpenAI</span><i></i><span>Google Ads</span><i></i><span>Meta Ads</span></div></div>
+<div class="wrap"><div class="stack" aria-label="Tools I build with: GoHighLevel, n8n, Zapier, Make, HubSpot, OpenAI, Claude, Twilio, Cal.com, Airtable, Slack, Google Ads, Meta Ads, Google Analytics"><span class="stack__l">Built with</span><div class="stack__vp" aria-hidden="true"><div class="stack__tr"><span>GoHighLevel</span><i></i><span>n8n</span><i></i><span>Zapier</span><i></i><span>Make</span><i></i><span>HubSpot</span><i></i><span>OpenAI</span><i></i><span>Claude</span><i></i><span>Twilio</span><i></i><span>Cal.com</span><i></i><span>Airtable</span><i></i><span>Slack</span><i></i><span>Google Ads</span><i></i><span>Meta Ads</span><i></i><span>Google Analytics</span><i></i><span>GoHighLevel</span><i></i><span>n8n</span><i></i><span>Zapier</span><i></i><span>Make</span><i></i><span>HubSpot</span><i></i><span>OpenAI</span><i></i><span>Claude</span><i></i><span>Twilio</span><i></i><span>Cal.com</span><i></i><span>Airtable</span><i></i><span>Slack</span><i></i><span>Google Ads</span><i></i><span>Meta Ads</span><i></i><span>Google Analytics</span><i></i></div></div></div></div>
 
 
 <!-- ================= WHAT I FIX ================= -->
@@ -1601,9 +1607,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="tmarq">
     <div class="trow"><div class="ttrack">
       <figure class="card quote tcard"><span class="tcard__n">01</span>
+        <span class="tcard__m"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17l6-6 4 4 6-8"/><path d="M15 7h5v5"/></svg>3x more booked calls from the same ad spend</span>
         <blockquote>“We were spending money on ads but the leads weren’t turning into actual conversations. Aftab rebuilt the campaign, improved the messaging and fixed our follow-up. We started getting better-quality inquiries and finally had a system that moved leads toward booking.”</blockquote>
         <figcaption><span class="initials" aria-hidden="true">DM</span><div><b>Daniel Morris</b><small>Founder, Property Services Company</small></div></figcaption></figure>
       <figure class="card quote tcard"><span class="tcard__n">02</span>
+        <span class="tcard__m"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17l6-6 4 4 6-8"/><path d="M15 7h5v5"/></svg>Lead response time cut from 4 hours to under 30 seconds</span>
         <blockquote>“Our biggest problem wasn’t getting leads — it was following up with them fast enough. Aftab connected our ads, CRM, SMS and automated follow-up so every inquiry was contacted immediately. We stopped losing good leads simply because the team was busy.”</blockquote>
         <figcaption><span class="initials" aria-hidden="true">SM</span><div><b>Sarah Mitchell</b><small>Managing Director, Healthcare Practice</small></div></figcaption></figure>
       <figure class="card quote tcard"><span class="tcard__n">03</span>
