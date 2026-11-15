@@ -1540,7 +1540,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="m1__copy">
         <div class="kicker">See it working</div>
         <h2 class="h2">From first search<br>to booked job. <span class="m1__red">Automatically.</span></h2>
-        <div class="m1__inds"><div class="m1__pick">Pick your industry</div><div class="itabs" role="tablist" aria-label="Industries"><a class="itab" href="industries/dental/" data-k="dental">Dental</a><a class="itab" href="industries/med-spa/" data-k="medspa">Med spa</a><a class="itab" href="industries/real-estate/" data-k="realty">Real estate</a><a class="itab" href="industries/home-services/" data-k="hvac">HVAC</a><button type="button" class="itab" data-k="roof">Roofing</button><button type="button" class="itab" data-k="floor">Flooring</button><a class="itab" href="industries/insurance/" data-k="insure">Insurance</a><button type="button" class="itab" data-k="fitness">Fitness</button><a class="itab" href="industries/law/" data-k="law">Law firms</a></div></div>
+        <div class="m1__inds"><div class="m1__pick">Pick your industry</div><div class="itabs" role="tablist" aria-label="Industries"><a class="itab" role="tab" aria-selected="false" href="industries/dental/" data-k="dental">Dental</a><a class="itab" role="tab" aria-selected="false" href="industries/med-spa/" data-k="medspa">Med spa</a><a class="itab" role="tab" aria-selected="false" href="industries/real-estate/" data-k="realty">Real estate</a><a class="itab" role="tab" aria-selected="false" href="industries/home-services/" data-k="hvac">HVAC</a><button type="button" class="itab" role="tab" aria-selected="false" data-k="roof">Roofing</button><button type="button" class="itab" role="tab" aria-selected="false" data-k="floor">Flooring</button><a class="itab" role="tab" aria-selected="false" href="industries/insurance/" data-k="insure">Insurance</a><button type="button" class="itab" role="tab" aria-selected="false" data-k="fitness">Fitness</button><a class="itab" role="tab" aria-selected="false" href="industries/law/" data-k="law">Law firms</a></div></div>
         <div class="m1__panel">
         <div class="m1__ph"><span><i></i>Live example</span><em class="m1__stp"><b>Found</b><i></i><b>Answered</b><i></i><b>Booked</b></em></div>
         <ol class="msteps">
@@ -1550,7 +1550,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </ol>
         <div class="m1__res"><span aria-hidden="true">✓</span><div><b>Job booked.</b> Nobody on the team touched the phone.</div></div>
         </div>
-        <div class="m1__foot"><a class="btn btn--red" href="demo/">Try the AI receptionist yourself →</a><a class="m1__alt" href="tools/missed-call-calculator/">Calculate your missed calls →</a></div>
+        <div class="m1__foot"><a class="btn btn--red" href="demo/">Try the AI receptionist yourself →</a><a class="m1__alt" href="tools/ai-receptionist-cost-calculator/">Compare AI vs. receptionist cost →</a></div>
         <p class="m1__ex" data-f="ex">Example: Mike runs an HVAC company.</p>
       </div>
       <div class="m1__stage" aria-hidden="true">
@@ -2948,7 +2948,7 @@ function fig(k,pose){
     timers.forEach(clearTimeout); timers = []; cur = k; from = from || 0;
     const q = [], at = (fn, ms) => q.push([fn, ms]);
     const d = D[k], x = X[k];
-    tabs.forEach(b => b.classList.toggle('on', b.dataset.k === k));
+    tabs.forEach(b => { const on = b.dataset.k === k; b.classList.toggle('on', on); b.setAttribute('aria-selected', on ? 'true' : 'false'); });
     miniScene.innerHTML = scene(k);
     const pose = (p, glow) => { miniPor.classList.add('swap'); setTimeout(() => { miniPor.innerHTML = fig(k, p); miniPor.classList.remove('swap'); }, reduce ? 0 : 160); };
     pose({eyes:'open', mouth:'n', phone:'hold', head:0});
