@@ -203,6 +203,7 @@ page = head(TITLE, DESC, url, 'AI receptionist cost calculator: compare 4 pricin
     <li><a href="../missed-call-calculator/">Missed call cost calculator</a></li>
     <li><a href="../../demo/">Try the AI receptionist live demo</a></li>
     <li><a href="../../blog/ai-receptionist-cost/">How much does an AI receptionist cost? Pricing explained</a></li>
+    <li><a href="../../blog/ai-receptionist-pricing-models/">AI receptionist pricing models compared: break-even math</a></li>
     <li><a href="../../blog/ai-receptionist-small-business/">AI receptionists: answering calls and booking appointments 24/7</a></li>
     <li><a href="../">All free tools</a></li>
   </ul></div>

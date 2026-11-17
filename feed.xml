@@ -6,8 +6,16 @@
   <atom:link href="https://iamaftabahmed.com/feed.xml" rel="self" type="application/rss+xml"/>
   <description>Practical guides on Google Ads, Facebook ads, lead generation and AI automation for US small businesses.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 12 Nov 2026 14:00:00 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 16 Nov 2026 14:00:00 GMT</lastBuildDate>
 <!-- NEW ITEMS GO HERE (newest first) -->
+  <item>
+    <title>AI receptionist pricing models compared: per minute vs flat rate vs per call</title>
+    <link>https://iamaftabahmed.com/blog/ai-receptionist-pricing-models/</link>
+    <guid isPermaLink="true">https://iamaftabahmed.com/blog/ai-receptionist-pricing-models/</guid>
+    <pubDate>Mon, 16 Nov 2026 14:00:00 GMT</pubDate>
+    <dc:creator>Aftab Ahmed</dc:creator>
+    <description>Per minute, flat rate, per call or a bundle with overage? The break-even points for each AI receptionist pricing model, plus the billing terms that quietly raise the bill.</description>
+  </item>
   <item>
     <title>How much does an AI receptionist cost? Pricing explained for small businesses</title>
     <link>https://iamaftabahmed.com/blog/ai-receptionist-cost/</link>

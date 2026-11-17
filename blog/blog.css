@@ -230,3 +230,6 @@ article.svc .steps{gap:0 32px;margin-top:30px}
 article.svc .steps li{background:none;border:0;border-top:2px solid var(--line);border-radius:0;padding:34px 0 8px}
 article.svc .steps li::before{left:0}
 @media (max-width:860px){article.svc .steps{gap:30px}}
+
+/* wide tables scroll inside their own box on phones */
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:18px 0}.tw table{min-width:520px;margin:0}
