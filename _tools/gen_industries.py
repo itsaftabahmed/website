@@ -306,6 +306,40 @@ I = [
        ('What about consent rules for texting and calling leads?','Automated texts and calls are regulated under the TCPA and state laws, so forms are set up to collect clear consent, messages include opt-out instructions, and replies go only to people who contacted you. Your own compliance review and any carrier marketing rules still apply.'),
        ('Does it work with our agency management system or CRM?','Often, yes. Many agency management systems and CRMs can connect directly or through automation platforms. Where they can\'t, leads can go to a simple CRM or shared calendar with alerts to your team.')],
   rel=['lg','ai','inslead','aivsans','speed']),
+ dict(slug='flooring', name='Flooring Companies', short='Flooring', forname='flooring companies', biz='company', who='homeowner',
+  title='Lead Follow-Up & Estimate Booking for Flooring Companies',
+  desc='Turn flooring inquiries into booked in-home estimates. Instant replies, project questions, estimate scheduling and quote follow-up for US flooring companies.',
+  h1='Turn flooring inquiries into booked estimates',
+  lead='For flooring stores, installers and refinishers: reply to every inquiry while the homeowner is still comparing, collect the room and material details before the visit, book the in-home estimate, and follow up on quotes without anyone keeping a list.',
+  card='Instant inquiry replies, project details up front, estimate booking and quote follow-up.',
+  takeaways=['Homeowners planning new floors usually contact several companies, so a fast, helpful first reply matters.',
+             'A few short questions (rooms, square footage, material, timeline) make the estimate visit more useful for both sides.',
+             'Estimate booking, reminders and directions run automatically, so fewer visits are wasted.',
+             'Quotes get a planned follow-up, because many homeowners take days or weeks to decide.'],
+  pains_h='Why do flooring companies lose good leads?',
+  pains_a='Because inquiries come in while the team is on a job site or in the showroom, the first conversation is spent gathering basics, and quotes go quiet with no planned follow-up.',
+  pains=[('Inquiries that wait','Calls and messages arrive while installers are on site, so homeowners hear from another company first.'),
+         ('Estimates without details','Visits are booked without knowing the rooms, square footage or material, so time is spent on jobs that don\'t fit.'),
+         ('Quotes that go quiet','Homeowners compare quotes, pick samples and talk it over, and without a follow-up plan many of them are never heard from again.'),
+         ('Ads that bring browsers','Ads get clicks and messages from people who are only looking at prices, and staff spend hours on them.')],
+  fix_h='How does automation help a flooring company?',
+  fix_a='It replies to every inquiry right away, asks the questions your estimator needs, books the visit and follows up on every quote, so your team spends its time measuring and installing.',
+  fixes=[('Instant inquiry replies','Every form, ad message and missed call gets a reply within seconds by text and email, with a link to book an estimate.','lg'),
+         ('Project questions up front','A short set of questions captures rooms, approximate square footage, material and timeline before anyone drives out.','ai'),
+         ('AI assistant for common questions','Answers questions about materials you install, service areas, showroom hours and how estimates work, using answers you approve. Prices come from your estimator.','ai'),
+         ('Estimate booking & reminders','Visits go straight into the estimator\'s calendar, with reminders and directions sent the day before.','lg'),
+         ('Quote follow-up sequence','A planned set of check-ins after each quote, with sample and financing questions routed to your team.','lg'),
+         ('Local ads for ready buyers','Google Ads for searches like "hardwood floor installation near me" and Facebook ads with clear project questions, so leads arrive pre-qualified.','fb')],
+  journey=['A homeowner wants to replace the carpet in three bedrooms and messages your company from a Facebook ad on a Sunday evening.',
+           'They get a reply within seconds asking which rooms, the rough size and whether they prefer hardwood, laminate or luxury vinyl.',
+           'They answer and pick an in-home estimate time for Thursday from the booking link.',
+           'The estimator gets the details ahead of the visit and brings the right samples, and the homeowner gets a reminder the day before.',
+           'After the quote, follow-up messages answer questions and check in, and the job is booked the following week.'],
+  fit=['Flooring stores with a showroom and installation crews','Independent installers and refinishers','Companies running Google or Facebook ads for flooring','Teams without a dedicated person to answer inquiries'],
+  faq=[('Can the assistant give customers a price?','It can share starting prices or ranges you approve, but final quotes come from your estimator after measuring, since room size, subfloor and materials change the price. That keeps the assistant from promising numbers you haven\'t signed off on.'),
+       ('Will customers know they are talking to an automated assistant?','They should, and the assistant says so if asked. Most homeowners care more about a quick, helpful reply and an easy way to book than about who sends the first message. Anything unusual is passed to your team.'),
+       ('Does it work with the software we already use?','Often, yes. Many CRMs, calendars and field service tools can connect directly or through automation platforms. Where they can\'t, inquiries go to a simple CRM or shared calendar with alerts to your team, and automated texts are set up with clear consent and opt-out.')],
+  rel=['fb','lg','fbcalls']),
 ]
 
 # ---- Project examples (owner-provided; client names kept private; no outcome numbers claimed) ----
@@ -362,7 +396,7 @@ PROJECTS = [
   stages=['Appointment request', 'Acknowledgment', 'Front desk follow-up', 'First visit confirmed']),
 ]
 PJ = {x['id']: x for x in PROJECTS}
-IND_PROJ = {'dental': ['dental'], 'real-estate': ['real-estate'], 'accounting': ['accounting'], 'home-services': ['hvac', 'roofing'], 'med-spa': ['med-spa'], 'law': ['law'], 'chiropractic': ['chiropractic'], 'insurance': ['insurance']}
+IND_PROJ = {'dental': ['dental'], 'real-estate': ['real-estate'], 'accounting': ['accounting'], 'home-services': ['hvac', 'roofing'], 'med-spa': ['med-spa'], 'law': ['law'], 'chiropractic': ['chiropractic'], 'insurance': ['insurance'], 'flooring': ['flooring']}
 
 def flow(x):
     return '<div class="pflow" aria-label="Workflow">' + '<i aria-hidden="true">→</i>'.join(f'<span>{e(t)}</span>' for t in x['stages']) + '</div>'

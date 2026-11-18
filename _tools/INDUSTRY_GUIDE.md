@@ -8,7 +8,7 @@ Audience: US small-business owners in that industry. Voice: Aftab Ahmed, plain, 
 
 - [x] chiropractic | Chiropractors & Physical Therapy
 - [x] insurance | Insurance Agencies
-- [ ] flooring | Flooring Companies
+- [x] flooring | Flooring Companies
 - [ ] roofing | Roofing & Remodeling
 - [ ] junk-removal | Junk Removal & Dumpster Rental
 - [ ] mortgage | Mortgage Brokers & Loan Officers
@@ -69,3 +69,4 @@ Pick the industry page that was refreshed least recently (track it in the log be
 - 2026-10-01: dental, real-estate, accounting, home-services, med-spa, law created
 - 2026-10-19: chiropractic created (catch-up for the Oct 15 run, skipped while GitHub access was down)
 - 2026-11-01: insurance created; dental refreshed (Related now links the AI receptionist posts and Facebook ads for dentists; HIPAA FAQ now mentions BAAs and health details staying out of open texts)
+- 2026-11-18: flooring created (links the Charlotte flooring case study; homepage industry chip and demo tab now point to it)

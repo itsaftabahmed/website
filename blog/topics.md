@@ -32,6 +32,7 @@ When a new industry page is added, its 4 starter topics are spread through the q
 ## Queue (in publishing order)
 - [ ] Facebook ads for home service businesses (HVAC, plumbing, roofing) | facebook ads for home services
 - [ ] Facebook ads for accountants and CPA firms | facebook ads for accountants
+- [ ] How flooring companies can book more in-home estimates | flooring estimate leads
 - [ ] AI receptionist for dental offices: what it handles and what it shouldn't | ai receptionist for dental office
 - [ ] What can an AI chatbot actually do for a service business? | ai chatbot for small business
 - [ ] Google Ads vs Facebook Ads for local service businesses | google ads vs facebook ads for local business
@@ -41,6 +42,7 @@ When a new industry page is added, its 4 starter topics are spread through the q
 - [ ] AI receptionist for HVAC and home service businesses | ai receptionist for hvac
 - [ ] Facebook ads for law firms: what works and what gets rejected | facebook ads for lawyers
 - [ ] AI automation for small businesses: where to start | ai automation for small business
+- [ ] Facebook ads for flooring companies: what actually works | facebook ads for flooring
 - [ ] Is an AI receptionist HIPAA compliant? What dental practices should know | hipaa compliant ai receptionist
 - [ ] Dental front desk phone scripts that book more new patients | dental phone scripts
 - [ ] Facebook ads for insurance agents: what works and what gets rejected | facebook ads for insurance agents
@@ -50,6 +52,7 @@ When a new industry page is added, its 4 starter topics are spread through the q
 - [ ] AI receptionist for law firms: answer every new case call | ai receptionist for law firms
 - [ ] How much do Google Ads cost for a small business in the US? | google ads cost small business
 - [ ] How contractors can follow up on quotes and win more jobs | contractor quote follow up
+- [ ] How to follow up on flooring quotes and win more jobs | flooring quote follow up
 - [ ] Med spa advertising: what works on Google, Facebook and Instagram | med spa advertising
 - [ ] Tax season workflow automation for CPA firms | tax season automation
 - [ ] Lead generation for small businesses: the complete 2026 guide | lead generation for small business
@@ -59,6 +62,7 @@ When a new industry page is added, its 4 starter topics are spread through the q
 - [ ] Marketing for med spas: the complete 2026 playbook | med spa marketing
 - [ ] Why patients drop off care plans (and how to keep them coming back) | chiropractic patient retention
 - [ ] How insurance agencies can automate renewal reminders and reviews | insurance renewal reminders
+- [ ] Google Ads for flooring stores and installers | google ads for flooring
 - [ ] AI receptionist for med spas: booking consultations around the clock | ai receptionist for med spa
 - [ ] AI intake for law firms: what it can and can't do | ai intake for law firms
 - [ ] Why your website gets traffic but no leads | website traffic but no leads
