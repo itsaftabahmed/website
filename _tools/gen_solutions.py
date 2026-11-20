@@ -79,7 +79,7 @@ SOL = [
        ('Which lead sources can be connected?', 'Usually all of them: website forms, Facebook and Google lead forms, Instagram and Facebook messages, missed calls, and most booking tools. Anything that can send an email or a webhook can be connected.'),
        ('Is it legal to text leads automatically?', 'Generally yes, when the lead gave consent, for example on your form, and every message includes an easy way to opt out. The setup includes consent wording and opt-out handling.'),
        ('Do I need a new CRM?', 'Not necessarily. If you already use one, the follow-up is built around it. If your leads live in inboxes and spreadsheets, a simple CRM is usually part of the setup.')],
-  related=[('blog/automated-lead-follow-up/', 'How to follow up with leads automatically'), ('blog/speed-to-lead/', 'Speed to lead: why the first 5 minutes decide the sale'), ('solutions/missed-calls/', 'Stop missed calls'), ('services/lead-generation/', 'Lead generation systems')]),
+  related=[('tools/speed-to-lead-calculator/', 'Speed to lead calculator: what slow replies cost you'), ('blog/automated-lead-follow-up/', 'How to follow up with leads automatically'), ('blog/speed-to-lead/', 'Speed to lead: why the first 5 minutes decide the sale'), ('solutions/missed-calls/', 'Stop missed calls'), ('services/lead-generation/', 'Lead generation systems')]),
  dict(slug='no-shows', name='No-Shows', menu='Reduce no-shows',
   title='Reduce No-Shows with Automated Reminders & Easy Rescheduling',
   desc='Cut no-shows and late cancellations with automatic reminders, two-way confirmations, easy rescheduling by text and a waitlist that fills empty slots fast.',

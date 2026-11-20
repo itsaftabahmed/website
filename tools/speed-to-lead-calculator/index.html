@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8J15RWPXC0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8J15RWPXC0');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MNSH7P36');</script>
+<!-- End Google Tag Manager -->
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1075518385124489');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1075518385124489&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yqwgv2g7r3");
+</script>
+<!-- End Microsoft Clarity -->
+<!-- Conversion events: "Book a call" clicks and completed bookings -->
+<script>
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a[href*="#book"], #calcBook');
+  if (!a) return;
+  (window.dataLayer = window.dataLayer || []).push({event: 'book_call_click', link_text: (a.textContent || '').trim().slice(0, 60), page_path: location.pathname});
+  if (window.fbq) fbq('track', 'Contact');
+  if (window.gtag) gtag('event', 'book_call_click', {link_text: (a.textContent || '').trim().slice(0, 60)});
+}, true);
+</script>
+<title>Speed to Lead Calculator (Free) | Aftab Ahmed</title>
+<meta name="description" content="Free speed to lead calculator: see how many of your leads wait too long for a reply and what answering within 5 minutes could be worth to your business.">
+<link rel="canonical" href="https://iamaftabahmed.com/tools/speed-to-lead-calculator/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Aftab Ahmed">
+<meta name="theme-color" content="#0A0A0A">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Aftab Ahmed">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://iamaftabahmed.com/tools/speed-to-lead-calculator/">
+<meta property="og:title" content="Speed to lead calculator: what slow replies cost you">
+<meta property="og:description" content="Free speed to lead calculator: see how many of your leads wait too long for a reply and what answering within 5 minutes could be worth to your business.">
+<meta property="og:image" content="https://iamaftabahmed.com/images/og/speed-to-lead-calculator.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://iamaftabahmed.com/images/og/speed-to-lead-calculator.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../blog/blog.css">
+<style>
+.ac{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:22px;margin:8px 0 34px}
+.ac__in,.ac__out{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:26px}
+.ac__f{margin-bottom:20px}.ac__f label{display:flex;justify-content:space-between;gap:12px;font-size:15px;color:var(--soft);margin-bottom:10px}.ac__f label b{color:#fff;white-space:nowrap}
+.ac select,.ac input[type=number]{width:100%;padding:12px 14px;border-radius:12px;background:#0d0d0d;color:#fff;border:1px solid #333;font:inherit;font-size:15px}
+.ac input[type=number]:focus,.ac select:focus{outline:none;border-color:var(--red)}
+.ac input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:9px;background:linear-gradient(90deg,var(--red) var(--p,40%),#333 var(--p,40%));outline:none}
+.ac input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:#fff;border:4px solid var(--red);cursor:grab}
+.ac input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:#fff;border:4px solid var(--red);cursor:grab}
+.ac__note{color:var(--muted);font-size:13px;margin-top:6px}
+.ac__rates{border-top:1px solid var(--line);margin-top:6px;padding-top:18px}.ac__rates>b{display:block;font-size:15px;margin-bottom:4px}
+.ac__g{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}.ac__g label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+.ac__out{display:flex;flex-direction:column;gap:14px;position:sticky;top:90px;align-self:start}
+.ac__k{color:var(--red-text);font-weight:800;letter-spacing:.14em;font-size:12px;text-transform:uppercase}
+.ac__big{font-family:var(--display);font-stretch:115%;font-weight:900;font-size:clamp(38px,4.6vw,52px);color:#ff2a33;letter-spacing:-.03em;line-height:1.05}
+.ac__big small{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-stretch:100%;font-size:15px;font-weight:600;color:var(--muted);letter-spacing:0;margin-top:6px}
+.ac__rows div{display:flex;justify-content:space-between;gap:12px;padding:10px 12px;border-top:1px solid var(--line);font-size:15px;color:var(--soft)}
+.ac__rows b{color:#fff}.ac__rows .best{background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.3);border-radius:12px}.ac__rows .best b{color:#4ade80}
+.ac__rows .best span::after{content:"Lowest";margin-left:8px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#4ade80}
+.ac__for{color:var(--muted);font-size:13px;line-height:1.5}
+.ac__busy{background:rgba(224,17,25,.08);border:1px solid rgba(224,17,25,.35);border-radius:16px;padding:14px 16px;font-size:14.5px;color:var(--soft)}.ac__busy b{color:#fff}
+.ac__btns{display:flex;flex-wrap:wrap;gap:10px}.ac__btns .btn{padding:12px 18px;font-size:14.5px}
+.ac__ghost{background:none!important;border:1px solid #3a3a3a!important;box-shadow:none!important;color:#fff;cursor:pointer;font-family:inherit;font-weight:700;border-radius:999px}
+.ac__lead{margin-top:2px;padding-top:16px;border-top:1px solid var(--line)}
+article table{width:100%;border-collapse:collapse;margin:18px 0;font-size:15.5px}article th,article td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line)}article th{color:var(--muted);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase}
+.tw{overflow-x:auto}
+@media (max-width:760px){.ac{grid-template-columns:1fr}.ac__out{position:static}}
+.ac__bar{height:12px;border-radius:9px;background:#2a2a2a;overflow:hidden;display:flex;margin:4px 0 2px}.ac__bar i{display:block;background:#4ade80}.ac__bar em{display:block;background:var(--red)}
+.ac__legend{display:flex;justify-content:space-between;gap:10px;font-size:13px;color:var(--muted)}
+</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "Speed to Lead Calculator", "url": "https://iamaftabahmed.com/tools/speed-to-lead-calculator/", "applicationCategory": "BusinessApplication", "operatingSystem": "Any", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Free speed to lead calculator: see how many of your leads wait too long for a reply and what answering within 5 minutes could be worth to your business.", "author": {"@type": "Person", "@id": "https://iamaftabahmed.com/#person", "name": "Aftab Ahmed", "url": "https://iamaftabahmed.com/about/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://iamaftabahmed.com/"}, {"@type": "ListItem", "position": 2, "name": "Free tools", "item": "https://iamaftabahmed.com/tools/"}, {"@type": "ListItem", "position": 3, "name": "Speed to lead calculator", "item": "https://iamaftabahmed.com/tools/speed-to-lead-calculator/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is speed to lead?", "acceptedAnswer": {"@type": "Answer", "text": "Speed to lead is the time between a new lead reaching out (a form, call, text or ad inquiry) and your first real reply. The shorter it is, the more of those people you reach while they are still interested."}}, {"@type": "Question", "name": "How do you calculate lead response time?", "acceptedAnswer": {"@type": "Answer", "text": "For each lead, subtract the time the inquiry came in from the time of your first reply. Add those times and divide by the number of leads for the average. Also look at the median and at the share of leads answered within 5 minutes, because a few very slow replies can hide behind a decent average."}}, {"@type": "Question", "name": "What is a good lead response time for a small business?", "acceptedAnswer": {"@type": "Answer", "text": "Within 5 minutes is a common target, and the closer to instant the better. An automatic text that goes out in seconds, followed by a call from a person, is the most practical way for a small team to hit it every time, including evenings and weekends."}}, {"@type": "Question", "name": "How much revenue does slow lead response cost?", "acceptedAnswer": {"@type": "Answer", "text": "Use the calculator above: it multiplies the leads you could move into the fast group by the difference between your close rate on fast and slow leads, then by your average job value. Use your own close rates from your CRM or a month of records, not a statistic from someone else."}}, {"@type": "Question", "name": "Are the numbers in the calculator real statistics?", "acceptedAnswer": {"@type": "Answer", "text": "No. The starting values are examples so the math is easy to follow. Replace them with your own lead count, close rates and job value to get a number that means something for your business."}}]}]}
+</script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MNSH7P36"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="ann"><a class="ann__in" href="../../tools/missed-call-calculator/"><span class="ann__new">NEW</span><span class="ann__msgs"><span class="ann__m on" data-href="../../tools/missed-call-calculator/">Calculate how much missed calls are costing your business <b>→</b></span></span></a></div><header class="top"><div class="wrap"><a class="logo" href="../../">AFTAB <span>AHMED</span></a><button type="button" class="nav__burger" aria-label="Menu" aria-expanded="false" aria-controls="siteNav"><i></i><i></i><i></i></button><nav class="nav" id="siteNav" aria-label="Main"><div class="nav__dd"><button type="button" class="nav__l" aria-expanded="false">Solutions</button><div class="nav__menu nav__menu--sol"><span class="nav__grp">Problems we solve</span><a href="../../solutions/missed-calls/">Stop missed calls<small>AI receptionist and instant text back</small></a><a href="../../solutions/lead-follow-up/">Fix slow follow-up<small>Reply to every lead in seconds</small></a><a href="../../solutions/no-shows/">Reduce no-shows<small>Reminders and easy rescheduling</small></a><a href="../../solutions/ads-not-converting/">Fix ads that don’t convert<small>Offer, page, tracking and follow-up</small></a><a href="../../solutions/busywork/">Automate busywork<small>Onboarding, admin, reviews and reports</small></a><span class="nav__grp">Services</span><a href="../../services/ai-automation/" class="nav__sm">AI Automation &amp; AI Chatbots</a><a href="../../services/lead-generation/" class="nav__sm">Lead Generation Systems</a><a href="../../services/google-ads/" class="nav__sm">Get Found on Google</a><a href="../../services/facebook-ads/" class="nav__sm">Win Customers on Social Media</a></div></div><div class="nav__dd"><button type="button" class="nav__l" aria-expanded="false">Industries</button><div class="nav__menu nav__menu--2"><a href="../../industries/dental/">Dental &amp; medical</a><a href="../../industries/real-estate/">Real estate</a><a href="../../industries/home-services/">Home services</a><a href="../../industries/law/">Law firms</a><a href="../../industries/med-spa/">Med spas</a><a href="../../industries/accounting/">Accounting &amp; CPA</a><a href="../../industries/chiropractic/">Chiropractic &amp; PT</a><a href="../../industries/insurance/">Insurance agencies</a><a href="../../industries/flooring/">Flooring companies</a><a href="../../industries/">All industries →</a></div></div><a class="nav__l" href="../../case-studies/">Case studies</a><a class="nav__l" href="../../blog/">Blog</a><a class="nav__l" href="../../tools/">Free tools</a><a class="nav__l" href="../../about/">About</a><a class="btn" href="../../#book">Book a call</a></nav></div></header>
+
+<section class="hero"><div class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">Home</a><span>/</span><a href="../">Free tools</a><span>/</span>Speed to lead calculator</nav>
+  <div class="kicker">Free tool · For US small businesses</div>
+  <h1>Speed to lead calculator</h1>
+  <p class="lead">How many of your leads wait too long for a reply, and what is that costing you? Enter your monthly leads, how fast you reply today and your close rates, and this free speed to lead calculator shows the extra customers and revenue from answering within 5 minutes.</p>
+</div></section>
+
+<article>
+  <div class="ac" id="ac">
+    <div class="ac__in">
+      <div class="ac__f"><label for="slInd">Your industry</label>
+        <select id="slInd">
+          <option value="home">HVAC, plumbing &amp; home services</option>
+          <option value="dental">Dental practice</option>
+          <option value="law">Law firm</option>
+          <option value="medspa">Med spa</option>
+          <option value="realestate">Real estate</option>
+          <option value="insurance">Insurance agency</option>
+          <option value="other">Other service business</option>
+        </select>
+        <div class="ac__note">Sets example lead and job values. Replace them with your own.</div></div>
+      <div class="ac__f"><label for="slLeads">New leads per month <b id="slLeadsV"></b></label><input type="range" id="slLeads" min="5" max="1000" step="5"></div>
+      <div class="ac__f"><label for="slNow">Your typical reply time today</label>
+        <select id="slNow">
+          <option value="" selected>Choose one to set an example</option>
+          <option value="85">Under 5 minutes, almost always</option>
+          <option value="35">5 to 30 minutes</option>
+          <option value="15">30 minutes to 2 hours</option>
+          <option value="5">Later the same day</option>
+          <option value="2">Next day or later</option>
+        </select>
+        <div class="ac__note">Sets a rough example for the slider below. Use your real share if you know it.</div></div>
+      <div class="ac__f"><label for="slFast">Leads you reply to within 5 minutes now <b id="slFastV"></b></label><input type="range" id="slFast" min="0" max="100" step="1"></div>
+      <div class="ac__f"><label for="slTarget">Leads replied to within 5 minutes after fixing it <b id="slTargetV"></b></label><input type="range" id="slTarget" min="0" max="100" step="1"><div class="ac__note">An automatic text in seconds plus a call from a person usually gets this above 90%.</div></div>
+      <div class="ac__rates"><b>Your close rates and job value</b><div class="ac__note">Example values. Check a month of your own leads: how many fast replies and slow replies became customers?</div>
+        <div class="ac__g">
+          <div><label for="slCf">Close rate, replied within 5 min (%)</label><input type="number" id="slCf" value="30" min="0" step="1" inputmode="decimal"></div>
+          <div><label for="slCs">Close rate, replied later (%)</label><input type="number" id="slCs" value="15" min="0" step="1" inputmode="decimal"></div>
+          <div><label for="slVal">Average job or customer value ($)</label><input type="number" id="slVal" value="1200" min="0" step="50" inputmode="decimal"></div>
+        </div></div>
+    </div>
+    <div class="ac__out" aria-live="polite">
+      <div class="ac__k">Extra revenue from faster replies</div>
+      <div class="ac__big"><span id="slRev">$0</span><small id="slRevL">per month</small></div>
+      <div>
+        <div class="ac__bar" aria-hidden="true"><i id="slBarF"></i><em id="slBarS"></em></div>
+        <div class="ac__legend"><span id="slLegF"></span><span id="slLegS"></span></div>
+      </div>
+      <div class="ac__rows">
+        <div><span>Leads waiting over 5 minutes now</span><b id="slWait"></b></div>
+        <div><span>Customers a month now</span><b id="slNowC"></b></div>
+        <div class="best"><span>Customers a month after</span><b id="slAfterC"></b></div>
+        <div><span>Extra revenue a year</span><b id="slYear"></b></div>
+      </div>
+      <div class="ac__for" id="slFor"></div>
+      <div class="ac__btns"><a class="btn" href="../../#book" id="slBook">Fix my reply time on a free call →</a><button type="button" class="btn ac__ghost" id="slCopy">Copy link to this result</button></div>
+      <form class="lead ac__lead" data-lead="tool-speed-to-lead-calculator" data-ok="Thanks! I’ll email your result and a short plan within one business day.">
+        <b style="color:#fff;font-size:15px">Email me this result and a plan</b>
+        <input name="name" placeholder="First name" autocomplete="given-name" aria-label="First name">
+        <input type="email" name="email" required placeholder="Email address" autocomplete="email" aria-label="Email address">
+        <input name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn ac__ghost" type="submit">Send me a plan</button>
+        <p class="lead__msg" aria-live="polite"></p>
+      </form>
+      <a href="../../demo/" style="color:var(--red-text);font-weight:700;font-size:14.5px">See an instant reply in the AI receptionist demo →</a>
+    </div>
+  </div>
+
+  <h2 id="how">How do you calculate what speed to lead is worth?</h2>
+  <p>Split your leads into two groups: the ones you reply to within 5 minutes and the ones who wait longer. Each group has its own close rate. The value of replying faster is the number of leads you move from the slow group to the fast group, times the difference in close rate, times what a customer is worth:</p>
+  <p><strong>Extra customers = leads per month × (target fast share − current fast share) × (fast close rate − slow close rate)</strong>, and extra revenue = extra customers × average job value.</p>
+  <p>A worked example with hypothetical numbers: 100 leads a month, 20% answered within 5 minutes today, a 30% close rate on fast replies and 15% on slow ones, and a $1,200 average job. Moving to 90% fast replies gives 100 × 0.70 × 0.15 = 10.5 extra customers a month, or about $12,600 in extra revenue a month. Your own close rates decide the answer, so measure them before you trust the number.</p>
+
+  <h2 id="scenarios">What is faster lead response worth at different sizes?</h2>
+  <p>Example scenarios using a 30% fast close rate, a 15% slow close rate, a $1,000 job value and a 90% target. These illustrate the math; they are not benchmarks:</p>
+  <div class="tw"><table>
+    <tr><th>Business</th><th>Leads a month</th><th>Fast today</th><th>Extra customers</th><th>Extra revenue a month</th></tr>
+    <tr><td>Small, slow replies</td><td>30</td><td>20%</td><td>3.15</td><td>$3,150</td></tr>
+    <tr><td>Steady, slow replies</td><td>100</td><td>20%</td><td>10.5</td><td>$10,500</td></tr>
+    <tr><td>Steady, already fairly fast</td><td>100</td><td>60%</td><td>4.5</td><td>$4,500</td></tr>
+    <tr><td>Busy, slow replies</td><td>300</td><td>20%</td><td>31.5</td><td>$31,500</td></tr>
+  </table></div>
+  <p>The gain is largest when you have many leads and few of them get a fast reply. If you already answer most leads quickly, the next step is usually better follow-up for the ones who don't answer, which my guide to <a href="../../blog/automated-lead-follow-up/">automated lead follow-up</a> covers.</p>
+
+  <h2 id="measure">How do you measure your lead response time?</h2>
+  <p>Take the last 20 to 30 leads. For each one, note when the inquiry arrived and when someone first replied, and subtract. Then count how many were answered within 5 minutes; that share goes in the calculator. Look at evenings and weekends separately, because that is where most small businesses lose speed. Research on online leads, such as the <a href="https://hbr.org/2011/03/the-short-life-of-online-sales-leads" rel="noopener">Harvard Business Review study on the short life of online sales leads</a>, found that many companies take hours or longer to reply, which is why the share answered within minutes matters more than the average.</p>
+
+  <h2 id="good">What is a good speed to lead?</h2>
+  <ul>
+    <li><strong>Under 1 minute:</strong> possible with an automatic text or AI reply. This is the realistic goal for every lead, at any hour.</li>
+    <li><strong>Under 5 minutes:</strong> a strong result for a person replying by hand during business hours.</li>
+    <li><strong>30 minutes or more:</strong> many leads have already contacted someone else or lost interest.</li>
+    <li><strong>Next day:</strong> you are mostly reaching people who already booked elsewhere.</li>
+  </ul>
+  <p>My guide on <a href="../../blog/speed-to-lead/">why the first 5 minutes decide the sale</a> explains the reasons and what the first message should say. Any automated texts or calls need the customer's consent, and the FCC has confirmed that <a href="https://www.fcc.gov/document/fcc-makes-ai-generated-voices-robocalls-illegal" rel="noopener">AI-generated voices in robocalls fall under existing calling rules</a>.</p>
+
+  <h2 id="industry">How does speed to lead differ by industry?</h2>
+  <ul>
+    <li><strong>Home services:</strong> urgent jobs go to whoever answers first, often after hours. See <a href="../../industries/home-services/">automation for home service businesses</a>.</li>
+    <li><strong>Dental and med spas:</strong> new patients often inquire in the evening and book wherever replies first. See <a href="../../industries/dental/">dental practices</a> and <a href="../../industries/med-spa/">med spas</a>.</li>
+    <li><strong>Law firms:</strong> people with a legal problem often contact several firms at once, so the first callback has a real advantage. See <a href="../../industries/law/">law firms</a>.</li>
+    <li><strong>Real estate and insurance:</strong> online leads from portals and quote forms go to several agents, so seconds matter. See <a href="../../industries/real-estate/">real estate</a> and <a href="../../industries/insurance/">insurance agencies</a>.</li>
+  </ul>
+  <p>If your phone is where leads wait longest, the <a href="../missed-call-calculator/">missed call cost calculator</a> estimates that side. The <a href="../../solutions/lead-follow-up/">slow follow-up solution</a> shows how I set up instant replies and follow-up as one system.</p>
+
+  <h2 id="faq">FAQ</h2>
+  <h3>What is speed to lead?</h3>
+  <p>Speed to lead is the time between a new lead reaching out (a form, call, text or ad inquiry) and your first real reply. The shorter it is, the more of those people you reach while they are still interested.</p>
+  <h3>How do you calculate lead response time?</h3>
+  <p>For each lead, subtract the time the inquiry came in from the time of your first reply. Add those times and divide by the number of leads for the average. Also look at the median and at the share of leads answered within 5 minutes, because a few very slow replies can hide behind a decent average.</p>
+  <h3>What is a good lead response time for a small business?</h3>
+  <p>Within 5 minutes is a common target, and the closer to instant the better. An automatic text that goes out in seconds, followed by a call from a person, is the most practical way for a small team to hit it every time, including evenings and weekends.</p>
+  <h3>How much revenue does slow lead response cost?</h3>
+  <p>Use the calculator above: it multiplies the leads you could move into the fast group by the difference between your close rate on fast and slow leads, then by your average job value. Use your own close rates from your CRM or a month of records, not a statistic from someone else.</p>
+  <h3>Are the numbers in the calculator real statistics?</h3>
+  <p>No. The starting values are examples so the math is easy to follow. Replace them with your own lead count, close rates and job value to get a number that means something for your business.</p>
+
+  <div class="sources"><b>Sources and further reading</b><ul>
+    <li><a href="https://hbr.org/2011/03/the-short-life-of-online-sales-leads" rel="noopener">Harvard Business Review: The Short Life of Online Sales Leads (Oldroyd, McElheran and Elkington, 2011)</a></li>
+    <li><a href="https://www.fcc.gov/document/fcc-makes-ai-generated-voices-robocalls-illegal" rel="noopener">FCC: AI-generated voices in robocalls</a></li>
+  </ul></div>
+
+  <div class="related"><b>Related tools and guides</b><ul>
+    <li><a href="../missed-call-calculator/">Missed call cost calculator</a></li>
+    <li><a href="../ai-receptionist-cost-calculator/">AI receptionist cost calculator</a></li>
+    <li><a href="../../blog/speed-to-lead/">Speed to lead: why the first 5 minutes decide the sale</a></li>
+    <li><a href="../../blog/automated-lead-follow-up/">How to follow up with leads automatically</a></li>
+    <li><a href="../../services/lead-generation/">Lead generation systems</a></li>
+    <li><a href="../">All free tools</a></li>
+  </ul></div>
+
+  <div class="cta">
+    <h2>Want every lead answered in seconds?</h2>
+    <p>Book a free 30-minute call. Bring your numbers and I'll show you how to reply to every lead instantly, day and night.</p>
+    <a class="btn" href="../../#book">Book a free call →</a>
+  </div>
+</article>
+
+<footer class="ft"><div class="wrap"><div class="ft__cta"><div><span class="ft__k">Let's talk</span><b>Ready for a business that <br>keeps working when you're not?</b></div><a class="btn" href="../../#book">Book a free 30-minute call →</a></div><div class="ft__g"><div><a class="logo" href="../../">AFTAB <span>AHMED</span></a><p>AI automation, ads and lead follow-up for US service businesses.</p><div class="ft__soc"><a href="https://www.linkedin.com/in/iamaftabahmed/" rel="noopener" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"> <defs><linearGradient id="lit" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2d8cff"/><stop offset="1" stop-color="#0a5bc4"/></linearGradient> <linearGradient id="lig" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient> <radialGradient id="lis" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".6"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient></defs> <ellipse cx="32" cy="58.5" rx="21" ry="3.6" fill="url(#lis)"/> <rect x="8" y="9" width="48" height="46" rx="13" fill="#073f8a"/> <rect x="8" y="5" width="48" height="46" rx="13" fill="url(#lit)"/> <path d="M21 6.5h22c6 0 10.5 3 12 7.5-11-3.5-31-3.5-46 0 1.5-4.5 6-7.5 12-7.5z" fill="url(#lig)" opacity=".85"/> <g fill="#06306b" transform="translate(0 1.6)"><rect x="18" y="24" width="6.5" height="17" rx="1.6"/><circle cx="21.2" cy="17.5" r="3.9"/><path d="M28.5 24h6.2v2.6c1.2-1.9 3.4-3.1 6.2-3.1 5 0 6.9 3.2 6.9 8.2V41h-6.5v-8.2c0-2.3-.6-3.9-2.8-3.9s-3.4 1.6-3.4 3.9V41h-6.6z"/></g> <g fill="#fff"><rect x="18" y="24" width="6.5" height="17" rx="1.6"/><circle cx="21.2" cy="17.5" r="3.9"/><path d="M28.5 24h6.2v2.6c1.2-1.9 3.4-3.1 6.2-3.1 5 0 6.9 3.2 6.9 8.2V41h-6.5v-8.2c0-2.3-.6-3.9-2.8-3.9s-3.4 1.6-3.4 3.9V41h-6.6z"/></g></svg></a><a href="https://www.youtube.com/@ItsAftab_Ahmed" rel="noopener" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"> <defs><linearGradient id="ytt" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff4a50"/><stop offset="1" stop-color="#c40c13"/></linearGradient> <linearGradient id="ytg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient> <radialGradient id="yts" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".6"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient></defs> <ellipse cx="32" cy="58.5" rx="21" ry="3.6" fill="url(#yts)"/> <rect x="8" y="9" width="48" height="46" rx="13" fill="#7d070c"/> <rect x="8" y="5" width="48" height="46" rx="13" fill="url(#ytt)"/> <path d="M21 6.5h22c6 0 10.5 3 12 7.5-11-3.5-31-3.5-46 0 1.5-4.5 6-7.5 12-7.5z" fill="url(#ytg)" opacity=".85"/> <path d="M27 19.5l14 8.5-14 8.5z" fill="#7d070c" transform="translate(0 2)"/><path d="M27 19.5l14 8.5-14 8.5z" fill="#fff" stroke="#fff" stroke-width="3" stroke-linejoin="round"/></svg></a><a href="https://www.instagram.com/itsaftab.ahmed/" rel="noopener" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"> <defs><linearGradient id="igt" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7a3cff"/><stop offset=".45" stop-color="#e1306c"/><stop offset="1" stop-color="#ffb13d"/></linearGradient> <linearGradient id="igg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient> <radialGradient id="igs" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".6"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient></defs> <ellipse cx="32" cy="58.5" rx="21" ry="3.6" fill="url(#igs)"/> <rect x="8" y="9" width="48" height="46" rx="13" fill="#8a1d4a"/> <rect x="8" y="5" width="48" height="46" rx="13" fill="url(#igt)"/> <path d="M21 6.5h22c6 0 10.5 3 12 7.5-11-3.5-31-3.5-46 0 1.5-4.5 6-7.5 12-7.5z" fill="url(#igg)" opacity=".85"/> <g fill="none" stroke="#7a1a40" stroke-width="3.6" transform="translate(0 1.8)"><rect x="19" y="15" width="26" height="26" rx="8"/><circle cx="32" cy="28" r="6.3"/></g> <g fill="none" stroke="#fff" stroke-width="3.6"><rect x="19" y="15" width="26" height="26" rx="8"/><circle cx="32" cy="28" r="6.3"/></g><circle cx="39.6" cy="20.6" r="2" fill="#fff"/></svg></a><a href="https://www.tiktok.com/@itsaftab_ahmed" rel="noopener" aria-label="TikTok"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"> <defs><linearGradient id="ttt" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2e2e33"/><stop offset="1" stop-color="#0b0b0d"/></linearGradient> <linearGradient id="ttg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient> <radialGradient id="tts" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".6"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient></defs> <ellipse cx="32" cy="58.5" rx="21" ry="3.6" fill="url(#tts)"/> <rect x="8" y="9" width="48" height="46" rx="13" fill="#000"/> <rect x="8" y="5" width="48" height="46" rx="13" fill="url(#ttt)"/> <path d="M21 6.5h22c6 0 10.5 3 12 7.5-11-3.5-31-3.5-46 0 1.5-4.5 6-7.5 12-7.5z" fill="url(#ttg)" opacity=".85"/> <path d="M34.5 13h5c.5 4 3 6.6 7 7v5c-2.7 0-5.1-.8-7-2.1V33a8.7 8.7 0 1 1-8.7-8.7c.6 0 1.1 0 1.6.1v5.2a3.6 3.6 0 1 0 2.1 3.3z" fill="#25F4EE" transform="translate(-1.5 -1.2)"/> <path d="M34.5 13h5c.5 4 3 6.6 7 7v5c-2.7 0-5.1-.8-7-2.1V33a8.7 8.7 0 1 1-8.7-8.7c.6 0 1.1 0 1.6.1v5.2a3.6 3.6 0 1 0 2.1 3.3z" fill="#FE2C55" transform="translate(1.5 1.2)"/> <path d="M34.5 13h5c.5 4 3 6.6 7 7v5c-2.7 0-5.1-.8-7-2.1V33a8.7 8.7 0 1 1-8.7-8.7c.6 0 1.1 0 1.6.1v5.2a3.6 3.6 0 1 0 2.1 3.3z" fill="#fff"/></svg></a></div></div><div><b>Solutions</b><a href="../../solutions/missed-calls/">Stop missed calls</a><a href="../../solutions/lead-follow-up/">Fix slow follow-up</a><a href="../../solutions/no-shows/">Reduce no-shows</a><a href="../../solutions/ads-not-converting/">Fix ads that don’t convert</a><a href="../../solutions/busywork/">Automate busywork</a></div><div><b>Services</b><a href="../../services/ai-automation/">AI Automation &amp; AI Chatbots</a><a href="../../services/lead-generation/">Lead Generation Systems</a><a href="../../services/google-ads/">Get Found on Google</a><a href="../../services/facebook-ads/">Win Customers on Social Media</a></div><div><b>Industries</b><a href="../../industries/dental/">Dental &amp; medical</a><a href="../../industries/real-estate/">Real estate</a><a href="../../industries/home-services/">Home services</a><a href="../../industries/law/">Law firms</a><a href="../../industries/">All industries →</a></div><div><b>Resources</b><a href="../../blog/">Blog</a><a href="../../case-studies/">Case studies</a><a href="../../tools/">Free tools</a><a href="../../about/">About</a></div><div><b>Contact</b><a href="mailto:hello@iamaftabahmed.com">hello@iamaftabahmed.com</a><a href="../../#book">Book a free call</a><a href="../../privacy/">Privacy</a></div></div><div class="ft__big" aria-hidden="true">AFTAB AHMED</div><div class="ft__b"><span>© 2026 Aftab Ahmed · AI, Automation &amp; Marketing</span><span>Serving businesses across the United States</span></div></div></footer>
+<script src="../../blog/site.js" defer></script><script src="../../blog/ann.js" defer></script><script src="../../blog/book.js?v=3" defer></script>
+<script>
+(function(){
+  // Example values per industry (not statistics): leads a month, average job value
+  var P={home:[80,1200],dental:[60,1500],law:[40,4000],medspa:[70,600],realestate:[50,6000],insurance:[60,900],other:[60,1000]};
+  var $=function(i){return document.getElementById(i)},R=['slLeads','slFast','slTarget'],N=['slCf','slCs','slVal'];
+  var KEY={slLeads:'leads',slFast:'fast',slTarget:'target',slCf:'cf',slCs:'cs',slVal:'value'};
+  var money=function(n){return '$'+Math.round(n).toLocaleString('en-US')},v=function(i){var x=parseFloat($(i).value);return isFinite(x)&&x>=0?x:0},used=false;
+  var one=function(n){return (Math.round(n*10)/10).toLocaleString('en-US')};
+  function update(){
+    R.forEach(function(i){var r=$(i);r.style.setProperty('--p',(r.value-r.min)/(r.max-r.min)*100+'%')});
+    var L=v('slLeads'),f=Math.min(v('slFast'),100)/100,t=Math.min(v('slTarget'),100)/100,cf=v('slCf')/100,cs=v('slCs')/100,val=v('slVal');
+    $('slLeadsV').textContent=L.toLocaleString('en-US');$('slFastV').textContent=Math.round(f*100)+'%';$('slTargetV').textContent=Math.round(t*100)+'%';
+    var now=L*(f*cf+(1-f)*cs),after=L*(t*cf+(1-t)*cs),extra=after-now,rev=extra*val;
+    $('slRev').textContent=(rev<0?'−':'')+money(Math.abs(rev));$('slRevL').textContent='per month · '+one(extra)+' extra customers';
+    $('slBarF').style.width=f*100+'%';$('slBarS').style.width=(1-f)*100+'%';
+    $('slLegF').textContent=Math.round(L*f).toLocaleString('en-US')+' replied within 5 min';$('slLegS').textContent=Math.round(L*(1-f)).toLocaleString('en-US')+' waited longer';
+    $('slWait').textContent=Math.round(L*(1-f)).toLocaleString('en-US')+' a month';$('slNowC').textContent=one(now);$('slAfterC').textContent=one(after);$('slYear').textContent=(rev<0?'−':'')+money(Math.abs(rev)*12);
+    $('slFor').textContent=L.toLocaleString('en-US')+' leads × ('+Math.round(t*100)+'% − '+Math.round(f*100)+'%) × ('+Math.round(cf*100)+'% − '+Math.round(cs*100)+'%) = '+one(extra)+' extra customers × '+money(val)+' = '+money(rev)+' a month.'+(t<=f?' Set the target above your current share to see the gain.':'');
+  }
+  function touch(){if(!used){used=true;(window.dataLayer=window.dataLayer||[]).push({event:'tool_used',tool:'speed-to-lead-calculator'})}update()}
+  function link(){var q=R.concat(N).map(function(i){return KEY[i]+'='+encodeURIComponent($(i).value)}).join('&');return location.origin+location.pathname+'?'+q}
+  $('slInd').addEventListener('change',function(e){var p=P[e.target.value];$('slLeads').value=p[0];$('slVal').value=p[1];touch()});
+  $('slNow').addEventListener('change',function(e){if(e.target.value){$('slFast').value=e.target.value;touch()}});
+  R.concat(N).forEach(function(i){$(i).addEventListener('input',touch)});
+  $('slCopy').addEventListener('click',function(){var b=this,u=link(),done=function(){b.textContent='Link copied';setTimeout(function(){b.textContent='Copy link to this result'},1800)};
+    (window.dataLayer=window.dataLayer||[]).push({event:'tool_result_shared',tool:'speed-to-lead-calculator'});
+    if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(u).then(done,function(){prompt('Copy this link',u)});else prompt('Copy this link',u)});
+  $('slBook').addEventListener('click',function(){(window.dataLayer=window.dataLayer||[]).push({event:'calculator_cta',tool:'speed-to-lead-calculator',extra:$('slRev').textContent})});
+  var lf=document.querySelector('.ac__lead');if(lf)lf.leadExtra=function(){return 'Industry: '+$('slInd').selectedOptions[0].text+'; leads/mo '+$('slLeads').value+'; reply today: '+$('slNow').selectedOptions[0].text+'; fast now '+$('slFast').value+'%; target '+$('slTarget').value+'%; close fast '+$('slCf').value+'%, slow '+$('slCs').value+'%; job value $'+$('slVal').value+'; extra '+$('slRev').textContent+' '+$('slRevL').textContent};
+  // defaults, then any values shared in the link (?leads=100&fast=20 ...)
+  $('slLeads').value=100;$('slFast').value=20;$('slTarget').value=90;
+  var q=new URLSearchParams(location.search);Object.keys(KEY).forEach(function(i){var x=parseFloat(q.get(KEY[i]));if(isFinite(x)&&x>=0)$(i).value=x});
+  update();
+})();
+</script>
+<script src="../../blog/lead.js" defer></script>
+</body>
+</html>

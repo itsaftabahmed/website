@@ -31,6 +31,7 @@ When a new industry page is added, its 4 starter topics are spread through the q
 - [x] Speed to lead: why the first 5 minutes decide the sale | speed to lead
 
 ## Queue (in publishing order)
+- [ ] How to measure your lead response time (and what a good one is) | lead response time
 - [ ] Facebook ads for accountants and CPA firms | facebook ads for accountants
 - [ ] How flooring companies can book more in-home estimates | flooring estimate leads
 - [ ] AI receptionist for dental offices: what it handles and what it shouldn't | ai receptionist for dental office
