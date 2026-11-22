@@ -19,7 +19,7 @@ INDUSTRIES = [('industries/dental/', 'Dental &amp; medical'), ('industries/real-
               ('industries/med-spa/', 'Med spas'), ('industries/accounting/', 'Accounting &amp; CPA'),
               ('industries/chiropractic/', 'Chiropractic &amp; PT'), ('industries/insurance/', 'Insurance agencies'),
               ('industries/flooring/', 'Flooring companies')]
-LINKS = [('case-studies/', 'Case studies'), ('blog/', 'Blog'), ('tools/', 'Free tools'), ('about/', 'About')]
+LINKS = [('pricing/', 'Pricing'), ('case-studies/', 'Case studies'), ('tools/', 'Free tools')]
 SOCIAL = [('https://www.linkedin.com/in/iamaftabahmed/', 'in', 'LinkedIn'), ('https://www.youtube.com/@ItsAftab_Ahmed', 'YT', 'YouTube'),
           ('https://www.instagram.com/itsaftab.ahmed/', 'IG', 'Instagram'), ('https://www.tiktok.com/@itsaftab_ahmed', 'TT', 'TikTok')]
 

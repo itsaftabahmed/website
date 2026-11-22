@@ -234,3 +234,6 @@ article.svc .steps li::before{left:0}
 
 /* wide tables scroll inside their own box on phones */
 .tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:18px 0}.tw table{min-width:520px;margin:0}
+
+/* Mid-width header (981-1199px): keep every menu item and the logo on one line */
+@media (min-width:981px) and (max-width:1199px){.top .logo,.nav__l,.top .btn{white-space:nowrap}.nav{gap:0}.nav__l{padding:8px 9px!important;font-size:14px}.top .btn{padding:11px 16px}}
