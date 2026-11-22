@@ -53,6 +53,10 @@ Shortcut: write the post as a config file outside the repo and run `python3 _too
 9. Commit with message `Blog: <title>` and push to **both** the working branch and `main` (`git push origin HEAD:main`). Retry pushes on network errors.
 
 
+## Focus industries (owner decision, 2026-11-22)
+
+Most new posts should serve the focus industries: **home services** (HVAC, roofing, flooring, plumbing), **dental and medical practices**, **real estate** and **insurance**, or be general posts every service business can use. When the next unchecked topic in `blog/topics.md` is for a non-focus industry and a focus or general topic is further down, take the focus or general one first (tick it) and leave the other in place. When adding new topics, add them for focus industries or general use only.
+
 ## Google AI search rules (from Neil Patel, "Google's New Rules for Getting Customers", Nov 2026)
 
 Google's AI Mode runs several hidden searches for one question ("query fan-out") and lifts single paragraphs out of pages to build its answer. Every page must work for that:

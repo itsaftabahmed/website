@@ -4,7 +4,13 @@ Industry pages are sales pages for one type of business (`/industries/<slug>/`).
 
 Audience: US small-business owners in that industry. Voice: Aftab Ahmed, plain, direct, practical, no hype. Follow the "Quality rules" in `blog/WRITING_GUIDE.md` (no filler phrases, no em dashes, specific over vague).
 
-## Queue (next industry first)
+## Focus (owner decision, 2026-11-22)
+
+**New industry pages are paused.** The site has 9 industry pages, which is enough for a new site with few backlinks: depth now beats breadth, and many look-alike pages risk being treated as low-value. Do not build pages from the queue below unless the owner asks.
+
+**Focus industries** (they have real case studies and existing posts): **home services** (HVAC, roofing, flooring, plumbing), **dental and medical practices**, **real estate** and **insurance**. Three of every four runs improve a focus page; every fourth run improves one of the others (accounting, chiropractic, med spa, law, flooring).
+
+## Queue (paused, kept for later)
 
 - [x] chiropractic | Chiropractors & Physical Therapy
 - [x] insurance | Insurance Agencies
@@ -27,8 +33,7 @@ When the queue is empty, do a **refresh run** instead (see below). The owner wan
 ## Every run
 
 1. `git fetch origin main && git merge origin/main` first.
-2. If an unchecked industry is in the queue: do **A. New industry page**. Otherwise do **B. Refresh**.
-3. On a run that falls on the 1st of the month, also do **B. Refresh** for one existing page (in addition to A).
+2. Do **B. Deepen one page** (new pages are paused, see Focus above). Pick the page by the focus rotation and the log below (the focus page improved least recently; every fourth run, the non-focus page improved least recently).
 4. Test, commit and push (see **Finish**).
 
 ## A. New industry page
@@ -54,17 +59,20 @@ Follow the "Google AI search rules" section in `blog/WRITING_GUIDE.md` (decision
 7. `blog/topics.md`: write 4 new blog topics for that industry (problem-focused searches its owners make, e.g. "how to reduce no-shows at a chiropractic clinic | chiropractic no shows") and insert them into the Queue spaced about 9 lines apart, starting around line 3 of the unchecked queue. Don't duplicate existing topics.
 8. Tick the industry in the queue above (`- [x]`).
 
-## B. Refresh (one existing page)
+## B. Deepen one page
 
-Pick the industry page that was refreshed least recently (track it in the log below). Then:
-1. Link its newest relevant blog posts: add them to `POSTS` and put their keys in that industry's `rel` list (keep the 2 service keys + up to 3 newest posts).
-2. Improve one thing: add or sharpen an FAQ based on searches people make, make a vague line more specific, or update anything that has changed on the platforms (Google, Meta, etc.).
-3. Re-run `python3 _tools/gen_industries.py`, update that page's lastmod in `sitemap.xml`, and add a line to the log.
+Make the chosen page clearly more useful than a generic agency page for that industry. Follow the "Google AI search rules" in `blog/WRITING_GUIDE.md`. Then:
+1. Research 10 minutes: search the industry's main buyer phrase (e.g. "ai receptionist for dentists", "lead follow-up for insurance agents") and note the "People also ask" questions and what the top pages cover that ours doesn't.
+2. Add the industry's buyer questions to `_tools/DECISION_MAP.md` if missing, and answer 2 or 3 of them on the page (new FAQ entries, or sharper `pains`/`fixes` text). Every answer must name its subject and make sense when copied out alone.
+3. Add one specific, industry-only detail a generic page wouldn't have: the real tool names that industry uses (booking or practice software, CRMs), a compliance limit (e.g. HIPAA business associate agreements, TCPA consent, state insurance or bar advertising rules) with a confirmed official source, or a worked example labelled hypothetical. Never invent results.
+4. Link its newest relevant blog posts: add them to `POSTS` and put their keys in that industry's `rel` list (keep the 2 service keys + up to 3 newest posts). If the page has a matching case study, make sure `IND_PROJ` maps it.
+5. If an important buyer question has no page anywhere, add one blog topic for it to the top of the unchecked list in `blog/topics.md`.
+6. Re-run `python3 _tools/gen_industries.py`, update that page's lastmod in `sitemap.xml`, and add a line to the log saying what was deepened.
 
 ## Finish
 
 - Test every page with the Playwright check (no horizontal scroll at 390px wide, one H1, valid JSON-LD, no broken internal links). Fix anything that fails.
-- Commit (`Industry page: <name>` or `Refresh industry page: <name>`) and push to the working branch **and** `main` (`git push origin HEAD:main`).
+- Commit (`Deepen industry page: <name>`) and push to the working branch **and** `main` (`git push origin HEAD:main`).
 - IndexNow ping (best effort, skip if the network blocks it):
   `curl -s -X POST https://api.indexnow.org/indexnow -H 'Content-Type: application/json' -d '{"host":"iamaftabahmed.com","key":"1f05e2226886949432f94aa509ff16b9","keyLocation":"https://iamaftabahmed.com/1f05e2226886949432f94aa509ff16b9.txt","urlList":["https://iamaftabahmed.com/industries/<slug>/","https://iamaftabahmed.com/industries/","https://iamaftabahmed.com/sitemap.xml"]}'`
 
@@ -73,3 +81,4 @@ Pick the industry page that was refreshed least recently (track it in the log be
 - 2026-10-19: chiropractic created (catch-up for the Oct 15 run, skipped while GitHub access was down)
 - 2026-11-01: insurance created; dental refreshed (Related now links the AI receptionist posts and Facebook ads for dentists; HIPAA FAQ now mentions BAAs and health details staying out of open texts)
 - 2026-11-18: flooring created (links the Charlotte flooring case study; homepage industry chip and demo tab now point to it)
+- 2026-11-22: new industry pages paused by owner; runs now deepen existing pages (focus: home services, dental, real estate, insurance)
