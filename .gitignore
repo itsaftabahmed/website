@@ -2,3 +2,5 @@
 !images/*.png
 !images/og/*.png
 __pycache__/
+research_notes/
+reports/
