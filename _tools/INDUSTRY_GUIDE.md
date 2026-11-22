@@ -33,6 +33,9 @@ When the queue is empty, do a **refresh run** instead (see below). The owner wan
 
 ## A. New industry page
 
+Follow the "Google AI search rules" section in `blog/WRITING_GUIDE.md` (decision map, paragraphs that work on their own, no thin pages). Add the industry's top buying question and its sub-questions to `_tools/DECISION_MAP.md`.
+
+
 1. Add a new `dict(...)` to the `I` list in `_tools/gen_industries.py`, following the existing entries exactly (same keys: slug, name, short, forname, biz, who, title, desc, h1, lead, card, takeaways, pains_h, pains_a, pains, fix_h, fix_a, fixes, journey, fit, faq, rel).
    - `title` ≤ 60 characters with the main buyer search phrase (e.g. "AI Receptionist & Lead Follow-Up for Chiropractors"); `desc` 140–160 characters.
    - `h1`: the industry's sharpest pain as an outcome ("Never miss a new-patient call again" style). It must differ from the other pages' headlines.

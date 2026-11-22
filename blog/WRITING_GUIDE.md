@@ -52,6 +52,16 @@ Shortcut: write the post as a config file outside the repo and run `python3 _too
    `curl -s -X POST https://api.indexnow.org/indexnow -H 'Content-Type: application/json' -d '{"host":"iamaftabahmed.com","key":"1f05e2226886949432f94aa509ff16b9","keyLocation":"https://iamaftabahmed.com/1f05e2226886949432f94aa509ff16b9.txt","urlList":["https://iamaftabahmed.com/blog/<slug>/","https://iamaftabahmed.com/blog/","https://iamaftabahmed.com/sitemap.xml"]}'`
 9. Commit with message `Blog: <title>` and push to **both** the working branch and `main` (`git push origin HEAD:main`). Retry pushes on network errors.
 
+
+## Google AI search rules (from Neil Patel, "Google's New Rules for Getting Customers", Nov 2026)
+
+Google's AI Mode runs several hidden searches for one question ("query fan-out") and lifts single paragraphs out of pages to build its answer. Every page must work for that:
+
+- **Cover the decision, not one keyword.** Before writing, check `_tools/DECISION_MAP.md` for the buyer question this page belongs to. Answer the sub-questions this topic owns, link to the pages that answer the others, and add any unanswered sub-question to `blog/topics.md`. Never create thin pages just to target sub-questions: Google treats scaled, low-value pages made mainly for AI answers as spam. Fewer pages with real answers win.
+- **Every key paragraph must work when copied out alone.** The first paragraph under each H2, the lead and every FAQ answer must name the subject (the service, tool, industry or setting), say who it is for, and put the limit or condition right next to the claim. Never start one with "It", "This", "That" or "They". Test: paste the paragraph into a blank document. If it needs the paragraph above to make sense, rewrite it.
+- **Proof that names things.** Use specific, real results and named (confirmed) customers where we have them. Never invent them. Hypothetical examples stay labelled.
+- **No AI gimmicks.** Google says special "AI markup", llms.txt files and chopping content into tiny chunks are not needed for its AI features. Keep normal schema and `llms.txt` (other AI tools may read it) but never spend effort on "AI schema".
+
 ## Quality rules (what Google actually rewards)
 
 Google ranks pages on how helpful and original they are, not on who or what wrote them. Generic, interchangeable content is what fails. Every post must pass these:

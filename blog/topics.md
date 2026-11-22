@@ -32,6 +32,10 @@ When a new industry page is added, its 4 starter topics are spread through the q
 
 ## Queue (in publishing order)
 - [ ] How to measure your lead response time (and what a good one is) | lead response time
+- [ ] Google Ads vs Facebook Ads for local service businesses: which fits which job | google ads vs facebook ads for local business
+- [ ] How to tell Google Ads which leads became customers (offline conversion import for service businesses) | google ads offline conversion import small business
+- [ ] Google AI Max for small businesses: what it changes and what to check before you turn it on | google ai max small business
+- [ ] Lead follow-up text scripts for home service businesses | home service follow up text scripts
 - [ ] Facebook ads for accountants and CPA firms | facebook ads for accountants
 - [ ] How flooring companies can book more in-home estimates | flooring estimate leads
 - [ ] AI receptionist for dental offices: what it handles and what it shouldn't | ai receptionist for dental office

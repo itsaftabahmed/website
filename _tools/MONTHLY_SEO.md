@@ -12,6 +12,11 @@ Runs once a month. Goal: keep the site technically clean, connect it to every pr
 - Note which pages win those queries instead and what they have that ours lacks (data, comparison tables, video, more sources). Add one improvement idea per query to the log, and use the best one in step 3.
 - In the summary, ask the owner to try 3 of these questions in ChatGPT and Perplexity and send screenshots.
 
+
+## 1d. AI recommendation test and "cited vs chosen" (owner step, monthly)
+- Ask the owner to run the 10 questions in `_tools/AI_TEST_SET.md` in Google AI Mode, Gemini and ChatGPT and fill in the table (shown or not, which customer we were matched to, strengths and weaknesses mentioned, sources cited). Remind them answers change, so the same questions are re-run every month.
+- When an answer describes Aftab wrongly, open the sources it cites and list what we control and should fix (old profile text, directory listings, an outdated page).
+- Track three things separately in the summary: **cited** (our page used as a source), **recommended** (Aftab named as an option) and **action** (calls booked and leads from the CRM and analytics). Ask the owner to check Search Console for any AI features or generative AI performance report and send the numbers. Traffic and citations are early signs; booked calls and clients are the score.
 ## 1c. Keyword plan
 - Keyword plan: review `_tools/KEYWORDS.md` against Search Console queries; add new long-tail topics to `blog/topics.md` for phrases with impressions but no dedicated page.
 

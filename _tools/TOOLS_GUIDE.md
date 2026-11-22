@@ -32,6 +32,7 @@ The goal of each tool is search traffic that turns into leads. A tool that works
 - Pick one main phrase and 3 to 5 supporting phrases (include "free", "for small business", and the question form such as "how to calculate ..."). Use the main phrase in the title, H1, first paragraph, one H2, the URL slug and the meta description. Use the supporting phrases in H2 questions and FAQ. No keyword stuffing.
 
 **On the page**
+- Follow the "Google AI search rules" in `blog/WRITING_GUIDE.md`: every answer paragraph and FAQ answer names its subject and works when copied out alone.
 - Answer first: one or two sentences under the H1 that say what the tool calculates and for whom, before the tool.
 - The tool sits high on the page, usable without scrolling far on a phone.
 - Include a "How to calculate <thing>" section with the formula in words and one worked example (hypothetical numbers, labelled). This is what search engines and AI answers quote.
