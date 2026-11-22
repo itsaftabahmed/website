@@ -1308,11 +1308,8 @@ footer.ft .ft__soc a svg{width:44px;height:44px}footer.ft .ft__soc a:hover{trans
 .lg i{position:absolute;right:22px;top:24px;width:36px;height:36px;border-radius:50%;border:1px solid #333;display:grid;place-items:center;color:#aaa;transition:all .3s var(--ease)}.lg i svg{width:16px;height:16px}
 .lg:hover i{background:var(--red);border-color:var(--red);color:#fff;transform:rotate(45deg)}
 @media (max-width:860px){.lgs{grid-template-columns:1fr;gap:12px}.lg{padding:22px 60px 22px 22px;border-radius:var(--r-md)}.lgh{flex-wrap:wrap}}
-/* Meet Aftab: top-aligned, why chips under the video */
+/* Meet Aftab: top-aligned */
 .intro{align-items:start}
-.why{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
-.why span{display:inline-flex;align-items:center;gap:9px;padding:10px 16px 10px 10px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:14.5px;font-weight:600;color:var(--soft)}
-.why svg{width:22px;height:22px;padding:5px;border-radius:50%;background:rgba(224,17,25,.14);border:1px solid rgba(224,17,25,.4);color:var(--red-text);box-sizing:border-box}
 /* What I fix: rounded cards like the rest of the site */
 .pah{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:28px}.pah .lead{margin:0}
 .pal{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
@@ -1367,7 +1364,7 @@ footer.ft .ft__soc a svg{width:44px;height:44px}footer.ft .ft__soc a:hover{trans
 .lead{line-height:1.75}
 .tcard blockquote{line-height:1.8}
 .faq summary{padding:30px 0}.faq details p{line-height:1.8;margin-bottom:30px}
-.why{margin-top:26px;gap:12px}
+
 /* Meet Aftab -> tools band -> What I fix: give the band its own space */
 #intro{padding-bottom:90px}
 .stack{margin:0 auto}
@@ -1473,7 +1470,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="video__play" aria-hidden="true"><svg width="30" height="34" viewBox="0 0 14 16" fill="#fff"><path d="M0 0L14 8L0 16Z"/></svg></span>
       <div class="video__meta"><span>Hi, I'm Aftab</span><span class="chip">Watch intro</span></div>
     </div>
-      <div class="why"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>One partner for systems and marketing</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>You talk to the builder</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Price agreed before we start</span></div>
     </div></div>
   </div>
 </section>
@@ -2184,7 +2180,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
 
   // scroll reveal with stagger (also triggers the chat, flow and bar animations)
-  const targets = document.querySelectorAll('.world__copy, .globe, .sp, .head, .m1__copy, .tools, .intro > *, .tile, .short, .project, .step, .values, .tmarq, .faq > *, .faq details, .book, .foot, .cmp, .pah, .pa, .why, .lgh, .inds, .ct__head, .pr__l, .ct__card, .pr__card');
+  const targets = document.querySelectorAll('.world__copy, .globe, .sp, .head, .m1__copy, .tools, .intro > *, .tile, .short, .project, .step, .values, .tmarq, .faq > *, .faq details, .book, .foot, .cmp, .pah, .pa, .lgh, .inds, .ct__head, .pr__l, .ct__card, .pr__card');
   targets.forEach(el => {
     if (reduce) { el.classList.add('in'); return; }
     el.classList.add('io');
