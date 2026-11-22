@@ -220,7 +220,7 @@ def page(x):
   <div class="kicker">{e(x['kicker'])}</div>
   <h1>{e(x['h1'])}</h1>
   <p class="lead">{e(x['lead'])}</p>
-  <p class="sv-price">Plans start from <b>${PRICE_FROM}/month</b> · Free 30-minute call, no obligation</p>
+  <p class="sv-price">Plans start from <b>${PRICE_FROM}/month</b> · <a href="{up}pricing/">See plans and pricing</a> · Free 30-minute call, no obligation</p>
   <a class="btn" href="{up}#book">Book a free 30-minute call →</a> <a class="btn" href="{up}{x['btn2'][0]}" style="background:none;border:1px solid #3a3a3a;box-shadow:none;margin-left:6px">{e(x['btn2'][1])}</a>
 </div>
 {x['visual']}</div></section>
