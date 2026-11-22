@@ -79,10 +79,15 @@ FAQ = [
  ('I already have a website. Can I still use a plan?', 'Yes. On a free call we look at your current site. If it works well, we connect it to your CRM and follow-up; if it is holding you back, the new website is included in your plan.'),
 ]
 PLAY = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>'
+INTRO_VIDEO = 'CI87I9J2kJg'   # homepage "Hi, I'm Aftab" video, shown until a plan has its own video
 def vbtn(p):
-    # Video walkthrough of the plan (VSL). Set PLANS[...]['video'] to a YouTube video id to show it.
-    if not p.get('video'): return ''
-    return f'<button type="button" class="pc__vid" data-vid="{p["video"]}" data-title="{p["name"]} plan walkthrough"><span class="pc__play">{PLAY}</span><span><b>Watch Aftab explain this plan</b><small>2-minute video: what is included and who it is for</small></span></button>'
+    # Plan walkthrough video (VSL). Set PLANS[...]['video'] to the plan's YouTube video id when it is recorded;
+    # until then the button plays the intro video with matching wording.
+    if p.get('video'):
+        vid, t, sub = p['video'], 'Watch Aftab explain this plan', '2-minute video: what is included and who it is for'
+    else:
+        vid, t, sub = INTRO_VIDEO, 'Watch Aftab explain the plans', 'Short video: who I help and how it works'
+    return f'<button type="button" class="pc__vid" data-vid="{vid}" data-title="{p["name"]}: video"><span class="pc__play">{PLAY}</span><span><b>{t}</b><small>{sub}</small></span></button>'
 cards = ''
 for p in PLANS:
     plus = f'<p class="pc__plus">{p["plus"]}</p>' if p['plus'] else '<p class="pc__plus">What you get:</p>'
@@ -214,11 +219,6 @@ page = A.head(TITLE, DESC, url, 'Pricing: simple plans that bring you business',
   {faq}
 </section>
 
-<div class="cta" style="margin-top:90px">
-  <h2>Not sure which plan fits?</h2>
-  <p>Book a free 30-minute call. I'll look at your business and tell you which plan makes sense, or if you don't need one yet.</p>
-  <a class="btn" href="../#book">Book a free call →</a>
-</div>
 </main>
 
 {chrome.footer('../')}
