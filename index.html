@@ -1106,6 +1106,7 @@ footer{padding:20px 0 34px}
 .nav__l::after{content:"";display:inline-block;margin-left:7px;border:4px solid transparent;border-top-color:currentColor;transform:translateY(3px);opacity:.6}
 .nav__menu{display:none;position:absolute;top:calc(100% + 14px);left:-22px;min-width:330px;background:#111;border:1px solid var(--line);border-radius:18px;padding:12px;box-shadow:0 30px 70px -20px #000;z-index:60}
 .nav__menu::before{content:"";position:absolute;left:0;right:0;top:-16px;height:16px}
+@media (hover:hover) and (min-width:761px){.nav__dd:hover::after{content:"";position:absolute;left:-30px;right:-30px;top:100%;height:18px;z-index:59}}
 .nav__menu--2{min-width:400px;grid-template-columns:1fr 1fr}
 .nav__dd:hover .nav__menu,.nav__dd.open .nav__menu,.nav__dd:focus-within .nav__menu{display:block}
 .nav__dd:hover .nav__menu--2,.nav__dd.open .nav__menu--2,.nav__dd:focus-within .nav__menu--2{display:grid}
