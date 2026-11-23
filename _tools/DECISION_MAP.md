@@ -21,7 +21,7 @@ Update this file whenever a page is added. Paths are relative to the site root.
 | Buyer sub-question | Answered on |
 |---|---|
 | Does reply speed really matter? | `blog/speed-to-lead/`, `tools/speed-to-lead-calculator/` |
-| How do I measure my lead response time? | **GAP** (in topics queue: "How to measure your lead response time") |
+| How do I measure my lead response time? | `blog/lead-response-time/` |
 | What should the follow-up sequence look like? | `blog/automated-lead-follow-up/` |
 | What do I actually say? (scripts) | `blog/real-estate-follow-up-scripts/` (real estate only). **GAP:** scripts for home services and practices |
 | Do I need a new CRM? | `solutions/lead-follow-up/` FAQ |

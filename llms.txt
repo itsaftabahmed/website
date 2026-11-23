@@ -45,6 +45,7 @@
 
 ## Blog (newest first)
 <!-- NEW POSTS GO HERE -->
+- [How to measure your lead response time (and what a good one is)](https://iamaftabahmed.com/blog/lead-response-time/): how a small service business can measure lead response time from its CRM, phone log and inbox, why the median and the share of leads answered within 5 minutes matter more than the average, and what a good lead response time is
 - [Facebook ads for home service businesses (HVAC, plumbing, roofing)](https://iamaftabahmed.com/blog/facebook-ads-for-home-services/): how HVAC, plumbing and roofing companies can use Facebook ads for planned jobs (maintenance plans, replacements, inspections), which offers and form settings work, and the follow-up that turns leads into booked jobs
 - [AI receptionist pricing models compared: per minute vs flat rate vs per call](https://iamaftabahmed.com/blog/ai-receptionist-pricing-models/): how the four AI receptionist pricing models (per minute, flat rate, per call, bundle with overage) compare, the break-even points between them, and the billing terms that change the real cost
 - [How much does an AI receptionist cost? Pricing explained for small businesses](https://iamaftabahmed.com/blog/ai-receptionist-cost/): what an AI receptionist costs a small business: typical monthly ranges, the four billing models, setup and extra fees, a worked example for 300 calls a month and how the cost compares with staff and missed calls

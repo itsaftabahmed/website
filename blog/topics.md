@@ -9,6 +9,7 @@ AI receptionist topics are placed every 2nd or 3rd post because it is the fastes
 When a new industry page is added, its 4 starter topics are spread through the queue (see `_tools/INDUSTRY_GUIDE.md`).
 
 ## Published
+- [x] How to measure your lead response time (and what a good one is) | lead response time
 - [x] Facebook ads for home service businesses (HVAC, plumbing, roofing) | facebook ads for home services
 - [x] AI receptionist pricing models compared: per minute vs flat rate vs per call | ai receptionist pricing models
 - [x] How much does an AI receptionist cost? Pricing explained for small businesses | ai receptionist cost
@@ -31,7 +32,6 @@ When a new industry page is added, its 4 starter topics are spread through the q
 - [x] Speed to lead: why the first 5 minutes decide the sale | speed to lead
 
 ## Queue (in publishing order)
-- [ ] How to measure your lead response time (and what a good one is) | lead response time
 - [ ] Google Ads vs Facebook Ads for local service businesses: which fits which job | google ads vs facebook ads for local business
 - [ ] How to tell Google Ads which leads became customers (offline conversion import for service businesses) | google ads offline conversion import small business
 - [ ] Google AI Max for small businesses: what it changes and what to check before you turn it on | google ai max small business

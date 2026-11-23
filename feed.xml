@@ -6,8 +6,16 @@
   <atom:link href="https://iamaftabahmed.com/feed.xml" rel="self" type="application/rss+xml"/>
   <description>Practical guides on Google Ads, Facebook ads, lead generation and AI automation for US small businesses.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 19 Nov 2026 14:00:00 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 23 Nov 2026 14:00:00 GMT</lastBuildDate>
 <!-- NEW ITEMS GO HERE (newest first) -->
+  <item>
+    <title>How to measure your lead response time (and what a good one is)</title>
+    <link>https://iamaftabahmed.com/blog/lead-response-time/</link>
+    <guid isPermaLink="true">https://iamaftabahmed.com/blog/lead-response-time/</guid>
+    <pubDate>Mon, 23 Nov 2026 14:00:00 GMT</pubDate>
+    <dc:creator>Aftab Ahmed</dc:creator>
+    <description>Where to find the timestamps, how to work out your median and your share of leads answered within 5 minutes, and what a good lead response time looks like.</description>
+  </item>
   <item>
     <title>Facebook ads for home service businesses (HVAC, plumbing, roofing)</title>
     <link>https://iamaftabahmed.com/blog/facebook-ads-for-home-services/</link>
