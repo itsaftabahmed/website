@@ -3,7 +3,29 @@
 Audience: US small-business owners (dental, real estate, accounting, home services, med spa, law, local services).
 Author voice: Aftab Ahmed, 8+ years in design and marketing, now AI, automation and marketing. Plain, direct, practical. "No hype."
 
-Pace: 2 posts a week (Monday and Thursday). Google ranks helpful, original content, not volume, and its scaled-content policy targets sites publishing lots of low-value pages. Each post should be the most useful answer on its topic: specific steps, a worked example, real sources and the author's view.
+Pace (owner decision, 2026-11-23, after the November 2026 core update hit sites publishing AI content at scale): **one new post a week (Monday)**. **Thursday is an improvement run**: make one existing post clearly better instead of adding a page (see "Thursday: improve one post" below). Google ranks helpful, original content, not volume; its scaled-content policy targets sites publishing lots of low-value pages, and its guidance on AI content says to fact-check and review AI-written text before publishing. Each post should be the most useful answer on its topic: specific steps, a worked example, real sources and the author's view.
+
+## Owner's experience in every post (human review)
+
+Every post needs first-hand input from Aftab, because Google rewards real experience and asks for human review of AI-assisted content. Never invent his experience, clients or results.
+- When you publish a new post, add one short question for Aftab to the top of `_tools/OWNER_QUESTIONS.md` (post title, URL path, the question). Make it easy to answer in one or two lines from his work, e.g. "What is the most common follow-up mistake you see HVAC owners make?" Put the question in your final reply too.
+- When a question in that file has an answer, the next Thursday run adds it to the post as a short callout `<div class="callout"><b>From my work:</b> ...</div>` in the most relevant section, in his words (light grammar fixes only), and moves the question to "Answered".
+- Until it is answered, the post goes live without the callout. Never write one yourself.
+
+## Thursday: improve one post
+
+Do this instead of writing a new post on Thursdays.
+1. Pick the post: first any post whose question in `_tools/OWNER_QUESTIONS.md` has been answered but not added; otherwise the post improved least recently in the log at the bottom of `_tools/OWNER_QUESTIONS.md` (never improved counts as oldest).
+2. Make real improvements, not cosmetic ones. Changing the date alone counts as nothing. Do at least three of these:
+   - Add the owner's answer as a "From my work" callout (when available).
+   - Answer 1 or 2 missing buyer questions from `_tools/DECISION_MAP.md` or "People also ask".
+   - Check the basics the update rewards: the main search phrase in the title, H1, URL and the first sentence; the answer to the searcher's question in the first paragraph, above the fold.
+   - Replace vague lines with specifics (exact settings, steps, numbers with confirmed sources).
+   - Check every source link still works and every statistic is still current; fix or remove anything that isn't.
+   - Cut filler and repetition so the post reads faster.
+   - Add links to newer related posts, tools and the pricing page where they genuinely help.
+3. Update `dateModified` in the post's JSON-LD and the visible "Updated" date if the template has one, plus its `sitemap.xml` lastmod. Add a line to the log in `_tools/OWNER_QUESTIONS.md`.
+4. Test (site check and headless Chromium at 1366 and 390), commit as `Improve post: <title>`, push to both branches.
 
 ## Steps (do all of them, in this order)
 
