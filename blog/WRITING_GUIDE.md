@@ -11,6 +11,7 @@ Every post needs first-hand input from Aftab, because Google rewards real experi
 - When you publish a new post, add one short question for Aftab to the top of `_tools/OWNER_QUESTIONS.md` (post title, URL path, the question). Make it easy to answer in one or two lines from his work, e.g. "What is the most common follow-up mistake you see HVAC owners make?" Put the question in your final reply too.
 - When a question in that file has an answer, the next Thursday run adds it to the post as a short callout `<div class="callout"><b>From my work:</b> ...</div>` in the most relevant section, in his words (light grammar fixes only), and moves the question to "Answered".
 - Until it is answered, the post goes live without the callout. Never write one yourself.
+- **Authorship must stay honest.** Google's people-first content guidance (updated Oct 1, 2026) calls fabricated creator profiles (invented names, AI-generated headshots, false credentials) deceptive and a low-quality signal. Posts are bylined to Aftab, the real owner, with his real photo and the About page. Never add other author names, invented credentials or claims that he personally did something he did not confirm. His "From my work" answers are what make the byline accurate.
 
 ## Thursday: improve one post
 
