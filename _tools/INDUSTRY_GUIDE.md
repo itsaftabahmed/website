@@ -82,3 +82,4 @@ Make the chosen page clearly more useful than a generic agency page for that ind
 - 2026-11-01: insurance created; dental refreshed (Related now links the AI receptionist posts and Facebook ads for dentists; HIPAA FAQ now mentions BAAs and health details staying out of open texts)
 - 2026-11-18: flooring created (links the Charlotte flooring case study; homepage industry chip and demo tab now point to it)
 - 2026-11-22: new industry pages paused by owner; runs now deepen existing pages (focus: home services, dental, real estate, insurance)
+- 2026-11-25: home-services deepened: 3 new self-contained FAQs (reply speed, Google vs Facebook ads by job type, texting consent), field service software named (ServiceTitan, Jobber, Housecall Pro), two FAQ openings rewritten to name their subject, Related now links the Facebook ads for home services post; buyer questions added to `_tools/DECISION_MAP.md`

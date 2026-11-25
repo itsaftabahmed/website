@@ -31,7 +31,9 @@ POSTS = {'inslead': ('How insurance agents can follow up on quote requests faste
          'fbcost': ('How much do Facebook ads cost for a small business in the US?', 'blog/facebook-ads-cost-small-business/'),
          'airec': ('AI receptionists: answering calls and booking appointments 24/7', 'blog/ai-receptionist-small-business/'),
          'aivsans': ('AI receptionist vs answering service: which is right for your business?', 'blog/ai-receptionist-vs-answering-service/'),
-         'speed': ('Speed to lead: why the first 5 minutes decide the sale', 'blog/speed-to-lead/')}
+         'speed': ('Speed to lead: why the first 5 minutes decide the sale', 'blog/speed-to-lead/'),
+         'fbhome': ('Facebook ads for home service businesses (HVAC, plumbing, roofing)', 'blog/facebook-ads-for-home-services/'),
+         'lrt': ('How to measure your lead response time (and what a good one is)', 'blog/lead-response-time/')}
 
 I = [
  dict(slug='dental', name='Dental & Medical Practices', short='Dental & medical', forname='dental & medical practices', biz='practice',
@@ -153,7 +155,7 @@ I = [
          ('Busy and quiet seasons','Work floods in during peak season and dries up after, with no plan to fill the gaps.'),
          ('Paying for leads that go nowhere','Lead sites and ads bring inquiries, but slow replies mean competitors win them.')],
   fix_h='How does automation help a home service business?',
-  fix_a='It replies to every call and form in seconds, books jobs and follows up on quotes automatically, so you win more work without spending evenings on the phone.',
+  fix_a='Automation replies to every call and form in seconds, books jobs and follows up on quotes for you, so a home service business wins more work without spending evenings on the phone.',
   fixes=[('Missed-call text back','Every missed call gets a text within seconds asking what they need and offering to book.','ai'),
          ('AI booking assistant','Answers common questions on your website and social pages, collects job details and photos, and books a visit.','ai'),
          ('Quote follow-up','Friendly automatic follow-ups after every estimate until the customer says yes or no.','lg'),
@@ -166,10 +168,13 @@ I = [
            'They get a reminder before the visit and an on-my-way text on the day.',
            'After the job, they get a thank-you, a review request and later a maintenance reminder.'],
   fit=['HVAC, plumbing and electrical contractors','Roofing, remodeling and home improvement companies','Cleaning, pest control and landscaping businesses','Owner-operators who are on the tools most of the day'],
-  faq=[('Does missed-call text back work with my business number?','In most cases, yes. It can usually be added to your existing number through your phone provider or a business texting tool, so customers keep calling the number they already know.'),
+  faq=[('Does missed-call text back work with my business number?','Yes, in most cases. Missed-call text back can usually be added to your existing business number through your phone provider or a business texting tool, so customers keep calling the number they already know.'),
        ('Can it give prices or quotes?','The assistant can share starting prices or ranges you approve and collect the details and photos you need to quote. Final quotes stay with you, so nothing is promised that you haven\'t signed off on.'),
-       ('Will it work with my scheduling or field service software?','Often, yes. Many field service tools can connect directly or through automation platforms. If not, bookings can go into a calendar with an alert to you or your office.')],
-  rel=['ai','ga','mctb','hvacmissed']),
+       ('Will it work with my scheduling or field service software?','Often, yes. Field service tools such as ServiceTitan, Jobber and Housecall Pro can usually connect directly or through an automation platform, so new jobs land in the schedule you already use. If a tool can\'t connect, bookings go into a shared calendar with an instant alert to you or your office.'),
+       ('How fast should a home service business reply to a new lead?','A home service business should reply to a new call or form within minutes: an automatic text within a minute and a call from a person as soon as someone is free. Homeowners with an urgent problem usually call several companies and book the first one that responds.'),
+       ('Should HVAC, plumbing or roofing companies use Google Ads or Facebook ads?','Use Google search ads and Local Services Ads for urgent jobs such as no heat, leaks or storm damage, because those homeowners are already searching. Use Facebook and Instagram ads for planned work such as tune-ups, maintenance plans, replacements and roof inspections, where an offer creates the demand.'),
+       ('Is it legal to text people who call my business?','A text back to someone who just called you is generally a reply to their own request, but marketing texts need the customer\'s consent, and every message should include a way to opt out. Automated AI voice calls fall under the same calling rules as robocalls. This is general information, not legal advice; check your setup with your texting provider.')],
+  rel=['ai','ga','fbhome','hvacmissed','mctb']),
  dict(slug='med-spa', name='Med Spas & Aesthetics', short='Med spa', forname='med spas & aesthetics clinics', biz='clinic', who='client',
   title='Lead Generation & AI Booking for Med Spas | Aftab Ahmed',
   desc='Turn ad leads into booked consultations. Instant replies, AI booking, reminders and Facebook and Instagram ads for US med spas and aesthetics clinics.',

@@ -54,6 +54,19 @@ Update this file whenever a page is added. Paths are relative to the site root.
 | Where do I start? | **GAP** ("What should you automate first?" quiz is in the tools queue) |
 | Freelancer or agency? What does it cost per month? | `solutions/*` pages ("Plans start from $297/month"). **GAP:** honest comparison page |
 
+## Industry: home services (HVAC, plumbing, roofing, flooring)
+"How do I stop losing jobs to the contractor who answers first?"
+| Buyer sub-question | Answered on |
+|---|---|
+| What do missed calls cost an HVAC company? | `blog/hvac-missed-calls/`, `tools/missed-call-calculator/` |
+| Does missed-call text back work with my number? | `industries/home-services/` FAQ |
+| Will it work with ServiceTitan, Jobber or Housecall Pro? | `industries/home-services/` FAQ |
+| How fast should I reply to a lead? | `industries/home-services/` FAQ, `blog/speed-to-lead/`, `blog/lead-response-time/` |
+| Google Ads or Facebook ads for my trade? | `industries/home-services/` FAQ, `blog/facebook-ads-for-home-services/`. **GAP:** full comparison post (in topics queue) |
+| Is it legal to text people who call me? | `industries/home-services/` FAQ (short). **GAP:** plain-English texting consent guide |
+| What should my follow-up texts say? | **GAP:** home service follow-up scripts (in topics queue) |
+| How do I follow up on estimates that go quiet? | `industries/home-services/` (quote follow-up). **GAP:** estimate follow-up guide |
+
 ## How to use this
 - Blog run: before writing, find the topic's row here; answer that sub-question fully and link to the rows next to it.
 - New topics: turn a GAP into a line in `blog/topics.md` (or `_tools/TOOLS_GUIDE.md` for a tool). Remove the GAP mark once the page is live.
