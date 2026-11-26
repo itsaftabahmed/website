@@ -19,3 +19,4 @@ Answer any of these in one or two lines, in chat or as a voice note. Each answer
 ## Improvement log
 
 One line per Thursday run: date, post, what was improved.
+- 2026-11-26: Why your Facebook ads get clicks but no calls: answer-first lead, symptom/cause/fix table, current Meta objective names, FAQ answers made self-contained, vague "we see" claim removed, links to the lead response time and home services ads posts, the speed to lead calculator and pricing.
