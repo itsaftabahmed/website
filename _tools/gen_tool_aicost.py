@@ -261,13 +261,14 @@ open(f'{ROOT}/tools/{SLUG}/index.html', 'w').write(page)
 # ---------------------------------------------------------------- tools hub
 # Newest first. Add a tuple here when a new tool launches, then rerun this script.
 TOOLS = [
- ('speed-to-lead-calculator/', 'Calculator · New', 'Speed to lead calculator', 'Enter your leads, reply speed and close rates to see how many leads wait too long and what faster replies are worth.', 'Open the calculator →'),
+ ('no-show-cost-calculator/', 'Calculator · New', 'No-show cost calculator', 'Enter your appointments, no-show rate and visit value to see what no-shows cost each month and year.', 'Open the calculator →'),
+ ('speed-to-lead-calculator/', 'Calculator', 'Speed to lead calculator', 'Enter your leads, reply speed and close rates to see how many leads wait too long and what faster replies are worth.', 'Open the calculator →'),
  (f'{SLUG}/', 'Calculator', 'AI receptionist cost calculator', 'Enter your calls and call length to compare flat, per-minute, per-call and bundle pricing.', 'Open the calculator →'),
  ('missed-call-calculator/', 'Calculator', 'Missed call cost calculator', 'See how much revenue unanswered calls cost you each month, and what a fast reply could win back.', 'Open the calculator →'),
  ('../demo/', 'Live demo', 'AI receptionist demo', 'Chat with an example AI receptionist for a dental office, HVAC company, law firm and more.', 'Try the demo →')]
 hub_url = f'{U}tools/'
 HT = 'Free Tools for Service Businesses | Aftab Ahmed'
-HD = 'Free tools for small service businesses: speed to lead calculator, AI receptionist cost calculator, missed call cost calculator and a live demo. No sign-up.'
+HD = 'Free tools for service businesses: no-show cost, speed to lead, AI receptionist cost and missed call calculators, plus a live AI receptionist demo. No sign-up.'
 hub_ld = {"@context": "https://schema.org", "@graph": [
   {"@type": "CollectionPage", "name": "Free tools for service businesses", "url": hub_url, "description": HD, "author": person},
   {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": U}, {"@type": "ListItem", "position": 2, "name": "Free tools", "item": hub_url}]},

@@ -30,7 +30,7 @@ Update this file whenever a page is added. Paths are relative to the site root.
 ## 3. "How do I cut no-shows?"
 | Buyer sub-question | Answered on |
 |---|---|
-| What do no-shows cost me? | **GAP** (no-show cost calculator is next in the tools queue) |
+| What do no-shows cost me? | `tools/no-show-cost-calculator/` |
 | How many reminders and when? | `solutions/no-shows/` FAQ, `blog/reduce-dental-no-shows/`, `blog/med-spa-no-shows/` |
 | Should I take deposits? | `blog/med-spa-no-shows/` (med spa). **GAP:** deposits for other industries |
 | What can reminders say without breaking privacy rules? | `solutions/no-shows/` FAQ |

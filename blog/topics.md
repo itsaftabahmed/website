@@ -32,6 +32,7 @@ When a new industry page is added, its 4 starter topics are spread through the q
 - [x] Speed to lead: why the first 5 minutes decide the sale | speed to lead
 
 ## Queue (in publishing order)
+- [ ] How to calculate your no-show rate and what no-shows really cost | no show rate
 - [ ] Google Ads vs Facebook Ads for local service businesses: which fits which job | google ads vs facebook ads for local business
 - [ ] How to tell Google Ads which leads became customers (offline conversion import for service businesses) | google ads offline conversion import small business
 - [ ] Google AI Max for small businesses: what it changes and what to check before you turn it on | google ai max small business
