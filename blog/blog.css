@@ -237,3 +237,25 @@ article.svc .steps li::before{left:0}
 
 /* Mid-width header (981-1199px): keep every menu item and the logo on one line */
 @media (min-width:981px) and (max-width:1199px){.top .logo,.nav__l,.top .btn{white-space:nowrap}.nav{gap:0}.nav__l{padding:8px 9px!important;font-size:14px}.top .btn{padding:11px 16px}}
+/* Buttons (owner's pick, Nov 2026): red gradient with a soft glow. On hover the letters roll up, the arrow swaps and the
+   button leans toward the mouse. blog/btn.js builds the letter spans, and only when --btn-roll below is loaded. */
+:root{--btn-roll:1;--ease:cubic-bezier(.2,.8,.2,1);--spring:cubic-bezier(.34,1.56,.64,1);--redfill:linear-gradient(180deg,#ff2c35 0%,#E01119 55%,#c70c13 100%)}
+.btn{position:relative;background:var(--redfill);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 14px 36px -14px rgba(224,17,25,.95);transition:transform .45s var(--ease),scale .2s var(--ease),box-shadow .4s,border-color .35s}
+.btn:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 20px 46px -12px rgba(224,17,25,1)}
+.btn:active{scale:.97}
+.btn.btn--line,.btn.ac__ghost,.btn.pc__ghost{background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.02))!important;border:1px solid #3a3a3a!important;box-shadow:none!important}
+.btn.btn--line:hover,.btn.ac__ghost:hover,.btn.pc__ghost:hover{border-color:rgba(255,255,255,.55)!important}
+.btn__in{display:inline-flex;align-items:center;gap:.25em;transition:transform .45s var(--ease)}
+.btn.out,.btn.out .btn__in{transition:transform .7s var(--spring),scale .2s var(--ease),box-shadow .4s,border-color .35s}
+.roll{display:inline-flex;flex-wrap:wrap;justify-content:center;white-space:pre;padding-block:calc((1lh - 1.3em)/2)}
+.rw,.rsp{display:inline-flex}
+.ch{display:block;height:1.3em;line-height:1.3em;overflow:hidden}
+.ch>span{display:block;position:relative;transition:transform .55s var(--ease);transition-delay:calc(var(--i)*16ms)}
+.ch>span::after{content:attr(data-c);position:absolute;left:0;top:120%}
+.btn:hover .ch>span,.btn:focus-visible .ch>span{transform:translateY(-120%)}
+.swap{position:relative;width:1.1em;height:1.1em;margin:0 -.2em;overflow:hidden;flex:none}
+.btn .swap svg{position:absolute;inset:0;width:100%;height:100%;transition:transform .5s var(--ease)}
+.btn .swap .i2{transform:translateX(-150%)}
+.btn:hover .swap .i1,.btn:focus-visible .swap .i1{transform:translateX(150%)}
+.btn:hover .swap .i2,.btn:focus-visible .swap .i2{transform:none;transition-delay:.06s}
+@media (prefers-reduced-motion:reduce){.btn,.btn__in,.ch>span,.btn .swap svg{transition:none!important}}

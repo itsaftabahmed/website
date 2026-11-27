@@ -186,7 +186,7 @@ page = A.head(TITLE, DESC, url, 'Speed to lead calculator: what slow replies cos
   $('slInd').addEventListener('change',function(e){{var p=P[e.target.value];$('slLeads').value=p[0];$('slVal').value=p[1];touch()}});
   $('slNow').addEventListener('change',function(e){{if(e.target.value){{$('slFast').value=e.target.value;touch()}}}});
   R.concat(N).forEach(function(i){{$(i).addEventListener('input',touch)}});
-  $('slCopy').addEventListener('click',function(){{var b=this,u=link(),done=function(){{b.textContent='Link copied';setTimeout(function(){{b.textContent='Copy link to this result'}},1800)}};
+  $('slCopy').addEventListener('click',function(){{var b=this,u=link(),h=b.__h||(b.__h=b.innerHTML),done=function(){{b.textContent='Link copied';setTimeout(function(){{b.innerHTML=h}},1800)}};
     (window.dataLayer=window.dataLayer||[]).push({{event:'tool_result_shared',tool:'{SLUG}'}});
     if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(u).then(done,function(){{prompt('Copy this link',u)}});else prompt('Copy this link',u)}});
   $('slBook').addEventListener('click',function(){{(window.dataLayer=window.dataLayer||[]).push({{event:'calculator_cta',tool:'{SLUG}',extra:$('slRev').textContent}})}});

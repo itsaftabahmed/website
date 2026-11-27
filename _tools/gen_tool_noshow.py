@@ -165,7 +165,7 @@ page = A.head(TITLE, DESC, url, 'No-show cost calculator: what missed appointmen
   function link(){{var q=R.concat(N).map(function(i){{return KEY[i]+'='+encodeURIComponent($(i).value)}}).join('&');return location.origin+location.pathname+'?'+q}}
   $('nsInd').addEventListener('change',function(e){{var p=P[e.target.value];$('nsAppts').value=p[0];$('nsRate').value=p[1];$('nsTarget').value=Math.max(0,Math.round(p[1]/2));$('nsVal').value=p[2];touch()}});
   R.concat(N).forEach(function(i){{$(i).addEventListener('input',touch)}});
-  $('nsCopy').addEventListener('click',function(){{var b=this,u=link(),done=function(){{b.textContent='Link copied';setTimeout(function(){{b.textContent='Copy link to this result'}},1800)}};
+  $('nsCopy').addEventListener('click',function(){{var b=this,u=link(),h=b.__h||(b.__h=b.innerHTML),done=function(){{b.textContent='Link copied';setTimeout(function(){{b.innerHTML=h}},1800)}};
     (window.dataLayer=window.dataLayer||[]).push({{event:'tool_result_shared',tool:'{SLUG}'}});
     if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(u).then(done,function(){{prompt('Copy this link',u)}});else prompt('Copy this link',u)}});
   $('nsBook').addEventListener('click',function(){{(window.dataLayer=window.dataLayer||[]).push({{event:'calculator_cta',tool:'{SLUG}',yearly:$('nsYear').textContent}})}});

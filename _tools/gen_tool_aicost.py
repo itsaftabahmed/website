@@ -240,7 +240,7 @@ page = head(TITLE, DESC, url, 'AI receptionist cost calculator: compare 4 pricin
   function link(){{var q=R.concat(N).map(function(i){{return KEY[i]+'='+encodeURIComponent($(i).value)}}).join('&');return location.origin+location.pathname+'?'+q}}
   $('acInd').addEventListener('change',function(e){{var p=P[e.target.value];$('acCalls').value=p[0];$('acMins').value=p[1];touch()}});
   R.concat(N).forEach(function(i){{$(i).addEventListener('input',touch)}});
-  $('acCopy').addEventListener('click',function(){{var b=this,u=link(),done=function(){{b.textContent='Link copied';setTimeout(function(){{b.textContent='Copy link to this result'}},1800)}};
+  $('acCopy').addEventListener('click',function(){{var b=this,u=link(),h=b.__h||(b.__h=b.innerHTML),done=function(){{b.textContent='Link copied';setTimeout(function(){{b.innerHTML=h}},1800)}};
     (window.dataLayer=window.dataLayer||[]).push({{event:'tool_result_shared',tool:'{SLUG}'}});
     if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(u).then(done,function(){{prompt('Copy this link',u)}});else prompt('Copy this link',u)}});
   $('acBook').addEventListener('click',function(){{(window.dataLayer=window.dataLayer||[]).push({{event:'calculator_cta',tool:'{SLUG}',lowest:$('acBest').textContent}})}});

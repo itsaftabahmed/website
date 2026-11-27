@@ -1383,6 +1383,31 @@ footer.ft .ft__soc a svg{width:44px;height:44px}footer.ft .ft__soc a:hover{trans
 #demo .mst.on .mst__ic--3d{box-shadow:0 0 0 4px rgba(224,17,25,.12)}
 .ct__plans{display:inline-flex;align-items:center;gap:6px;margin:2px 0 16px;padding:10px 16px;border-radius:999px;border:1px solid #3a3a3a;color:#fff;font-weight:700;font-size:14.5px;text-decoration:none;transition:border-color .3s}.ct__plans:hover{border-color:var(--red)}
 @media (min-width:761px) and (max-width:1199px){.nav__bar .logo,.nav__links a,.nav__links .nav__l,.nav__bar>.btn{white-space:nowrap}.nav__links{gap:0}.nav__links a,.nav__links .nav__l{padding:10px 9px!important;font-size:13.5px}.nav__bar>.btn{padding:12px 16px}}
+/* Buttons (owner's pick, Nov 2026): same as blog/blog.css. Letters roll on hover, the arrow swaps, the button leans toward the mouse (blog/btn.js). */
+:root{--btn-roll:1;--spring:cubic-bezier(.34,1.56,.64,1);--redfill:linear-gradient(180deg,#ff2c35 0%,#E01119 55%,#c70c13 100%)}
+.btn{position:relative;transition:transform .45s var(--ease),scale .2s var(--ease),box-shadow .4s,border-color .35s,background-color .2s}
+.btn:active{scale:.97}
+.btn--red,.btn--red:hover{background:var(--redfill)}
+.btn--red{box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 18px 44px -16px rgba(224,17,25,.95)}
+.btn--red:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 24px 54px -14px rgba(224,17,25,1)}
+.btn--red::after{content:none}
+.btn--ghost{background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.02))}
+.btn--ghost:hover{border-color:rgba(255,255,255,.55)}
+.btn__in{display:inline-flex;align-items:center;gap:.25em;transition:transform .45s var(--ease)}
+.btn.out,.btn.out .btn__in{transition:transform .7s var(--spring),scale .2s var(--ease),box-shadow .4s,border-color .35s,background-color .2s}
+.roll{display:inline-flex;flex-wrap:wrap;justify-content:center;white-space:pre;padding-block:calc((1lh - 1.3em)/2)}
+.rw,.rsp{display:inline-flex}
+.ch{display:block;height:1.3em;line-height:1.3em;overflow:hidden}
+.ch>span{display:block;position:relative;transition:transform .55s var(--ease);transition-delay:calc(var(--i)*16ms)}
+.ch>span::after{content:attr(data-c);position:absolute;left:0;top:120%}
+.btn:hover .ch>span,.btn:focus-visible .ch>span{transform:translateY(-120%)}
+.swap{position:relative;width:1.1em;height:1.1em;margin:0 -.2em;overflow:hidden;flex:none}
+.btn .swap svg{position:absolute;inset:0;width:100%;height:100%;transition:transform .5s var(--ease)}
+.btn .swap .i2{transform:translateX(-150%)}
+.btn__in>svg:first-child{margin-right:8px}
+.btn:hover .swap .i1,.btn:focus-visible .swap .i1{transform:translateX(150%)}
+.btn:hover .swap .i2,.btn:focus-visible .swap .i2{transform:none;transition-delay:.06s}
+@media (prefers-reduced-motion:reduce){.btn,.btn__in,.ch>span,.btn .swap svg{transition:none!important}}
 .nav{top:62px}.nav.scrolled{top:16px}
 @media (max-width:760px){.nav{top:58px}.nav.scrolled{top:12px}}
 .fsoc a.s3d,.fsoc a{border:0!important;background:none!important;width:44px;height:44px;padding:0;filter:drop-shadow(0 6px 10px rgba(0,0,0,.45));transition:transform .25s cubic-bezier(.34,1.56,.64,1)}.fsoc a svg,.socials a svg{width:44px!important;height:44px!important}.socials a{border:0!important;background:none!important;box-shadow:none!important;width:46px!important;height:46px!important;padding:0!important;filter:drop-shadow(0 6px 10px rgba(0,0,0,.45));transition:transform .25s cubic-bezier(.34,1.56,.64,1)}.socials a:hover{transform:translateY(-4px) rotate(-6deg) scale(1.08)}.fsoc a:hover{transform:translateY(-4px) rotate(-6deg) scale(1.08)}
@@ -1394,6 +1419,7 @@ footer.ft .ft__soc a svg{width:44px;height:44px}footer.ft .ft__soc a:hover{trans
 <link rel="stylesheet" href="blog/book.css?v=3">
 <script src="blog/book.js?v=3" defer></script>
 <script src="blog/ann.js" defer></script>
+<script src="blog/btn.js" defer></script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->

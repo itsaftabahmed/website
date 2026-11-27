@@ -19,14 +19,14 @@
       var d = { kind: form.getAttribute('data-lead') || 'contact' };
       [].forEach.call(form.elements, function (el) { if (el.name) d[el.name] = el.value; });
       if (typeof form.leadExtra === 'function') d.extra = form.leadExtra();
-      var label = btn.textContent; btn.disabled = true; btn.textContent = 'Sending…'; if (msg) { msg.textContent = ''; msg.className = 'lead__msg'; }
+      var label = btn.innerHTML; btn.disabled = true; btn.textContent = 'Sending…'; if (msg) { msg.textContent = ''; msg.className = 'lead__msg'; }
       window.sendLead(d).then(function () {
         form.classList.add('lead--done');
         if (msg) { msg.textContent = form.getAttribute('data-ok') || 'Thanks! I’ll get back to you within one business day.'; msg.className = 'lead__msg ok'; }
         form.reset();
       }).catch(function (err) {
         if (msg) { msg.innerHTML = err.message === 'email' ? 'Please check your email address.' : 'Something went wrong. Please email <a href="mailto:hello@iamaftabahmed.com">hello@iamaftabahmed.com</a>.'; msg.className = 'lead__msg err'; }
-      }).then(function () { btn.disabled = false; btn.textContent = label; });
+      }).then(function () { btn.disabled = false; btn.innerHTML = label; });
     });
   }
   function init() { [].forEach.call(document.querySelectorAll('form[data-lead]'), wire); }
