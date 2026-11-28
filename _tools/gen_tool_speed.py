@@ -97,7 +97,7 @@ page = A.head(TITLE, DESC, url, 'Speed to lead calculator: what slow replies cos
         <button class="btn ac__ghost" type="submit">Send me a plan</button>
         <p class="lead__msg" aria-live="polite"></p>
       </form>
-      <a href="../../demo/" style="color:var(--red-text);font-weight:700;font-size:14.5px">See an instant reply in the AI receptionist demo →</a>
+      <a href="../../demo/" style="color:var(--red-text);font-weight:700;font-size:14.5px">See an instant reply in the AI receptionist demo&nbsp;→</a>
     </div>
   </div>
 

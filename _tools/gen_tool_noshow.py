@@ -80,7 +80,7 @@ page = A.head(TITLE, DESC, url, 'No-show cost calculator: what missed appointmen
         <button class="btn ac__ghost" type="submit">Send me a plan</button>
         <p class="lead__msg" aria-live="polite"></p>
       </form>
-      <a href="../../solutions/no-shows/" style="color:var(--red-text);font-weight:700;font-size:14.5px">See how automated reminders work →</a>
+      <a href="../../solutions/no-shows/" style="color:var(--red-text);font-weight:700;font-size:14.5px">See how automated reminders work&nbsp;→</a>
     </div>
   </div>
 

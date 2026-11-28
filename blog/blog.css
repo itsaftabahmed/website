@@ -259,3 +259,13 @@ article.svc .steps li::before{left:0}
 .btn:hover .swap .i1,.btn:focus-visible .swap .i1{transform:translateX(150%)}
 .btn:hover .swap .i2,.btn:focus-visible .swap .i2{transform:none;transition-delay:.06s}
 @media (prefers-reduced-motion:reduce){.btn,.btn__in,.ch>span,.btn .swap svg{transition:none!important}}
+/* ---------- visual fixes (Nov 2026 review) ---------- */
+/* Article text keeps a 20px side margin on phones (desktop layouts set their own width). */
+article{width:min(740px,100% - 40px)}
+/* Text tables (class "wrap") fit the screen instead of scrolling; wide number tables say they scroll. */
+.tw table.wrap{min-width:0}
+@media (max-width:560px){.tw:has(table:not(.wrap))::before{content:"Swipe to see all columns \2192";position:sticky;left:0;display:block;margin:0 0 8px;font-size:12.5px;font-weight:600;color:var(--muted)}}
+/* Footer: the contact column takes the full width on phones, so the email stays on one line. */
+@media (max-width:860px){.ft__g>div:last-child{grid-column:1/-1}}
+/* Blog cards: label, title, summary and link line up across each row. */
+@supports (grid-template-rows:subgrid){.cards .card{display:grid;grid-row:span 4;grid-template-rows:subgrid;row-gap:0;align-content:start}.cards .card>.kicker{align-self:start}}
