@@ -163,6 +163,19 @@ CSS = '''.pz{padding:10px 0 30px}
 .cmp tr:last-child td{border-bottom:0}
 .cmp__y{color:#4ade80;font-weight:800}.cmp__n{color:#555}.cmp__t{color:#fff;font-weight:600;font-size:14px}
 .cmp td:nth-child(3),.cmp thead th:nth-child(3){background:rgba(224,17,25,.05)}
+.cmp-tabs{display:none}
+@media (max-width:760px){
+  .cmp-tabs{display:flex;gap:4px;margin:0 0 16px;padding:5px;border:1px solid var(--line);border-radius:999px;background:#121212}
+  .cmp-tabs button{flex:1;border:0;border-radius:999px;background:none;color:#cfcfcf;font-family:inherit;font-size:13px;font-weight:700;padding:9px 2px;line-height:1.25;cursor:pointer}
+  .cmp-tabs button small{display:block;font-weight:600;font-size:11px;color:var(--muted)}
+  .cmp-tabs button.on{background:var(--red);color:#fff;box-shadow:0 8px 20px -8px rgba(224,17,25,.9)}
+  .cmp-tabs button.on small{color:#ffd9db}
+  .cmpw{overflow:visible}
+  .cmp{min-width:0}
+  .cmp th,.cmp td{padding:12px 14px}
+  .cmp[data-p] tr>:nth-child(n+2){display:none}
+  .cmp[data-p="1"] tr>:nth-child(2),.cmp[data-p="2"] tr>:nth-child(3),.cmp[data-p="3"] tr>:nth-child(4){display:table-cell;width:96px}
+}
 .tl{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
 .tl li{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:20px}
 .tl b{display:block;color:var(--red-text);font-size:13px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}.tl span{color:var(--soft);font-size:14.5px;line-height:1.55}
@@ -182,6 +195,8 @@ VSCRIPT = '''<script>
   })});
   vm.addEventListener('click',function(e){if(e.target===vm||e.target.classList.contains('vm__x'))close()});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&vm.classList.contains('on'))close()});
+  var cmp=document.querySelector('.cmp');   // phones: the comparison shows one plan at a time
+  document.querySelectorAll('.cmp-tabs button').forEach(function(b,i,all){b.addEventListener('click',function(){cmp.dataset.p=b.dataset.p;all.forEach(function(x){x.classList.toggle('on',x===b);x.setAttribute('aria-pressed',x===b)})})});
   document.querySelectorAll('.pc .btn[data-plan]').forEach(function(a){a.addEventListener('click',function(){(window.dataLayer=window.dataLayer||[]).push({event:'plan_cta',plan:a.dataset.plan})})});
 })();
 </script>'''
@@ -201,7 +216,8 @@ page = A.head(TITLE, DESC, url, 'Pricing: simple plans that bring you business',
 <section class="pz__sec" aria-labelledby="cmpH">
   <div class="kicker" style="justify-content:center">Compare plans</div>
   <h2 id="cmpH">Everything in each plan</h2>
-  <div class="cmpw"><table class="cmp">
+  <div class="cmp-tabs" role="group" aria-label="Show one plan"><button type="button" data-p="1" aria-pressed="false">Get Found<small>$297/mo</small></button><button type="button" data-p="2" aria-pressed="true" class="on">Get Leads<small>$497/mo</small></button><button type="button" data-p="3" aria-pressed="false">Full Growth<small>$997/mo</small></button></div>
+  <div class="cmpw"><table class="cmp" data-p="2">
     <thead><tr><th>Feature</th><th>Get Found<small>$297/mo</small></th><th>Get Leads<small>$497/mo</small></th><th>Full Growth<small>$997/mo</small></th></tr></thead>
     <tbody>{rows}</tbody>
   </table></div>

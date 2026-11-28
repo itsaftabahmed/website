@@ -45,6 +45,9 @@ Shortcut: write the post as a config file outside the repo and run `python3 _too
      - Start the article with a `<div class="takeaways"><b>Key takeaways</b><ul>…</ul></div>` box: 3–5 one-sentence answers a reader (or an AI engine) could quote on their own.
      - Write most `<h2>` headings as the questions people actually ask ("How much does…", "Why does…", "What is…"), and make the first 1–2 sentences under each heading a direct, self-contained answer before the detail.
      - Use lists, numbered steps and short tables where they make an answer clearer; define terms in plain English the first time they appear.
+     - Tables: wrap every table in `<div class="tw">`. A table with sentences in its cells uses `<table class="wrap cols3">` (`class="wrap"` for 2 columns), so it fits phones and reads left to right. Only number tables use a plain `<table>` (numbers right-aligned; on phones they scroll with a "Swipe to see all columns" hint).
+     - A text link that ends in an arrow uses `&nbsp;→` so the arrow never wraps onto its own line.
+     - Do not add an author box or a card picture by hand: `python3 _tools/chrome.py` adds the "Written by" card to the post header and an icon tile to the blog page card. If the new topic gets an unsuitable icon, add a keyword rule to `TOPIC_RULES` in `_tools/tool_icons.py`.
      - Keep the byline link to `../../about/` and the author `url` in JSON-LD pointing to `https://iamaftabahmed.com/about/`.
    - 5–8 `<h2>` sections with ids, listed in the "In this guide" box; one practical checklist (`<ul class="check">`) and one `<div class="callout">` tip.
    - Include a step-by-step plan or checklist the reader can use today.

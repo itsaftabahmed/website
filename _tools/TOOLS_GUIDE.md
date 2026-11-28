@@ -24,6 +24,8 @@ Format: `slug | Tool name | main search phrase | what it does`
 When every tool is checked, add 8 new ideas in the same format (calculators, generators or checkers that US service-business owners search for, not duplicates), then build the first one.
 
 ## SEO and lead rules (apply to every tool)
+- Layout: the page title, the calculator and the article share one 740px column (`section.hero>.wrap` rule at the top of `CSS` in `gen_tool_aicost.py`, used by every generated tool). A hand-built tool page needs the same rule in its `<style>`.
+- Text links ending in an arrow use `&nbsp;→`; text tables use `<table class="wrap cols3">`, number tables a plain `<table>` inside `<div class="tw">`.
 
 The goal of each tool is search traffic that turns into leads. A tool that works but does not rank or capture leads is not done.
 

@@ -12,6 +12,8 @@ Answer any of these in one or two lines, in chat or as a voice note. Each answer
 - **Automated lead follow-up** (`/blog/automated-lead-follow-up/`): Which follow-up message gets the most replies in your setups?
 - **Missed call text back** (`/blog/missed-call-text-back/`): What do callers usually reply to the first text-back message?
 
+- **Testimonial photos (homepage):** Can you send a headshot or company logo for Daniel Morris, Sarah Mitchell, James Carter, Michael Thompson, Rachel Bennett or Chris Walker, with their permission to show it? The cards are ready: a photo replaces the initials (`<img class="t-face" src="images/clients/name.webp" alt="Name">` in place of `<span class="initials">`) and a logo goes at the end of the caption (`<img class="t-logo" src="…" alt="Company">`). Never use stock or made-up photos.
+
 ## Answered (added to the post)
 
 (none yet)

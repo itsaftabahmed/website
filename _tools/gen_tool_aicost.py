@@ -69,7 +69,8 @@ ld = {"@context": "https://schema.org", "@graph": [
     {"@type": "ListItem", "position": 2, "name": "Free tools", "item": f"{U}tools/"},
     {"@type": "ListItem", "position": 3, "name": "AI receptionist cost calculator", "item": url}]},
   {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in FAQ]}]}
-CSS = '''.ac{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:22px;margin:8px 0 34px}
+CSS = '''section.hero>.wrap{width:min(740px,100% - 40px)}   /* title, calculator and article share one column */
+.ac{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:22px;margin:8px 0 34px}
 .ac__in,.ac__out{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:26px}
 .ac__f{margin-bottom:20px}.ac__f label{display:flex;justify-content:space-between;gap:12px;font-size:15px;color:var(--soft);margin-bottom:10px}.ac__f label b{color:#fff;white-space:nowrap}
 .ac select,.ac input[type=number]{width:100%;padding:12px 14px;border-radius:12px;background:#0d0d0d;color:#fff;border:1px solid #333;font:inherit;font-size:15px}
